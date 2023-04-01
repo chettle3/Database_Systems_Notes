@@ -1,0 +1,3 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{ALTER}\PYG{+w}{ }\PYG{k}{TABLE}\PYG{+w}{ }\PYG{n}{old\PYGZus{}name}\PYG{+w}{ }\PYG{k}{RENAME}\PYG{+w}{ }\PYG{k}{TO}\PYG{+w}{ }\PYG{n}{new\PYGZus{}name}\PYG{p}{;}
+\end{Verbatim}

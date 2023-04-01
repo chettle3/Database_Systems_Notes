@@ -1,0 +1,5 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{CREATE}\PYG{+w}{ }\PYG{k}{TABLE}\PYG{+w}{ }\PYG{n}{new\PYGZus{}table}\PYG{+w}{ }\PYG{k}{AS}
+\PYG{k}{SELECT}\PYG{+w}{ }\PYG{n}{column1}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{column2}
+\PYG{k}{FROM}\PYG{+w}{ }\PYG{n}{old\PYGZus{}table}
+\end{Verbatim}

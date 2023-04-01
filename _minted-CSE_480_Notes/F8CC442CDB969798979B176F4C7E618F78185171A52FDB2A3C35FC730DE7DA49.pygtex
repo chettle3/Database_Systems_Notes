@@ -1,0 +1,3 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{BETWEEN}\PYG{+w}{ }\PYG{k}{lower}\PYG{+w}{ }\PYG{k}{AND}\PYG{+w}{ }\PYG{k}{upper}
+\end{Verbatim}

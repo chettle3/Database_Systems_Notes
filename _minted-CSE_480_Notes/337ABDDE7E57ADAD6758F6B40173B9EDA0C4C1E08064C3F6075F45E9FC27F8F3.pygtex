@@ -1,0 +1,8 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n+nt}{\PYGZlt{}xsd:simpleType} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}myType\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+  \PYG{n+nt}{\PYGZlt{}xsd:restriction} \PYG{n+na}{base=}\PYG{l+s}{\PYGZdq{}xsd:integer\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}xsd:minInclusive} \PYG{n+na}{value=}\PYG{l+s}{\PYGZdq{}0\PYGZdq{}}\PYG{n+nt}{/\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}xsd:maxInclusive} \PYG{n+na}{value=}\PYG{l+s}{\PYGZdq{}120\PYGZdq{}}\PYG{n+nt}{/\PYGZgt{}}
+  \PYG{n+nt}{\PYGZlt{}/xsd:restriction\PYGZgt{}}
+\PYG{n+nt}{\PYGZlt{}/xsd:simpleType\PYGZgt{}}
+\end{Verbatim}

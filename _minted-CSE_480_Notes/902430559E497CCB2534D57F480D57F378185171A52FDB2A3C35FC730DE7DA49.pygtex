@@ -1,0 +1,7 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{SELECT}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{k}{FROM}\PYG{+w}{ }\PYG{k}{table}\PYG{+w}{ }\PYG{k}{AS}\PYG{+w}{ }\PYG{n}{t1}
+\PYG{k}{INNER}\PYG{+w}{ }\PYG{k}{JOIN}\PYG{+w}{ }\PYG{k}{table}\PYG{+w}{ }\PYG{k}{as}\PYG{+w}{ }\PYG{n}{t2}
+\PYG{k}{ON}\PYG{+w}{ }\PYG{n}{t1}\PYG{p}{.}\PYG{n}{column1}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{t2}\PYG{p}{.}\PYG{n}{column2}
+\PYG{k}{AND}\PYG{+w}{ }\PYG{n}{t1}\PYG{p}{.}\PYG{n}{column2}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{t2}\PYG{p}{.}\PYG{n}{column1}
+\PYG{k}{WHERE}\PYG{+w}{ }\PYG{n}{t1}\PYG{p}{.}\PYG{n}{column1}\PYG{+w}{ }\PYG{o}{\PYGZlt{}}\PYG{+w}{ }\PYG{n}{t2}\PYG{p}{.}\PYG{n}{column1}\PYG{p}{;}
+\end{Verbatim}

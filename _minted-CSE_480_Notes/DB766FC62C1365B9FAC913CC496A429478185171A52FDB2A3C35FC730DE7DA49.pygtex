@@ -1,0 +1,8 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZhy{}\PYGZhy{} Select customers who have paid for a track of over 5 dollars}
+\PYG{k}{SELECT}\PYG{+w}{ }\PYG{n}{CustomerId}\PYG{+w}{ }\PYG{k}{FROM}\PYG{+w}{ }\PYG{n}{Invoice}
+\PYG{k}{WHERE}\PYG{+w}{ }\PYG{n}{InvoiceId}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{k}{ANY}\PYG{p}{(}
+\PYG{+w}{    }\PYG{k}{SELECT}\PYG{+w}{ }\PYG{n}{InvoiceId}\PYG{+w}{ }\PYG{k}{FROM}\PYG{+w}{ }\PYG{n}{InvoiceLine}
+\PYG{+w}{    }\PYG{k}{WHERE}\PYG{+w}{ }\PYG{n}{UnitPrice}\PYG{o}{\PYGZgt{}}\PYG{l+m+mi}{5}
+\PYG{p}{);}
+\end{Verbatim}

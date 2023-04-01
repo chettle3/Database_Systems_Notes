@@ -1,0 +1,3 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{CALL}\PYG{+w}{ }\PYG{n}{add\PYGZus{}now\PYGZus{}to\PYGZus{}log}\PYG{p}{();}
+\end{Verbatim}

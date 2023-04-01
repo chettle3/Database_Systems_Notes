@@ -1,0 +1,3 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{SELECT}\PYG{+w}{ }\PYG{n}{col1}\PYG{p}{,}\PYG{+w}{ }\PYG{k}{min}\PYG{p}{(}\PYG{n}{col2}\PYG{p}{)}
+\end{Verbatim}

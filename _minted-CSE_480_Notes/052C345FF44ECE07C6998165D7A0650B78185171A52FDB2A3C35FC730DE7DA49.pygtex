@@ -1,0 +1,9 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZhy{}\PYGZhy{} Select suppliers who make clothing}
+\PYG{k}{SELECT}\PYG{+w}{ }\PYG{n}{SupplierName}\PYG{+w}{ }\PYG{k}{FROM}\PYG{+w}{ }\PYG{n}{Suppliers}
+\PYG{k}{WHERE}\PYG{+w}{ }\PYG{k}{EXISTS}\PYG{+w}{ }\PYG{p}{(}
+\PYG{+w}{    }\PYG{k}{SELECT}\PYG{+w}{ }\PYG{n}{ProductName}\PYG{+w}{ }\PYG{k}{FROM}\PYG{+w}{ }\PYG{n}{Products}
+\PYG{+w}{    }\PYG{k}{WHERE}\PYG{+w}{ }\PYG{n}{Products}\PYG{p}{.}\PYG{n}{SupplierID}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{Supplier}\PYG{p}{.}\PYG{n}{SupplierID}
+\PYG{+w}{    }\PYG{k}{AND}\PYG{+w}{ }\PYG{n}{Category}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}Clothing\PYGZsq{}}
+\PYG{p}{);}
+\end{Verbatim}

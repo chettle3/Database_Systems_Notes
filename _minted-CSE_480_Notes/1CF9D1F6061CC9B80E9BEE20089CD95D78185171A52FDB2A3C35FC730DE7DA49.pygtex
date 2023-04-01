@@ -1,0 +1,3 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{CREATE}\PYG{+w}{ }\PYG{k}{VIEW}\PYG{+w}{ }\PYG{n}{view\PYGZus{}name}\PYG{+w}{ }\PYG{k}{AS}\PYG{+w}{ }\PYG{k}{SELECT}\PYG{+w}{ }\PYG{p}{...}
+\end{Verbatim}

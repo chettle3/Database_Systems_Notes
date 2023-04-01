@@ -1,0 +1,6 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{CREATE}\PYG{+w}{ }\PYG{k}{TRIGGER}\PYG{+w}{ }\PYG{n}{id\PYGZus{}change}\PYG{+w}{ }\PYG{k}{AFTER}\PYG{+w}{ }\PYG{k}{UPDATE}\PYG{+w}{ }\PYG{k}{ON}\PYG{+w}{ }\PYG{n}{students}\PYG{+w}{ }\PYG{k}{WHEN}\PYG{+w}{ }\PYG{k}{NEW}\PYG{p}{.}\PYG{n}{id}\PYG{+w}{ }\PYG{o}{!=}\PYG{+w}{ }\PYG{k}{OLD}\PYG{p}{.}\PYG{n}{id}
+\PYG{k}{BEGIN}
+\PYG{+w}{    }\PYG{k}{UPDATE}\PYG{+w}{ }\PYG{n}{log}\PYG{+w}{ }\PYG{k}{SET}\PYG{+w}{ }\PYG{n}{student\PYGZus{}id}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{k}{NEW}\PYG{p}{.}\PYG{n}{id}\PYG{+w}{ }\PYG{k}{WHERE}\PYG{+w}{ }\PYG{n}{student\PYGZus{}id}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{k}{OLD}\PYG{p}{.}\PYG{n}{id}\PYG{p}{;}
+\PYG{k}{END}\PYG{p}{;}
+\end{Verbatim}

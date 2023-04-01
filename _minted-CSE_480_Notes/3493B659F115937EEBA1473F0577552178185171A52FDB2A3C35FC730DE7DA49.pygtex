@@ -1,0 +1,7 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{CASE}
+\PYG{+w}{  }\PYG{k}{WHEN}\PYG{+w}{ }\PYG{n}{cond\PYGZus{}1}\PYG{+w}{ }\PYG{k}{THEN}\PYG{+w}{ }\PYG{n}{statement\PYGZus{}1}\PYG{p}{;}
+\PYG{+w}{  }\PYG{k}{WHEN}\PYG{+w}{ }\PYG{n}{cond\PYGZus{}2}\PYG{+w}{ }\PYG{k}{THEN}\PYG{+w}{ }\PYG{n}{statement\PYGZus{}2}\PYG{p}{;}
+\PYG{+w}{  }\PYG{k}{ELSE}\PYG{+w}{ }\PYG{n}{statement\PYGZus{}3}\PYG{p}{;}
+\PYG{k}{END}\PYG{+w}{ }\PYG{k}{CASE}\PYG{p}{;}
+\end{Verbatim}

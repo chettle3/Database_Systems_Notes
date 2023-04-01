@@ -1,0 +1,8 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZhy{}\PYGZhy{} Select courses offered in both fall and spring}
+\PYG{k}{SELECT}\PYG{+w}{ }\PYG{n}{name}\PYG{+w}{ }\PYG{k}{FROM}\PYG{+w}{ }\PYG{n}{courses}
+\PYG{k}{WHERE}\PYG{+w}{ }\PYG{n}{semester}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}Fall\PYGZsq{}}
+\PYG{k}{AND}\PYG{+w}{ }\PYG{n}{name}\PYG{+w}{ }\PYG{k}{IN}
+\PYG{p}{(}\PYG{k}{SELECT}\PYG{+w}{ }\PYG{n}{name}\PYG{+w}{ }\PYG{k}{FROM}\PYG{+w}{ }\PYG{n}{courses}
+\PYG{k}{WHERE}\PYG{+w}{ }\PYG{n}{semester}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}Spring\PYGZsq{}}\PYG{p}{);}
+\end{Verbatim}

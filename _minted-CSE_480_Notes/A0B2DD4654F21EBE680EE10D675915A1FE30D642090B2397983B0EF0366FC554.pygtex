@@ -1,0 +1,16 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{def} \PYG{n+nf}{adapt\PYGZus{}color}\PYG{p}{(}\PYG{n}{color}\PYG{p}{):}
+    \PYG{k}{return} \PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+si}{\PYGZob{}}\PYG{n}{color}\PYG{o}{.}\PYG{n}{r}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{;}\PYG{l+s+si}{\PYGZob{}}\PYG{n}{color}\PYG{o}{.}\PYG{n}{g}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{;}\PYG{l+s+si}{\PYGZob{}}\PYG{n}{color}\PYG{o}{.}\PYG{n}{b}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}
+\PYG{k}{def} \PYG{n+nf}{convert\PYGZus{}color}\PYG{p}{(}\PYG{n}{bytestring}\PYG{p}{):}
+    \PYG{n}{as\PYGZus{}str} \PYG{o}{=} \PYG{n}{bytestring}\PYG{o}{.}\PYG{n}{decode}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}ascii\PYGZdq{}}\PYG{p}{)}
+    \PYG{n}{r}\PYG{p}{,} \PYG{n}{g}\PYG{p}{,} \PYG{n}{b} \PYG{o}{=} \PYG{p}{[}\PYG{n+nb}{float}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)} \PYG{k}{for} \PYG{n}{x} \PYG{o+ow}{in} \PYG{n}{as\PYGZus{}str}\PYG{o}{.}\PYG{n}{split}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{};\PYGZsq{}}\PYG{p}{)]}
+    \PYG{k}{return} \PYG{n}{Color}\PYG{p}{(}\PYG{n}{r}\PYG{p}{,}\PYG{n}{g}\PYG{p}{,}\PYG{n}{b}\PYG{p}{)}
+\PYG{n}{sqlite3}\PYG{o}{.}\PYG{n}{register\PYGZus{}adapter}\PYG{p}{(}\PYG{n}{Color}\PYG{p}{,} \PYG{n}{adapt\PYGZus{}color}\PYG{p}{)}
+\PYG{n}{sqlite3}\PYG{o}{.}\PYG{n}{register\PYGZus{}converter}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}COLOR\PYGZdq{}}\PYG{p}{,} \PYG{n}{convert\PYGZus{}color}\PYG{p}{)}
+\PYG{n}{c} \PYG{o}{=} \PYG{n}{Color}\PYG{p}{(}\PYG{l+m+mi}{24}\PYG{p}{,} \PYG{l+m+mi}{69}\PYG{p}{,} \PYG{l+m+mi}{59}\PYG{p}{)}
+\PYG{n}{conn} \PYG{o}{=} \PYG{n}{sqlite3}\PYG{o}{.}\PYG{n}{connect}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}:memory:\PYGZdq{}}\PYG{p}{,} \PYG{n}{detect\PYGZus{}types} \PYG{o}{=} \PYG{n}{sqlite3}\PYG{o}{.}\PYG{n}{PARSE\PYGZus{}DECLTYPES} \PYG{o}{|} \PYG{n}{sqlite3}\PYG{o}{.}\PYG{n}{PARSE\PYGZus{}COLNAMES}\PYG{p}{)}
+\PYG{n}{conn}\PYG{o}{.}\PYG{n}{execute}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}CREATE TABLE my\PYGZus{}colors (col COLOR);\PYGZdq{}}\PYG{p}{)}
+\PYG{n}{conn}\PYG{o}{.}\PYG{n}{execute}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}INSERT INTO my\PYGZus{}colors VALUES (?);\PYGZdq{}}\PYG{p}{,} \PYG{n}{c}\PYG{p}{)}
+\PYG{n}{res} \PYG{o}{=} \PYG{n}{conn}\PYG{o}{.}\PYG{n}{execute}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}SELECT col AS \PYGZdq{}col [COLOR]\PYGZdq{} FROM my\PYGZus{}colors;\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{row} \PYG{o}{=} \PYG{n+nb}{next}\PYG{p}{(}\PYG{n}{res}\PYG{p}{)}
+\end{Verbatim}

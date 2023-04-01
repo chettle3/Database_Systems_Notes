@@ -1,0 +1,4744 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.3.3)  1 APR 2023 12:34
+entering extended mode
+ \write18 enabled.
+ %&-line parsing enabled.
+**CSE_480_Notes.tex
+(./CSE_480_Notes.tex
+LaTeX2e <2022-11-01> patch level 1
+L3 programming layer <2023-02-22>
+(c:/texlive/2022/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2022/07/02 v1.4n Standard LaTeX document class
+(c:/texlive/2022/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2022/07/02 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count185
+\c@section=\count186
+\c@subsection=\count187
+\c@subsubsection=\count188
+\c@paragraph=\count189
+\c@subparagraph=\count190
+\c@figure=\count191
+\c@table=\count192
+\abovecaptionskip=\skip48
+\belowcaptionskip=\skip49
+\bibindent=\dimen140
+)
+(c:/Users/chett/texmf/tex/latex/mycommands.sty
+Package: mycommands 
+
+(c:/texlive/2022/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2023/02/13 3.86 The Babel package
+\babel@savecnt=\count193
+\U@D=\dimen141
+\l@unhyphenated=\language87
+
+(c:/texlive/2022/texmf-dist/tex/generic/babel/txtbabel.def)
+\bbl@readstream=\read2
+\bbl@dirlevel=\count194
+
+(c:/texlive/2022/texmf-dist/tex/generic/babel-english/english.ldf
+Language: english 2017/06/06 v3.3r English support from the babel system
+Package babel Info: Hyphen rules for 'canadian' set to \l@english
+(babel)             (\language0). Reported on input line 102.
+Package babel Info: Hyphen rules for 'australian' set to \l@ukenglish
+(babel)             (\language21). Reported on input line 105.
+Package babel Info: Hyphen rules for 'newzealand' set to \l@ukenglish
+(babel)             (\language21). Reported on input line 108.
+))
+(c:/texlive/2022/texmf-dist/tex/generic/babel/locale/en/babel-english.tex
+Package babel Info: Importing font and identification data for english
+(babel)             from babel-en.ini. Reported on input line 11.
+)
+(c:/texlive/2022/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2021/02/14 v1.3d Input encoding file
+\inpenc@prehook=\toks16
+\inpenc@posthook=\toks17
+
+(c:/texlive/2022/texmf-dist/tex/latex/ucs/utf8x.def
+File: utf8x.def 2022/08/07 UCS: Input encoding UTF-8
+
+
+Package ucs Info: utf8x disabled, assuming standard utf8 processing
+(ucs)             load ucs package to force utf8x processing.
+
+(c:/texlive/2022/texmf-dist/tex/latex/base/utf8.def
+File: utf8.def 2022/06/07 v1.3c UTF-8 support
+Now handling font encoding OML ...
+... no UTF-8 mapping file for font encoding OML
+Now handling font encoding OMS ...
+... processing UTF-8 mapping file for font encoding OMS
+
+(c:/texlive/2022/texmf-dist/tex/latex/base/omsenc.dfu
+File: omsenc.dfu 2022/06/07 v1.3c UTF-8 support
+   defining Unicode char U+00A7 (decimal 167)
+   defining Unicode char U+00B6 (decimal 182)
+   defining Unicode char U+00B7 (decimal 183)
+   defining Unicode char U+2020 (decimal 8224)
+   defining Unicode char U+2021 (decimal 8225)
+   defining Unicode char U+2022 (decimal 8226)
+)
+Now handling font encoding OT1 ...
+... processing UTF-8 mapping file for font encoding OT1
+
+(c:/texlive/2022/texmf-dist/tex/latex/base/ot1enc.dfu
+File: ot1enc.dfu 2022/06/07 v1.3c UTF-8 support
+   defining Unicode char U+00A0 (decimal 160)
+   defining Unicode char U+00A1 (decimal 161)
+   defining Unicode char U+00A3 (decimal 163)
+   defining Unicode char U+00AD (decimal 173)
+   defining Unicode char U+00B8 (decimal 184)
+   defining Unicode char U+00BF (decimal 191)
+   defining Unicode char U+00C5 (decimal 197)
+   defining Unicode char U+00C6 (decimal 198)
+   defining Unicode char U+00D8 (decimal 216)
+   defining Unicode char U+00DF (decimal 223)
+   defining Unicode char U+00E6 (decimal 230)
+   defining Unicode char U+00EC (decimal 236)
+   defining Unicode char U+00ED (decimal 237)
+   defining Unicode char U+00EE (decimal 238)
+   defining Unicode char U+00EF (decimal 239)
+   defining Unicode char U+00F8 (decimal 248)
+   defining Unicode char U+0131 (decimal 305)
+   defining Unicode char U+0141 (decimal 321)
+   defining Unicode char U+0142 (decimal 322)
+   defining Unicode char U+0152 (decimal 338)
+   defining Unicode char U+0153 (decimal 339)
+   defining Unicode char U+0174 (decimal 372)
+   defining Unicode char U+0175 (decimal 373)
+   defining Unicode char U+0176 (decimal 374)
+   defining Unicode char U+0177 (decimal 375)
+   defining Unicode char U+0218 (decimal 536)
+   defining Unicode char U+0219 (decimal 537)
+   defining Unicode char U+021A (decimal 538)
+   defining Unicode char U+021B (decimal 539)
+   defining Unicode char U+0237 (decimal 567)
+   defining Unicode char U+2013 (decimal 8211)
+   defining Unicode char U+2014 (decimal 8212)
+   defining Unicode char U+2018 (decimal 8216)
+   defining Unicode char U+2019 (decimal 8217)
+   defining Unicode char U+201C (decimal 8220)
+   defining Unicode char U+201D (decimal 8221)
+   defining Unicode char U+FB00 (decimal 64256)
+   defining Unicode char U+FB01 (decimal 64257)
+   defining Unicode char U+FB02 (decimal 64258)
+   defining Unicode char U+FB03 (decimal 64259)
+   defining Unicode char U+FB04 (decimal 64260)
+   defining Unicode char U+FB05 (decimal 64261)
+   defining Unicode char U+FB06 (decimal 64262)
+)
+Now handling font encoding T1 ...
+... processing UTF-8 mapping file for font encoding T1
+
+(c:/texlive/2022/texmf-dist/tex/latex/base/t1enc.dfu
+File: t1enc.dfu 2022/06/07 v1.3c UTF-8 support
+   defining Unicode char U+00A0 (decimal 160)
+   defining Unicode char U+00A1 (decimal 161)
+   defining Unicode char U+00A3 (decimal 163)
+   defining Unicode char U+00AB (decimal 171)
+   defining Unicode char U+00AD (decimal 173)
+   defining Unicode char U+00BB (decimal 187)
+   defining Unicode char U+00BF (decimal 191)
+   defining Unicode char U+00C0 (decimal 192)
+   defining Unicode char U+00C1 (decimal 193)
+   defining Unicode char U+00C2 (decimal 194)
+   defining Unicode char U+00C3 (decimal 195)
+   defining Unicode char U+00C4 (decimal 196)
+   defining Unicode char U+00C5 (decimal 197)
+   defining Unicode char U+00C6 (decimal 198)
+   defining Unicode char U+00C7 (decimal 199)
+   defining Unicode char U+00C8 (decimal 200)
+   defining Unicode char U+00C9 (decimal 201)
+   defining Unicode char U+00CA (decimal 202)
+   defining Unicode char U+00CB (decimal 203)
+   defining Unicode char U+00CC (decimal 204)
+   defining Unicode char U+00CD (decimal 205)
+   defining Unicode char U+00CE (decimal 206)
+   defining Unicode char U+00CF (decimal 207)
+   defining Unicode char U+00D0 (decimal 208)
+   defining Unicode char U+00D1 (decimal 209)
+   defining Unicode char U+00D2 (decimal 210)
+   defining Unicode char U+00D3 (decimal 211)
+   defining Unicode char U+00D4 (decimal 212)
+   defining Unicode char U+00D5 (decimal 213)
+   defining Unicode char U+00D6 (decimal 214)
+   defining Unicode char U+00D8 (decimal 216)
+   defining Unicode char U+00D9 (decimal 217)
+   defining Unicode char U+00DA (decimal 218)
+   defining Unicode char U+00DB (decimal 219)
+   defining Unicode char U+00DC (decimal 220)
+   defining Unicode char U+00DD (decimal 221)
+   defining Unicode char U+00DE (decimal 222)
+   defining Unicode char U+00DF (decimal 223)
+   defining Unicode char U+00E0 (decimal 224)
+   defining Unicode char U+00E1 (decimal 225)
+   defining Unicode char U+00E2 (decimal 226)
+   defining Unicode char U+00E3 (decimal 227)
+   defining Unicode char U+00E4 (decimal 228)
+   defining Unicode char U+00E5 (decimal 229)
+   defining Unicode char U+00E6 (decimal 230)
+   defining Unicode char U+00E7 (decimal 231)
+   defining Unicode char U+00E8 (decimal 232)
+   defining Unicode char U+00E9 (decimal 233)
+   defining Unicode char U+00EA (decimal 234)
+   defining Unicode char U+00EB (decimal 235)
+   defining Unicode char U+00EC (decimal 236)
+   defining Unicode char U+00ED (decimal 237)
+   defining Unicode char U+00EE (decimal 238)
+   defining Unicode char U+00EF (decimal 239)
+   defining Unicode char U+00F0 (decimal 240)
+   defining Unicode char U+00F1 (decimal 241)
+   defining Unicode char U+00F2 (decimal 242)
+   defining Unicode char U+00F3 (decimal 243)
+   defining Unicode char U+00F4 (decimal 244)
+   defining Unicode char U+00F5 (decimal 245)
+   defining Unicode char U+00F6 (decimal 246)
+   defining Unicode char U+00F8 (decimal 248)
+   defining Unicode char U+00F9 (decimal 249)
+   defining Unicode char U+00FA (decimal 250)
+   defining Unicode char U+00FB (decimal 251)
+   defining Unicode char U+00FC (decimal 252)
+   defining Unicode char U+00FD (decimal 253)
+   defining Unicode char U+00FE (decimal 254)
+   defining Unicode char U+00FF (decimal 255)
+   defining Unicode char U+0100 (decimal 256)
+   defining Unicode char U+0101 (decimal 257)
+   defining Unicode char U+0102 (decimal 258)
+   defining Unicode char U+0103 (decimal 259)
+   defining Unicode char U+0104 (decimal 260)
+   defining Unicode char U+0105 (decimal 261)
+   defining Unicode char U+0106 (decimal 262)
+   defining Unicode char U+0107 (decimal 263)
+   defining Unicode char U+0108 (decimal 264)
+   defining Unicode char U+0109 (decimal 265)
+   defining Unicode char U+010A (decimal 266)
+   defining Unicode char U+010B (decimal 267)
+   defining Unicode char U+010C (decimal 268)
+   defining Unicode char U+010D (decimal 269)
+   defining Unicode char U+010E (decimal 270)
+   defining Unicode char U+010F (decimal 271)
+   defining Unicode char U+0110 (decimal 272)
+   defining Unicode char U+0111 (decimal 273)
+   defining Unicode char U+0112 (decimal 274)
+   defining Unicode char U+0113 (decimal 275)
+   defining Unicode char U+0114 (decimal 276)
+   defining Unicode char U+0115 (decimal 277)
+   defining Unicode char U+0116 (decimal 278)
+   defining Unicode char U+0117 (decimal 279)
+   defining Unicode char U+0118 (decimal 280)
+   defining Unicode char U+0119 (decimal 281)
+   defining Unicode char U+011A (decimal 282)
+   defining Unicode char U+011B (decimal 283)
+   defining Unicode char U+011C (decimal 284)
+   defining Unicode char U+011D (decimal 285)
+   defining Unicode char U+011E (decimal 286)
+   defining Unicode char U+011F (decimal 287)
+   defining Unicode char U+0120 (decimal 288)
+   defining Unicode char U+0121 (decimal 289)
+   defining Unicode char U+0122 (decimal 290)
+   defining Unicode char U+0123 (decimal 291)
+   defining Unicode char U+0124 (decimal 292)
+   defining Unicode char U+0125 (decimal 293)
+   defining Unicode char U+0128 (decimal 296)
+   defining Unicode char U+0129 (decimal 297)
+   defining Unicode char U+012A (decimal 298)
+   defining Unicode char U+012B (decimal 299)
+   defining Unicode char U+012C (decimal 300)
+   defining Unicode char U+012D (decimal 301)
+   defining Unicode char U+012E (decimal 302)
+   defining Unicode char U+012F (decimal 303)
+   defining Unicode char U+0130 (decimal 304)
+   defining Unicode char U+0131 (decimal 305)
+   defining Unicode char U+0132 (decimal 306)
+   defining Unicode char U+0133 (decimal 307)
+   defining Unicode char U+0134 (decimal 308)
+   defining Unicode char U+0135 (decimal 309)
+   defining Unicode char U+0136 (decimal 310)
+   defining Unicode char U+0137 (decimal 311)
+   defining Unicode char U+0139 (decimal 313)
+   defining Unicode char U+013A (decimal 314)
+   defining Unicode char U+013B (decimal 315)
+   defining Unicode char U+013C (decimal 316)
+   defining Unicode char U+013D (decimal 317)
+   defining Unicode char U+013E (decimal 318)
+   defining Unicode char U+0141 (decimal 321)
+   defining Unicode char U+0142 (decimal 322)
+   defining Unicode char U+0143 (decimal 323)
+   defining Unicode char U+0144 (decimal 324)
+   defining Unicode char U+0145 (decimal 325)
+   defining Unicode char U+0146 (decimal 326)
+   defining Unicode char U+0147 (decimal 327)
+   defining Unicode char U+0148 (decimal 328)
+   defining Unicode char U+014A (decimal 330)
+   defining Unicode char U+014B (decimal 331)
+   defining Unicode char U+014C (decimal 332)
+   defining Unicode char U+014D (decimal 333)
+   defining Unicode char U+014E (decimal 334)
+   defining Unicode char U+014F (decimal 335)
+   defining Unicode char U+0150 (decimal 336)
+   defining Unicode char U+0151 (decimal 337)
+   defining Unicode char U+0152 (decimal 338)
+   defining Unicode char U+0153 (decimal 339)
+   defining Unicode char U+0154 (decimal 340)
+   defining Unicode char U+0155 (decimal 341)
+   defining Unicode char U+0156 (decimal 342)
+   defining Unicode char U+0157 (decimal 343)
+   defining Unicode char U+0158 (decimal 344)
+   defining Unicode char U+0159 (decimal 345)
+   defining Unicode char U+015A (decimal 346)
+   defining Unicode char U+015B (decimal 347)
+   defining Unicode char U+015C (decimal 348)
+   defining Unicode char U+015D (decimal 349)
+   defining Unicode char U+015E (decimal 350)
+   defining Unicode char U+015F (decimal 351)
+   defining Unicode char U+0160 (decimal 352)
+   defining Unicode char U+0161 (decimal 353)
+   defining Unicode char U+0162 (decimal 354)
+   defining Unicode char U+0163 (decimal 355)
+   defining Unicode char U+0164 (decimal 356)
+   defining Unicode char U+0165 (decimal 357)
+   defining Unicode char U+0168 (decimal 360)
+   defining Unicode char U+0169 (decimal 361)
+   defining Unicode char U+016A (decimal 362)
+   defining Unicode char U+016B (decimal 363)
+   defining Unicode char U+016C (decimal 364)
+   defining Unicode char U+016D (decimal 365)
+   defining Unicode char U+016E (decimal 366)
+   defining Unicode char U+016F (decimal 367)
+   defining Unicode char U+0170 (decimal 368)
+   defining Unicode char U+0171 (decimal 369)
+   defining Unicode char U+0172 (decimal 370)
+   defining Unicode char U+0173 (decimal 371)
+   defining Unicode char U+0174 (decimal 372)
+   defining Unicode char U+0175 (decimal 373)
+   defining Unicode char U+0176 (decimal 374)
+   defining Unicode char U+0177 (decimal 375)
+   defining Unicode char U+0178 (decimal 376)
+   defining Unicode char U+0179 (decimal 377)
+   defining Unicode char U+017A (decimal 378)
+   defining Unicode char U+017B (decimal 379)
+   defining Unicode char U+017C (decimal 380)
+   defining Unicode char U+017D (decimal 381)
+   defining Unicode char U+017E (decimal 382)
+   defining Unicode char U+01C4 (decimal 452)
+   defining Unicode char U+01C5 (decimal 453)
+   defining Unicode char U+01C6 (decimal 454)
+   defining Unicode char U+01C7 (decimal 455)
+   defining Unicode char U+01C8 (decimal 456)
+   defining Unicode char U+01C9 (decimal 457)
+   defining Unicode char U+01CA (decimal 458)
+   defining Unicode char U+01CB (decimal 459)
+   defining Unicode char U+01CC (decimal 460)
+   defining Unicode char U+01CD (decimal 461)
+   defining Unicode char U+01CE (decimal 462)
+   defining Unicode char U+01CF (decimal 463)
+   defining Unicode char U+01D0 (decimal 464)
+   defining Unicode char U+01D1 (decimal 465)
+   defining Unicode char U+01D2 (decimal 466)
+   defining Unicode char U+01D3 (decimal 467)
+   defining Unicode char U+01D4 (decimal 468)
+   defining Unicode char U+01E2 (decimal 482)
+   defining Unicode char U+01E3 (decimal 483)
+   defining Unicode char U+01E6 (decimal 486)
+   defining Unicode char U+01E7 (decimal 487)
+   defining Unicode char U+01E8 (decimal 488)
+   defining Unicode char U+01E9 (decimal 489)
+   defining Unicode char U+01EA (decimal 490)
+   defining Unicode char U+01EB (decimal 491)
+   defining Unicode char U+01F0 (decimal 496)
+   defining Unicode char U+01F4 (decimal 500)
+   defining Unicode char U+01F5 (decimal 501)
+   defining Unicode char U+0218 (decimal 536)
+   defining Unicode char U+0219 (decimal 537)
+   defining Unicode char U+021A (decimal 538)
+   defining Unicode char U+021B (decimal 539)
+   defining Unicode char U+0232 (decimal 562)
+   defining Unicode char U+0233 (decimal 563)
+   defining Unicode char U+0237 (decimal 567)
+   defining Unicode char U+02D9 (decimal 729)
+   defining Unicode char U+02DB (decimal 731)
+   defining Unicode char U+1E02 (decimal 7682)
+   defining Unicode char U+1E03 (decimal 7683)
+   defining Unicode char U+1E0D (decimal 7693)
+   defining Unicode char U+1E1E (decimal 7710)
+   defining Unicode char U+1E1F (decimal 7711)
+   defining Unicode char U+1E25 (decimal 7717)
+   defining Unicode char U+1E30 (decimal 7728)
+   defining Unicode char U+1E31 (decimal 7729)
+   defining Unicode char U+1E37 (decimal 7735)
+   defining Unicode char U+1E8E (decimal 7822)
+   defining Unicode char U+1E8F (decimal 7823)
+   defining Unicode char U+1E43 (decimal 7747)
+   defining Unicode char U+1E45 (decimal 7749)
+   defining Unicode char U+1E47 (decimal 7751)
+   defining Unicode char U+1E5B (decimal 7771)
+   defining Unicode char U+1E63 (decimal 7779)
+   defining Unicode char U+1E6D (decimal 7789)
+   defining Unicode char U+1E90 (decimal 7824)
+   defining Unicode char U+1E91 (decimal 7825)
+   defining Unicode char U+1E9E (decimal 7838)
+   defining Unicode char U+1EF2 (decimal 7922)
+   defining Unicode char U+1EF3 (decimal 7923)
+   defining Unicode char U+200C (decimal 8204)
+   defining Unicode char U+2010 (decimal 8208)
+   defining Unicode char U+2011 (decimal 8209)
+   defining Unicode char U+2012 (decimal 8210)
+   defining Unicode char U+2013 (decimal 8211)
+   defining Unicode char U+2014 (decimal 8212)
+   defining Unicode char U+2015 (decimal 8213)
+   defining Unicode char U+2018 (decimal 8216)
+   defining Unicode char U+2019 (decimal 8217)
+   defining Unicode char U+201A (decimal 8218)
+   defining Unicode char U+201C (decimal 8220)
+   defining Unicode char U+201D (decimal 8221)
+   defining Unicode char U+201E (decimal 8222)
+   defining Unicode char U+2030 (decimal 8240)
+   defining Unicode char U+2031 (decimal 8241)
+   defining Unicode char U+2039 (decimal 8249)
+   defining Unicode char U+203A (decimal 8250)
+   defining Unicode char U+2423 (decimal 9251)
+   defining Unicode char U+1E20 (decimal 7712)
+   defining Unicode char U+1E21 (decimal 7713)
+   defining Unicode char U+FB00 (decimal 64256)
+   defining Unicode char U+FB01 (decimal 64257)
+   defining Unicode char U+FB02 (decimal 64258)
+   defining Unicode char U+FB03 (decimal 64259)
+   defining Unicode char U+FB04 (decimal 64260)
+   defining Unicode char U+FB05 (decimal 64261)
+   defining Unicode char U+FB06 (decimal 64262)
+)
+Now handling font encoding TS1 ...
+... processing UTF-8 mapping file for font encoding TS1
+
+(c:/texlive/2022/texmf-dist/tex/latex/base/ts1enc.dfu
+File: ts1enc.dfu 2022/06/07 v1.3c UTF-8 support
+   defining Unicode char U+00A2 (decimal 162)
+   defining Unicode char U+00A3 (decimal 163)
+   defining Unicode char U+00A4 (decimal 164)
+   defining Unicode char U+00A5 (decimal 165)
+   defining Unicode char U+00A6 (decimal 166)
+   defining Unicode char U+00A7 (decimal 167)
+   defining Unicode char U+00A8 (decimal 168)
+   defining Unicode char U+00A9 (decimal 169)
+   defining Unicode char U+00AA (decimal 170)
+   defining Unicode char U+00AC (decimal 172)
+   defining Unicode char U+00AE (decimal 174)
+   defining Unicode char U+00AF (decimal 175)
+   defining Unicode char U+00B0 (decimal 176)
+   defining Unicode char U+00B1 (decimal 177)
+   defining Unicode char U+00B2 (decimal 178)
+   defining Unicode char U+00B3 (decimal 179)
+   defining Unicode char U+00B4 (decimal 180)
+   defining Unicode char U+00B5 (decimal 181)
+   defining Unicode char U+00B6 (decimal 182)
+   defining Unicode char U+00B7 (decimal 183)
+   defining Unicode char U+00B9 (decimal 185)
+   defining Unicode char U+00BA (decimal 186)
+   defining Unicode char U+00BC (decimal 188)
+   defining Unicode char U+00BD (decimal 189)
+   defining Unicode char U+00BE (decimal 190)
+   defining Unicode char U+00D7 (decimal 215)
+   defining Unicode char U+00F7 (decimal 247)
+   defining Unicode char U+0192 (decimal 402)
+   defining Unicode char U+02C7 (decimal 711)
+   defining Unicode char U+02D8 (decimal 728)
+   defining Unicode char U+02DD (decimal 733)
+   defining Unicode char U+0E3F (decimal 3647)
+   defining Unicode char U+2016 (decimal 8214)
+   defining Unicode char U+2020 (decimal 8224)
+   defining Unicode char U+2021 (decimal 8225)
+   defining Unicode char U+2022 (decimal 8226)
+   defining Unicode char U+2030 (decimal 8240)
+   defining Unicode char U+2031 (decimal 8241)
+   defining Unicode char U+203B (decimal 8251)
+   defining Unicode char U+203D (decimal 8253)
+   defining Unicode char U+2044 (decimal 8260)
+   defining Unicode char U+204E (decimal 8270)
+   defining Unicode char U+2052 (decimal 8274)
+   defining Unicode char U+20A1 (decimal 8353)
+   defining Unicode char U+20A4 (decimal 8356)
+   defining Unicode char U+20A6 (decimal 8358)
+   defining Unicode char U+20A9 (decimal 8361)
+   defining Unicode char U+20AB (decimal 8363)
+   defining Unicode char U+20AC (decimal 8364)
+   defining Unicode char U+20B1 (decimal 8369)
+   defining Unicode char U+2103 (decimal 8451)
+   defining Unicode char U+2116 (decimal 8470)
+   defining Unicode char U+2117 (decimal 8471)
+   defining Unicode char U+211E (decimal 8478)
+   defining Unicode char U+2120 (decimal 8480)
+   defining Unicode char U+2122 (decimal 8482)
+   defining Unicode char U+2126 (decimal 8486)
+   defining Unicode char U+2127 (decimal 8487)
+   defining Unicode char U+212E (decimal 8494)
+   defining Unicode char U+2190 (decimal 8592)
+   defining Unicode char U+2191 (decimal 8593)
+   defining Unicode char U+2192 (decimal 8594)
+   defining Unicode char U+2193 (decimal 8595)
+   defining Unicode char U+2329 (decimal 9001)
+   defining Unicode char U+3008 (decimal 12296)
+   defining Unicode char U+232A (decimal 9002)
+   defining Unicode char U+3009 (decimal 12297)
+   defining Unicode char U+2422 (decimal 9250)
+   defining Unicode char U+25E6 (decimal 9702)
+   defining Unicode char U+25EF (decimal 9711)
+   defining Unicode char U+266A (decimal 9834)
+   defining Unicode char U+27E8 (decimal 10216)
+   defining Unicode char U+27E9 (decimal 10217)
+   defining Unicode char U+FEFF (decimal 65279)
+)
+Now handling font encoding OMX ...
+... no UTF-8 mapping file for font encoding OMX
+Now handling font encoding U ...
+... no UTF-8 mapping file for font encoding U
+   defining Unicode char U+00A9 (decimal 169)
+   defining Unicode char U+00AA (decimal 170)
+   defining Unicode char U+00AE (decimal 174)
+   defining Unicode char U+00BA (decimal 186)
+   defining Unicode char U+02C6 (decimal 710)
+   defining Unicode char U+02DC (decimal 732)
+   defining Unicode char U+200C (decimal 8204)
+   defining Unicode char U+2026 (decimal 8230)
+   defining Unicode char U+2122 (decimal 8482)
+   defining Unicode char U+2423 (decimal 9251)
+   defining Unicode char U+FEFF (decimal 65279)
+)))
+(c:/texlive/2022/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
+)
+(c:/texlive/2022/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+
+(c:/texlive/2022/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks18
+)
+(c:/texlive/2022/texmf-dist/tex/generic/iftex/ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+
+(c:/texlive/2022/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2022/02/03 v1.0f TeX engine tests
+))
+\Gm@cnth=\count195
+\Gm@cntv=\count196
+\c@Gm@tempcnt=\count197
+\Gm@bindingoffset=\dimen142
+\Gm@wd@mp=\dimen143
+\Gm@odd@mp=\dimen144
+\Gm@even@mp=\dimen145
+\Gm@layoutwidth=\dimen146
+\Gm@layoutheight=\dimen147
+\Gm@layouthoffset=\dimen148
+\Gm@layoutvoffset=\dimen149
+\Gm@dimlist=\toks19
+)
+(c:/texlive/2022/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2022/04/08 v2.17n AMS math features
+\@mathmargin=\skip50
+
+For additional information on amsmath, use the `?' option.
+(c:/texlive/2022/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2021/08/26 v2.01 AMS text
+
+(c:/texlive/2022/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks20
+\ex@=\dimen150
+))
+(c:/texlive/2022/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen151
+)
+(c:/texlive/2022/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2022/04/08 v2.04 operator names
+)
+\inf@bad=\count198
+LaTeX Info: Redefining \frac on input line 234.
+\uproot@=\count199
+\leftroot@=\count266
+LaTeX Info: Redefining \overline on input line 399.
+LaTeX Info: Redefining \colon on input line 410.
+\classnum@=\count267
+\DOTSCASE@=\count268
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box51
+\strutbox@=\box52
+LaTeX Info: Redefining \big on input line 722.
+LaTeX Info: Redefining \Big on input line 723.
+LaTeX Info: Redefining \bigg on input line 724.
+LaTeX Info: Redefining \Bigg on input line 725.
+\big@size=\dimen152
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count269
+LaTeX Info: Redefining \bmod on input line 905.
+LaTeX Info: Redefining \pmod on input line 910.
+LaTeX Info: Redefining \smash on input line 940.
+LaTeX Info: Redefining \relbar on input line 970.
+LaTeX Info: Redefining \Relbar on input line 971.
+\c@MaxMatrixCols=\count270
+\dotsspace@=\muskip16
+\c@parentequation=\count271
+\dspbrk@lvl=\count272
+\tag@help=\toks21
+\row@=\count273
+\column@=\count274
+\maxfields@=\count275
+\andhelp@=\toks22
+\eqnshift@=\dimen153
+\alignsep@=\dimen154
+\tagshift@=\dimen155
+\tagwidth@=\dimen156
+\totwidth@=\dimen157
+\lineht@=\dimen158
+\@envbody=\toks23
+\multlinegap=\skip51
+\multlinetaggap=\skip52
+\mathdisplay@stack=\toks24
+LaTeX Info: Redefining \[ on input line 2953.
+LaTeX Info: Redefining \] on input line 2954.
+)
+(c:/texlive/2022/texmf-dist/tex/latex/amscls/amsthm.sty
+Package: amsthm 2020/05/29 v2.20.6
+\thm@style=\toks25
+\thm@bodyfont=\toks26
+\thm@headfont=\toks27
+\thm@notefont=\toks28
+\thm@headpunct=\toks29
+\thm@preskip=\skip53
+\thm@postskip=\skip54
+\thm@headsep=\skip55
+\dth@everypar=\toks30
+)
+(c:/texlive/2022/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(c:/texlive/2022/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+(c:/texlive/2022/texmf-dist/tex/latex/tools/enumerate.sty
+Package: enumerate 2015/07/23 v3.00 enumerate extensions (DPC)
+\@enLab=\toks31
+)
+(c:/texlive/2022/texmf-dist/tex/latex/mdframed/mdframed.sty
+Package: mdframed 2013/07/01 1.9b: mdframed
+
+(c:/texlive/2022/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+
+(c:/texlive/2022/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
+)
+(c:/texlive/2022/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+))
+(c:/texlive/2022/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
+(c:/texlive/2022/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2023-02-22 L3 programming layer (loader) 
+
+(c:/texlive/2022/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count276
+\l__pdf_internal_box=\box53
+))
+Package: xparse 2023-02-02 L3 Experimental document command parser
+)
+(c:/texlive/2022/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count277
+)
+(c:/texlive/2022/texmf-dist/tex/latex/zref/zref-abspage.sty
+Package: zref-abspage 2022-04-07 v2.34 Module abspage for zref (HO)
+
+(c:/texlive/2022/texmf-dist/tex/latex/zref/zref-base.sty
+Package: zref-base 2022-04-07 v2.34 Module base for zref (HO)
+
+(c:/texlive/2022/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+(c:/texlive/2022/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+)
+(c:/texlive/2022/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(c:/texlive/2022/texmf-dist/tex/generic/etexcmds/etexcmds.sty
+Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
+)
+(c:/texlive/2022/texmf-dist/tex/latex/auxhook/auxhook.sty
+Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
+)
+Package zref Info: New property list: main on input line 767.
+Package zref Info: New property: default on input line 768.
+Package zref Info: New property: page on input line 769.
+)
+(c:/texlive/2022/texmf-dist/tex/latex/base/atbegshi-ltx.sty
+Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
+package with kernel methods
+)
+\c@abspage=\count278
+Package zref Info: New property: abspage on input line 65.
+)
+(c:/texlive/2022/texmf-dist/tex/latex/needspace/needspace.sty
+Package: needspace 2010/09/12 v1.3d reserve vertical space
+)
+(c:/texlive/2022/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2022/01/06 v1.3d Standard LaTeX Color (DPC)
+
+(c:/texlive/2022/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package color Info: Driver file: pdftex.def on input line 149.
+
+(c:/texlive/2022/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
+)
+(c:/texlive/2022/texmf-dist/tex/latex/graphics/mathcolor.ltx))
+\mdf@templength=\skip56
+\c@mdf@globalstyle@cnt=\count279
+\mdf@skipabove@length=\skip57
+\mdf@skipbelow@length=\skip58
+\mdf@leftmargin@length=\skip59
+\mdf@rightmargin@length=\skip60
+\mdf@innerleftmargin@length=\skip61
+\mdf@innerrightmargin@length=\skip62
+\mdf@innertopmargin@length=\skip63
+\mdf@innerbottommargin@length=\skip64
+\mdf@splittopskip@length=\skip65
+\mdf@splitbottomskip@length=\skip66
+\mdf@outermargin@length=\skip67
+\mdf@innermargin@length=\skip68
+\mdf@linewidth@length=\skip69
+\mdf@innerlinewidth@length=\skip70
+\mdf@middlelinewidth@length=\skip71
+\mdf@outerlinewidth@length=\skip72
+\mdf@roundcorner@length=\skip73
+\mdf@footenotedistance@length=\skip74
+\mdf@userdefinedwidth@length=\skip75
+\mdf@needspace@length=\skip76
+\mdf@frametitleaboveskip@length=\skip77
+\mdf@frametitlebelowskip@length=\skip78
+\mdf@frametitlerulewidth@length=\skip79
+\mdf@frametitleleftmargin@length=\skip80
+\mdf@frametitlerightmargin@length=\skip81
+\mdf@shadowsize@length=\skip82
+\mdf@extratopheight@length=\skip83
+\mdf@subtitleabovelinewidth@length=\skip84
+\mdf@subtitlebelowlinewidth@length=\skip85
+\mdf@subtitleaboveskip@length=\skip86
+\mdf@subtitlebelowskip@length=\skip87
+\mdf@subtitleinneraboveskip@length=\skip88
+\mdf@subtitleinnerbelowskip@length=\skip89
+\mdf@subsubtitleabovelinewidth@length=\skip90
+\mdf@subsubtitlebelowlinewidth@length=\skip91
+\mdf@subsubtitleaboveskip@length=\skip92
+\mdf@subsubtitlebelowskip@length=\skip93
+\mdf@subsubtitleinneraboveskip@length=\skip94
+\mdf@subsubtitleinnerbelowskip@length=\skip95
+
+(c:/texlive/2022/texmf-dist/tex/latex/mdframed/md-frame-0.mdf
+File: md-frame-0.mdf 2013/07/01\ 1.9b: md-frame-0
+)
+\mdf@frametitlebox=\box54
+\mdf@footnotebox=\box55
+\mdf@splitbox@one=\box56
+\mdf@splitbox@two=\box57
+\mdf@splitbox@save=\box58
+\mdfsplitboxwidth=\skip96
+\mdfsplitboxtotalwidth=\skip97
+\mdfsplitboxheight=\skip98
+\mdfsplitboxdepth=\skip99
+\mdfsplitboxtotalheight=\skip100
+\mdfframetitleboxwidth=\skip101
+\mdfframetitleboxtotalwidth=\skip102
+\mdfframetitleboxheight=\skip103
+\mdfframetitleboxdepth=\skip104
+\mdfframetitleboxtotalheight=\skip105
+\mdffootnoteboxwidth=\skip106
+\mdffootnoteboxtotalwidth=\skip107
+\mdffootnoteboxheight=\skip108
+\mdffootnoteboxdepth=\skip109
+\mdffootnoteboxtotalheight=\skip110
+\mdftotallinewidth=\skip111
+\mdfboundingboxwidth=\skip112
+\mdfboundingboxtotalwidth=\skip113
+\mdfboundingboxheight=\skip114
+\mdfboundingboxdepth=\skip115
+\mdfboundingboxtotalheight=\skip116
+\mdf@freevspace@length=\skip117
+\mdf@horizontalwidthofbox@length=\skip118
+\mdf@verticalmarginwhole@length=\skip119
+\mdf@horizontalspaceofbox=\skip120
+\mdfsubtitleheight=\skip121
+\mdfsubsubtitleheight=\skip122
+\c@mdfcountframes=\count280
+
+****** mdframed patching \endmdf@trivlist
+
+****** -- success******
+
+\mdf@envdepth=\count281
+\c@mdf@env@i=\count282
+\c@mdf@env@ii=\count283
+\c@mdf@zref@counter=\count284
+Package zref Info: New property: mdf@pagevalue on input line 895.
+)
+(c:/texlive/2022/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+
+(c:/texlive/2022/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
+
+(c:/texlive/2022/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+)
+(c:/texlive/2022/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 107.
+)
+\Gin@req@height=\dimen159
+\Gin@req@width=\dimen160
+)
+(c:/texlive/2022/texmf-dist/tex/latex/tools/longtable.sty
+Package: longtable 2021-09-01 v4.17 Multi-page Table package (DPC)
+\LTleft=\skip123
+\LTright=\skip124
+\LTpre=\skip125
+\LTpost=\skip126
+\LTchunksize=\count285
+\LTcapwidth=\dimen161
+\LT@head=\box59
+\LT@firsthead=\box60
+\LT@foot=\box61
+\LT@lastfoot=\box62
+\LT@gbox=\box63
+\LT@cols=\count286
+\LT@rows=\count287
+\c@LT@tables=\count288
+\c@LT@chunks=\count289
+\LT@p@ftn=\toks32
+)
+(c:/texlive/2022/texmf-dist/tex/latex/tools/array.sty
+Package: array 2022/09/04 v2.5g Tabular extension package (FMi)
+\col@sep=\dimen162
+\ar@mcellbox=\box64
+\extrarowheight=\dimen163
+\NC@list=\toks33
+\extratabsurround=\skip127
+\backup@length=\skip128
+\ar@cellbox=\box65
+)
+(c:/texlive/2022/texmf-dist/tex/latex/l3packages/xfrac/xfrac.sty
+(c:/texlive/2022/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
+Package: l3keys2e 2023-02-02 LaTeX2e option processing using LaTeX3 keys
+)
+(c:/texlive/2022/texmf-dist/tex/latex/base/textcomp.sty
+Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
+)
+(c:/texlive/2022/texmf-dist/tex/latex/l3packages/xtemplate/xtemplate.sty
+Package: xtemplate 2023-02-02 L3 Experimental prototype document functions
+\l__xtemplate_tmp_dim=\dimen164
+\l__xtemplate_tmp_int=\count290
+\l__xtemplate_tmp_muskip=\muskip17
+\l__xtemplate_tmp_skip=\skip129
+)
+Package: xfrac 2023-02-02 L3 Experimental split-level fractions
+\l__xfrac_slash_box=\box66
+\l__xfrac_tmp_box=\box67
+\l__xfrac_denominator_bot_sep_dim=\dimen165
+\l__xfrac_numerator_bot_sep_dim=\dimen166
+\l__xfrac_numerator_top_sep_dim=\dimen167
+\l__xfrac_slash_left_sep_dim=\dimen168
+\l__xfrac_slash_right_sep_dim=\dimen169
+\l__xfrac_slash_left_muskip=\muskip18
+\l__xfrac_slash_right_muskip=\muskip19
+
+Package xtemplate Info: Declaring object type 'xfrac' taking 3 argument(s) on
+(xtemplate)             line 80.
+
+)
+(c:/texlive/2022/texmf-dist/tex/latex/nicematrix/nicematrix.sty
+(c:/texlive/2022/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
+(c:/texlive/2022/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
+(c:/texlive/2022/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+(c:/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
+\pgfutil@everybye=\toks34
+\pgfutil@tempdima=\dimen170
+\pgfutil@tempdimb=\dimen171
+)
+(c:/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+\pgfutil@abb=\box68
+)
+(c:/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+(c:/texlive/2022/texmf-dist/tex/generic/pgf/pgf.revision.tex)
+Package: pgfrcs 2023-01-15 v3.1.10 (3.1.10)
+))
+(c:/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+Package: pgfsys 2023-01-15 v3.1.10 (3.1.10)
+
+(c:/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks35
+\pgfkeys@temptoks=\toks36
+
+(c:/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfkeyslibraryfiltered.co
+de.tex
+\pgfkeys@tmptoks=\toks37
+))
+\pgf@x=\dimen172
+\pgf@y=\dimen173
+\pgf@xa=\dimen174
+\pgf@ya=\dimen175
+\pgf@xb=\dimen176
+\pgf@yb=\dimen177
+\pgf@xc=\dimen178
+\pgf@yc=\dimen179
+\pgf@xd=\dimen180
+\pgf@yd=\dimen181
+\w@pgf@writea=\write3
+\r@pgf@reada=\read3
+\c@pgf@counta=\count291
+\c@pgf@countb=\count292
+\c@pgf@countc=\count293
+\c@pgf@countd=\count294
+\t@pgf@toka=\toks38
+\t@pgf@tokb=\toks39
+\t@pgf@tokc=\toks40
+\pgf@sys@id@count=\count295
+ (c:/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
+File: pgf.cfg 2023-01-15 v3.1.10 (3.1.10)
+)
+Driver file for pgf: pgfsys-pdftex.def
+
+(c:/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
+File: pgfsys-pdftex.def 2023-01-15 v3.1.10 (3.1.10)
+
+(c:/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.def
+File: pgfsys-common-pdf.def 2023-01-15 v3.1.10 (3.1.10)
+)))
+(c:/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
+File: pgfsyssoftpath.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfsyssoftpath@smallbuffer@items=\count296
+\pgfsyssoftpath@bigbuffer@items=\count297
+)
+(c:/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
+File: pgfsysprotocol.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)) (c:/texlive/2022/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2022/06/12 v2.14 LaTeX color extensions (UK)
+
+(c:/texlive/2022/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 227.
+LaTeX Info: Redefining \color on input line 711.
+
+(c:/texlive/2022/texmf-dist/tex/latex/graphics/mathcolor.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1353.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1357.
+Package xcolor Info: Model `RGB' extended on input line 1369.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1371.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1372.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1373.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1374.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1375.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1376.
+)
+(c:/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+Package: pgfcore 2023-01-15 v3.1.10 (3.1.10)
+
+(c:/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
+(c:/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
+(c:/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+\pgfmath@dimen=\dimen182
+\pgfmath@count=\count298
+\pgfmath@box=\box69
+\pgfmath@toks=\toks41
+\pgfmath@stack@operand=\toks42
+\pgfmath@stack@operation=\toks43
+)
+(c:/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex)
+(c:/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.te
+x)
+(c:/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonometric
+.code.tex)
+(c:/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.code.t
+ex)
+(c:/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison.co
+de.tex)
+(c:/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex
+)
+(c:/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.te
+x)
+(c:/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex
+)
+(c:/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithm
+etics.code.tex)
+(c:/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex)
+(c:/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count299
+))
+(c:/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
+(c:/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
+File: pgfcorepoints.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@picminx=\dimen183
+\pgf@picmaxx=\dimen184
+\pgf@picminy=\dimen185
+\pgf@picmaxy=\dimen186
+\pgf@pathminx=\dimen187
+\pgf@pathmaxx=\dimen188
+\pgf@pathminy=\dimen189
+\pgf@pathmaxy=\dimen190
+\pgf@xx=\dimen191
+\pgf@xy=\dimen192
+\pgf@yx=\dimen193
+\pgf@yy=\dimen194
+\pgf@zx=\dimen195
+\pgf@zy=\dimen196
+)
+(c:/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.cod
+e.tex
+File: pgfcorepathconstruct.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@path@lastx=\dimen197
+\pgf@path@lasty=\dimen198
+)
+(c:/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code.te
+x
+File: pgfcorepathusage.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@shorten@end@additional=\dimen199
+\pgf@shorten@start@additional=\dimen256
+)
+(c:/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
+File: pgfcorescopes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfpic=\box70
+\pgf@hbox=\box71
+\pgf@layerbox@main=\box72
+\pgf@picture@serial@count=\count300
+)
+(c:/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code
+.tex
+File: pgfcoregraphicstate.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgflinewidth=\dimen257
+)
+(c:/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformations.c
+ode.tex
+File: pgfcoretransformations.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@pt@x=\dimen258
+\pgf@pt@y=\dimen259
+\pgf@pt@temp=\dimen260
+)
+(c:/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
+File: pgfcorequick.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(c:/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex
+File: pgfcoreobjects.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(c:/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing.co
+de.tex
+File: pgfcorepathprocessing.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(c:/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex
+File: pgfcorearrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfarrowsep=\dimen261
+)
+(c:/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
+File: pgfcoreshade.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@max=\dimen262
+\pgf@sys@shading@range@num=\count301
+\pgf@shadingcount=\count302
+)
+(c:/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
+File: pgfcoreimage.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(c:/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex
+File: pgfcoreexternal.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfexternal@startupbox=\box73
+) (c:/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex
+File: pgfcorelayers.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(c:/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.code
+.tex
+File: pgfcoretransparency.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(c:/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.tex
+File: pgfcorepatterns.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (c:/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.tex
+File: pgfcorerdf.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))) (c:/texlive/2022/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.te
+x
+File: pgfmoduleshapes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfnodeparttextbox=\box74
+)
+Package: nicematrix 2023/02/25 v6.15 Enhanced arrays with the help of PGF/TikZ
+\g__nicematrix_env_int=\count303
+\g__nicematrix_NiceMatrixBlock_int=\count304
+\l__nicematrix_note_in_caption_int=\count305
+\l__nicematrix_columns_width_dim=\dimen263
+\l__nicematrix_col_width_dim=\dimen264
+\g__nicematrix_row_total_int=\count306
+\g__nicematrix_col_total_int=\count307
+\g__nicematrix_last_row_node_int=\count308
+\l__nicematrix_key_nb_rows_int=\count309
+\g__nicematrix_blocks_wd_dim=\dimen265
+\g__nicematrix_blocks_ht_dim=\dimen266
+\g__nicematrix_blocks_dp_dim=\dimen267
+\l__nicematrix_width_dim=\dimen268
+\l__nicematrix_tabular_width_dim=\dimen269
+\l__nicematrix_rule_width_dim=\dimen270
+\l__nicematrix_old_iRow_int=\count310
+\l__nicematrix_old_jCol_int=\count311
+\g__nicematrix_total_X_weight_int=\count312
+\l__nicematrix_X_columns_dim=\dimen271
+\l__nicematrix_x_initial_dim=\dimen272
+\l__nicematrix_y_initial_dim=\dimen273
+\l__nicematrix_x_final_dim=\dimen274
+\l__nicematrix_y_final_dim=\dimen275
+\l__nicematrix_tmpc_dim=\dimen276
+\l__nicematrix_tmpd_dim=\dimen277
+\g__nicematrix_width_last_col_dim=\dimen278
+\g__nicematrix_width_first_col_dim=\dimen279
+\l__nicematrix_row_min_int=\count313
+\l__nicematrix_row_max_int=\count314
+\l__nicematrix_col_min_int=\count315
+\l__nicematrix_col_max_int=\count316
+\g__nicematrix_static_num_of_col_int=\count317
+\l__nicematrix_rounded_corners_dim=\dimen280
+\l__nicematrix_line_width_dim=\dimen281
+\g__nicematrix_block_box_int=\count318
+\l__nicematrix_submatrix_extra_height_dim=\dimen282
+\l__nicematrix_submatrix_left_xshift_dim=\dimen283
+\l__nicematrix_submatrix_right_xshift_dim=\dimen284
+\l__nicematrix_first_row_int=\count319
+\l__nicematrix_first_col_int=\count320
+\l__nicematrix_last_row_int=\count321
+\l__nicematrix_last_col_int=\count322
+\c@tabularnote=\count323
+\c@nicematrix_draft=\count324
+\l__nicematrix_cell_space_top_limit_dim=\dimen285
+\l__nicematrix_cell_space_bottom_limit_dim=\dimen286
+\l__nicematrix_xdots_inter_dim=\dimen287
+\l__nicematrix_xdots_shorten_start_dim=\dimen288
+\l__nicematrix_xdots_shorten_end_dim=\dimen289
+\l__nicematrix_xdots_radius_dim=\dimen290
+\l__nicematrix_notes_above_space_dim=\dimen291
+\l__nicematrix_left_margin_dim=\dimen292
+\l__nicematrix_right_margin_dim=\dimen293
+\l__nicematrix_extra_left_margin_dim=\dimen294
+\l__nicematrix_extra_right_margin_dim=\dimen295
+\c__nicematrix_max_l_dim=\dimen296
+\l__nicematrix_position_int=\count325
+\l__nicematrix_start_int=\count326
+\l__nicematrix_multiplicity_int=\count327
+\l__nicematrix_brace_yshift_dim=\dimen297
+) (c:/texlive/2022/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
+(c:/texlive/2022/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+Package: pgf 2023-01-15 v3.1.10 (3.1.10)
+
+(c:/texlive/2022/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
+File: pgfmoduleplot.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(c:/texlive/2022/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.st
+y
+Package: pgfcomp-version-0-65 2023-01-15 v3.1.10 (3.1.10)
+\pgf@nodesepstart=\dimen298
+\pgf@nodesepend=\dimen299
+)
+(c:/texlive/2022/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.st
+y
+Package: pgfcomp-version-1-18 2023-01-15 v3.1.10 (3.1.10)
+)) (c:/texlive/2022/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
+(c:/texlive/2022/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+(c:/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex))
+(c:/texlive/2022/texmf-dist/tex/latex/pgf/math/pgfmath.sty
+(c:/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex))
+(c:/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+Package: pgffor 2023-01-15 v3.1.10 (3.1.10)
+\pgffor@iter=\dimen300
+\pgffor@skip=\dimen301
+\pgffor@stack=\toks44
+\pgffor@toks=\toks45
+))
+(c:/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+Package: tikz 2023-01-15 v3.1.10 (3.1.10)
+
+(c:/texlive/2022/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.co
+de.tex
+File: pgflibraryplothandlers.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@plot@mark@count=\count328
+\pgfplotmarksize=\dimen302
+)
+\tikz@lastx=\dimen303
+\tikz@lasty=\dimen304
+\tikz@lastxsaved=\dimen305
+\tikz@lastysaved=\dimen306
+\tikz@lastmovetox=\dimen307
+\tikz@lastmovetoy=\dimen308
+\tikzleveldistance=\dimen309
+\tikzsiblingdistance=\dimen310
+\tikz@figbox=\box75
+\tikz@figbox@bg=\box76
+\tikz@tempbox=\box77
+\tikz@tempbox@bg=\box78
+\tikztreelevel=\count329
+\tikznumberofchildren=\count330
+\tikznumberofcurrentchild=\count331
+\tikz@fig@count=\count332
+
+(c:/texlive/2022/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
+File: pgfmodulematrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfmatrixcurrentrow=\count333
+\pgfmatrixcurrentcolumn=\count334
+\pgf@matrix@numberofcolumns=\count335
+)
+\tikz@expandcount=\count336
+
+(c:/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
+brarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)))
+(c:/texlive/2022/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.meta.cod
+e.tex
+File: pgflibraryarrows.meta.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfarrowinset=\dimen311
+\pgfarrowlength=\dimen312
+\pgfarrowwidth=\dimen313
+\pgfarrowlinewidth=\dimen314
+) (c:/texlive/2022/texmf-dist/tex/latex/pgfplots/pgfplots.sty
+(c:/texlive/2022/texmf-dist/tex/generic/pgfplots/pgfplots.revision.tex)
+Package: pgfplots 2021/05/15 v1.18.1 Data Visualization (1.18.1)
+
+(c:/texlive/2022/texmf-dist/tex/generic/pgfplots/pgfplots.code.tex
+(c:/texlive/2022/texmf-dist/tex/generic/pgfplots/pgfplotscore.code.tex
+\t@pgfplots@toka=\toks46
+\t@pgfplots@tokb=\toks47
+\t@pgfplots@tokc=\toks48
+\pgfplots@tmpa=\dimen315
+\c@pgfplots@coordindex=\count337
+\c@pgfplots@scanlineindex=\count338
+
+(c:/texlive/2022/texmf-dist/tex/generic/pgfplots/sys/pgfplotssysgeneric.code.te
+x))
+(c:/texlive/2022/texmf-dist/tex/generic/pgfplots/libs/pgfplotslibrary.code.tex)
+
+(c:/texlive/2022/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfs
+upp_loader.code.tex
+(c:/texlive/2022/texmf-dist/tex/generic/pgf/libraries/pgflibraryfpu.code.tex)
+Package pgfplots: loading complementary utilities for your pgf version...
+\t@pgf@toka=\toks49
+\t@pgf@tokb=\toks50
+\t@pgf@tokc=\toks51
+
+(c:/texlive/2022/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfs
+upp_pgfutil-common-lists.tex))
+(c:/texlive/2022/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.code.tex
+(c:/texlive/2022/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsliststru
+cture.code.tex)
+(c:/texlive/2022/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsliststru
+ctureext.code.tex)
+(c:/texlive/2022/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsarray.co
+de.tex
+\c@pgfplotsarray@tmp=\count339
+)
+(c:/texlive/2022/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsmatrix.c
+ode.tex)
+(c:/texlive/2022/texmf-dist/tex/generic/pgfplots/numtable/pgfplotstableshared.c
+ode.tex
+\c@pgfplotstable@counta=\count340
+\t@pgfplotstable@a=\toks52
+)
+(c:/texlive/2022/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsdeque.co
+de.tex)
+(c:/texlive/2022/texmf-dist/tex/generic/pgfplots/util/pgfplotsbinary.code.tex
+(c:/texlive/2022/texmf-dist/tex/generic/pgfplots/util/pgfplotsbinary.data.code.
+tex))
+(c:/texlive/2022/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.verb.code.te
+x)
+(c:/texlive/2022/texmf-dist/tex/generic/pgfplots/libs/pgflibrarypgfplots.surfsh
+ading.code.tex
+\c@pgfplotslibrarysurf@no=\count341
+
+(c:/texlive/2022/texmf-dist/tex/generic/pgfplots/sys/pgflibrarypgfplots.surfsha
+ding.pgfsys-pdftex.def)))
+(c:/texlive/2022/texmf-dist/tex/generic/pgfplots/util/pgfplotscolormap.code.tex
+(c:/texlive/2022/texmf-dist/tex/generic/pgfplots/util/pgfplotscolor.code.tex))
+(c:/texlive/2022/texmf-dist/tex/generic/pgfplots/pgfplotsstackedplots.code.tex)
+(c:/texlive/2022/texmf-dist/tex/generic/pgfplots/pgfplotsplothandlers.code.tex
+(c:/texlive/2022/texmf-dist/tex/generic/pgfplots/pgfplotsmeshplothandler.code.t
+ex
+(c:/texlive/2022/texmf-dist/tex/generic/pgfplots/pgfplotsmeshplotimage.code.tex
+))) (c:/texlive/2022/texmf-dist/tex/generic/pgfplots/pgfplots.scaling.code.tex)
+
+(c:/texlive/2022/texmf-dist/tex/generic/pgfplots/pgfplotscoordprocessing.code.t
+ex)
+(c:/texlive/2022/texmf-dist/tex/generic/pgfplots/pgfplots.errorbars.code.tex)
+(c:/texlive/2022/texmf-dist/tex/generic/pgfplots/pgfplots.markers.code.tex)
+(c:/texlive/2022/texmf-dist/tex/generic/pgfplots/pgfplotsticks.code.tex)
+(c:/texlive/2022/texmf-dist/tex/generic/pgfplots/pgfplots.paths.code.tex)
+(c:/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
+brarydecorations.code.tex
+(c:/texlive/2022/texmf-dist/tex/generic/pgf/modules/pgfmoduledecorations.code.t
+ex
+\pgfdecoratedcompleteddistance=\dimen316
+\pgfdecoratedremainingdistance=\dimen317
+\pgfdecoratedinputsegmentcompleteddistance=\dimen318
+\pgfdecoratedinputsegmentremainingdistance=\dimen319
+\pgf@decorate@distancetomove=\dimen320
+\pgf@decorate@repeatstate=\count342
+\pgfdecorationsegmentamplitude=\dimen321
+\pgfdecorationsegmentlength=\dimen322
+)
+\tikz@lib@dec@box=\box79
+)
+(c:/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
+brarydecorations.pathmorphing.code.tex
+(c:/texlive/2022/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydec
+orations.pathmorphing.code.tex))
+(c:/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
+brarydecorations.pathreplacing.code.tex
+(c:/texlive/2022/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydec
+orations.pathreplacing.code.tex))
+(c:/texlive/2022/texmf-dist/tex/generic/pgfplots/libs/tikzlibrarypgfplots.conto
+urlua.code.tex)
+\pgfplots@numplots=\count343
+\pgfplots@xmin@reg=\dimen323
+\pgfplots@xmax@reg=\dimen324
+\pgfplots@ymin@reg=\dimen325
+\pgfplots@ymax@reg=\dimen326
+\pgfplots@zmin@reg=\dimen327
+\pgfplots@zmax@reg=\dimen328
+)
+(c:/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
+braryplotmarks.code.tex
+File: tikzlibraryplotmarks.code.tex 2023-01-15 v3.1.10 (3.1.10)
+
+(c:/texlive/2022/texmf-dist/tex/generic/pgf/libraries/pgflibraryplotmarks.code.
+tex
+File: pgflibraryplotmarks.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))) (c:/texlive/2022/texmf-dist/tex/latex/forest/forest.sty
+Package: forest 2017/07/14 v2.1.5 Drawing (linguistic) trees
+
+(c:/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
+braryshapes.code.tex
+File: tikzlibraryshapes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+
+(c:/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
+braryshapes.geometric.code.tex
+File: tikzlibraryshapes.geometric.code.tex 2023-01-15 v3.1.10 (3.1.10)
+
+(c:/texlive/2022/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.g
+eometric.code.tex
+File: pgflibraryshapes.geometric.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))
+(c:/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
+braryshapes.misc.code.tex
+File: tikzlibraryshapes.misc.code.tex 2023-01-15 v3.1.10 (3.1.10)
+
+(c:/texlive/2022/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.m
+isc.code.tex
+File: pgflibraryshapes.misc.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))
+(c:/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
+braryshapes.symbols.code.tex
+File: tikzlibraryshapes.symbols.code.tex 2023-01-15 v3.1.10 (3.1.10)
+
+(c:/texlive/2022/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.s
+ymbols.code.tex
+File: pgflibraryshapes.symbols.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))
+(c:/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
+braryshapes.arrows.code.tex
+File: tikzlibraryshapes.arrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+
+(c:/texlive/2022/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.a
+rrows.code.tex
+File: pgflibraryshapes.arrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))
+(c:/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
+braryshapes.callouts.code.tex
+(c:/texlive/2022/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.c
+allouts.code.tex))
+(c:/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
+braryshapes.multipart.code.tex
+File: tikzlibraryshapes.multipart.code.tex 2023-01-15 v3.1.10 (3.1.10)
+
+(c:/texlive/2022/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.m
+ultipart.code.tex
+File: pgflibraryshapes.multipart.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfnodepartlowerbox=\box80
+\pgfnodeparttwobox=\box81
+\pgfnodepartthreebox=\box82
+\pgfnodepartfourbox=\box83
+\pgfnodeparttwentybox=\box84
+\pgfnodepartnineteenbox=\box85
+\pgfnodeparteighteenbox=\box86
+\pgfnodepartseventeenbox=\box87
+\pgfnodepartsixteenbox=\box88
+\pgfnodepartfifteenbox=\box89
+\pgfnodepartfourteenbox=\box90
+\pgfnodepartthirteenbox=\box91
+\pgfnodeparttwelvebox=\box92
+\pgfnodepartelevenbox=\box93
+\pgfnodeparttenbox=\box94
+\pgfnodepartninebox=\box95
+\pgfnodeparteightbox=\box96
+\pgfnodepartsevenbox=\box97
+\pgfnodepartsixbox=\box98
+\pgfnodepartfivebox=\box99
+)))
+(c:/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
+braryfit.code.tex
+File: tikzlibraryfit.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(c:/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
+brarycalc.code.tex
+File: tikzlibrarycalc.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(c:/texlive/2022/texmf-dist/tex/generic/pgf/libraries/pgflibraryintersections.c
+ode.tex
+\pgf@intersect@solutions=\count344
+) (c:/texlive/2022/texmf-dist/tex/latex/pgfopts/pgfopts.sty
+Package: pgfopts 2014/07/10 v2.1a LaTeX package options with pgfkeys
+\pgfopts@list@add@a@toks=\toks53
+\pgfopts@list@add@b@toks=\toks54
+)
+(c:/texlive/2022/texmf-dist/tex/latex/elocalloc/elocalloc.sty
+Package: elocalloc 2016/12/15 v0.03 local allocation for LaTeX 2015+ (DPC)
+)
+(c:/texlive/2022/texmf-dist/tex/latex/environ/environ.sty
+Package: environ 2014/05/04 v0.3 A new way to define environments
+
+(c:/texlive/2022/texmf-dist/tex/latex/trimspaces/trimspaces.sty
+Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
+))
+(c:/texlive/2022/texmf-dist/tex/latex/inlinedef/inlinedef.sty
+Package: inlinedef 2008/07/10 v1.0 Inlined expansions within definitions
+\ID@toks=\toks55
+\ID@count=\count345
+)
+\ID@usercommands=\toks56
+\safeloop@depth=\count346
+\safeRKloop@depth=\count347
+\forest@temp@dimen=\dimen329
+\forest@temp@count=\count348
+\forest@n=\count349
+\forest@temp@global@count=\count350
+\forest@temp@toks=\toks57
+\forest@temparray@M=\count351
+\forest@temparray@N=\count352
+\forest@global@temparray@M=\count353
+\forest@global@temparray@N=\count354
+\forest@isnum@count=\count355
+\forest@isdim@nonintpart=\count356
+\forest@isdim@dimen=\dimen330
+\forest@sort@m=\count357
+\forest@sort@k=\count358
+\forest@sort@p=\count359
+\bracket@content=\toks58
+\bracket@afterthought=\toks59
+\forest@node@maxid=\count360
+\forest@process@left@M=\count361
+\forest@process@left@N=\count362
+\forest@process@right@M=\count363
+\forest@process@right@N=\count364
+\forest@process@saved@M=\count365
+\forest@process@saved@N=\count366
+\forest@process@result@M=\count367
+\forest@process@result@N=\count368
+\forest@process@n=\count369
+\forest@nodewalk@branch@toks=\toks60
+\forest@nodewalk@shortsteps@resolution=\toks61
+\forest@do@dynamics=\toks62
+\forest@box=\box100
+\forest@xg=\dimen331
+\forest@yg=\dimen332
+\forest@xs=\dimen333
+\forest@ys=\dimen334
+\forest@pi@toks=\toks63
+\forest@segment@toks=\toks64
+\forest@PIi@toks=\toks65
+\forest@PIii@toks=\toks66
+\forest@copy@in=\read4
+\forest@copy@out=\write4
+\forest@externalize@max@outer@n=\count370
+\forest@externalize@inner@n=\count371
+)
+(c:/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
+brarybackgrounds.code.tex
+File: tikzlibrarybackgrounds.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@layerbox@background=\box101
+\pgf@layerboxsaved@background=\box102
+)
+(c:/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
+brarychains.code.tex
+File: tikzlibrarychains.code.tex 2023-01-15 v3.1.10 (3.1.10)
+
+(c:/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
+brarypositioning.code.tex
+File: tikzlibrarypositioning.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))
+(c:/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
+braryarrows.code.tex
+File: tikzlibraryarrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+
+(c:/texlive/2022/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.code.tex
+File: pgflibraryarrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\arrowsize=\dimen335
+))
+(c:/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
+brarymatrix.code.tex
+File: tikzlibrarymatrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (c:/texlive/2022/texmf-dist/tex/generic/ulem/ulem.sty
+\UL@box=\box103
+\UL@hyphenbox=\box104
+\UL@skip=\skip130
+\UL@hook=\toks67
+\UL@height=\dimen336
+\UL@pe=\count372
+\UL@pixel=\dimen337
+\ULC@box=\box105
+Package: ulem 2019/11/18
+\ULdepth=\dimen338
+)
+(c:/texlive/2022/texmf-dist/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen339
+\lightrulewidth=\dimen340
+\cmidrulewidth=\dimen341
+\belowrulesep=\dimen342
+\belowbottomsep=\dimen343
+\aboverulesep=\dimen344
+\abovetopsep=\dimen345
+\cmidrulesep=\dimen346
+\cmidrulekern=\dimen347
+\defaultaddspace=\dimen348
+\@cmidla=\count373
+\@cmidlb=\count374
+\@aboverulesep=\dimen349
+\@belowrulesep=\dimen350
+\@thisruleclass=\count375
+\@lastruleclass=\count376
+\@thisrulewidth=\dimen351
+)
+(c:/texlive/2022/texmf-dist/tex/latex/pgf/utilities/pgfpages.sty
+Package: pgfpages 2011/01/05 ver 0.02
+
+(c:/texlive/2022/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count377
+\calc@Bcount=\count378
+\calc@Adimen=\dimen352
+\calc@Bdimen=\dimen353
+\calc@Askip=\skip131
+\calc@Bskip=\skip132
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count379
+\calc@Cskip=\skip133
+)
+\pgf@logicalpages=\count380
+\pgf@firstshipout=\count381
+\pgf@lastshipout=\count382
+\pgf@currentshipout=\count383
+\pgf@cpn=\count384
+\pgf@shipoutnextto=\count385
+\pgfphysicalheight=\dimen354
+\pgfphysicalwidth=\dimen355
+\pgfpages@shipoutbox=\box106
+)
+(c:/texlive/2022/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2022/03/01 v3.6b Customizing captions (AR)
+
+(c:/texlive/2022/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2022/03/17 v2.3b caption3 kernel (AR)
+\caption@tempdima=\dimen356
+\captionmargin=\dimen357
+\caption@leftmargin=\dimen358
+\caption@rightmargin=\dimen359
+\caption@width=\dimen360
+\caption@indent=\dimen361
+\caption@parindent=\dimen362
+\caption@hangindent=\dimen363
+Package caption Info: Standard document class detected.
+)
+\c@caption@flags=\count386
+\c@continuedfloat=\count387
+Package caption Info: longtable package is loaded.
+
+(c:/texlive/2022/texmf-dist/tex/latex/caption/ltcaption.sty
+Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
+))
+(c:/texlive/2022/texmf-dist/tex/latex/caption/subcaption.sty
+Package: subcaption 2022/01/07 v1.5 Sub-captions (AR)
+\c@subfigure=\count388
+\c@subtable=\count389
+)
+(c:/texlive/2022/texmf-dist/tex/latex/wrapfig/wrapfig.sty
+\wrapoverhang=\dimen364
+\WF@size=\dimen365
+\c@WF@wrappedlines=\count390
+\WF@box=\box107
+\WF@everypar=\toks68
+Package: wrapfig 2003/01/31  v 3.6
+)
+(c:/texlive/2022/texmf-dist/tex/latex/algorithm2e/algorithm2e.sty
+Package: algorithm2e 2017/07/18 v5.2 algorithms environments
+\c@AlgoLine=\count391
+
+(c:/texlive/2022/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
+)
+\algocf@hangindent=\skip134
+
+(c:/texlive/2022/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
+Package: ifoddpage 2022/10/18 v1.2 Conditionals for odd/even page detection
+\c@checkoddpage=\count392
+)
+(c:/texlive/2022/texmf-dist/tex/latex/tools/xspace.sty
+Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
+)
+(c:/texlive/2022/texmf-dist/tex/latex/relsize/relsize.sty
+Package: relsize 2013/03/29 ver 4.1
+)
+\skiptotal=\skip135
+\skiplinenumber=\skip136
+\skiprule=\skip137
+\skiphlne=\skip138
+\skiptext=\skip139
+\skiplength=\skip140
+\algomargin=\skip141
+\skipalgocfslide=\skip142
+\algowidth=\dimen366
+\inoutsize=\dimen367
+\inoutindent=\dimen368
+\interspacetitleruled=\dimen369
+\interspacealgoruled=\dimen370
+\interspacetitleboxruled=\dimen371
+\algocf@ruledwidth=\skip143
+\algocf@inoutbox=\box108
+\algocf@inputbox=\box109
+\AlCapSkip=\skip144
+\AlCapHSkip=\skip145
+\algoskipindent=\skip146
+\algocf@nlbox=\box110
+\algocf@hangingbox=\box111
+\algocf@untilbox=\box112
+\algocf@skipuntil=\skip147
+\algocf@capbox=\box113
+\algocf@lcaptionbox=\skip148
+\algoheightruledefault=\skip149
+\algoheightrule=\skip150
+\algotitleheightruledefault=\skip151
+\algotitleheightrule=\skip152
+\c@algocfline=\count393
+\c@algocfproc=\count394
+\c@algocf=\count395
+\algocf@algoframe=\box114
+\algocf@algobox=\box115
+)
+(c:/texlive/2022/texmf-dist/tex/latex/tools/multicol.sty
+Package: multicol 2021/11/30 v1.9d multicolumn formatting (FMi)
+\c@tracingmulticols=\count396
+\mult@box=\box116
+\multicol@leftmargin=\dimen372
+\c@unbalance=\count397
+\c@collectmore=\count398
+\doublecol@number=\count399
+\multicoltolerance=\count400
+\multicolpretolerance=\count401
+\full@width=\dimen373
+\page@free=\dimen374
+\premulticols=\dimen375
+\postmulticols=\dimen376
+\multicolsep=\skip153
+\multicolbaselineskip=\skip154
+\partial@page=\box117
+\last@line=\box118
+\maxbalancingoverflow=\dimen377
+\mult@rightbox=\box119
+\mult@grightbox=\box120
+\mult@firstbox=\box121
+\mult@gfirstbox=\box122
+\@tempa=\box123
+\@tempa=\box124
+\@tempa=\box125
+\@tempa=\box126
+\@tempa=\box127
+\@tempa=\box128
+\@tempa=\box129
+\@tempa=\box130
+\@tempa=\box131
+\@tempa=\box132
+\@tempa=\box133
+\@tempa=\box134
+\@tempa=\box135
+\@tempa=\box136
+\@tempa=\box137
+\@tempa=\box138
+\@tempa=\box139
+\@tempa=\box140
+\@tempa=\box141
+\@tempa=\box142
+\@tempa=\box143
+\@tempa=\box144
+\@tempa=\box145
+\@tempa=\box146
+\@tempa=\box147
+\@tempa=\box148
+\@tempa=\box149
+\@tempa=\box150
+\@tempa=\box151
+\@tempa=\box152
+\@tempa=\box153
+\@tempa=\box154
+\@tempa=\box155
+\@tempa=\box156
+\@tempa=\box157
+\@tempa=\box158
+\c@minrows=\count402
+\c@columnbadness=\count403
+\c@finalcolumnbadness=\count404
+\last@try=\dimen378
+\multicolovershoot=\dimen379
+\multicolundershoot=\dimen380
+\mult@nat@firstbox=\box159
+\colbreak@box=\box160
+\mc@col@check@num=\count405
+)
+(c:/texlive/2022/texmf-dist/tex/latex/multirow/multirow.sty
+Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
+\multirow@colwidth=\skip155
+\multirow@cntb=\count406
+\multirow@dima=\skip156
+\bigstrutjot=\dimen381
+)
+(c:/texlive/2022/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count407
+\float@exts=\toks69
+\float@box=\box161
+\@float@everytoks=\toks70
+\@floatcapt=\box162
+)
+(c:/texlive/2022/texmf-dist/tex/latex/minted/minted.sty
+Package: minted 2022/12/12 v2.7 Yet another Pygments shim for LaTeX
+
+(c:/texlive/2022/texmf-dist/tex/latex/fvextra/fvextra.sty
+Package: fvextra 2022/11/30 v1.5 fvextra - extensions and patches for fancyvrb
+
+(c:/texlive/2022/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
+Package: fancyvrb 2023/01/19 4.5a verbatim text (tvz,hv)
+\FV@CodeLineNo=\count408
+\FV@InFile=\read5
+\FV@TabBox=\box163
+\c@FancyVerbLine=\count409
+\FV@StepNumber=\count410
+\FV@OutFile=\write5
+)
+(c:/texlive/2022/texmf-dist/tex/latex/upquote/upquote.sty
+Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
+tim
+)
+(c:/texlive/2022/texmf-dist/tex/latex/lineno/lineno.sty
+Package: lineno 2023/01/19 line numbers on paragraphs v5.1
+\linenopenalty=\count411
+\output=\toks71
+\linenoprevgraf=\count412
+\linenumbersep=\dimen382
+\linenumberwidth=\dimen383
+\c@linenumber=\count413
+\c@pagewiselinenumber=\count414
+\c@LN@truepage=\count415
+\c@internallinenumber=\count416
+\c@internallinenumbers=\count417
+\quotelinenumbersep=\dimen384
+\bframerule=\dimen385
+\bframesep=\dimen386
+\bframebox=\box164
+\linenoamsmath@ams@eqpen=\count418
+LaTeX Info: Redefining \\ on input line 3131.
+)
+\c@FV@TrueTabGroupLevel=\count419
+\c@FV@TrueTabCounter=\count420
+\FV@TabBox@Group=\box165
+\FV@TmpLength=\skip157
+\c@FV@HighlightLinesStart=\count421
+\c@FV@HighlightLinesStop=\count422
+\FV@LoopCount=\count423
+\FV@NCharsBox=\box166
+\FV@BreakIndent=\dimen387
+\FV@BreakIndentNChars=\count424
+\FV@BreakSymbolSepLeft=\dimen388
+\FV@BreakSymbolSepLeftNChars=\count425
+\FV@BreakSymbolSepRight=\dimen389
+\FV@BreakSymbolSepRightNChars=\count426
+\FV@BreakSymbolIndentLeft=\dimen390
+\FV@BreakSymbolIndentLeftNChars=\count427
+\FV@BreakSymbolIndentRight=\dimen391
+\FV@BreakSymbolIndentRightNChars=\count428
+\c@FancyVerbLineBreakLast=\count429
+\FV@LineBox=\box167
+\FV@LineIndentBox=\box168
+\c@FV@BreakBufferDepth=\count430
+\FV@LineWidth=\dimen392
+)
+(c:/texlive/2022/texmf-dist/tex/latex/tools/shellesc.sty
+Package: shellesc 2019/11/08 v1.0c unified shell escape interface for LaTeX
+Package shellesc Info: Unrestricted shell escape enabled on input line 75.
+)
+(c:/texlive/2022/texmf-dist/tex/latex/ifplatform/ifplatform.sty
+Package: ifplatform 2017/10/13 v0.4a Testing for the operating system
+
+(c:/texlive/2022/texmf-dist/tex/generic/catchfile/catchfile.sty
+Package: catchfile 2019/12/09 v1.8 Catch the contents of a file (HO)
+)
+(c:/texlive/2022/texmf-dist/tex/generic/iftex/ifluatex.sty
+Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
+))
+(c:/texlive/2022/texmf-dist/tex/generic/xstring/xstring.sty
+(c:/texlive/2022/texmf-dist/tex/generic/xstring/xstring.tex
+\integerpart=\count431
+\decimalpart=\count432
+)
+Package: xstring 2023/01/14 v1.85 String manipulations (CT)
+)
+(c:/texlive/2022/texmf-dist/tex/latex/framed/framed.sty
+Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
+\OuterFrameSep=\skip158
+\fb@frw=\dimen393
+\fb@frh=\dimen394
+\FrameRule=\dimen395
+\FrameSep=\dimen396
+)
+\minted@appexistsfile=\read6
+\minted@bgbox=\box169
+\minted@code=\write6
+\c@minted@FancyVerbLineTemp=\count433
+\c@minted@pygmentizecounter=\count434
+\@float@every@listing=\toks72
+\c@listing=\count435
+)
+runsystem(if not exist _minted-CSE_480_Notes mkdir _minted-CSE_480_Notes)...exe
+cuted.
+
+
+(c:/texlive/2022/texmf-dist/tex/latex/appendix/appendix.sty
+Package: appendix 2020/02/08 v1.2c extra appendix facilities
+\c@@pps=\count436
+\c@@ppsavesec=\count437
+\c@@ppsaveapp=\count438
+)
+(c:/texlive/2022/texmf-dist/tex/latex/secdot/secdot.sty
+Package: secdot 2000/06/20 v1.0 section numbers with dots
+)
+(c:/texlive/2022/texmf-dist/tex/latex/koma-script/scrextend.sty
+Package: scrextend 2022/10/12 v3.38 KOMA-Script package (extend other classes w
+ith features of KOMA-Script classes)
+
+(c:/texlive/2022/texmf-dist/tex/latex/koma-script/scrkbase.sty
+Package: scrkbase 2022/10/12 v3.38 KOMA-Script package (KOMA-Script-dependent b
+asics and keyval usage)
+
+(c:/texlive/2022/texmf-dist/tex/latex/koma-script/scrbase.sty
+Package: scrbase 2022/10/12 v3.38 KOMA-Script package (KOMA-Script-independent 
+basics and keyval usage)
+
+(c:/texlive/2022/texmf-dist/tex/latex/koma-script/scrlfile.sty
+Package: scrlfile 2022/10/12 v3.38 KOMA-Script package (file load hooks)
+
+(c:/texlive/2022/texmf-dist/tex/latex/koma-script/scrlfile-hook.sty
+Package: scrlfile-hook 2022/10/12 v3.38 KOMA-Script package (using LaTeX hooks)
+
+
+(c:/texlive/2022/texmf-dist/tex/latex/koma-script/scrlogo.sty
+Package: scrlogo 2022/10/12 v3.38 KOMA-Script package (logo)
+)))
+Applying: [2021/05/01] Usage of raw or classic option list on input line 252.
+Already applied: [0000/00/00] Usage of raw or classic option list on input line
+ 368.
+)))
+(c:/texlive/2022/texmf-dist/tex/latex/enumitem/enumitem.sty
+Package: enumitem 2019/06/20 v3.9 Customized lists
+\labelindent=\skip159
+\enit@outerparindent=\dimen397
+\enit@toks=\toks73
+\enit@inbox=\box170
+\enit@count@id=\count439
+\enitdp@description=\count440
+)
+(c:/texlive/2022/texmf-dist/tex/latex/mathtools/mathtools.sty
+Package: mathtools 2022/06/29 v1.29 mathematical typesetting tools
+
+(c:/texlive/2022/texmf-dist/tex/latex/mathtools/mhsetup.sty
+Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
+)
+\g_MT_multlinerow_int=\count441
+\l_MT_multwidth_dim=\dimen398
+\origjot=\skip160
+\l_MT_shortvdotswithinadjustabove_dim=\dimen399
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen400
+\l_MT_above_intertext_sep=\dimen401
+\l_MT_below_intertext_sep=\dimen402
+\l_MT_above_shortintertext_sep=\dimen403
+\l_MT_below_shortintertext_sep=\dimen404
+\xmathstrut@box=\box171
+\xmathstrut@dim=\dimen405
+)
+(c:/texlive/2022/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count442
+\lst@gtempboxa=\box172
+\lst@token=\toks74
+\lst@length=\count443
+\lst@currlwidth=\dimen406
+\lst@column=\count444
+\lst@pos=\count445
+\lst@lostspace=\dimen407
+\lst@width=\dimen408
+\lst@newlines=\count446
+\lst@lineno=\count447
+\lst@maxwidth=\dimen409
+
+(c:/texlive/2022/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2023/02/27 1.9 (Carsten Heinz)
+\c@lstnumber=\count448
+\lst@skipnumbers=\count449
+\lst@framebox=\box173
+)
+(c:/texlive/2022/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2023/02/27 1.9 listings configuration
+))
+Package: listings 2023/02/27 1.9 (Carsten Heinz)
+
+(c:/texlive/2022/texmf-dist/tex/latex/pdfpages/pdfpages.sty
+Package: pdfpages 2022/12/19 v0.5x Insert pages of external PDF documents (AM)
+
+(c:/texlive/2022/texmf-dist/tex/latex/eso-pic/eso-pic.sty
+Package: eso-pic 2020/10/14 v3.0a eso-pic (RN)
+\ESO@tempdima=\dimen410
+\ESO@tempdimb=\dimen411
+)
+\AM@pagewidth=\dimen412
+\AM@pageheight=\dimen413
+\AM@fboxrule=\dimen414
+
+(c:/texlive/2022/texmf-dist/tex/latex/pdfpages/pppdftex.def
+File: pppdftex.def 2022/12/19 v0.5x Pdfpages driver for pdfTeX (AM)
+)
+\pdfpages@includegraphics@status=\count450
+\AM@pagebox=\box174
+\AM@global@opts=\toks75
+\AM@pagecnt=\count451
+\AM@toc@title=\toks76
+\AM@lof@heading=\toks77
+\c@AM@survey=\count452
+\AM@templatesizebox=\box175
+)
+(c:/texlive/2022/texmf-dist/tex/latex/ytableau/ytableau.sty
+Package: ytableau 2021/06/12 v1.4 Many-featured Young tableaux and Young diagra
+ms
+\tableaux@YT=\box176
+\thistableau@YT=\box177
+\refhtdp@YT=\box178
+\toks@YT=\toks78
+\opttoksa@YT=\toks79
+\opttoksb@YT=\toks80
+\boxdim@YT=\dimen415
+\tableauwd@YT=\dimen416
+\count@YT=\count453
+)
+(c:/texlive/2022/texmf-dist/tex/latex/titlesec/titlesec.sty
+Package: titlesec 2021/07/05 v2.14 Sectioning titles
+\ttl@box=\box179
+\beforetitleunit=\skip161
+\aftertitleunit=\skip162
+\ttl@plus=\dimen417
+\ttl@minus=\dimen418
+\ttl@toksa=\toks81
+\titlewidth=\dimen419
+\titlewidthlast=\dimen420
+\titlewidthfirst=\dimen421
+)
+(c:/texlive/2022/texmf-dist/tex/latex/tabularray/tabularray.sty
+Package: tabularray 2023-03-01 v2023A Typeset tabulars and arrays with LaTeX3
+\l__tblr_a_int=\count454
+\l__tblr_c_int=\count455
+\l__tblr_r_int=\count456
+\l__tblr_d_dim=\dimen422
+\l__tblr_h_dim=\dimen423
+\l__tblr_o_dim=\dimen424
+\l__tblr_p_dim=\dimen425
+\l__tblr_q_dim=\dimen426
+\l__tblr_r_dim=\dimen427
+\l__tblr_s_dim=\dimen428
+\l__tblr_t_dim=\dimen429
+\l__tblr_v_dim=\dimen430
+\l__tblr_w_dim=\dimen431
+\l__tblr_a_box=\box180
+\l__tblr_b_box=\box181
+\l__tblr_c_box=\box182
+\l__tblr_d_box=\box183
+\g__tblr_table_count_int=\count457
+\c@rownum=\count458
+\c@colnum=\count459
+\c@rowcount=\count460
+\c@colcount=\count461
+\abovesep=\dimen432
+\belowsep=\dimen433
+\leftsep=\dimen434
+\rightsep=\dimen435
+\g_tblr_level_int=\count462
+\g__tblr_data_row_key_count_int=\count463
+\g__tblr_data_column_key_count_int=\count464
+\g__tblr_data_cell_key_count_int=\count465
+\g__tblr_array_int=\count466
+\l__tblr_key_count_int=\count467
+\l__tblr_key_quotient_int=\count468
+\l__tblr_key_quotient_two_int=\count469
+\l__tblr_key_remainder_int=\count470
+\g__tblr_data_str_value_count_int=\count471
+\rulewidth=\dimen436
+\l__tblr_strut_dp_dim=\dimen437
+\l__tblr_strut_ht_dim=\dimen438
+\g__tblr_cell_wd_dim=\dimen439
+\g__tblr_cell_ht_dim=\dimen440
+\g__tblr_cell_head_dim=\dimen441
+\g__tblr_cell_foot_dim=\dimen442
+\l__column_target_dim=\dimen443
+\l__tblr_caption_box=\box184
+\l__tblr_caption_left_box=\box185
+\l__tblr_row_head_box=\box186
+\l__tblr_row_foot_box=\box187
+\l__tblr_row_head_foot_dim=\dimen444
+\tablewidth=\dimen445
+\l__tblr_table_firsthead_box=\box188
+\l__tblr_table_middlehead_box=\box189
+\l__tblr_table_lasthead_box=\box190
+\l__tblr_table_firstfoot_box=\box191
+\l__tblr_table_middlefoot_box=\box192
+\l__tblr_table_lastfoot_box=\box193
+\l__tblr_remain_height_dim=\dimen446
+\l__tblr_long_from_int=\count472
+\l__tblr_long_to_int=\count473
+\l__tblr_curr_i_int=\count474
+\l__tblr_prev_i_int=\count475
+\l__tblr_table_page_int=\count476
+\l__tblr_table_head_box=\box194
+\l__tblr_table_foot_box=\box195
+\l__tblr_table_head_foot_dim=\dimen447
+\l__tblr_table_head_body_foot_dim=\dimen448
+\l__tblr_table_box=\box196
+\l__tblr_table_hlines_box=\box197
+\l__tblr_hline_box=\box198
+\l__tblr_row_box=\box199
+\l__tblr_col_o_wd_dim=\dimen449
+\l__tblr_col_b_wd_dim=\dimen450
+\l__tblr_hline_leftskip_dim=\dimen451
+\l__tblr_hline_rightskip_dim=\dimen452
+\l__tblr_row_ht_dim=\dimen453
+\l__tblr_row_dp_dim=\dimen454
+\l__tblr_row_abovesep_dim=\dimen455
+\l__tblr_row_belowsep_dim=\dimen456
+\l__tblr_row_vlines_box=\box256
+\l__tblr_vline_box=\box257
+\l__tblr_cell_box=\box258
+\l__row_upper_dim=\dimen457
+\l__row_lower_dim=\dimen458
+\l__row_vpace_dim=\dimen459
+\l__tblr_vline_aboveskip_dim=\dimen460
+\l__tblr_vline_belowskip_dim=\dimen461
+\l__tblr_cell_wd_dim=\dimen462
+\l__tblr_cell_ht_dim=\dimen463
+\l__tblr_diag_box=\box259
+)
+(c:/texlive/2022/texmf-dist/tex/latex/stmaryrd/stmaryrd.sty
+Package: stmaryrd 1994/03/03 St Mary's Road symbol package
+\symstmry=\mathgroup6
+LaTeX Font Info:    Overwriting symbol font `stmry' in version `bold'
+(Font)                  U/stmry/m/n --> U/stmry/b/n on input line 89.
+)
+(c:/texlive/2022/texmf-dist/tex/latex/tikz-cd/tikz-cd.sty
+Package: tikz-cd 2021/05/04 v1.0 Commutative diagrams with TikZ
+
+(c:/texlive/2022/texmf-dist/tex/generic/tikz-cd/tikzlibrarycd.code.tex
+(c:/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
+braryquotes.code.tex
+File: tikzlibraryquotes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)))
+(c:/texlive/2022/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2023-02-07 v7.00v Hypertext links for LaTeX
+
+(c:/texlive/2022/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+)
+(c:/texlive/2022/texmf-dist/tex/latex/hycolor/hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+)
+(c:/texlive/2022/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty
+Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
+)
+(c:/texlive/2022/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2022-05-17 v2.50 Cross-referencing by name of section
+
+(c:/texlive/2022/texmf-dist/tex/latex/refcount/refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+)
+(c:/texlive/2022/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+)
+\c@section@level=\count477
+)
+\@linkdim=\dimen464
+\Hy@linkcounter=\count478
+\Hy@pagecounter=\count479
+
+(c:/texlive/2022/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2023-02-07 v7.00v Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+)
+(c:/texlive/2022/texmf-dist/tex/generic/intcalc/intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+)
+\Hy@SavedSpaceFactor=\count480
+
+(c:/texlive/2022/texmf-dist/tex/latex/hyperref/puenc.def
+File: puenc.def 2023-02-07 v7.00v Hyperref: PDF Unicode definition (HO)
+Now handling font encoding PU ...
+... no UTF-8 mapping file for font encoding PU
+)
+Package hyperref Info: Hyper figures OFF on input line 4177.
+Package hyperref Info: Link nesting OFF on input line 4182.
+Package hyperref Info: Hyper index ON on input line 4185.
+Package hyperref Info: Plain pages OFF on input line 4192.
+Package hyperref Info: Backreferencing OFF on input line 4197.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4425.
+\c@Hy@tempcnt=\count481
+
+(c:/texlive/2022/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip20
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 4763.
+\XeTeXLinkMargin=\dimen465
+
+(c:/texlive/2022/texmf-dist/tex/generic/bitset/bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+
+(c:/texlive/2022/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
+)
+))
+\Fld@menulength=\count482
+\Field@Width=\dimen466
+\Fld@charsize=\dimen467
+Package hyperref Info: Hyper figures OFF on input line 6042.
+Package hyperref Info: Link nesting OFF on input line 6047.
+Package hyperref Info: Hyper index ON on input line 6050.
+Package hyperref Info: backreferencing OFF on input line 6057.
+Package hyperref Info: Link coloring OFF on input line 6062.
+Package hyperref Info: Link coloring with OCG OFF on input line 6067.
+Package hyperref Info: PDF/A mode OFF on input line 6072.
+\Hy@abspage=\count483
+\c@Item=\count484
+\c@Hfootnote=\count485
+)
+Package hyperref Info: Driver (autodetected): hpdftex.
+
+(c:/texlive/2022/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2023-02-07 v7.00v Hyperref driver for pdfTeX
+
+(c:/texlive/2022/texmf-dist/tex/latex/base/atveryend-ltx.sty
+Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend pac
+kage
+with kernel methods
+)
+\HyAnn@Count=\count486
+\Fld@listcount=\count487
+\c@bookmark@seq@number=\count488
+
+(c:/texlive/2022/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
+
+(c:/texlive/2022/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+85.
+)
+\Hy@SectionHShift=\skip163
+)
+(c:/texlive/2022/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+Package: fancyhdr 2022/11/09 v4.1 Extensive control of page headers and footers
+
+\f@nch@headwidth=\skip164
+\f@nch@O@elh=\skip165
+\f@nch@O@erh=\skip166
+\f@nch@O@olh=\skip167
+\f@nch@O@orh=\skip168
+\f@nch@O@elf=\skip169
+\f@nch@O@erf=\skip170
+\f@nch@O@olf=\skip171
+\f@nch@O@orf=\skip172
+)
+\c@theorem=\count489
+\c@innerproblem=\count490
+\symmathb=\mathgroup7
+\symsymbolsMN=\mathgroup8
+LaTeX Font Info:    Overwriting symbol font `symbolsMN' in version `bold'
+(Font)                  U/MnSymbolF/m/n --> U/MnSymbolF/b/n on input line 156.
+)
+runsystem(for ^%i in (pygmentize.exe pygmentize.bat pygmentize.cmd) do set > CS
+E_480_Notes.aex <nul: /p x=^%~$PATH:i>> CSE_480_Notes.aex)...executed.
+
+runsystem(del CSE_480_Notes.aex)...executed.
+
+
+(./CSE_480_Notes.aux)
+\openout1 = `CSE_480_Notes.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(72.26999pt, 452.9679pt, 72.26999pt)
+* v-part:(T,H,B)=(72.26999pt, 700.50687pt, 72.26999pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=452.9679pt
+* \textheight=700.50687pt
+* \oddsidemargin=0.0pt
+* \evensidemargin=0.0pt
+* \topmargin=-37.0pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=10.0pt
+* \footskip=30.0pt
+* \marginparwidth=57.0pt
+* \marginparsep=11.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+(c:/texlive/2022/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count491
+\scratchdimen=\dimen468
+\scratchbox=\box260
+\nofMPsegments=\count492
+\nofMParguments=\count493
+\everyMPshowfont=\toks82
+\MPscratchCnt=\count494
+\MPscratchDim=\dimen469
+\MPnumerator=\count495
+\makeMPintoPDFobject=\count496
+\everyMPtoPDFconversion=\toks83
+) (c:/texlive/2022/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(c:/texlive/2022/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+LaTeX Font Info:    Trying to load font information for U+msa on input line 5.
+
+(c:/texlive/2022/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 5.
+
+(c:/texlive/2022/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Trying to load font information for U+stmry on input line 5
+.
+
+(c:/texlive/2022/texmf-dist/tex/latex/stmaryrd/Ustmry.fd)
+\c@tabularnotesi=\count497
+\enitdp@tabularnotes=\count498
+\c@tabularnotes*i=\count499
+\enitdp@tabularnotes*=\count500
+
+Package pgfplots notification 'compat/show suggested version=true': document ha
+s been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
+
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: float package is loaded.
+Package caption Info: hyperref package is loaded.
+Package caption Info: listings package is loaded.
+Package caption Info: wrapfig package is loaded.
+Package caption Info: End \AtBeginDocument code.
+\c@lstlisting=\count501
+(c:/texlive/2022/texmf-dist/tex/latex/pdflscape/pdflscape.sty
+Package: pdflscape 2022-10-27 v0.13 Display of landscape pages in PDF
+
+(c:/texlive/2022/texmf-dist/tex/latex/pdflscape/pdflscape-nometadata.sty
+Package: pdflscape-nometadata 2022-10-28 v0.13 Display of landscape pages in PD
+F (HO)
+
+(c:/texlive/2022/texmf-dist/tex/latex/graphics/lscape.sty
+Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
+)
+Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
+))
+(c:/texlive/2022/texmf-dist/tex/latex/ninecolors/ninecolors.sty
+Package: ninecolors 2022-02-13 vv2022D Select colors with proper color contrast
+
+)
+Package hyperref Info: Link coloring OFF on input line 5.
+
+(./CSE_480_Notes.out) (./CSE_480_Notes.out)
+\@outlinefile=\write7
+\openout7 = `CSE_480_Notes.out'.
+
+ (./CSE_480_Notes.toc [1{c:/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdft
+ex.map}
+
+])
+\tf@toc=\write8
+\openout8 = `CSE_480_Notes.toc'.
+
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/default.pygstyle)
+(./_minted-CSE_480_Notes/B80FA55B1234F1935CEA559D9EFBC39AD90BEC8074339655BAFBFF
+8709335A2D.pygtex
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 3
+.
+ (c:/texlive/2022/texmf-dist/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 2022/07/10 v2.5l Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <10> not available
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 3.
+)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/97058E29D122D15C0A80F31E0608BD7AD90BEC8074339655BAFBFF
+8709335A2D.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/58EBF9960B86A9629DD60C465BFA26BDD90BEC8074339655BAFBFF
+8709335A2D.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/3AF0BF9DC137CB0122F491A03578FA8DD90BEC8074339655BAFBFF
+8709335A2D.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/58EBF9960B86A9629DD60C465BFA26BDD90BEC8074339655BAFBFF
+8709335A2D.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/A55822426A5330C04625A41D264C190BD90BEC8074339655BAFBFF
+8709335A2D.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/4B39BFABD329DDBDD14822EB58219DDAD90BEC8074339655BAFBFF
+8709335A2D.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/F66C0C4EA08413F20FCE150CBE1CF018D90BEC8074339655BAFBFF
+8709335A2D.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/AC4C1A956B01A13AB36CBB7E5ADBB9B3D90BEC8074339655BAFBFF
+8709335A2D.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/E49F145124DD8EC975268B1BC168930DD90BEC8074339655BAFBFF
+8709335A2D.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/2705B8C3D698C826857D1AC230AF9469D90BEC8074339655BAFBFF
+8709335A2D.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/B5022718B6AC7C3341C0C239015F30F1D90BEC8074339655BAFBFF
+8709335A2D.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/8797FCFC48EC15E97CEB0251E9122359D90BEC8074339655BAFBFF
+8709335A2D.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/F3A2A427C0020A4AF9259B4115EB8DA3D90BEC8074339655BAFBFF
+8709335A2D.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/2224CAFFA98B46DA55ED4131B01A9989D90BEC8074339655BAFBFF
+8709335A2D.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/E7B29A2AC00CA7C96C12B72468664292D90BEC8074339655BAFBFF
+8709335A2D.pygtex)
+Overfull \hbox (19.17831pt too wide) in paragraph at lines 3--41
+[][][][][]\T1/cmtt/m/n/10 t[]\T1/cmr/m/n/10 , an un-ordered col-lec-tion of nam
+e/-value pairs [][][]\T1/cmtt/m/n/10 {[]"field1"[]:[] [][][][][]1[],[] [][]"fie
+ld2"[]:[] [][][][][]2[][][][]} 
+ []
+
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/A7CF24F7419FD981D559528C30EB815FD90BEC8074339655BAFBFF
+8709335A2D.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/5FDC311369B80559F8FBE1212A6C4B0BD90BEC8074339655BAFBFF
+8709335A2D.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/74D9A83219CABAAB06A69FD318873F33D90BEC8074339655BAFBFF
+8709335A2D.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/D42F2DA1DF5ECDF29BE4AC27EDDA0C12D90BEC8074339655BAFBFF
+8709335A2D.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/674441960CA1BA2DE08AD4E50C9FDE98D90BEC8074339655BAFBFF
+8709335A2D.pygtex)
+\openout5 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/8F2BD324EA34275451AA7699F16648B1D90BEC8074339655BAFBFF
+8709335A2D.pygtex) [2]
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/B382B64105749B8F8E154D5BA644C418D90BEC8074339655BAFBFF
+8709335A2D.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/B97C788C51ACBFB6819E9DB5F8DAB2B0D90BEC8074339655BAFBFF
+8709335A2D.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/9BA349867B563B89C74FCBA069004F8CD90BEC8074339655BAFBFF
+8709335A2D.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/F8393F6572B94F6AC026EE3D9A49A9DAD90BEC8074339655BAFBFF
+8709335A2D.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/EA81EB92564AA0B5DEA86BF289A6AD3FD90BEC8074339655BAFBFF
+8709335A2D.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/4131A1E05E5CE0D8806D9937B54C2FD7D90BEC8074339655BAFBFF
+8709335A2D.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/CC0599BE4463BC8E5B134113DD049420D90BEC8074339655BAFBFF
+8709335A2D.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/CAA17CFBCB9250F2193C53E4FF525D58D90BEC8074339655BAFBFF
+8709335A2D.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/94A45E23418896D8DEA4C10580D6EA03D90BEC8074339655BAFBFF
+8709335A2D.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/3C7E1D9D90C7843E196B4E19F29DD515D90BEC8074339655BAFBFF
+8709335A2D.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/5FCD52C46C676FA304B72B36AD7FB7EED90BEC8074339655BAFBFF
+8709335A2D.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/2D786EFC5CB47AE1AF36F3BC99805405D90BEC8074339655BAFBFF
+8709335A2D.pygtex)
+Overfull \hbox (17.3732pt too wide) in paragraph at lines 3--68
+[][]\T1/cmtt/m/n/10 "number"[] \T1/cmr/m/n/10 and []\T1/cmtt/m/n/10 "integer"[]
+\T1/cmr/m/n/10 , with key-words in-clud-ing []\T1/cmtt/m/n/10 "minimum"[]\T1/cm
+r/m/n/10 , []\T1/cmtt/m/n/10 "maximum"[]\T1/cmr/m/n/10 , []\T1/cmtt/m/n/10 "exc
+lusiveMinimum"[]\T1/cmr/m/n/10 ,
+ []
+
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/EA48926FAA4282610530C0AAC23C064DD90BEC8074339655BAFBFF
+8709335A2D.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/AAF45F3582277217BB3D7F0778A67888D90BEC8074339655BAFBFF
+8709335A2D.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/0E8316AED3EC73F2A0D3F1B42960838CD90BEC8074339655BAFBFF
+8709335A2D.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/B69E158834357C966485BEA0B135E30AD90BEC8074339655BAFBFF
+8709335A2D.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/BC8ED315EED98652C3966B3E604423E6D90BEC8074339655BAFBFF
+8709335A2D.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/07DA71B2EC24FCBE081E9B3FA69C09B2D90BEC8074339655BAFBFF
+8709335A2D.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/6F4D079D07AE607C2C8390F002952E1AD90BEC8074339655BAFBFF
+8709335A2D.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/812C4C78B8C7792FEAB21C429D1941C8A0C4C1E08064C3F6075F45
+E9FC27F8F3.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/4E61AB8849D6ADA924CEDB29A91D6039A0C4C1E08064C3F6075F45
+E9FC27F8F3.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/9BC1618EFD9366A73E1361EE88D0CC78A0C4C1E08064C3F6075F45
+E9FC27F8F3.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/E238E8A7E07A7BBB018838A4CB7FE518A0C4C1E08064C3F6075F45
+E9FC27F8F3.pygtex)
+\openout5 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/AAED98F0BB554E21AD1EF8FD99589EC0A0C4C1E08064C3F6075F45
+E9FC27F8F3.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/4AFDBC33C01E94D90D7004852C3E9D70A0C4C1E08064C3F6075F45
+E9FC27F8F3.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/4CF18C6C2019B40513DE7A795510F464A0C4C1E08064C3F6075F45
+E9FC27F8F3.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/313834A2EB7CAE422E3F8012BA27FDD2A0C4C1E08064C3F6075F45
+E9FC27F8F3.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/E56D0996B8DC2ED8C01E069165E6B363A0C4C1E08064C3F6075F45
+E9FC27F8F3.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/CFADE67B0D179DE540B47F40366595CCA0C4C1E08064C3F6075F45
+E9FC27F8F3.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/7A3E9FDEB12C5A78964AC010C6C4BABEA0C4C1E08064C3F6075F45
+E9FC27F8F3.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/C02161B2A4C60EEAD69ED2EBEC7C0812A0C4C1E08064C3F6075F45
+E9FC27F8F3.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/11E237040C56793F948DED46E0C263EFA0C4C1E08064C3F6075F45
+E9FC27F8F3.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/DE2B14AE7499F90736FC4A92327553A5A0C4C1E08064C3F6075F45
+E9FC27F8F3.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/3FC55EC19CABE5C2D41512941734C90BA0C4C1E08064C3F6075F45
+E9FC27F8F3.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/BD5DF84F354A60B899A1E0F546B7AA08A0C4C1E08064C3F6075F45
+E9FC27F8F3.pygtex)
+\openout5 = `CSE_480_Notes.pyg'.
+
+ [3]
+(./_minted-CSE_480_Notes/337ABDDE7E57ADAD6758F6B40173B9EDA0C4C1E08064C3F6075F45
+E9FC27F8F3.pygtex) [4] [5
+
+]
+<entity1.png, id=322, 621.7629pt x 261.6174pt>
+File: entity1.png Graphic file (type png)
+<use entity1.png>
+Package pdftex.def Info: entity1.png  used on input line 162.
+(pdftex.def)             Requested size: 226.48395pt x 95.29593pt.
+<entity2.png, id=324, 539.3751pt x 251.2587pt>
+File: entity2.png Graphic file (type png)
+<use entity2.png>
+Package pdftex.def Info: entity2.png  used on input line 167.
+(pdftex.def)             Requested size: 226.48395pt x 105.50491pt.
+<entity3.png, id=325, 127.4361pt x 308.352pt>
+File: entity3.png Graphic file (type png)
+<use entity3.png>
+Package pdftex.def Info: entity3.png  used on input line 212.
+(pdftex.def)             Requested size: 40.76585pt x 98.63701pt.
+<entity4.png, id=326, 127.4361pt x 308.352pt>
+File: entity4.png Graphic file (type png)
+<use entity4.png>
+Package pdftex.def Info: entity4.png  used on input line 213.
+(pdftex.def)             Requested size: 40.76585pt x 98.63701pt.
+<entity5.png, id=327, 127.4361pt x 308.352pt>
+File: entity5.png Graphic file (type png)
+<use entity5.png>
+Package pdftex.def Info: entity5.png  used on input line 214.
+(pdftex.def)             Requested size: 40.76585pt x 98.63701pt.
+<entity6.png, id=328, 127.4361pt x 308.352pt>
+File: entity6.png Graphic file (type png)
+<use entity6.png>
+Package pdftex.def Info: entity6.png  used on input line 215.
+(pdftex.def)             Requested size: 40.76585pt x 98.63701pt.
+<entity7.png, id=329, 127.4361pt x 308.352pt>
+File: entity7.png Graphic file (type png)
+<use entity7.png>
+Package pdftex.def Info: entity7.png  used on input line 216.
+(pdftex.def)             Requested size: 40.76585pt x 98.63701pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 216--216
+[]|\T1/cmr/m/n/9 Many-to-
+ []
+
+<entity8.png, id=330, 127.4361pt x 308.352pt>
+File: entity8.png Graphic file (type png)
+<use entity8.png>
+Package pdftex.def Info: entity8.png  used on input line 217.
+(pdftex.def)             Requested size: 40.76585pt x 98.63701pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 217--217
+[]|\T1/cmr/m/n/9 Exactly-One-to-
+ []
+
+[6
+
+ <./entity1.png> <./entity2.png>]
+<entity9.png, id=344, 452.6511pt x 146.949pt>
+File: entity9.png Graphic file (type png)
+<use entity9.png>
+Package pdftex.def Info: entity9.png  used on input line 226.
+(pdftex.def)             Requested size: 199.75972pt x 64.85059pt.
+<entity10.png, id=345, 452.6511pt x 193.9245pt>
+File: entity10.png Graphic file (type png)
+<use entity10.png>
+Package pdftex.def Info: entity10.png  used on input line 231.
+(pdftex.def)             Requested size: 199.75972pt x 85.58151pt.
+<entity11.png, id=346, 304.9794pt x 127.677pt>
+File: entity11.png Graphic file (type png)
+<use entity11.png>
+Package pdftex.def Info: entity11.png  used on input line 238.
+(pdftex.def)             Requested size: 135.89174pt x 56.89108pt.
+<entity12.png, id=347, 377.4903pt x 310.0383pt>
+File: entity12.png Graphic file (type png)
+<use entity12.png>
+Package pdftex.def Info: entity12.png  used on input line 250.
+(pdftex.def)             Requested size: 135.89174pt x 111.60896pt.
+ [7 <./entity3.png> <./entity4.png> <./entity5.png> <./entity6.png> <./entity7.
+png> <./entity8.png> <./entity9.png> <./entity10.png> <./entity11.png> <./entit
+y12.png>]
+<entity15.png, id=371, 280.1667pt x 477.7047pt>
+File: entity15.png Graphic file (type png)
+<use entity15.png>
+Package pdftex.def Info: entity15.png  used on input line 262.
+(pdftex.def)             Requested size: 106.99196pt x 182.42624pt.
+<entity13.png, id=372, 377.4903pt x 170.5572pt>
+File: entity13.png Graphic file (type png)
+<use entity13.png>
+Package pdftex.def Info: entity13.png  used on input line 354.
+(pdftex.def)             Requested size: 135.89174pt x 61.39793pt.
+<entity14.png, id=373, 377.4903pt x 308.352pt>
+File: entity14.png Graphic file (type png)
+<use entity14.png>
+Package pdftex.def Info: entity14.png  used on input line 362.
+(pdftex.def)             Requested size: 135.89174pt x 111.00192pt.
+ [8 <./entity15.png> <./entity13.png>]
+<entity16.png, id=385, 496.7358pt x 261.6174pt>
+File: entity16.png Graphic file (type png)
+<use entity16.png>
+Package pdftex.def Info: entity16.png  used on input line 380.
+(pdftex.def)             Requested size: 158.99039pt x 83.73523pt.
+<entity17.png, id=386, 577.6782pt x 261.6174pt>
+File: entity17.png Graphic file (type png)
+<use entity17.png>
+Package pdftex.def Info: entity17.png  used on input line 385.
+(pdftex.def)             Requested size: 158.99039pt x 72.00288pt.
+<entity18.png, id=387, 377.4903pt x 245.2362pt>
+File: entity18.png Graphic file (type png)
+<use entity18.png>
+Package pdftex.def Info: entity18.png  used on input line 390.
+(pdftex.def)             Requested size: 77.45796pt x 50.31865pt.
+ [9 <./entity14.png> <./entity16.png> <./entity17.png> <./entity18.png>]
+<entity19.png, id=401, 659.3433pt x 261.6174pt>
+File: entity19.png Graphic file (type png)
+<use entity19.png>
+Package pdftex.def Info: entity19.png  used on input line 422.
+(pdftex.def)             Requested size: 317.07614pt x 125.81442pt.
+
+[10 <./entity19.png>] [11
+
+] [12] [13]
+Overfull \hbox (25.75464pt too wide) in paragraph at lines 574--575
+[][][][][] \T1/cmr/m/n/10 is op-tion-ally passed), and ei-ther [][][][][] or []
+[][][][]. 
+ []
+
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/E7C404E927672F4A87DF72FD24D4CD9FFE30D642090B2397983B0E
+F0366FC554.pygtex
+LaTeX Font Info:    Trying to load font information for TS1+cmtt on input line 
+3.
+ (c:/texlive/2022/texmf-dist/tex/latex/base/ts1cmtt.fd
+File: ts1cmtt.fd 2022/07/10 v2.5l Standard LaTeX font definitions
+))
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/01AB6A4E30A264F20619D0BE09748460FE30D642090B2397983B0E
+F0366FC554.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/D30592B7FF0CD5B05DE6B060E98D4F38FE30D642090B2397983B0E
+F0366FC554.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/000B297684065A9342A236D13813F46DFE30D642090B2397983B0E
+F0366FC554.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/7E536E4C6F7B4AAED1A5C88347F504B5FE30D642090B2397983B0E
+F0366FC554.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/E7C404E927672F4A87DF72FD24D4CD9FFE30D642090B2397983B0E
+F0366FC554.pygtex)
+Overfull \hbox (0.57175pt too wide) in paragraph at lines 3--578
+[][]\TS1/cmtt/m/n/10 '\T1/cmtt/m/n/10 DEFERRED\TS1/cmtt/m/n/10 '[]\T1/cmr/m/n/1
+0 , []\TS1/cmtt/m/n/10 '\T1/cmtt/m/n/10 IMMEDIATE\TS1/cmtt/m/n/10 '[]\T1/cmr/m/
+n/10 , or []\TS1/cmtt/m/n/10 '\T1/cmtt/m/n/10 EXCLUSIVE\TS1/cmtt/m/n/10 '[]\T1/
+cmr/m/n/10 . Trans-ac-tions in these modes are im-plic-itly opened
+ []
+
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/08E9DE24AB150D083240557CEC091D53FE30D642090B2397983B0E
+F0366FC554.pygtex) [14] [15]
+Overfull \hbox (14.19666pt too wide) in paragraph at lines 685--686
+[]\T1/cmr/m/n/10 For $\OML/cmm/m/it/10 T[]$ \T1/cmr/m/n/10 be-gin-ning be-fore 
+$\OML/cmm/m/it/10 T[]$\T1/cmr/m/n/10 , |   [] oc-curs when $\OML/cmm/m/it/10 r[
+]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 X\OT1/cmr/m/n/10 )$ \T1/cmr/m/n/10 oc-curs a
+f-ter $\OML/cmm/m/it/10 w[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 X\OT1/cmr/m/n/10 )
+$\T1/cmr/m/n/10 , and |   []
+ []
+
+[16] [17] [18
+
+]
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/A64A1254A5C5FE031DA5181720B1700978185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/CBF5A5BFC7979572FD1A29D97637A15F78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/9DD9A49EEB62F97F5211F698D78B5A1278185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/C45F40D2C8CBEEA673E8CBF4881BC41778185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/89A5BC96D967419EC0D07C6C704A6F1E78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/51FED9533FAA68EE7EEA1B8036FB61A578185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/6F9B83E2761C1446344AC1D2DA3054E378185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/CA35C56C0C379F292F8FAB68B3A19F6178185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/51FED9533FAA68EE7EEA1B8036FB61A578185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/89A5BC96D967419EC0D07C6C704A6F1E78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/C45F40D2C8CBEEA673E8CBF4881BC41778185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/9FDE16262F8F5CF254AC42A57B7131F8FE30D642090B2397983B0E
+F0366FC554.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/5FBACC081126C48528341C89B877DE7CFE30D642090B2397983B0E
+F0366FC554.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/928CDA17C0714538C4E7BD8147FDBE09FE30D642090B2397983B0E
+F0366FC554.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/D10999B65B0E0DCBCA099FE0A4CF1708FE30D642090B2397983B0E
+F0366FC554.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/F091C3C9042B52B12CEAAC573748E57978185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/41AF4089F6BDAB6F6483D08224ED9490FE30D642090B2397983B0E
+F0366FC554.pygtex)
+Overfull \hbox (1.37933pt too wide) in paragraph at lines 800--801
+[]\T1/cmr/m/n/10 To ap-ply con-verter upon se-lec-tion, use []\T1/cmtt/m/n/10 S
+ELECT[][] []col[] [][]AS[][] [][]"col [type]"[][] [][]FROM[][] [][]table[]; \T1
+/cmr/m/n/10 and spec-
+ []
+
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/C5017F258101D35EDF0B93CECC3A8503FE30D642090B2397983B0E
+F0366FC554.pygtex)
+Overfull \hbox (5.5996pt too wide) in paragraph at lines 801--802
+[]\T1/cmr/m/n/10 Both op-tions can be spec-i-fied by us-ing \T1/cmtt/m/n/10 det
+ect_types[]=[][]sqlite3[][].[]PARSE_DECLTYPES [][]|[] []sqlite3[][]
+ []
+
+[19
+
+]
+\openout5 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/A0B2DD4654F21EBE680EE10D675915A1FE30D642090B2397983B0E
+F0366FC554.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/DB89A6BFFC267DCF87E7D082156BC61B78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout5 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/3D09A652DD6700BCE4DF17A4EB608AD678185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout5 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/3C609672A123A7CBE960C4BD55B331F678185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/5982149B8BFD4846E70D86C46075510478185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout5 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/0427563D4DDDD06479AD88212DB1E4D178185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/CA35C56C0C379F292F8FAB68B3A19F6178185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/41C47F55278F886B5C68303F2F73724F78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/5982149B8BFD4846E70D86C46075510478185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout5 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/B775A85AC31BA5BB78D08573B015160B78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/FDD80BC13946E8A57ABB1577FCD4E87D78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/AD355156BAE3369A157D2AA9DA5CB2CE78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout5 = `CSE_480_Notes.pyg'.
+
+ [20]
+(./_minted-CSE_480_Notes/2C823DF626D4C5B02F130A311A3B831C78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/3CD90DEDBE406A58C04179FACC2F288B78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/F84E99D5B7AD7A600E6727E7B4A95E7578185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/8AFB93DF9265CD8AB1DF1ECAAC0D74E778185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/6A06A94C348047D4F9D1A599BCCCDDBE78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/41C47F55278F886B5C68303F2F73724F78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout5 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/9795E95FBEA7F5C4C1A572C5FF59161978185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/B3136A962C78ED1216A17F6C0E30B9C078185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/41C47F55278F886B5C68303F2F73724F78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/FEC3656842638FAF4D3668A0FB4D442B78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout5 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/7DBAFAB30F06DC2FC3D3B9C9E5455EE978185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/3464E8D8DBE8F67C4203458C7DC35CFB78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/1333F3BD775453D01BF12780858F70F978185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout5 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/B5B33E296DD8598F15D1392887BCBD3F78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/A8D581DA635533CC1B60B0FAE90F528F78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/FE13119FB084FE8BBF5FE3AB7CC89B3B78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/41C47F55278F886B5C68303F2F73724F78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/3D4F6FF35EF2ACE5DED941142A0A5C3978185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/FF146E286251FB41B37DBC2D8DAA0CA578185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/94304D3B13DB262D63A3399FFD9BC15878185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/2C09287720251EE4608C7D32DE62199D78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/94304D3B13DB262D63A3399FFD9BC15878185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/34C2B5C68408CE57FA7580B0F4BDE43C78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/94304D3B13DB262D63A3399FFD9BC15878185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/94304D3B13DB262D63A3399FFD9BC15878185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/41C47F55278F886B5C68303F2F73724F78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/41C47F55278F886B5C68303F2F73724F78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/3D4F6FF35EF2ACE5DED941142A0A5C3978185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/1333F3BD775453D01BF12780858F70F978185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/5D9C106D2C3080C56722B3E4FF5FD9DB78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/5F823FCC168FFD2EE6E7610F5798A99378185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/FEC3656842638FAF4D3668A0FB4D442B78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/E1DEB9AC5C8E416B78EE2B07502DF3C678185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/C30DBA8197A1560649606EA4745E9D0478185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/0A1F21A3417389E0C0A13392C79A7A8978185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/B3136A962C78ED1216A17F6C0E30B9C078185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/A55822426A5330C04625A41D264C190B78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/85AC4B69A93BE6625FEE9C5A402D3F8C78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/02FC4E7B0C34AF223DEAE62F2C0EE5FF78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/FDC7E1257006FEE05FC2BD4A3C91334978185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/A65D5ACC20AD1F6C138540681B6C334C78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/8E9285E9423A3501EF798FF3C7A6C29978185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/467666C12F45D4E6B3E37CCCBCB6E1F878185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/EE9F11505D0160B459A18BFC992CE4FC78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/E7FB8B0240FDE08A2FAA4C55C9C740A978185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/5B41510F6FCF2140EDE26C7FD80B42F978185171A52FDB2A3C35FC
+730DE7DA49.pygtex) [21]
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/CA35C56C0C379F292F8FAB68B3A19F6178185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/7C4867F67CEE84AB22D9C77D24F7073C78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/1159184937F1A52D70A06A50D63B594778185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/45CE3B2543A563AAC0F955D52767E57078185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/788B769C0E4947987A74BC9C4666780178185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/F8CC442CDB969798979B176F4C7E618F78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/D55FA734C1FA905B7A4B7F40C535819B78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/01A982FB293F966D3C3BA943D5AC6DA478185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/7C0C0577834D29BE479910502833588A78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/6CF29A9353B210B5EFC2185AAD787C7678185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/CA35C56C0C379F292F8FAB68B3A19F6178185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/7C0C0577834D29BE479910502833588A78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/7C4867F67CEE84AB22D9C77D24F7073C78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/CA35C56C0C379F292F8FAB68B3A19F6178185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/19BF32B8725EC794D434280902D78E1878185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/3B2992C503F32D3599B3179745DD1DB478185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/61230153E3CD510CDDFDDAE7722BE79278185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/96812D9311641C7A360B094060D6AA1E78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/85AC4B69A93BE6625FEE9C5A402D3F8C78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/92520A5A9CF893220B9CD447F585F14478185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/E8ADD20C8A43C8300F7E7B60D9DE1E7678185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/9737FB19BB53FCCCE0D520ED85C6787E78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/A759F684E27357CA4BAC1C1FECF3980278185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/0FC5FBF12B4BFAC38834345CC4DFFE6578185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/CC9CABA38F801B8DC1C204D81177D91178185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/401B30E3B8B5D629635A5C613CDB791978185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/AC7CAB3DC16A6C6279643C1777CF587E78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/83D96B4FE164690D0A3059AD03BBD03678185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/D16D6C3E3CCDFD915B8B78B793B2E7EB78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/7E0C547C09ECD27E562069B181F8A34778185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/6F4D079D07AE607C2C8390F002952E1A78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/CAA17CFBCB9250F2193C53E4FF525D5878185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/ED7B65DEAF6695CB0974D0AFBFC3766278185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/6FEC1388A57AF0C14FDE3C300E361D1E78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/2E62F524DD2C53852D602F31ADB4939678185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/FAD23A93E72060F2DAD9A4D30F4E1C4378185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/401B30E3B8B5D629635A5C613CDB791978185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/009520053B00386D1173F3988C55D19278185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/43044084A2750AD7D10B850E824A1C3A78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/401B30E3B8B5D629635A5C613CDB791978185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/009520053B00386D1173F3988C55D19278185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/1322F08D2BFC86C3E316D0B0D214870278185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/0B24CC97C2665656DCDAB5EC6690D66578185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/7C1A5D12744DEC24641AB8CA14FFF59778185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/ADD2DB902D8AD19264ABFED0DDF9594E78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/7C223AEB88B4E7CC1E22D89FF7011A9A78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/A6973D434FCCC633538005C9F5CEA33E78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/DFEBEDBFAE77A1AAFD1119BEEB2ADE4E78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/A6973D434FCCC633538005C9F5CEA33E78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/716786D571E129C3481029C204B9238778185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/CA35C56C0C379F292F8FAB68B3A19F6178185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/E7375833E499638505BE5E2583EB317A78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/CA35C56C0C379F292F8FAB68B3A19F6178185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/CA35C56C0C379F292F8FAB68B3A19F6178185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/A61E6D2CD26BF56ADF01C5A25AD3FFAB78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/CA35C56C0C379F292F8FAB68B3A19F6178185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/D61CC243245A1A55CFA6037E3D28873378185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/F851B2043FE93335C335C836CEA4DCB9FE30D642090B2397983B0E
+F0366FC554.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/7F5A6C3334626FA8CEC9DE904BCFF821FE30D642090B2397983B0E
+F0366FC554.pygtex)
+Overfull \hbox (20.06291pt too wide) in paragraph at lines 961--962
+[]\T1/cmr/m/n/10 Users can de-fine ag-gre-ga-tors in Python and pass them to SQ
+Lite us-ing \T1/cmtt/m/n/10 conn[][].[]create_aggregate(name,[]
+ []
+
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/A56BBE9F616A180236D334FE8BF65826FE30D642090B2397983B0E
+F0366FC554.pygtex) [22]
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/A50ABD315E091768A2BB092F9244E1E9FE30D642090B2397983B0E
+F0366FC554.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/127CFBA07E437625AC1CD6331C2A0171FE30D642090B2397983B0E
+F0366FC554.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/6AB8AC4CCA99C0C7C9629ADCC1C67B5978185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/B3DC5E9EDCB52A844172F476F782279B78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/29B50971A2448C2BE7A5AC094FBD534B78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/B087A77ECDB929CFEB7ACC0A1C33124B78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/261993601E6F0361639F30BDE538216578185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/1BCD9AD9C10B6E3982516F30A3F5426DFE30D642090B2397983B0E
+F0366FC554.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/697BF35822A7935A51FBDFC8785B1763FE30D642090B2397983B0E
+F0366FC554.pygtex)
+Overfull \hbox (11.12065pt too wide) in paragraph at lines 983--984
+[]\T1/cmr/m/n/10 Users can de-fine col-la-tions in Python and pass them to SQLi
+te us-ing \T1/cmtt/m/n/10 conn[][].[]create_collation(name,[]
+ []
+
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/897316929176464EBC9AD085F31E7284FE30D642090B2397983B0E
+F0366FC554.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/EB844645E8E61DE0A4CF4B991E65E63EFE30D642090B2397983B0E
+F0366FC554.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/B026324C6904B2A9CB4B88D6D61C81D1FE30D642090B2397983B0E
+F0366FC554.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/843C162D6AFCB9B3DB33C0478BA9A67BFE30D642090B2397983B0E
+F0366FC554.pygtex)
+\openout5 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/5773EB321375513865BBACFA5B3E982378185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout5 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/81E735087C898257C2C1A43CE3A2144478185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/C574C049157E40CD633A729F785C205478185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout5 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/C015D838B56434F7BF29A30DE59F7C2078185171A52FDB2A3C35FC
+730DE7DA49.pygtex) [23]
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/CA35C56C0C379F292F8FAB68B3A19F6178185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/29472F89B665946AC6AA15DAA73AB51678185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/CA35C56C0C379F292F8FAB68B3A19F6178185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/E01D94154E889DDA564FD7BF9C45039D78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/29472F89B665946AC6AA15DAA73AB51678185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/C574C049157E40CD633A729F785C205478185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/68F994E1F349FCEEF67954499652A90A78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/241B74819A4CFE10F9D28DC7A372C36578185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/94FC297652EB63EB5BCD7AB229FA824078185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/DB89A6BFFC267DCF87E7D082156BC61B78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/6588B5679F6DBB105733372901D928FC78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/9D3D22289725271A8C5C8102DCF0B9E678185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/CA35C56C0C379F292F8FAB68B3A19F6178185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/560E4E8431C450CA9DD752D253E1C9D178185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+Overfull \hbox (4.09866pt too wide) in paragraph at lines 1043--1044
+[]\T1/cmr/m/n/10 Foreign key check-ing is ex-pen-sive, so it is only per-formed
+ if turned on via \T1/cmtt/m/n/10 PRAGMA[] []foreign_keys[]
+ []
+
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/61C3EA8DF06638B897C77F73373C71F378185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/6588B5679F6DBB105733372901D928FC78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/F4ADB0274B7899917DC56079E3AFEEB878185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout5 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/268962192D932DF79E11C718E53EF56278185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/77C253CA1884D5FC8FA5B93C94C54A3B78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/B3136A962C78ED1216A17F6C0E30B9C078185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/12884E5CA2C9E27244F60438C02B569878185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/ACB7E8B65BAB5FF1DA0965C8F57265A578185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/CDDA2DEB7F5DC95705C4FECB8B5C5E6F78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/662D54AD76E4854F3FF1D8143A57B3CD78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout5 = `CSE_480_Notes.pyg'.
+
+ [24]
+(./_minted-CSE_480_Notes/DC68FBC1E8C183AD440C42CB1B8A3A8D78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/662D54AD76E4854F3FF1D8143A57B3CD78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/A5958BD49EB4FC4E22FED0E334D4624D78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/1473B07E70DAE94C35D6B0F4654BE8BC78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/7E6BC19187CD66B80F2A688EA2433C2878185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/7BB3A70E2242948FAEC2B9AD86C4755978185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/07B0C924D9CFA8C5C2D84BB2D79381B478185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/FA250C5327E8FC40B3C48F95B126AC4B78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/7BB3A70E2242948FAEC2B9AD86C4755978185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/B44C39B66132A59CE86FF3C7D8FA946678185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/1333F3BD775453D01BF12780858F70F978185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/D9C6419AF529DF403BC929B38588188B78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/FA250C5327E8FC40B3C48F95B126AC4B78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/CA35C56C0C379F292F8FAB68B3A19F6178185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout5 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/897E35F93937F7316F1ED0997F10354178185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/566FE18C11E49138B0052F459652EAD578185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/658F02BA4E45C6497D505207B279E68278185171A52FDB2A3C35FC
+730DE7DA49.pygtex) [25]
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/CA35C56C0C379F292F8FAB68B3A19F6178185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/205C66BEBE6823F98C1236B42ABD6FBC78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout5 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/902430559E497CCB2534D57F480D57F378185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/FA250C5327E8FC40B3C48F95B126AC4B78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/7BB3A70E2242948FAEC2B9AD86C4755978185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/A759F684E27357CA4BAC1C1FECF3980278185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout5 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/4C72D8854C11A4CC53A0569959DC9C9278185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout5 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/B4114619EC23A9BFA6D4E9A740F6503478185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/AF51980602390E5273030AF5D63DDA6F78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/BCB3B2273FCCDD11F990BBB122DDCB9378185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout5 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/052C345FF44ECE07C6998165D7A0650B78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/B3136A962C78ED1216A17F6C0E30B9C078185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/B026324C6904B2A9CB4B88D6D61C81D178185171A52FDB2A3C35FC
+730DE7DA49.pygtex) [26]
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/7EA9FA4A980974C9F5C1CAB9B0491DE778185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/A4C60CF3867F1404D152039E49E3AD2A78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/84C98174F61E165E179E15D22B5ECA6778185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout5 = `CSE_480_Notes.pyg'.
+
+
+Overfull \hbox (12.3135pt too wide) in paragraph at lines 3--1273
+\T1/cmr/m/n/10 syn-tax []\T1/cmtt/m/n/10 WHERE[][] [][]column[][] [][]operator[
+][] [][]ANY[][]|[][]ALL[][] []([]SELECT[][] []other_column[] [][]FROM[][] [][]t
+able[][] [][]WHERE[][] []condition)
+ []
+
+
+(./_minted-CSE_480_Notes/DB766FC62C1365B9FAC913CC496A429478185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/A759F684E27357CA4BAC1C1FECF3980278185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/7EA9FA4A980974C9F5C1CAB9B0491DE778185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/0B24CC97C2665656DCDAB5EC6690D66578185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/7C1A5D12744DEC24641AB8CA14FFF59778185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/A4C60CF3867F1404D152039E49E3AD2A78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/5D9C106D2C3080C56722B3E4FF5FD9DB78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/5D9C106D2C3080C56722B3E4FF5FD9DB78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/0295FD033B59EEBDAA4C94943F30D5B378185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/E7375833E499638505BE5E2583EB317A78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout5 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/B7875FC37D8297055ADA064D2901D3AB78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/5D9C106D2C3080C56722B3E4FF5FD9DB78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/5F823FCC168FFD2EE6E7610F5798A99378185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/5D9C106D2C3080C56722B3E4FF5FD9DB78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/1333F3BD775453D01BF12780858F70F978185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/41C47F55278F886B5C68303F2F73724F78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout5 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/D0A25BD2CA9A3C970B3752E78DE238EF78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/51FED9533FAA68EE7EEA1B8036FB61A578185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/552B36BEC85197FE2129F9093D7BA97878185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/A9564EBC3289B7A14551BAF8AD5EC60A78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/4821726C1947CDF3EEBACADE9817393978185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/6BAB1F09A7403980BFEB4C2B412BE47B78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/D6BC9BD45EEED7070FA50D4498B589CE78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/D02BC6DE96421187CED2DBAB3A17DD0A78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/6511ED42E88FF15AF505EC60129B437178185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/04BD1F67D33CD665AFAEA161D9B0774478185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/8D309694AFBC548739FECBC18B39ABC978185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/C30DBA8197A1560649606EA4745E9D0478185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/0A1F21A3417389E0C0A13392C79A7A8978185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/41FF0912A07FDC52799FF27B38E7F14078185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/8F898B22D33B4AE6B360EC4725A2D64678185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/E4C8860AD5FD9DA4BFA1B158E1C7667078185171A52FDB2A3C35FC
+730DE7DA49.pygtex) [27]
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/DEA76DD9B1C2C69E3B7C1C35E7C9935978185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/947B8A09CA5032DE79A938D1E67BD57B78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/6F36B833528AC861007E920FCD06DF3078185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/DA008760094CA2F2B175CA002DE7C34678185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/507BAFE51328985D50F7A9A48D154BAF78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/1D3BC1D43C34DDEFEFE3B4061932A5D978185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/F4D5D0C0671BE202BC241807C243E80B78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/5EF7D164416FE427024ACD2B42DD082278185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/22E7A36243056455DF0A0F58F2769AA578185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/D3FA7C0E2AB6B93A661B34B579601F7378185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/B429132209912F01BB82A11D3BACA74378185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/5E07141D73470853A4D31F05FF2ECF3E78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/945F154B667D92342F685247AFBF304F78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/30ACC1AC6DE04D373AFEB61039029CEB78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/6BAB1F09A7403980BFEB4C2B412BE47BFE30D642090B2397983B0E
+F0366FC554.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/A9564EBC3289B7A14551BAF8AD5EC60AFE30D642090B2397983B0E
+F0366FC554.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/9F60E1C03440E66EB907F02306102862FE30D642090B2397983B0E
+F0366FC554.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/4821726C1947CDF3EEBACADE98173939FE30D642090B2397983B0E
+F0366FC554.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/6BAB1F09A7403980BFEB4C2B412BE47BFE30D642090B2397983B0E
+F0366FC554.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/76BCE3B8468B3E1F468CCFE5E6C5A838FE30D642090B2397983B0E
+F0366FC554.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/6A6FD996108A5000A8A86403C77600ABFE30D642090B2397983B0E
+F0366FC554.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/60E48A34FE94F02AE34071672CE9B5F3FE30D642090B2397983B0E
+F0366FC554.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/87002B824B66BD4D0B6D0DCFA8FDEADDFE30D642090B2397983B0E
+F0366FC554.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/470347CD2AF9E77FCB4F25A4B26701CE78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/12ADC126A84E7383985CBE3E2C934B6278185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/D53D98BBF9C720C5E4FFBDC0F683B85CFE30D642090B2397983B0E
+F0366FC554.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/2A6E2757E512A3B35AEE981C1264992FFE30D642090B2397983B0E
+F0366FC554.pygtex)
+Overfull \hbox (13.95737pt too wide) in paragraph at lines 1334--1335
+[]\T1/cmr/m/n/10 To use these, spec-ify \T1/cmtt/m/n/10 detect_types [][]=[][] 
+[]sqlite3[][].[]PARSE_DECLTYPES [][]|[] []sqlite3[][].[]PARSE_COLNAMES
+ []
+
+\openout5 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/A80610ACF6F4A526587BCAA3240A58A878185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/8EF64FC496C937256F497664CF2DEE6D78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/56F785241D0ED9FE51A8170B9DD5027278185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/B519D08EF66FD54910EDBEDBA6181EC278185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/7460B4E3C97740F661B412669CB691D878185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/09EC0D1CB6B914BAD7CF98F344CEED8678185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/FB5EDE4E3EC5059C585C857782773DBF78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/7B8B54ECE178FC49AD6814630FDBF3F378185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/BE47903447490C648611C2F6003B8D9678185171A52FDB2A3C35FC
+730DE7DA49.pygtex) [28]
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/A759F684E27357CA4BAC1C1FECF3980278185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/D4C6D1957AAB60656D244D958290F5D878185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/3BCB25591671A46C61990BF80756C31678185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout5 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/088DA0A66E283EAF9742DDBDF2AEBAE178185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/D14D804F4FCEABC77688B85044E7AD7978185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout5 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/3493B659F115937EEBA1473F0577552178185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout5 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/B47830352D3C676B90E92B329DA5244C78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/E7E1E4EA59A5B16F5EEE88B81D8D041E78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/B86520E700CF383B6D69D463E4A9D81B78185171A52FDB2A3C35FC
+730DE7DA49.pygtex) [29]
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/E7E1E4EA59A5B16F5EEE88B81D8D041E78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/B86520E700CF383B6D69D463E4A9D81B78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/6C4AD09749A67B7789336E187DC1966D78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/620EA5458324452AEBFEFA1F09FAF4D278185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/CE64BBE3BAD59DB040AAC9C4D0153E5078185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/FDD80BC13946E8A57ABB1577FCD4E87D78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/AA5EA07B7635132AC4FB1772B90665AE78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/620EA5458324452AEBFEFA1F09FAF4D278185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/FDD80BC13946E8A57ABB1577FCD4E87D78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/C192130986511D07AAB2CAF8B6417D3D78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/FDD80BC13946E8A57ABB1577FCD4E87D78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/CE64BBE3BAD59DB040AAC9C4D0153E5078185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/9DCEC83CC2F3C6BBDE0D454376AE946678185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/951EA512935C3635CECF6CD92B367EBF78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout5 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/25EA1FEE16D4420AC0779F6176FEEDA878185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/F5C36919F64EFC28CFCE3E658FCD58F678185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/D9F9E8215D53854B1EBBAC5A0ECC9BA578185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/98F539F0A304197D476373609994E67C78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/75B60115FABFCC70945B69833AC120AF78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/E4796AB8C100D8C04C5F647079B11C6278185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/91895542030423F23B3CE9F623B54FD978185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/52DFFC338344CE64C48CBFC9CA63F9FC78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/0C2CDCD8F161090AC4797C2178FB391E78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/76949BB8FF2D7611763A3344611B997878185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/41C47F55278F886B5C68303F2F73724F78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/1CF9D1F6061CC9B80E9BEE20089CD95D78185171A52FDB2A3C35FC
+730DE7DA49.pygtex) [30]
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/342A6495227DE2947E429557A214AC9B78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/1289BBBE9531DEE0246021A6ED0FCF7D78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/7E66A10CC92B5C8808CF205599DA1E4178185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/4F62B0CEAE93C42BFE244F6B6776DC8B78185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/A64A1254A5C5FE031DA5181720B1700978185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/7E66A10CC92B5C8808CF205599DA1E4178185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/2D44E549A7FCB130AF69428264EC9CA078185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/DF96E576F4519A70B985EC6C8114F3A078185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/F2B1387C8BAEC00E087A737A92556A0378185171A52FDB2A3C35FC
+730DE7DA49.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/8100F82BB48F240CBC396491CF21D1D2FE30D642090B2397983B0E
+F0366FC554.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/18697449D7C48CF32CDD4F14857E68EEFE30D642090B2397983B0E
+F0366FC554.pygtex)
+\openout6 = `CSE_480_Notes.pyg'.
+
+
+(./_minted-CSE_480_Notes/CFD449BEC15D15CCC3EDF200FAE4CE5DFE30D642090B2397983B0E
+F0366FC554.pygtex)
+
+Package hyperref Warning: The anchor of a bookmark and its parent's must not
+(hyperref)                be the same. Added a new anchor on input line 1510.
+
+
+
+pdfTeX warning: pdflatex.exe (file ./Query_Planning.pdf): PDF inclusion: found 
+PDF version <1.7>, but at most version <1.5> allowed
+<Query_Planning.pdf, id=543, 614.295pt x 794.97pt>
+File: Query_Planning.pdf Graphic file (type pdf)
+<use Query_Planning.pdf>
+Package pdftex.def Info: Query_Planning.pdf  used on input line 1511.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+
+
+pdfTeX warning: pdflatex.exe (file ./Query_Planning.pdf): PDF inclusion: found 
+PDF version <1.7>, but at most version <1.5> allowed
+File: Query_Planning.pdf Graphic file (type pdf)
+<use Query_Planning.pdf>
+Package pdftex.def Info: Query_Planning.pdf  used on input line 1511.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+
+
+pdfTeX warning: pdflatex.exe (file ./Query_Planning.pdf): PDF inclusion: found 
+PDF version <1.7>, but at most version <1.5> allowed
+
+
+pdfTeX warning: pdflatex.exe (file ./Query_Planning.pdf): PDF inclusion: found 
+PDF version <1.7>, but at most version <1.5> allowed
+<Query_Planning.pdf, id=546, page=1, 614.295pt x 794.97pt>
+File: Query_Planning.pdf Graphic file (type pdf)
+<use Query_Planning.pdf, page 1>
+Package pdftex.def Info: Query_Planning.pdf , page1 used on input line 1511.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+File: Query_Planning.pdf Graphic file (type pdf)
+<use Query_Planning.pdf, page 1>
+Package pdftex.def Info: Query_Planning.pdf , page1 used on input line 1511.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+[31]
+File: Query_Planning.pdf Graphic file (type pdf)
+<use Query_Planning.pdf, page 1>
+Package pdftex.def Info: Query_Planning.pdf , page1 used on input line 1511.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+File: Query_Planning.pdf Graphic file (type pdf)
+<use Query_Planning.pdf, page 1>
+Package pdftex.def Info: Query_Planning.pdf , page1 used on input line 1511.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+File: Query_Planning.pdf Graphic file (type pdf)
+<use Query_Planning.pdf, page 1>
+Package pdftex.def Info: Query_Planning.pdf , page1 used on input line 1511.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+ [32 <./Query_Planning.pdf>]
+
+pdfTeX warning: pdflatex.exe (file ./Query_Planning.pdf): PDF inclusion: found 
+PDF version <1.7>, but at most version <1.5> allowed
+<Query_Planning.pdf, id=561, page=2, 614.295pt x 794.97pt>
+File: Query_Planning.pdf Graphic file (type pdf)
+<use Query_Planning.pdf, page 2>
+Package pdftex.def Info: Query_Planning.pdf , page2 used on input line 1511.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+File: Query_Planning.pdf Graphic file (type pdf)
+<use Query_Planning.pdf, page 2>
+Package pdftex.def Info: Query_Planning.pdf , page2 used on input line 1511.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+File: Query_Planning.pdf Graphic file (type pdf)
+<use Query_Planning.pdf, page 2>
+Package pdftex.def Info: Query_Planning.pdf , page2 used on input line 1511.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+[33 <./Query_Planning.pdf>]
+
+pdfTeX warning: pdflatex.exe (file ./Query_Planning.pdf): PDF inclusion: found 
+PDF version <1.7>, but at most version <1.5> allowed
+<Query_Planning.pdf, id=571, page=3, 614.295pt x 794.97pt>
+File: Query_Planning.pdf Graphic file (type pdf)
+<use Query_Planning.pdf, page 3>
+Package pdftex.def Info: Query_Planning.pdf , page3 used on input line 1511.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+File: Query_Planning.pdf Graphic file (type pdf)
+<use Query_Planning.pdf, page 3>
+Package pdftex.def Info: Query_Planning.pdf , page3 used on input line 1511.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+File: Query_Planning.pdf Graphic file (type pdf)
+<use Query_Planning.pdf, page 3>
+Package pdftex.def Info: Query_Planning.pdf , page3 used on input line 1511.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+[34 <./Query_Planning.pdf>]
+
+pdfTeX warning: pdflatex.exe (file ./Query_Planning.pdf): PDF inclusion: found 
+PDF version <1.7>, but at most version <1.5> allowed
+<Query_Planning.pdf, id=582, page=4, 614.295pt x 794.97pt>
+File: Query_Planning.pdf Graphic file (type pdf)
+<use Query_Planning.pdf, page 4>
+Package pdftex.def Info: Query_Planning.pdf , page4 used on input line 1511.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+File: Query_Planning.pdf Graphic file (type pdf)
+<use Query_Planning.pdf, page 4>
+Package pdftex.def Info: Query_Planning.pdf , page4 used on input line 1511.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+File: Query_Planning.pdf Graphic file (type pdf)
+<use Query_Planning.pdf, page 4>
+Package pdftex.def Info: Query_Planning.pdf , page4 used on input line 1511.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+[35 <./Query_Planning.pdf>]
+
+pdfTeX warning: pdflatex.exe (file ./Query_Planning.pdf): PDF inclusion: found 
+PDF version <1.7>, but at most version <1.5> allowed
+<Query_Planning.pdf, id=591, page=5, 614.295pt x 794.97pt>
+File: Query_Planning.pdf Graphic file (type pdf)
+<use Query_Planning.pdf, page 5>
+Package pdftex.def Info: Query_Planning.pdf , page5 used on input line 1511.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+File: Query_Planning.pdf Graphic file (type pdf)
+<use Query_Planning.pdf, page 5>
+Package pdftex.def Info: Query_Planning.pdf , page5 used on input line 1511.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+File: Query_Planning.pdf Graphic file (type pdf)
+<use Query_Planning.pdf, page 5>
+Package pdftex.def Info: Query_Planning.pdf , page5 used on input line 1511.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+[36 <./Query_Planning.pdf>]
+
+pdfTeX warning: pdflatex.exe (file ./Query_Planning.pdf): PDF inclusion: found 
+PDF version <1.7>, but at most version <1.5> allowed
+<Query_Planning.pdf, id=601, page=6, 614.295pt x 794.97pt>
+File: Query_Planning.pdf Graphic file (type pdf)
+<use Query_Planning.pdf, page 6>
+Package pdftex.def Info: Query_Planning.pdf , page6 used on input line 1511.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+File: Query_Planning.pdf Graphic file (type pdf)
+<use Query_Planning.pdf, page 6>
+Package pdftex.def Info: Query_Planning.pdf , page6 used on input line 1511.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+File: Query_Planning.pdf Graphic file (type pdf)
+<use Query_Planning.pdf, page 6>
+Package pdftex.def Info: Query_Planning.pdf , page6 used on input line 1511.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+[37 <./Query_Planning.pdf>]
+
+pdfTeX warning: pdflatex.exe (file ./Query_Planning.pdf): PDF inclusion: found 
+PDF version <1.7>, but at most version <1.5> allowed
+<Query_Planning.pdf, id=612, page=7, 614.295pt x 794.97pt>
+File: Query_Planning.pdf Graphic file (type pdf)
+<use Query_Planning.pdf, page 7>
+Package pdftex.def Info: Query_Planning.pdf , page7 used on input line 1511.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+File: Query_Planning.pdf Graphic file (type pdf)
+<use Query_Planning.pdf, page 7>
+Package pdftex.def Info: Query_Planning.pdf , page7 used on input line 1511.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+File: Query_Planning.pdf Graphic file (type pdf)
+<use Query_Planning.pdf, page 7>
+Package pdftex.def Info: Query_Planning.pdf , page7 used on input line 1511.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+[38 <./Query_Planning.pdf>]
+
+pdfTeX warning: pdflatex.exe (file ./Query_Planning.pdf): PDF inclusion: found 
+PDF version <1.7>, but at most version <1.5> allowed
+<Query_Planning.pdf, id=621, page=8, 614.295pt x 794.97pt>
+File: Query_Planning.pdf Graphic file (type pdf)
+<use Query_Planning.pdf, page 8>
+Package pdftex.def Info: Query_Planning.pdf , page8 used on input line 1511.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+File: Query_Planning.pdf Graphic file (type pdf)
+<use Query_Planning.pdf, page 8>
+Package pdftex.def Info: Query_Planning.pdf , page8 used on input line 1511.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+File: Query_Planning.pdf Graphic file (type pdf)
+<use Query_Planning.pdf, page 8>
+Package pdftex.def Info: Query_Planning.pdf , page8 used on input line 1511.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+[39 <./Query_Planning.pdf>]
+
+pdfTeX warning: pdflatex.exe (file ./Query_Planning.pdf): PDF inclusion: found 
+PDF version <1.7>, but at most version <1.5> allowed
+<Query_Planning.pdf, id=630, page=9, 614.295pt x 794.97pt>
+File: Query_Planning.pdf Graphic file (type pdf)
+<use Query_Planning.pdf, page 9>
+Package pdftex.def Info: Query_Planning.pdf , page9 used on input line 1511.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+File: Query_Planning.pdf Graphic file (type pdf)
+<use Query_Planning.pdf, page 9>
+Package pdftex.def Info: Query_Planning.pdf , page9 used on input line 1511.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+File: Query_Planning.pdf Graphic file (type pdf)
+<use Query_Planning.pdf, page 9>
+Package pdftex.def Info: Query_Planning.pdf , page9 used on input line 1511.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+[40 <./Query_Planning.pdf>]
+
+pdfTeX warning: pdflatex.exe (file ./Query_Planning.pdf): PDF inclusion: found 
+PDF version <1.7>, but at most version <1.5> allowed
+<Query_Planning.pdf, id=639, page=10, 614.295pt x 794.97pt>
+File: Query_Planning.pdf Graphic file (type pdf)
+<use Query_Planning.pdf, page 10>
+Package pdftex.def Info: Query_Planning.pdf , page10 used on input line 1511.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+File: Query_Planning.pdf Graphic file (type pdf)
+<use Query_Planning.pdf, page 10>
+Package pdftex.def Info: Query_Planning.pdf , page10 used on input line 1511.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+File: Query_Planning.pdf Graphic file (type pdf)
+<use Query_Planning.pdf, page 10>
+Package pdftex.def Info: Query_Planning.pdf , page10 used on input line 1511.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+[41 <./Query_Planning.pdf>] (./CSE_480_Notes.aux)
+Package rerunfilecheck Info: File `CSE_480_Notes.out' has not changed.
+(rerunfilecheck)             Checksum: A0DCD0FA829B721B0023B062D05BF459;7681.
+runsystem(del CSE_480_Notes.pyg)...executed.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 62491 strings out of 476024
+ 1634105 string characters out of 5794017
+ 2112404 words of memory out of 5000000
+ 80759 multiletter control sequences out of 15000+600000
+ 538173 words of font info for 112 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 123i,18n,120p,1685b,1529s stack positions out of 10000i,1000n,20000p,200000b,200000s
+{c:/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{c:/texl
+ive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<c:/texlive/2022/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2022/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2022/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmmi5.pfb><c:/texlive/2022/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmmi7.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmr10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.p
+fb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/te
+xlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb><c:/texlive/2022
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/texlive/2022/texmf-dis
+t/fonts/type1/public/mathabx-type1/mathb10.pfb><c:/texlive/2022/texmf-dist/font
+s/type1/public/cm-super/sfbx1000.pfb><c:/texlive/2022/texmf-dist/fonts/type1/pu
+blic/cm-super/sfbx1200.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/cm-su
+per/sfbx1440.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfit10
+00.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm0500.pfb><c:
+/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb><c:/texlive/2
+022/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb><c:/texlive/2022/texmf-
+dist/fonts/type1/public/cm-super/sfrm1000.pfb><c:/texlive/2022/texmf-dist/fonts
+/type1/public/cm-super/sftt1000.pfb>
+Output written on CSE_480_Notes.pdf (41 pages, 3883726 bytes).
+PDF statistics:
+ 769 PDF objects out of 1000 (max. 8388607)
+ 606 compressed objects within 7 object streams
+ 146 named destinations out of 1000 (max. 500000)
+ 621 words of extra memory for PDF output out of 10000 (max. 10000000)
+

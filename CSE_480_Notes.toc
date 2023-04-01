@@ -1,0 +1,57 @@
+\babel@toc {english}{}\relax 
+\contentsline {section}{\numberline {1}File Types}{2}{section.1}%
+\contentsline {subsection}{\numberline {1.1}CSV Files}{2}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}JSON Files}{2}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}XML File}{3}{subsection.1.3}%
+\contentsline {section}{\numberline {2}Database Concepts}{5}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Introduction}{5}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}CAP Theorem for Distributed Databases}{5}{subsection.2.2}%
+\contentsline {section}{\numberline {3}Entity-Relationship Model}{6}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Introduction}{6}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Subclasses}{7}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Keys}{8}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Design Decisions}{9}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Converting E/R Diagrams to Relations}{10}{subsection.3.5}%
+\contentsline {section}{\numberline {4}Transaction Management}{11}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Introduction}{11}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Serializable Schedules}{11}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Conflict-Serializable Schedules}{11}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Locks}{12}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}Types of Locks}{13}{subsection.4.5}%
+\contentsline {subsection}{\numberline {4.6}Transactions in SQLite}{13}{subsection.4.6}%
+\contentsline {subsection}{\numberline {4.7}Rollbacks}{14}{subsection.4.7}%
+\contentsline {subsection}{\numberline {4.8}Deadlock}{14}{subsection.4.8}%
+\contentsline {subsection}{\numberline {4.9}Validation Scheduling}{15}{subsection.4.9}%
+\contentsline {subsection}{\numberline {4.10}Timestamp-Based Scheduling}{16}{subsection.4.10}%
+\contentsline {subsection}{\numberline {4.11}Comparison of Concurrency Control Methods}{17}{subsection.4.11}%
+\contentsline {section}{\numberline {5}Relational Database Model}{18}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Structure of Relational Databases}{18}{subsection.5.1}%
+\contentsline {section}{\numberline {6}SQL}{19}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Introduction to SQL}{19}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}SQL Style}{19}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}SQLite Datatypes}{19}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.4}Adding Data}{20}{subsection.6.4}%
+\contentsline {subsection}{\numberline {6.5}Updating Data}{21}{subsection.6.5}%
+\contentsline {subsection}{\numberline {6.6}Removing Data}{21}{subsection.6.6}%
+\contentsline {subsection}{\numberline {6.7}Querying}{21}{subsection.6.7}%
+\contentsline {subsection}{\numberline {6.8}SQL Operators}{22}{subsection.6.8}%
+\contentsline {subsection}{\numberline {6.9}SQL Functions}{22}{subsection.6.9}%
+\contentsline {subsection}{\numberline {6.10}SQL Aggregators}{22}{subsection.6.10}%
+\contentsline {subsection}{\numberline {6.11}Collations}{23}{subsection.6.11}%
+\contentsline {subsection}{\numberline {6.12}Case Expression}{23}{subsection.6.12}%
+\contentsline {subsection}{\numberline {6.13}Column Constraints}{23}{subsection.6.13}%
+\contentsline {subsection}{\numberline {6.14}Table Constraints}{24}{subsection.6.14}%
+\contentsline {subsection}{\numberline {6.15}Qualified Table Names}{24}{subsection.6.15}%
+\contentsline {subsection}{\numberline {6.16}SQL Union}{25}{subsection.6.16}%
+\contentsline {subsection}{\numberline {6.17}SQL Joins}{25}{subsection.6.17}%
+\contentsline {subsection}{\numberline {6.18}SQL Subqueries}{26}{subsection.6.18}%
+\contentsline {subsection}{\numberline {6.19}Group By}{27}{subsection.6.19}%
+\contentsline {subsection}{\numberline {6.20}Dates and Times}{27}{subsection.6.20}%
+\contentsline {subsection}{\numberline {6.21}Stored Procedures}{28}{subsection.6.21}%
+\contentsline {subsection}{\numberline {6.22}Triggers}{29}{subsection.6.22}%
+\contentsline {subsection}{\numberline {6.23}DDL Operations}{30}{subsection.6.23}%
+\contentsline {subsection}{\numberline {6.24}Views}{31}{subsection.6.24}%
+\contentsline {subsection}{\numberline {6.25}Indices}{31}{subsection.6.25}%
+\contentsline {subsection}{\numberline {6.26}Miscellaneous SQL}{31}{subsection.6.26}%
+\contentsline {section}{Other Notes}{31}{subsection.6.26}%
+\contentsline {subsection}{Query Planning/Indices}{31}{section*.15}%

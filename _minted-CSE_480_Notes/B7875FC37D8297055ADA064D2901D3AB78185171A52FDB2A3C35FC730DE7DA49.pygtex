@@ -1,0 +1,6 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZhy{}\PYGZhy{} Count how many tracks of each genre are present}
+\PYG{k}{SELECT}\PYG{+w}{ }\PYG{n}{GenreId}\PYG{p}{,}\PYG{+w}{ }\PYG{k}{count}\PYG{p}{()}
+\PYG{k}{FROM}\PYG{+w}{ }\PYG{n}{Track}
+\PYG{k}{GROUP}\PYG{+w}{ }\PYG{k}{BY}\PYG{+w}{ }\PYG{n}{GenreId}\PYG{p}{;}
+\end{Verbatim}

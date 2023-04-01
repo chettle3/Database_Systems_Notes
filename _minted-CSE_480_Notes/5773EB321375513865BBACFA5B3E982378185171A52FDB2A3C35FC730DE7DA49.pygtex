@@ -1,0 +1,8 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{UPDATE}\PYG{+w}{ }\PYG{k}{table}\PYG{+w}{ }\PYG{k}{SET}\PYG{+w}{ }\PYG{n}{col}\PYG{+w}{ }\PYG{o}{=}
+\PYG{k}{CASE}
+\PYG{+w}{  }\PYG{k}{WHEN}\PYG{+w}{ }\PYG{n}{cond\PYGZus{}1}\PYG{+w}{ }\PYG{k}{THEN}\PYG{+w}{ }\PYG{n}{val\PYGZus{}1}
+\PYG{+w}{  }\PYG{k}{WHEN}\PYG{+w}{ }\PYG{n}{cond\PYGZus{}2}\PYG{+w}{ }\PYG{k}{THEN}\PYG{+w}{ }\PYG{n}{val\PYGZus{}2}
+\PYG{+w}{  }\PYG{k}{ELSE}\PYG{+w}{ }\PYG{n}{val\PYGZus{}3}
+\PYG{k}{END}\PYG{p}{;}
+\end{Verbatim}

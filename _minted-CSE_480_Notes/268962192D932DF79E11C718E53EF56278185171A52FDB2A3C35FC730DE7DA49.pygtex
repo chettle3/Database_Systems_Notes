@@ -1,0 +1,6 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{CHECK}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{col\PYGZus{}in\PYGZus{}table}\PYG{+w}{ }\PYG{k}{IS}\PYG{+w}{ }\PYG{k}{NULL}\PYG{+w}{ }\PYG{k}{OR}\PYG{+w}{ }\PYG{k}{EXISTS}\PYG{+w}{ }\PYG{p}{(}
+\PYG{+w}{    }\PYG{k}{SELECT}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{+w}{ }\PYG{k}{FROM}\PYG{+w}{ }\PYG{k}{table}
+\PYG{+w}{    }\PYG{k}{WHERE}\PYG{+w}{ }\PYG{k}{table}\PYG{p}{.}\PYG{n}{id}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{col\PYGZus{}in\PYGZus{}table}\PYG{p}{.}\PYG{n}{id}
+\PYG{p}{))}
+\end{Verbatim}

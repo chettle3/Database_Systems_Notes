@@ -1,0 +1,3 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{sqlite3}\PYG{o}{.}\PYG{n}{register\PYGZus{}adapter}\PYG{p}{(}\PYG{n}{python\PYGZus{}type}\PYG{p}{,} \PYG{n}{adapter}\PYG{p}{)}
+\end{Verbatim}

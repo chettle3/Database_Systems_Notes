@@ -1,0 +1,3 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{ALTER}\PYG{+w}{ }\PYG{k}{TABLE}\PYG{+w}{ }\PYG{k}{table\PYGZus{}name}\PYG{+w}{ }\PYG{k}{ADD}\PYG{+w}{ }\PYG{k}{COLUMN}\PYG{+w}{ }\PYG{n}{col\PYGZus{}name}\PYG{+w}{ }\PYG{k}{type}\PYG{p}{;}
+\end{Verbatim}

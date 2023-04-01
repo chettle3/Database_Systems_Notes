@@ -1,0 +1,16 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n+nt}{\PYGZlt{}xsd:schema} \PYG{n+na}{xmlns:xsd=}\PYG{l+s}{\PYGZdq{}schema\PYGZus{}link\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+\PYG{n+nt}{\PYGZlt{}xsd:annotation\PYGZgt{}}
+  \PYG{n+nt}{\PYGZlt{}xsd:documentation} \PYG{n+na}{xml:lang=}\PYG{l+s}{\PYGZdq{}en\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+    Description Here
+  \PYG{n+nt}{\PYGZlt{}/xsd:documentation\PYGZgt{}}
+\PYG{n+nt}{\PYGZlt{}/xsd:annotation\PYGZgt{}}
+\PYG{n+nt}{\PYGZlt{}xsd:element} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}name1\PYGZdq{}} \PYG{n+na}{type=}\PYG{l+s}{\PYGZdq{}myType1\PYGZdq{}}\PYG{n+nt}{/\PYGZgt{}}
+\PYG{n+nt}{\PYGZlt{}xsd:complexType} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}myType1\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+  \PYG{n+nt}{\PYGZlt{}xsd:sequence\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}xsd:element} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}name2\PYGZdq{}} \PYG{n+na}{type=}\PYG{l+s}{\PYGZdq{}xsd:type1\PYGZdq{}}\PYG{n+nt}{/\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}xsd:element} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}name3\PYGZdq{}} \PYG{n+na}{type=}\PYG{l+s}{\PYGZdq{}xsd:type2\PYGZdq{}}\PYG{n+nt}{/\PYGZgt{}}
+  \PYG{n+nt}{\PYGZlt{}/xsd:sequence\PYGZgt{}}
+\PYG{n+nt}{\PYGZlt{}/xsd:complexType\PYGZgt{}}
+\PYG{n+nt}{\PYGZlt{}/xsd:schema\PYGZgt{}}
+\end{Verbatim}

@@ -1,0 +1,1021 @@
+\documentclass[a4paper]{article}
+\usepackage{commands}
+\lhead{CSE 480 Notes}
+\setcounter{tocdepth}{2}
+
+\begin{document}
+\tableofcontents
+
+\section{File Types}
+\subsection{CSV Files}
+\begin{itemize}
+    \item CSV stands for comma separated values
+    \item It is a flat file format (no nesting) consisting of \emph{records} separated by newlines, with each \emph{field} separated by commas
+    \begin{arrows}
+        \item Fields can be enclosed in double quotes, but need not be unless a comma, double quote, or newline occurs
+        \item Double quotes are escaped with another double quote
+        \item Nested structure must be represented using text or strings, requiring additional parsing
+    \end{arrows}
+    \item The first line of the file may be a header line, providing names for each field
+\end{itemize}
+
+\subsection{JSON Files}
+\begin{itemize}
+    \item JSON stands for JavaScript Object Notation
+    \begin{arrows}
+        \item While originally derived from JavaScript, it is now a language-independent data format
+    \end{arrows}
+    \item Data is contained in a semi-structured hierarchical structure under one root JSON object
+    \item The types in JSON are:
+    \begin{itemize}
+        \item \iljson{string}, a sequence of zero or more characters \iljson{"my_string"}
+        \begin{arrows}
+            \item Characters are escaped with \iljson{\}, such as \iljson{"}, \iljson{\}, and optionally \iljson{/}
+            \item Escape sequences include backspace \iljson{\b}, formfeed \iljson{\f}, newline \iljson{\n}, carriage return \iljson{\r}, tab \iljson{\t}, and unicode \iljson{\u\#\#\#\#} where \iljson{\#\#\#\#} is a four digit hexadecimal number
+        \end{arrows}
+        \item \iljson{number}, a signed decimal number optionally with exponential e/E notation
+        \begin{arrows}
+            \item Leading zeros not allowed, except one is required before a decimal if integer part is 0
+            \item Leading plus not allowed except in the exponential part
+        \end{arrows}
+        \item \iljson{object}, an unordered collection of name/value pairs \iljson{\{"field1": value1, "field2": value2\}}
+        \item \iljson{array}, an ordered list of zero or more values of any types \iljson{[value1, value2]}
+        \item \iljson{true}, \iljson{false}
+        \item \iljson{null}
+    \end{itemize}
+    \item JSON Schema uses the following format:
+    \begin{json}
+{
+    "title": "my_title",
+    "description": "my_description",
+    "type": "object"
+    "properties": {
+        "field1": {
+            "description": "description1",
+            "type": "type1"
+        },
+        "field2": {
+            "description": "description2",
+            "type": "type2"
+        }
+    },
+    "required": ["field1", "field2"]
+}
+\end{json}
+\item The types in JSON Schema are:
+\begin{itemize}
+    \item \iljson{"string"}, which keywords including \iljson{"minLength"}, \iljson{"maxLength"}, \iljson{"pattern"} (for regex), and \iljson{"format"} (for specifying specific types of strings, such as \iljson{"datetime"})
+    \item \iljson{"number"} and \iljson{"integer"}, with keywords including \iljson{"minimum"}, \iljson{"maximum"}, \iljson{"exclusiveMinimum"}, and \iljson{"exclusiveMaximum"}
+    \item \iljson{"object"}, where information about its contents are given by a nested schema under keyword \iljson{"properties"}
+    \item \iljson{"array"}, where the schema each item must match it provided with \iljson{"items"}, and if each value must satisfy a different schema, the list of schemas is given under \iljson{"prefixItems"}
+    \item \iljson{"boolean"}
+    \item \iljson{"null"}, which means the data must be null
+\end{itemize}
+\end{itemize}
+
+\subsection{XML File}
+\begin{itemize}
+    \item XML stands for eXtensible Markup Language
+    \begin{arrows}
+        \item HTML is a subset of XML
+        \item XML is often used in web services, inter-database communication, text document formatting, and configuration files
+    \end{arrows}
+    \item XML also stores data in a semi-structured hierarchical structure under a single root element
+    \item Each element consists of a start tag \ilxml{<tag\_name>}, optional content (without quotes), and an end tag \ilxml{</tag\_name>}, or an empty tag \ilxml{<tag\_name/>} can be used
+    \item Each start or empty tag can also contain columns \ilxml{<tag\_name attr\_name="value">}
+    \begin{arrows}
+        \item Only one value may be specified, so if multiple are needed, oftentimes space-delimited strings are used
+    \end{arrows}
+    \item An XML schema uses the following format:
+    \begin{xml}
+<xsd:schema xmlns:xsd="schema_link">
+<xsd:annotation>
+  <xsd:documentation xml:lang="en">
+    Description Here
+  </xsd:documentation>
+</xsd:annotation>
+<xsd:element name="name1" type="myType1"/>
+<xsd:complexType name="myType1">
+  <xsd:sequence>
+    <xsd:element name="name2" type="xsd:type1"/>
+    <xsd:element name="name3" type="xsd:type2"/>
+  </xsd:sequence>
+</xsd:complexType>
+</xsd:schema>
+\end{xml}
+    \item The built-in simple types are \ilxml{"xsd:string"}, \ilxml{"xsd:decimal"}, \ilxml{"xsd:integer"}, \ilxml{"xsd:boolean"}, \ilxml{"xsd:date"},
+    \ilxml{"xsd:time"}, \ilxml{"xsd:dateTime"}, and \ilxml{"xsd:duration"}
+    \item Other attributes include \ilxml{default}, \ilxml{use} (set equal to \ilxml{"required"} to make required)
+    \item More detailed restrictions can be placed by defining a simple type, such as:
+\begin{xml}
+<xsd:simpleType name="myType">
+  <xsd:restriction base="xsd:integer">
+    <xsd:minInclusive value="0"/>
+    <xsd:maxInclusive value="120"/>
+  </xsd:restriction>
+</xsd:simpleType>
+\end{xml}
+\end{itemize}
+
+\section{Database Concepts}
+\subsection{Introduction}
+\begin{itemize}
+    \item A \emph{database instance} is the actual data in a database in a moment of time, whereas a \emph{database schema} is a specification for the type of data that may be in the database
+    \item \emph{Well-formed} means the data conforms to the file format, whereas \emph{valid} means the data conforms to the schema (and is well-formed)
+\end{itemize}
+
+\subsection{CAP Theorem for Distributed Databases}
+\begin{itemize}
+    \item A \emph{distributed database} stores information on many nodes or virtual machines
+    \item The \emph{CAP Theorem} (or \emph{Brewer's Theorem}) states that a distributed database can only achieve two of the following three guarantees:
+    \begin{itemize}
+        \item[C:] \emph{Consistency}. The same information is seen by all clients regardless of the node accessed; all successful writes should be reflected across all nodes
+        \begin{arrows}
+            \item This is a different consistency then in the ACID properties
+            \item A write can only be deemed successful after the information has been successfully propagated
+        \end{arrows}
+        \item[A:] \emph{Availability}. The database should be kept available and responsive as often as possible; any working nodes must return a valid response for any request
+        \item[P:] \emph{Partition Tolerance}. The cluster should continue to work in spite of any partitions; if one part of the database is unavailable, the other parts should remain unaffected 
+        \begin{arrows}
+            \item A \emph{partition} is a communications break within a distributed database; either a lost or delayed connection between two nodes
+        \end{arrows}
+    \end{itemize}
+    \item This theorem yields the following cases:
+    \begin{itemize}
+        \item[CA:] 
+        \item[CP:]
+        \item[AP:]
+    \end{itemize}
+\end{itemize}
+
+\section{Transaction Management}
+\subsection{Introduction}
+\begin{itemize}
+    \item A \emph{transaction} is a unit of program execution that accesses and possibly updates various data items
+    \item The principles of transactions for relational databases are summarized with then acronym \emph{ACID} (called the \emph{ACID Properties)}:
+    \begin{itemize}
+        \item[A:] \emph{Atomicity}. Despite consisting of possibly many statements, the collection must appear to the user as an indivisible unit: it either executes in entirety or not at all (if failure occurs for any reason, any changes must be undone)
+        \item[C:] \emph{Consistency}. The database must remain in a consistent after an isolated transaction is run (data still is valid)
+        \item[I:] \emph{Isolation}. Since transactions consist of many statements, it must be ensured that each transaction is not affected by other concurrent transactions
+        \item[D:] \emph{Durability}. Successful transactions must remain permanent even if the system later crashes.
+    \end{itemize}
+    \item The primary way to make a database system more efficient is to allow for concurrency, but the scheduling of transactions cannot violate the ACID test; it must appear to the end-user that each query runs independently
+    \begin{arrows}
+        \item Note that no restrictions are placed on the order in which transactions are executed; if an order is required, they should be packaged in the same transaction
+        \item All transactions must conform to the ``Correctness Principle'': if a transaction executes independently without system errors, and the database begins in a consistent state, then it must end in a consistent state
+    \end{arrows}
+\end{itemize}
+\subsection{Serializable Schedules}
+\begin{itemize}
+    \item A schedule is a \emph{serial schedule} if the actions consist of all the actions from one transaction, then all the actions of another transaction, and so on
+    \item A schedule is a \emph{serializable schedule} if there exists a serial schedule producing the same output
+    \begin{arrows}
+    \item Serializable schedules may have actions being interweaved between transactions, resulting in concurrency, but it appears to the end user as if each runs in isolation
+    \item A non-serializable schedule violates ACID properties, so may not be used by the database scheduler
+    \end{arrows}
+    \item When determining whether a schedule is serializable, only the details of what element is being written to/read from is used, not the actual contents of the read/write
+    \begin{arrows}
+    \item This means arithmetic coincidence cannot be utilized; for example, properties such as commutativity and associativity cannot be utilized
+    \item The reason for this is understanding the effect of a query on the database is a hard problem, related to the Halting Problem
+    \end{arrows}
+\end{itemize}
+
+\subsection{Conflict-Serializable Schedules}
+\begin{itemize}
+    \item A \emph{conflict} is a pair of consecutive actions in a schedule such that the output may change if their order is interchanged
+    \begin{arrows}
+        \item To identify conflicts (again assuming no arithmetic coincidence), we notate the operations as $r_i(X)$ and $w_i(X)$ for read and write, where $i$ is the transaction and $X$ is the database element
+        \item Note that a write represents a \emph{blind write}, where the element is written to without being read (i.e., the element is overwritten)
+    \end{arrows}
+    \item Consider two actions $a_i(X)$ and $b_j(Y)$. We have:
+    \begin{enumerate}
+        \item There is a conflict if $i=j$, since we never allow actions within the same transaction to be re-ordered
+        \begin{arrows}
+        \item Although a transaction is represented by $r_i$ and $w_i$, other database-independent actions are also being performed; for example, the information of a read can be processed in some way and then used in a write
+        \item Thus, it is not feasible to consider re-ordering transactions under this framework
+        \end{arrows}
+        \item Otherwise, if $X\neq Y$, there is no conflict, since different database elements are being utilized
+        \item Finally, if $X=Y$, then there is a conflict iff either $a$ or $b$ is a write action
+    \end{enumerate}
+    \item Two schedules are \emph{conflict-equivalent} if one can be transformed to the other via non-conflicting swaps of adjacent actions
+    \item A schedule is \emph{conflict-serializable} if it is conflict equivalent to a serializable schedule
+    \begin{arrows}
+    \item Every conflict-serializable schedule is serializable
+    \item Not every serializable schedule is conflict-serializable, such as $r_1(X); w_2(x); w_1(X); w_3(X)$. This is not conflict serializable since $w_2(X)$ and $w_1(X)$ conflict, but it is serializable since in any order, the result is over-written by $w_3(X)$
+    \item In practice, it is difficult to determine whether a schedule is serializable, but it is much easier to determine whether it is conflict-serializable
+    \end{arrows}
+    \item Transaction $i$ ($T_i$) \emph{takes precedence} over transaction $j$ ($T_j$) in schedule $S$ if there are actions $A_1\in T_1$ and $A_2\in T_2$ such that $A_1$ precedes $A_2$, $A_1$ and $A_2$ involve the same data element, and at least one is a write
+    \begin{itemize}
+        \item Equivalently, $T_i$ has precedence over $T_j$ if there exists conflicting actions $A_1\in T_i$ and $A_2\in T_j$ such that $A_1$ precedes $A_2$
+        \item This is denoted $T_1<T_2$
+    \end{itemize}
+    \item In a conflict-serializable schedule, $T_i<T_j$ must imply that $T_i$ precedes $T_j$ in the corresponding serial schedule
+    \begin{arrows}
+    \item Thus, by building a precedence graph (a directed graph with edges from $T_i$ to $T_j$ for each $T_i<T_j$), a schedule is conflict-serializable iff it is acyclic
+    \item A conflict-equivalent serial schedule can then be found via topological sorting
+    \end{arrows}
+\end{itemize}
+
+\subsection{Locks}
+\begin{itemize}
+    \item \emph{Locks} provide a mechanism for producing conflict-serializable schedules while still allowing concurrency; transactions request and release locks on different elements of the database
+    \item Locks control transactions as follows:
+    \begin{arrows}
+    \item Consistency of Transactions I: A transaction may only read or write to an element if it was previously granted a lock and has not released the lock yet
+    \item Consistency of Transactions II: Transactions must eventually release all locks
+    \item Legality of Schedules: No two transactions can concurrently have a lock on the same element
+    \end{arrows}
+    \item Locking an element is denoted $l_i(X)$, and releasing a lock is denoted $u_i(X)$
+    \item Simply having locks is not enough to ensure conflict-serializable schedules, since each action could simply lock and then immediately unlock the element
+    \item \emph{Two-Phase Locking (2PL)} guarantees that a legal schedule of consistent transactions is conflict-serializable by forcing all lock actions to precede all unlock actions
+    \begin{arrows}
+        \item The \emph{expanding phase} consists of the portion of the transaction where locks may be acquired, and the \emph{shrinking phase} consists of the portion where locks may be released
+        \item This ensures that no other transactions may interfere with a given element until the transaction is completely finished with it
+    \end{arrows}
+    \item To produce the schedule, each transaction can greedily request resources/locks, and the scheduler will either grant these are deny them
+\end{itemize}
+
+
+\section{Relational Database Model}
+\subsection{Structure of Relational Databases}
+\begin{itemize}
+    \item A relational database stores data in tables, called \emph{relations}
+    \begin{arrows}
+        \item The rows of a relation are called \emph{tuples}
+        \item The columns of a relation are called \emph{attributes}
+        \item The relation may be given a name
+    \end{arrows}
+    \item A relation may have a \emph{relation schema}, which consists of a name for the relation and a list of its attributes, optionally with their corresponding \emph{domains}, or sets of possible values
+    \begin{arrows}
+        \item The database is therefore the collection of all relations, whereas the database schema is the collection of all relation schemas
+    \end{arrows}
+\end{itemize}
+
+\section{SQL}
+\subsection{Introduction to SQL}
+\begin{itemize}
+    \item Databases typically use restricted languages such as SQL
+    \begin{arrows}
+        \item This is easier to optimize and faster to write
+        \item Often they are not Turing-complete, although technically SQL is
+    \end{arrows}
+    \item SQL offers both querying and a component for data-definition (describing database schemas)
+    \item SQLite is a database engine which can be used in Python
+    \item SQL statements fall into two categories:
+    \begin{arrows}
+        \item \emph{Data Definition Language (DDL)}, which build/modify the structure of the tables/objects, including \ilsql{CREATE}, \ilsql{ALTER}, and \ilsql{DROP}
+        \item \emph{Data Manipulation Language (DML)}, including adding/removing/querying data
+        \item DML is often summarized by the acronym \emph{CRUD}: create, read, update, and delete
+    \end{arrows}
+\end{itemize}
+
+\subsection{SQL Style}
+\begin{itemize}
+    \item Semicolons should terminate each statement
+    \item SQL keywords should be in all capitals
+    \item Whitespace is only relevant in strings, although good practices are shown in the examples below
+\end{itemize}
+
+\subsection{SQLite Datatypes}
+\begin{itemize}
+    \item SQLite offers the following datatypes:
+    \begin{itemize}
+        \item \ilsql{INTEGER}, a signed integer up to 8 bytes long
+        \item \ilsql{REAL}, a signed float using decimal or exponential notation (using capital E)
+        \item \ilsql{TEXT}, a string of any length delimited by single quotes
+        \begin{arrows}
+            \item Single quotes are escaped by including two of them
+            \item Other databases limit the length of strings, but SQLite does not
+        \end{arrows}
+        \item \ilsql{BLOB}, used to hold arbitrary binary data, such as images or videos
+        \begin{arrows}
+            \item This has no storage limits, although storing file paths is often easier
+        \end{arrows}
+    \end{itemize}
+    \item Any datatype may also be \ilsql{NULL}
+    \begin{arrows}
+        \item It is used to represent an absence of information or an inapplicable value
+        \item It should not be used to represent empty strings, false, or 0
+    \end{arrows}
+    \item Dates and times can be represented as \ilsql{TEXT} (ISO8601 strings, \texttt{"YYYY-MM-DD HH:MM:SS.SSS"}), \ilsql{REAL} (Julian day numbers), or \ilsql{INTEGER} (Unix time)
+    \item Other types not in SQLite include Memo (65536 characters), Currency (15 whole digits and 4 decimal places), Yes/No (Microsoft Access), and Enum
+    \item One way of working with other types in SQLite is to use adapters/converters
+    \begin{arrows}
+        \item An adapter is a function for converting a Python object into one of SQL's supported types, and is registered with \ilpy{sqlite3.register_adapter(python_type, adapter)}
+        \item A converter is a function converting a \ilpy{bytes} object back into a desired Python object, and is registered with \ilpy{sqlite3.register_converter(sql_name, converter)}
+        \item Note that these are registered with the module, not the connection
+        \item To instruct SQLite to convert custom types during insertion, pass \ilpy{detect_types=sqlite3.PARSE_DECLTYPES} when forming the connection
+        \item To apply converter upon selection, use \ilsql{SELECT col AS "col [type]" FROM table;} and specify \ilpy{detect_types=sqlite3.PARSE_COLNAMES} when forming the connection
+        \item Both options can be specified by using \ilpy{detect_types=sqlite3.PARSE_DECLTYPES | sqlite3.PARSE_COLNAMES}
+    \end{arrows}
+\begin{python}
+def adapt_color(color):
+    return f"{color.r};{color.g};{color.b}"
+def convert_color(bytestring):
+    as_str = bytestring.decode("ascii")
+    r, g, b = [float(x) for x in as_str.split(';')]
+    return Color(r,g,b)
+sqlite3.register_adapter(Color, adapt_color)
+sqlite3.register_converter("COLOR", convert_color)
+c = Color(24, 69, 59)
+conn = sqlite3.connect(":memory:", detect_types = sqlite3.PARSE_DECLTYPES | sqlite3.PARSE_COLNAMES)
+conn.execute("CREATE TABLE my_colors (col COLOR);")
+conn.execute("INSERT INTO my_colors VALUES (?);", c)
+res = conn.execute('SELECT col AS "col [COLOR]" FROM my_colors;')
+row = next(res)
+\end{python}
+\end{itemize}
+
+\subsection{Adding Data}
+\begin{itemize}
+    \item A relation is created via the \ilsql{CREATE TABLE} statement:
+\begin{sql}
+CREATE TABLE table_name (
+    column1 datatype,
+    column2 datatype,
+    column3 datatype
+);
+\end{sql}
+    \item The datatypes are optional, and are not enforced by SQLite
+    \item A relation can be created from another table/query by:
+    \begin{sql}
+CREATE TABLE new_table AS
+SELECT column1, column2
+FROM old_table
+\end{sql}
+\item Tuples are added to the table via the \ilsql{INSERT INTO} statement:
+    \begin{sql}
+INSERT INTO table_name (column1, column2, column3)
+VALUES (value1a, value2a, value3a),
+       (value1b, value2b, value3b);
+\end{sql}
+    \begin{arrows}
+        \item The columns need not be specified if values are added for all columns in order
+        \item Unspecified attributes are given value \ilsql{NULL}
+        \item A \ilsql{SELECT} query can also be used to fill the rows needed for \ilsql{INSERT INTO}:
+    \end{arrows}
+\begin{sql}
+INSERT INTO valued_customers
+SELECT * FROM customers
+ORDER BY money_spent DESC
+LIMIT 20;
+\end{sql}
+\end{itemize}
+
+\subsection{Updating Data}
+\begin{itemize}
+    \item The \ilsql{UPDATE} command is used to update one or more records, with syntax \ilsql{UPDATE table SET col = value WHERE condition}
+\begin{sql}
+UPDATE guestbook 
+SET name = 'Mr. ' || name
+WHERE gender = 'Male';
+\end{sql}
+\end{itemize}
+
+\subsection{Removing Data}
+\begin{itemize}
+    \item \ilsql{DELETE FROM} permanently removes records from a table
+    \item \ilsql{DELETE FROM table} removes all rows in \ilsql{table}
+    \item \ilsql{DELETE FROM table WHERE condition} removes rows meeting a condition
+\end{itemize}
+
+\subsection{Querying}
+\begin{itemize}
+    \item Querying a relation is performed with the \ilsql{SELECT} statement:
+    \begin{sql}
+SELECT column1, column2, column3
+FROM table_name;
+\end{sql}
+    \begin{arrows}
+        \item All attributes may be selected with the wildcard character \ilsql{*}
+        \item Other queries may order or filter by columns; these need not be selected. \ilsql{SELECT} is essentially just controlling the final output to the user
+    \end{arrows}
+\item To order the rows by an column (or a set of columns), use the \ilsql{ORDER BY} statement:
+    \begin{sql}
+SELECT column1, column2, column3
+FROM table_name
+ORDER BY column1, column2 ASC|DESC;
+\end{sql}
+\begin{arrows}
+    \item The order is ascending by default, although \ilsql{DESC} can be specified to make it descending
+\end{arrows}
+\item Rows can be filtered with the \ilsql{WHERE} clause:
+    \begin{sql}
+SELECT column1, column2
+FROM table_name
+WHERE condition;\end{sql}
+\item \ilsql{LIMIT n} can be used at the end of the query to only return at most \ilsql{n} rows
+\item A \ilsql{SELECT} statement may select arbitrary expressions, and need not have \ilsql{FROM}, such as \ilsql{SELECT 1+2+3+4;}
+\item \ilsql{DISTINCT} can be used to select distinct/unique values in a column, with syntax \ilsql{SELECT DISTINCT col1}
+    \begin{arrows}
+        \item Since \ilsql{DISTINCT} is an operator returning distinct values, it can also be used inside the functions described here, such as \ilsql{count(DISTINCT col1)}
+        \item \ilsql{DISTINCT} operates on a single column; multi-column \ilsql{DISTINCT} is not supported
+    \end{arrows}
+\item Altogether, a \ilsql{SELECT} statement may have the following parts, in order: \ilsql{SELECT}, \ilsql{FROM}, \ilsql{WHERE}, \ilsql{GROUP BY}, \ilsql{HAVING}, \ilsql{ORDER BY}, \ilsql{LIMIT}
+\end{itemize}
+
+\subsection{SQL Operators}
+\begin{itemize}
+    \item Arithmetic operators are \ilsql{+}, \ilsql{-}, \ilsql{*}, \ilsql{/}, and \ilsql|%|
+    \item String concatenation is \ilsql{||}
+    \item Comparison operators are \ilsql{=}, \ilsql{!=} or \ilsql{<>}, \ilsql{<}, \ilsql{>}, \ilsql{>=}, and \ilsql{<=}
+    \begin{arrows}
+        \item All comparisons with \ilsql{NULL} yield \ilsql{UNKNOWN}, rather than \ilsql{TRUE} or \ilsql{FALSE}
+    \end{arrows}
+    \item The \ilsql{BETWEEN} operator checks whether the column is between two values inclusive, such as \ilsql{BETWEEN lower AND upper}
+    \item \ilsql{NOT} can be used to negate a condition, such as \ilsql{NOT BETWEEN}
+    \item \ilsql{IS} and \ilsql{IS NOT} is used to compare the attribute with \ilsql{NULL}
+    \begin{arrows}
+        \item This is the only time \ilsql{IS} is used, since normal comparisons always yield \ilsql{UNKNOWN} with \ilsql{NULL}
+    \end{arrows}
+    \item \ilsql{AND} and \ilsql{OR} are used to combine conditions
+    \item \ilsql{LIKE} is used to select strings matching a pattern, such as \ilsql|LIKE 'prefix%'|
+    \begin{arrows}
+        \item \ilsql|%| is a wildcard matching 0 or more characters
+        \item \ilsql{_} is a wildcard matching a single character
+        \item An escape character can be specified using \ilsql{LIKE 'ab\%cd\\' escape '\'}, so that this would match the string \ilsql|'ab%cd\'|
+    \end{arrows}
+    \item \ilsql{IN} is used to select values that are in a list, such as \ilsql{IN (1,3,5)} (or it can be used with subqueries)
+\end{itemize}
+
+\subsection{SQL Functions}
+\begin{itemize}
+    \item \ilsql{abs(x)} returns the absolute value of \ilsql{x}
+    \item \ilsql{lower(x)} and \ilsql{upper(x)} return copies of a string with the case changed
+    \item \ilsql{random(x)} returns a random, signed 64 bit integer
+    \item \ilsql{typeof(x)} returns \ilsql{"null"}, \ilsql{"integer"}, \ilsql{"real"}, \ilsql{"text"}, or \ilsql{"blob"}
+    \item \ilsql{round(x,y)} returns \ilsql{x} rounded to \ilsql{y} decimal places
+    \item \ilsql{trim(x,y)} returns a copy of string \ilsql{x} with any copies of character \ilsql{y} removed from either end
+    \item Users can define functions in Python and pass them to SQLite using \ilsql{conn.create_function(name, num_params, func)}
+    \begin{arrows}
+        \item The function must return precisely one value, which must be a SQLite-supported datatype
+    \end{arrows}
+\end{itemize}
+
+\subsection{SQL Aggregators}
+\begin{itemize}
+    \item Aggregators take 0 or more values and return some form of summary of those values
+    \item \ilsql{min} and \ilsql{max} return the minimum/maximum value of a column
+    \begin{arrows}
+        \item When used in a select statement, the query essentially returns a single row whose value is minimal or maximal in the specified column, so that \ilsql{SELECT col1, min(col2)} would return a single row with the minimum of \ilsql{col2} and some corresponding value in \ilsql{col1}
+    \end{arrows}
+    \item \ilsql{count(col1)} returns the number of non-null values in \ilsql{col1}
+    \begin{arrows}
+        \item \ilsql{count(*)} returns the number of rows in the table, including rows all of whose values are \ilsql{NULL}
+    \end{arrows}
+    \item \ilsql{sum} returns the sum of the column, and \ilsql{NULL} if all values are \ilsql{NULL}
+    \item \ilsql{total} returns the sum of the column, where \ilsql{NULL} is treated as 0.0 (note that all outputs are floats)
+    \item \ilsql{avg} returns the average of a column
+    \item Users can define aggregators in Python and pass them to SQLite using \ilpy{conn.create_aggregate(name, num_params, agg)} where \ilpy{agg} is a class with three methods:
+    \begin{arrows}
+        \item \ilpy{__init__(self)}, used to initialize the class
+        \item \ilpy{step(self, value)}, a method that is called for each value being aggregated
+        \item \ilpy{finalize(self)}, a method that returns the value for the aggregate
+    \end{arrows}
+\end{itemize}
+
+\subsection{Collations}
+\begin{itemize}
+    \item A collation defines how data is sorted and how equality is checked
+    \item SQLite has three built-in collations:
+    \begin{arrows}
+        \item \ilsql{BINARY}, the default which compares the binary representation of the two values
+        \item \ilsql{NOCASE}, where uppercase letters are treated like lowercase
+        \item \ilsql{RTRIM}, where trailing whitespace is ignored
+    \end{arrows}
+    \item Collations can be specified in two ways:
+    \begin{arrows}
+        \item When creating the table, with \ilsql{CREATE TABLE name (col type COLLATE collation);}
+        \item When selecting, with \ilsql{SELECT * FROM table ORDER BY col COLLATE collation;}
+    \end{arrows}
+    \item Users can define collations in Python and pass them to SQLite using \ilpy{conn.create_collation(name, collation)} where \ilpy{collation} is a callable taking two values and returning:
+    \begin{arrows}
+        \item \ilpy{0} if the values are equal
+        \item \ilpy{-1} if the first value is smaller than the second value
+        \item \ilpy{1} if the first value is greater than the second value
+    \end{arrows}
+    \item A collation can be removed with \ilpy{conn.create_collation(name, None)}
+\end{itemize}
+
+\subsection{Case Expression}
+\begin{itemize}
+    \item A case expression acts like a switch statement, such as in:
+\begin{sql}
+UPDATE table SET col =
+CASE 
+  WHEN cond_1 THEN val_1
+  WHEN cond_2 THEN val_2
+  ELSE val_3
+END;
+\end{sql}
+    \item A case expression can also use the value of some expression instead of conditions:
+\begin{sql}
+UPDATE table SET col =
+CASE expr
+  WHEN expr_val_1 THEN val_1
+  WHEN expr_val_2 THEN val_2
+  ELSE val_3
+END;
+\end{sql}
+\end{itemize}
+
+\subsection{Column Constraints}
+\begin{itemize}
+    \item \ilsql{UNIQUE} is used to specify that the column must contain unique values, such as:
+\begin{sql}
+CREATE TABLE students (
+    msu_id TEXT UNIQUE,
+    pid INTEGER UNIQUE,
+    first_name TEXT)
+);
+\end{sql}
+    \begin{arrows}
+        \item Duplicate \ilsql{NULL} values are allowed
+    \end{arrows}
+    \item \ilsql{NOT NULL} can be specified to prevent \ilsql{NULL} values
+    \item Each table can have at most one \ilsql{PRIMARY KEY}, which is implicitly \ilsql{NOT NULL} and \ilsql{UNIQUE}
+    \begin{arrows}
+        \item It is used to specify to make joins easier and specifies how the database should internally organize itself (for optimized queries)
+        \item A composite primary key can be specified with \ilsql{PRIMARY KEY (column1, column2)}
+        \item \ilsql{INTEGER PRIMARY KEY} will automatically autofill with a unique value if one isn't provided
+        \item \ilsql{INTEGER PRIMARY KEY AUTOINCREMENT} causes the keys to be picked in order with a step size of 1 (although this is expensive and discouraged)
+    \end{arrows}
+\end{itemize}
+
+\subsection{Table Constraints}
+\begin{itemize}
+    \item At the end of the list of columns in a \ilsql{CREATE TABLE} statement, one can go on to list table constraints
+    \item \ilsql{FOREIGN KEY} is used to indicate that a column references the primary key of another table, with syntax \ilsql{FOREIGN KEY (col_in_table) REFERENCES table(id)}
+    \begin{arrows}
+        \item The foreign key may be \ilsql{NULL}
+        \item Foreign key checking is expensive, so it is only performed if turned on via \ilsql{PRAGMA foreign_keys = ON;}
+        \item If multiple statements are part of the same transaction, it is possible that the check only happens at the end of the transaction
+    \end{arrows}
+    \item Any arbitrary constraint can be made with \ilsql{CHECK(condition)}, which is enforced upon insertion or updating
+    \item \ilsql{FOREIGN KEY} can also be expressed with \ilsql{CHECK} as:
+\begin{sql}
+CHECK (col_in_table IS NULL OR EXISTS (
+    SELECT 1 FROM table
+    WHERE table.id = col_in_table.id
+))
+\end{sql}
+\end{itemize}
+
+\subsection{Qualified Table Names}
+\begin{itemize}
+    \item Columns can be prefaced by their relation, which in turn can be prefaced by the database name, using the syntax \ilsql{database.relation.column}
+    \item The \ilsql{*} symbol can be qualified as well
+    \item The \ilsql{AS} keyword allows for column aliases with the syntax \ilsql{SELECT database.column FROM table AS alias}
+    \item Implicit aliases are not recommended but possible, with syntax \ilsql{SELECT database.column FROM table alias}
+    \item Qualified table names are necessary when referring to two columns in different tables of the same name (for example, in a subquery, join, or union)
+    \item Aliases are necessary when, for example, doing a self join
+\end{itemize}
+
+\subsection{SQL Union}
+\begin{itemize}
+    \item Rows/values from two separate queries can be combined using \ilsql{UNION}
+\begin{sql}
+SELECT Student.Name FROM Student
+UNION
+SELECT Staff.Name FROM Staff;
+\end{sql}
+    \item The columns need not have the same name; the only requirement is that the datatypes are the same
+    \item \ilsql{UNION} removes duplicates on the results; to avoid this, use \ilsql{UNION ALL}
+\end{itemize}
+
+\subsection{SQL Joins}
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}{0.24\linewidth}
+\centering
+\scalebox{0.5}{
+\begin{tikzpicture}[thick,
+    set/.style = { circle, minimum size = 3cm}]
+\node[set,label={135:\Huge $A$}] (A) at (0,0) {};
+\node[set,label={45:\Huge $B$}] (B) at (0:2) {};
+\begin{scope}
+    \clip (0,0) circle(1.5cm);
+    \clip (2,0) circle(1.5cm);
+    \fill[codepurple](0,0) circle(1.5cm);
+\end{scope}
+\draw (0,0) circle(1.5cm);
+\draw (2,0) circle(1.5cm);
+\end{tikzpicture}}
+\caption*{Inner Join}
+\end{subfigure}%
+\begin{subfigure}{0.24\linewidth}
+\centering
+\scalebox{0.5}{
+\begin{tikzpicture}[thick,
+    set/.style = { circle, minimum size = 3cm}]
+\node[set,fill=codepurple,label={135:\Huge $A$}] (A) at (0,0) {};
+\node[set,fill=codepurple,label={45:\Huge $B$}] (B) at (0:2) {};
+\draw (0,0) circle(1.5cm);
+\draw (2,0) circle(1.5cm);
+\end{tikzpicture}}
+\caption*{Full Outer Join}
+\end{subfigure}%
+\begin{subfigure}{0.24\linewidth}
+\centering
+\scalebox{0.5}{
+\begin{tikzpicture}[thick,
+    set/.style = { circle, minimum size = 3cm}]
+\node[set,fill=white,label={45:\Huge $B$}] (B) at (0:2) {};
+\node[set,fill=codepurple,label={135:\Huge $A$}] (A) at (0,0) {};
+\draw (0,0) circle(1.5cm);
+\draw (2,0) circle(1.5cm);
+\end{tikzpicture}}
+\caption*{Left Outer Join}
+\end{subfigure}%
+\begin{subfigure}{0.24\linewidth}
+\centering
+\scalebox{0.5}{
+\begin{tikzpicture}[thick,
+    set/.style = { circle, minimum size = 3cm}]
+\node[set,fill=white,label={135:\Huge $A$}] (A) at (0,0) {};
+\node[set,fill=codepurple,label={45:\Huge $B$}] (B) at (0:2) {};
+\draw (0,0) circle(1.5cm);
+\draw (2,0) circle(1.5cm);
+\end{tikzpicture}}
+\caption*{Right Outer Join}
+\end{subfigure}\\
+\begin{subfigure}{0.24\linewidth}
+\quad
+\end{subfigure}%
+\begin{subfigure}{0.24\linewidth}
+\centering
+\scalebox{0.5}{
+\begin{tikzpicture}[thick,
+    set/.style = { circle, minimum size = 3cm}]
+\node[set,fill=codepurple,label={135:\Huge $A$}] (A) at (0,0) {};
+\node[set,fill=codepurple,label={45:\Huge $B$}] (B) at (0:2) {};
+\begin{scope}
+    \clip (0,0) circle(1.5cm);
+    \clip (2,0) circle(1.5cm);
+    \fill[white](0,0) circle(1.5cm);
+\end{scope}
+\draw (0,0) circle(1.5cm);
+\draw (2,0) circle(1.5cm);
+\end{tikzpicture}}
+\caption*{(Without Matches)}
+\end{subfigure}%
+\begin{subfigure}{0.24\linewidth}
+\centering
+\scalebox{0.5}{
+\begin{tikzpicture}[thick,
+    set/.style = { circle, minimum size = 3cm}]
+\node[set,fill=codepurple,label={135:\Huge $A$}] (A) at (0,0) {};
+\node[set,fill=white,label={45:\Huge $B$}] (B) at (0:2) {};
+\draw (0,0) circle(1.5cm);
+\draw (2,0) circle(1.5cm);
+\end{tikzpicture}}
+\caption*{(Without Matches)}
+\end{subfigure}%
+\begin{subfigure}{0.24\linewidth}
+\centering
+\scalebox{0.5}{
+\begin{tikzpicture}[thick,
+    set/.style = { circle, minimum size = 3cm}]
+\node[set,fill=codepurple,label={45:\Huge $B$}] (B) at (0:2) {};
+\node[set,fill=white,label={135:\Huge $A$}] (A) at (0,0) {};
+\draw (0,0) circle(1.5cm);
+\draw (2,0) circle(1.5cm);
+\end{tikzpicture}}
+\caption*{(Without Matches)}
+\end{subfigure}%
+\end{figure}
+
+\begin{itemize}
+    \item Joins are used to merge columns of tables, and the different types of joins describe how to handle mismatches
+    \item The syntax is generally \ilsql{SELECT * FROM table1 JOIN table2}, where \ilsql{JOIN} can be any of the joints described
+    \item \ilsql{CROSS JOIN} performs a Cartesian product of the rows, forming every possible combination
+    \begin{arrows}
+        \item This can be implicitly performed with \ilsql{SELECT * FROM table1, table2}
+    \end{arrows}
+    \item \ilsql{INNER JOIN} is like \ilsql{CROSS JOIN} but only combinations matching a predicate are returned, with syntax \ilsql{INNER JOIN table2 ON predicate}
+    \begin{arrows}
+        \item Often, the predicate is checking equality of two columns, and there will not be multiple matches per row
+        \item This could also be performed with an implicit cross join follows by a filter with \ilsql{WHERE}
+    \end{arrows}
+    \item \ilsql{FULL OUTER JOIN} include all rows matching a predicate like \ilsql{INNER JOIN}, but rows without a match are also included with \ilsql{NULL} values inserted
+    \begin{arrows}
+        \item This is not implemented in SQLite
+        \item Instead, we can combine a left outer join and a right outer join without matches:
+    \end{arrows}
+\begin{sql}
+SELECT * FROM tableA
+LEFT OUTER JOIN tableB
+ON tableA.col = tableB.col
+UNION ALL
+SELECT * FROM tableB
+LEFT OUTER JOIN tableA
+ON tableB.col = tableA.col
+WHERE tableA.col IS NULL;
+\end{sql}
+    \item \ilsql{LEFT OUTER JOIN} (or \ilsql{LEFT JOIN}) includes all rows on the left, but not necessarily all rows on the right
+    \item A left outer join without matches is performed by doing a left outer join then filtering on when the matched data is \ilsql{NULL}
+    \item Similar definitions for \ilsql{RIGHT OUTER JOIN} and right outer join without matches are defined similarly
+    \begin{arrows}
+        \item Right joins are not implemented in SQLite and are generally discouraged
+    \end{arrows}
+    \item A self join merges a table with itself, based on two columns; this can be completed using aliases:
+\begin{sql}
+SELECT * FROM table AS t1
+INNER JOIN table as t2
+ON t1.column1 = t2.column2
+AND t1.column2 = t2.column1
+WHERE t1.column1 < t2.column1;
+\end{sql}
+    \begin{arrows}
+        \item Two conditions are used to ensure both ways match (recall that \ilsql{INNER JOIN} is just a refinement of \ilsql{CROSS JOIN}, so we must check that both directions match)
+        \item The last filter removes duplicates
+    \end{arrows}
+\end{itemize}
+
+\subsection{SQL Subqueries}
+\begin{itemize}
+    \item A subquery is a nested SQL query returning information (either individual values or a list of records) to an outer query
+    \item Subqueries are enclosed in parentheses
+    \item Subqueries can be used to test for set membership, make set comparisons, and determine set cardinality
+    \item The \ilsql{IN} keyword can be used with subqueries instead of lists:
+\begin{sql}
+-- Select artists who have not released an album
+SELECT Artist.Name FROM Artist
+WHERE Artist.Name NOT IN 
+(SELECT Album.ArtistId FROM Album);
+\end{sql}
+    \item Another example is for finding entries which occur several times in the table, each time meeting a different condition:
+\begin{sql}
+-- Select courses offered in both fall and spring
+SELECT name FROM courses
+WHERE semester = 'Fall'
+AND name IN
+(SELECT name FROM courses
+WHERE semester = 'Spring');
+\end{sql}
+\begin{arrows}
+    \item Simply using \ilsql{WHERE semester = 'Fall' AND semester = 'SPRING'} would yield no results
+\end{arrows}
+\item \ilsql{EXISTS} returns true if the subsequent subquery returns any results:
+\begin{sql}
+-- Select suppliers who make clothing
+SELECT SupplierName FROM Suppliers
+WHERE EXISTS (
+    SELECT ProductName FROM Products 
+    WHERE Products.SupplierID = Supplier.SupplierID 
+    AND Category = 'Clothing'
+);
+\end{sql}
+\begin{arrows}
+\item Note that the column returned by the subquery is irrelevant; it could be \ilsql{*} or even \ilsql{1}
+\end{arrows}
+\item \ilsql{ANY} and \ilsql{ALL} allow a comparison between a field and a range of other values from a subquery, with syntax \ilsql{WHERE column operator ANY|ALL (SELECT other_column FROM table WHERE condition)}
+\begin{sql}
+-- Select customers who have paid for a track of over 5 dollars
+SELECT CustomerId FROM Invoice
+WHERE InvoiceId = ANY(
+    SELECT InvoiceId FROM InvoiceLine
+    WHERE UnitPrice>5
+);
+\end{sql}
+\begin{arrows}
+    \item SQLite doesn't implement these operators, but \ilsql{IN} can be used instead of \ilsql{ANY}, and \ilsql{min} and \ilsql{max} can often be used to replicate the behavior of \ilsql{ALL}
+\end{arrows}
+\end{itemize}
+
+\subsection{Group By}
+\begin{itemize}
+    \item \ilsql{GROUP BY} groups records into summary rows, where one record is kept for each group
+    \item \ilsql{GROUP BY} is thus often used with aggregates like \ilsql{count}, \ilsql{sum}, etc.
+\begin{sql}
+-- Count how many tracks of each genre are present
+SELECT GenreId, count()
+FROM Track
+GROUP BY GenreId;
+\end{sql}
+    \item \ilsql{GROUP BY} can work on multiple columns
+    \item \ilsql{HAVING} is used to filter \ilsql{GROUP BY} results, similar to how \ilsql{WHERE} is used to filter \ilsql{SELECT} results
+\begin{sql}
+-- Count how many tracks of each genre are present, but only if they have at least 10 tracks
+SELECT GenreId, count()
+FROM Track
+GROUP BY GenreId
+HAVING count()>10;
+\end{sql}
+\end{itemize}
+
+\subsection{Dates and Times}
+\begin{itemize}
+    \item SQL does not have a built-in datatype for dates or times, so often ISO 8601 is used to represent them with \ilsql{TEXT} as \ilsql{YYYY-MM-DD HH:MM:SS.SSS}
+    \begin{arrows}
+        \item Hours range from 0 to 23, so there is no AM or PM
+    \end{arrows}
+    \item With this format, lexicographic sort is chronological sort
+    \item SQLite offers the functions \ilsql{date}, \ilsql{time}, and \ilsql{datetime} which take an input, apply any modifiers, and return the resulting string in ISO 8601
+    \item The valid inputs are:
+    \begin{arrows}
+        \item Dates must be represented as \ilsql{YYYY-MM-DD}, with all digits given and the correct delimiter
+        \item Times are \ilsql{HH:MM}, \ilsql{HH:MM:SS}, or \ilsql{HH:MM:SS.SSS}
+        \item A time is optionally followed by a time-zone modifier \ilsql{HH:SS} preceded by \ilsql{+} or \ilsql{-} (note that the opposite operation is used to calculate the time), or case-insensitive \ilsql{Z} which is default time zone; whitespace may precede this
+        \item Either a date, a time, or both (separated by whitespace, capital \ilsql{T}, or both) are valid inputs
+        \item \ilsql{now}, case-insensitive, selects the current time
+        \item It can also accept a Julian day number with arbitrary precision as an integer or floating point
+    \end{arrows}
+    \item Any number of case-insensitive modifiers can then be passed to the function as separate strings, separated by commas, including the following:
+    \begin{arrows}
+        \item A (possibly signed) number/decimal followed by \ilsql{years}, \ilsql{months}, \ilsql{days}, \ilsql{hours}, \ilsql{minutes}, or \ilsql{seconds}, where the trailing \ilsql{s} is optional
+        \item \ilsql{start of month}, \ilsql{start of year}, and \ilsql{start of day} shift the date/time back to the start
+        \item \ilsql{weekday N} shifts the date forward to the next date where the weekday number is \ilsql{N}, where Sunday is 0 and Saturday is 6
+    \end{arrows}
+    \item After converting to date-time format, operations like \ilsql{MIN} and \ilsql{MAX} work appropriately
+    \item In general, however, it is better to use non-SQL tools for handling dates and times; one option is the \ilpy{datetime} module:
+    \begin{arrows}
+        \item The \ilpy{date} class has a constructor accepting year, month, then day, or \ilpy{date.today()}
+        \item The \ilpy{time} class has a constructor accepting optional hour, minute, second, and microsecond
+        \item The \ilpy{datetime} class has a constructor accepting date fields and then optional time fields, or \ilpy{datetime.now()}
+        \item The \ilpy{timedelta} class represents a difference in times/dates with optional arguments days, seconds, microseconds, milliseconds, minutes, hours, and weeks; this can be added/subtracted from other datetime objects
+    \end{arrows}
+    \item Datetime objects can be converted to ISO 8601 with \ilpy|obj.strftime("%Y-%m-%d %H:%M:%S.%f%z")|, and the reverse operation can be done with \ilpy|obj=datetime.strptime(dt_string, "%Y-%m-%d %H:%M:%S.%f%z")|
+    \item sqlite3 has built-in support for Python datetime objects through \ilsql{DATE} and \ilsql{TIMESTAMP} types
+    \begin{arrows}
+        \item To use these, specify \ilpy{detect_types = sqlite3.PARSE_DECLTYPES | sqlite3.PARSE_COLNAMES} when calling the \ilpy{connect} function
+    \end{arrows}
+\end{itemize}
+
+\subsection{Stored Procedures}
+\begin{itemize}
+    \item A stored procedure is a function written in SQL and stored in the database
+    \begin{arrows}
+    \item SQLite does not offer these, since the client can directly interact with the database (and can use functions they define in Python or whatever other language is being used)
+    \item The following syntax and discussion is for MySQL
+    \end{arrows}
+    \item An example of a stored procedure is:
+\begin{sql}
+DELIMITER //
+CREATE PROCEDURE add_now_to_log()
+    BEGIN
+    INSERT INTO log VALUES (datetime('now'));
+    END //
+DELIMITER ;
+\end{sql}
+\begin{arrows}
+    \item The stored procedure is then called with \ilsql{CALL add_now_to_log();}
+    \item Since \ilsql{;} is used in the stored procedure, the delimiter must be switched to something else while defining the procedure, so that the full procedure is read before it is created; common choices are \ilsql{//} and \ilsql|$$|
+\end{arrows}
+\item Variables in a procedure are declared with \ilsql{DECLARE var_name data_type DEFAULT value}, where the default value is optional
+\begin{arrows}
+    \item The variable is then initialized/updated with \ilsql{SET var_name = value;} or \ilsql{SELECT expr INTO var_name FROM table;}
+    \item Session variables are user-defined variables outside of procedures that last for the scope of the connection; they are preceded by \ilsql{@} and do not require declaration
+\end{arrows}
+\item Stored procedures can accept one of three types of parameters:
+\begin{enumerate}[label=(\roman*)]
+    \item \ilsql{IN}, the default mode, which must be set by the caller and cannot be modified by the procedure
+    \item \ilsql{OUT}, which the procedure is allowed to set but cannot read
+    \item \ilsql{INOUT}, which allows the procedure to read and write to it
+\end{enumerate}
+\begin{sql}
+DELIMITER //
+CREATE PROCEDURE increment (INOUT tally INT(4), IN inc INT(4))
+    BEGIN
+    SET tally = tally + inc;
+    END //
+DELIMITER ;
+SET @count = 0;
+CALL increment(@count, 3);
+SELECT @count;
+\end{sql}
+\item A stored procedure can use a \ilsql{CASE} statement to execute different statements, such as:
+\begin{sql}
+CASE
+  WHEN cond_1 THEN statement_1;
+  WHEN cond_2 THEN statement_2;
+  ELSE statement_3;
+END CASE;
+\end{sql}
+\item Some advantages of stored procedures include:
+\begin{arrows}
+    \item Performance: stored procedures are compiled and stored in the database, allowing for caching and faster performance on repeated calls
+    \item Less traffic: lengthy SQL queries need not be sent over the connection
+    \item Reusable: Stored procedures can be used by different applications and users
+    \item Secure: Users can be given access to the stored procedures rather than the full tables
+\end{arrows}
+\item Some disadvantages of stored procedures include:
+\begin{arrows}
+\item Memory and CPU usage: Stored procedures add overhead to each connection
+\item Difficult to debug: Most database management systems do not have good support for traceback and error reporting
+\item Difficult to maintain: Stored procedures are less transparent and harder to write, especially if the schema changes
+\end{arrows}
+\end{itemize}
+
+\subsection{Triggers}
+\begin{itemize}
+    \item A trigger automatically performs some pre-defined set of queries when a particular action is carried out by the user
+    \item The general syntax is:
+\begin{sql}
+CREATE TRIGGER trigger_name [timing] event_name 
+ON table_name [WHEN predicate] BEGIN
+    commands;
+END;
+\end{sql}
+    \item The timing specifies when the trigger logic is applied
+    \begin{arrows}
+    \item For tables it is either \ilsql{BEFORE} (default) or \ilsql{AFTER}
+    \item \ilsql{BEFORE} is often used for validation, whereas \ilsql{AFTER} is used for updating other tables
+    \item For a view, the timing should be \ilsql{INSTEAD OF}, which is used to redirect the action (so that the view behaves like a table from the user-end)
+    \end{arrows}
+    \item The event name is either \ilsql{INSERT}, \ilsql{DELETE}, or \ilsql{UPDATE}
+    \item Within the trigger logic, the pseudo table \ilsql{NEW} refers to the row's new values (for \ilsql{INSERT} and \ilsql{UPDATE}) and \ilsql{OLD} refers to the old values (for \ilsql{UPDATE} and \ilsql{DELETE})
+    \begin{arrows}
+    \item It can only be used to access particular values, like \ilsql{NEW.col_name}; it cannot be treated like a table for the purposes of joins or \ilsql{NEW.*}
+    \end{arrows}
+\begin{sql}
+CREATE TRIGGER id_change AFTER UPDATE ON students WHEN NEW.id != OLD.id
+BEGIN
+    UPDATE log SET student_id = NEW.id WHERE student_id = OLD.id;
+END;
+\end{sql}
+    \item To fire the trigger when only specific columns are updated, one can use \ilsql{UPDATE OF col1, col2}
+    \item To raise an error, use \ilsql{RAISE(action, message)}
+    \begin{arrows}
+        \item The main action used is \ilsql{ABORT}, which ends the query and undoes any changes
+    \end{arrows}
+    \item Some advantages of triggers include:
+    \begin{arrows}
+    \item They always activate when the operation occurs
+    \item They are logic stored in the database, not the application/connection
+    \item They are useful for auditing and validation
+    \end{arrows}
+    \item Some disadvantages of triggers include:
+    \begin{arrows}
+    \item They are not transparent, and may activate without the user's knowledge
+    \item They can lead to inefficiencies, especially if they are running unknown
+    \item Stored procedures are often a better alternative
+    \end{arrows}
+\end{itemize}
+
+\subsection{DDL Operations}
+\begin{itemize}
+    \item Altering or dropping a table can cause pre-existing constraints (such as foreign keys and checks) to be lost
+    \item SQLite supports two actions with \ilsql{ALTER TABLE}:
+    \begin{arrows}
+    \item Renaming a table, with \ilsql{ALTER TABLE old_name RENAME TO new_name;}
+    \item Adding a column to a table, with \ilsql{ALTER TABLE table_name ADD COLUMN col_name type;}
+    \end{arrows}
+    \item A table can be removed with \ilsql{DROP TABLE table_name}, or if the table may not exist, \ilsql{DROP TABLE IF EXISTS table_name}
+    \begin{arrows}
+        \item This implicitly drops all rows from the table first
+    \end{arrows}
+    \item Similar drop statements exist for triggers with \ilsql{DROP TRIGGER}
+\end{itemize}
+
+\subsection{Views}
+\begin{itemize}
+    \item A \emph{view} is a named \ilsql{SELECT} statement (a virtual table composed of the result of the query), defined with \ilsql{CREATE VIEW view_name AS SELECT ...}
+    \item A view has rows and columns, but instead of holding data, it points to data held in other tables (and changes when the referenced table changes)
+    \item Normal select statements work on views, but views are read-only
+    \item Views are useful for creating read-only tables, hiding data complexity (such as with joins), customizing data (using functions and group by), and for privacy
+    \item Views can be slow, especially when creating views of other views
+    \item A view is dropped automatically when the referenced table is dropped
+    \begin{arrows}
+        \item To drop a view automatically when the connection closes, use \ilsql{CREATE TEMPORARY VIEW}
+        \item A view can be manually dropped with \ilsql{DROP VIEW}
+    \end{arrows}
+\end{itemize}
+
+\subsection{Indices}
+\begin{itemize}
+    \item Most ordinary tables contain an implicitly-created \ilsql{rowid} column that is used to uniquely identify rows (for indexing the database)
+    \begin{arrows}
+        \item This can be turned off with \ilsql{WITHOUT ROWID} at the end of the \ilsql{CREATE} statement
+        \item If an integer primary key is declared, then this becomes an alias for \ilsql{rowid}
+    \end{arrows}
+    \item Additional indices can be created with \ilsql{CREATE INDEX index_name ON table (col);}
+    \begin{arrows}
+        \item Multiple columns can also be included instead of just one
+        \item To remove an index, use \ilsql{DROP INDEX index_name} or \ilsql{DROP INDEX IF EXISTS index_name}
+    \end{arrows}
+    \item Indices can improve the speed of many operations:
+    \begin{arrows}
+    \item Looking up rows in a way not according to their primary key
+    \item Identifying matching rows according to the value in a column, when doing a look-up
+    \end{arrows}
+    \item However, indices add additional time to CRUD operations (since indices must be updated) and take more memory
+\end{itemize}
+
+
+\subsection{Miscellaneous SQL}
+\begin{itemize}
+    \item Parameterized queries help protect against SQL injection attacks by allowing Python objects to be directly passed to SQL statements
+    \begin{arrows}
+    \item The sqlite3 module handles string conversion and ensures all characters are properly escaped
+    \item For example, \ilpy{conn.execute("INSERT INTO students VALUES (?, ?);", name, age)}
+    \item A tuple containing the values of \ilpy{name} and \ilpy{age} could also be passed (i.e., they do not need to be unpacked)
+    \end{arrows}
+\end{itemize}
+
+\addcontentsline{toc}{section}{Other Notes}
+\addcontentsline{toc}{subsection}{Query Planning/Indices}
+\includepdf[scale=1.0,pages={-},pagecommand={\thispagestyle{fancy}},link=true]{Query_Planning.pdf}
+
+\end{document}

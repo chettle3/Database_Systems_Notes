@@ -1,0 +1,8 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{DELIMITER}\PYG{+w}{ }\PYG{o}{//}
+\PYG{k}{CREATE}\PYG{+w}{ }\PYG{k}{PROCEDURE}\PYG{+w}{ }\PYG{n}{add\PYGZus{}now\PYGZus{}to\PYGZus{}log}\PYG{p}{()}
+\PYG{+w}{    }\PYG{k}{BEGIN}
+\PYG{+w}{    }\PYG{k}{INSERT}\PYG{+w}{ }\PYG{k}{INTO}\PYG{+w}{ }\PYG{n}{log}\PYG{+w}{ }\PYG{k}{VALUES}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{datetime}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}now\PYGZsq{}}\PYG{p}{));}
+\PYG{+w}{    }\PYG{k}{END}\PYG{+w}{ }\PYG{o}{//}
+\PYG{k}{DELIMITER}\PYG{+w}{ }\PYG{p}{;}
+\end{Verbatim}

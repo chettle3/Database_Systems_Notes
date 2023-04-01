@@ -1,0 +1,6 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{INSERT}\PYG{+w}{ }\PYG{k}{INTO}\PYG{+w}{ }\PYG{n}{valued\PYGZus{}customers}
+\PYG{k}{SELECT}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{k}{FROM}\PYG{+w}{ }\PYG{n}{customers}
+\PYG{k}{ORDER}\PYG{+w}{ }\PYG{k}{BY}\PYG{+w}{ }\PYG{n}{money\PYGZus{}spent}\PYG{+w}{ }\PYG{k}{DESC}
+\PYG{k}{LIMIT}\PYG{+w}{ }\PYG{l+m+mi}{20}\PYG{p}{;}
+\end{Verbatim}

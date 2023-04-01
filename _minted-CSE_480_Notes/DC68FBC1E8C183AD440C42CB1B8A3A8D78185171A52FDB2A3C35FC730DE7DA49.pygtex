@@ -1,0 +1,5 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{SELECT}\PYG{+w}{ }\PYG{n}{Student}\PYG{p}{.}\PYG{n}{Name}\PYG{+w}{ }\PYG{k}{FROM}\PYG{+w}{ }\PYG{n}{Student}
+\PYG{k}{UNION}
+\PYG{k}{SELECT}\PYG{+w}{ }\PYG{n}{Staff}\PYG{p}{.}\PYG{n}{Name}\PYG{+w}{ }\PYG{k}{FROM}\PYG{+w}{ }\PYG{n}{Staff}\PYG{p}{;}
+\end{Verbatim}

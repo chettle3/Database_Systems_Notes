@@ -1,0 +1,7 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZhy{}\PYGZhy{} Count how many tracks of each genre are present, but only if they have at least 10 tracks}
+\PYG{k}{SELECT}\PYG{+w}{ }\PYG{n}{GenreId}\PYG{p}{,}\PYG{+w}{ }\PYG{k}{count}\PYG{p}{()}
+\PYG{k}{FROM}\PYG{+w}{ }\PYG{n}{Track}
+\PYG{k}{GROUP}\PYG{+w}{ }\PYG{k}{BY}\PYG{+w}{ }\PYG{n}{GenreId}
+\PYG{k}{HAVING}\PYG{+w}{ }\PYG{k}{count}\PYG{p}{()}\PYG{o}{\PYGZgt{}}\PYG{l+m+mi}{10}\PYG{p}{;}
+\end{Verbatim}

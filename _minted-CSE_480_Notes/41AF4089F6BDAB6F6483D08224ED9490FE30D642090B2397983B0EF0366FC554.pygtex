@@ -1,0 +1,3 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{detect\PYGZus{}types}\PYG{o}{=}\PYG{n}{sqlite3}\PYG{o}{.}\PYG{n}{PARSE\PYGZus{}COLNAMES}
+\end{Verbatim}

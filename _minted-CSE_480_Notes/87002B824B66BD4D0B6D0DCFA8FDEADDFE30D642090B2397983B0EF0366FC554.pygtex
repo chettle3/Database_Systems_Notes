@@ -1,0 +1,3 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{obj}\PYG{o}{=}\PYG{n}{datetime}\PYG{o}{.}\PYG{n}{strptime}\PYG{p}{(}\PYG{n}{dt\PYGZus{}string}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}\PYGZpc{}Y\PYGZhy{}\PYGZpc{}m\PYGZhy{}}\PYG{l+s+si}{\PYGZpc{}d}\PYG{l+s+s2}{ \PYGZpc{}H:\PYGZpc{}M:\PYGZpc{}S.}\PYG{l+s+si}{\PYGZpc{}f}\PYG{l+s+s2}{\PYGZpc{}z\PYGZdq{}}\PYG{p}{)}
+\end{Verbatim}

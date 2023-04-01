@@ -1,0 +1,10 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{SELECT}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{k}{FROM}\PYG{+w}{ }\PYG{n}{tableA}
+\PYG{k}{LEFT}\PYG{+w}{ }\PYG{k}{OUTER}\PYG{+w}{ }\PYG{k}{JOIN}\PYG{+w}{ }\PYG{n}{tableB}
+\PYG{k}{ON}\PYG{+w}{ }\PYG{n}{tableA}\PYG{p}{.}\PYG{n}{col}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{tableB}\PYG{p}{.}\PYG{n}{col}
+\PYG{k}{UNION}\PYG{+w}{ }\PYG{k}{ALL}
+\PYG{k}{SELECT}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{k}{FROM}\PYG{+w}{ }\PYG{n}{tableB}
+\PYG{k}{LEFT}\PYG{+w}{ }\PYG{k}{OUTER}\PYG{+w}{ }\PYG{k}{JOIN}\PYG{+w}{ }\PYG{n}{tableA}
+\PYG{k}{ON}\PYG{+w}{ }\PYG{n}{tableB}\PYG{p}{.}\PYG{n}{col}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{tableA}\PYG{p}{.}\PYG{n}{col}
+\PYG{k}{WHERE}\PYG{+w}{ }\PYG{n}{tableA}\PYG{p}{.}\PYG{n}{col}\PYG{+w}{ }\PYG{k}{IS}\PYG{+w}{ }\PYG{k}{NULL}\PYG{p}{;}
+\end{Verbatim}

@@ -1,0 +1,6 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{CREATE}\PYG{+w}{ }\PYG{k}{TRIGGER}\PYG{+w}{ }\PYG{k}{trigger\PYGZus{}name}\PYG{+w}{ }\PYG{p}{[}\PYG{n}{timing}\PYG{p}{]}\PYG{+w}{ }\PYG{n}{event\PYGZus{}name}
+\PYG{k}{ON}\PYG{+w}{ }\PYG{k}{table\PYGZus{}name}\PYG{+w}{ }\PYG{p}{[}\PYG{k}{WHEN}\PYG{+w}{ }\PYG{n}{predicate}\PYG{p}{]}\PYG{+w}{ }\PYG{k}{BEGIN}
+\PYG{+w}{    }\PYG{n}{commands}\PYG{p}{;}
+\PYG{k}{END}\PYG{p}{;}
+\end{Verbatim}

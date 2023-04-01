@@ -1,0 +1,6 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZhy{}\PYGZhy{} Select artists who have not released an album}
+\PYG{k}{SELECT}\PYG{+w}{ }\PYG{n}{Artist}\PYG{p}{.}\PYG{n}{Name}\PYG{+w}{ }\PYG{k}{FROM}\PYG{+w}{ }\PYG{n}{Artist}
+\PYG{k}{WHERE}\PYG{+w}{ }\PYG{n}{Artist}\PYG{p}{.}\PYG{n}{Name}\PYG{+w}{ }\PYG{k}{NOT}\PYG{+w}{ }\PYG{k}{IN}
+\PYG{p}{(}\PYG{k}{SELECT}\PYG{+w}{ }\PYG{n}{Album}\PYG{p}{.}\PYG{n}{ArtistId}\PYG{+w}{ }\PYG{k}{FROM}\PYG{+w}{ }\PYG{n}{Album}\PYG{p}{);}
+\end{Verbatim}

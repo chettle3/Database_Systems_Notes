@@ -1,0 +1,7 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{CREATE}\PYG{+w}{ }\PYG{k}{TABLE}\PYG{+w}{ }\PYG{k}{table\PYGZus{}name}\PYG{+w}{ }\PYG{p}{(}
+\PYG{+w}{    }\PYG{n}{column1}\PYG{+w}{ }\PYG{n}{datatype}\PYG{p}{,}
+\PYG{+w}{    }\PYG{n}{column2}\PYG{+w}{ }\PYG{n}{datatype}\PYG{p}{,}
+\PYG{+w}{    }\PYG{n}{column3}\PYG{+w}{ }\PYG{n}{datatype}
+\PYG{p}{);}
+\end{Verbatim}

@@ -1,0 +1,3 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{PRIMARY}\PYG{+w}{ }\PYG{k}{KEY}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{column1}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{column2}\PYG{p}{)}
+\end{Verbatim}
