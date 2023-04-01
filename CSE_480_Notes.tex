@@ -1,6 +1,9 @@
 \documentclass[a4paper]{article}
 \usepackage[title={CSE 480 Notes}]{mycommands}
 \setcounter{tocdepth}{2}
+\graphicspath{{graphics}}
+
+\renewcommand{\fcolorbox}[4][]{#4}
 
 \begin{document}
 \tableofcontents
@@ -27,22 +30,32 @@
     \item Data is contained in a semi-structured hierarchical structure under one root JSON object
     \item The types in JSON are:
     \begin{itemize}
-        \item \iljson{string}, a sequence of zero or more characters \iljson{"my_string"}
+        \item \textcolor{codegreen}{\texttt{"string"}}, a sequence of zero or more characters enclosed in quotation marks
         \begin{arrows}
-            \item Characters are escaped with \iljson{\}, such as \iljson{"}, \iljson{\}, and optionally \iljson{/}
-            \item Escape sequences include backspace \iljson{\b}, formfeed \iljson{\f}, newline \iljson{\n}, carriage return \iljson{\r}, tab \iljson{\t}, and unicode \iljson{\u\#\#\#\#} where \iljson{\#\#\#\#} is a four digit hexadecimal number
+            \item Characters are escaped with \texttt{\textbackslash}, such as \texttt{"}, \texttt{\textbackslash}, and optionally \texttt{/}
+            \item Escape sequences include backspace \texttt{\textbackslash b}, formfeed \texttt{\textbackslash f}, newline \texttt{\textbackslash n}, carriage return \texttt{\textbackslash r}, tab \texttt{\textbackslash t}, and unicode \texttt{\textbackslash u\#\#\#\#} where \texttt{\#\#\#\#} is a four digit hexadecimal number
+            \item Keywords in the schema include \textcolor{codegreen}{\texttt{"minLength"}}, \textcolor{codegreen}{\texttt{"maxLength"}}, \textcolor{codegreen}{\texttt{"pattern"}} (for regex), and \textcolor{codegreen}{\texttt{"format"}} (for specifying specific types of strings, such as \iljson{"datetime"})
         \end{arrows}
-        \item \iljson{number}, a signed decimal number optionally with exponential e/E notation
+        \item \textcolor{codegreen}{\texttt{"number"}}, a signed decimal number optionally with exponential e/E notation
         \begin{arrows}
             \item Leading zeros not allowed, except one is required before a decimal if integer part is 0
             \item Leading plus not allowed except in the exponential part
+            \item In the schema, one can also use the more restrictive \textcolor{codegreen}{\texttt{"integer"}}
+            \item Keywords in the schema include \textcolor{codegreen}{\texttt{"minimum"}}, \textcolor{codegreen}{\texttt{"maximum"}}, \textcolor{codegreen}{\texttt{"exclusiveMinimum"}}, and \textcolor{codegreen}{\texttt{"exclusiveMaximum"}}
         \end{arrows}
-        \item \iljson{object}, an unordered collection of name/value pairs \iljson{\{"field1": value1, "field2": value2\}}
-        \item \iljson{array}, an ordered list of zero or more values of any types \iljson{[value1, value2]}
-        \item \iljson{true}, \iljson{false}
+        \item \textcolor{codegreen}{\texttt{"object"}}, an unordered collection of name/value pairs \iljson|{"field1": value1, "field2": value2}|
+        \begin{arrows}
+        	\item In the schema, information about its contents are given by a nested schema under keyword \textcolor{codegreen}{\texttt{"properties"}}
+        \end{arrows}
+        \item \textcolor{codegreen}{\texttt{"array"}}, an ordered list of zero or more values of any types \iljson{[value1, value2]}
+        \begin{arrows}
+        \item For arbitrary-length arrays where each item must meet the same schema, specify this schema using the keyword \textcolor{codegreen}{\texttt{"items"}}
+        \item To validate the first $n$ values (if present) against different schemas, specify an array of schemas using \textcolor{codegreen}{\texttt{"prefixItems"}}
+        \end{arrows}
+        \item \textcolor{codegreen}{\texttt{"boolean"}}, which is either \iljson{true}, \iljson{false}
         \item \iljson{null}
     \end{itemize}
-    \item JSON Schema uses the following format:
+    \item A sample JSON schema is:
     \begin{json}
 {
     "title": "my_title",
@@ -61,15 +74,6 @@
     "required": ["field1", "field2"]
 }
 \end{json}
-\item The types in JSON Schema are:
-\begin{itemize}
-    \item \iljson{"string"}, which keywords including \iljson{"minLength"}, \iljson{"maxLength"}, \iljson{"pattern"} (for regex), and \iljson{"format"} (for specifying specific types of strings, such as \iljson{"datetime"})
-    \item \iljson{"number"} and \iljson{"integer"}, with keywords including \iljson{"minimum"}, \iljson{"maximum"}, \iljson{"exclusiveMinimum"}, and \iljson{"exclusiveMaximum"}
-    \item \iljson{"object"}, where information about its contents are given by a nested schema under keyword \iljson{"properties"}
-    \item \iljson{"array"}, where the schema each item must match it provided with \iljson{"items"}, and if each value must satisfy a different schema, the list of schemas is given under \iljson{"prefixItems"}
-    \item \iljson{"boolean"}
-    \item \iljson{"null"}, which means the data must be null
-\end{itemize}
 \end{itemize}
 
 \subsection{XML File}
@@ -80,8 +84,8 @@
         \item XML is often used in web services, inter-database communication, text document formatting, and configuration files
     \end{arrows}
     \item XML also stores data in a semi-structured hierarchical structure under a single root element
-    \item Each element consists of a start tag \ilxml{<tag\_name>}, optional content (without quotes), and an end tag \ilxml{</tag\_name>}, or an empty tag \ilxml{<tag\_name/>} can be used
-    \item Each start or empty tag can also contain columns \ilxml{<tag\_name attr\_name="value">}
+    \item Each element consists of a start tag \ilxml{<tag_name>}, optional content (without quotes), and an end tag \ilxml{</tag_name>}, or an empty tag \ilxml{<tag_name/>} can be used
+    \item Each start or empty tag can also contain columns \ilxml{<tag_name attr_name="value">}
     \begin{arrows}
         \item Only one value may be specified, so if multiple are needed, oftentimes space-delimited strings are used
     \end{arrows}
@@ -435,6 +439,24 @@ Relations:
 \end{itemize}
 \end{minipage}
 \end{figure}
+\end{itemize}
+
+\subsection{Determining Decompositions}
+\begin{itemize}
+\item As described, having too large of relations can cause anomalies; to solve this, we develop a theory for determining whether a relation is in good form or needs to be decomposed into subrelations
+\item To determine when decompositions are possible, we introduce \emph{functional dependency}, which captures information about the constraints in a database
+\begin{arrows}
+\item A set of attributes $Y$ is \emph{functionally dependent} on a set of attributes $X$ in relation $R$, denoted $X\rightarrow Y$, if any rows agreeing on the values in $X$ also agree on the values in $Y$
+\item $X\rightarrow Y$ means the values of $Y$ are entirely determined by the values in $X$, in relation $R$
+\item Notationally, $X,Y,Z$ are used to denote sets of attributes, while $A,B,C$ are used to denote individual attributes. Also, $\{A,B,C\}$ is typically denoted $ABC$
+\item $X\rightarrow A_1A_2\cdots A_n$ is equivalent to $X\rightarrow A_i$ for all $1\leq i\leq n$ (this is the \emph{splitting/combining rule})
+\item A functional dependency $X\rightarrow Y$ is \emph{trivial} if $Y\subset X$
+\end{arrows}
+\item Using functional dependency, we can revisit keys
+\begin{arrows}
+\item $K$ is a \emph{superkey} for relation $R$ if $K\rightarrow R$, and $K$ is a \emph{key} if it is minimal (i.e., no proper subset of $K$ is also a superkey)
+\item Keys can be determined by beginning with all of $R$ and then iteratively examining its subsets, or through deduction based on the functional dependencies in $R$
+\end{arrows}
 \end{itemize}
 
 

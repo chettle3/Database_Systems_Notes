@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.3.3)  1 APR 2023 12:34
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.3.3)  1 APR 2023 13:32
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -2205,24 +2205,24 @@ runsystem(del CSE_480_Notes.aex)...executed.
 (./CSE_480_Notes.aux)
 \openout1 = `CSE_480_Notes.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -2280,17 +2280,17 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Font Info:    Trying to load font information for U+msa on input line 5.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 8.
 
 (c:/texlive/2022/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 5.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 8.
 
 (c:/texlive/2022/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+stmry on input line 5
+LaTeX Font Info:    Trying to load font information for U+stmry on input line 8
 .
 
 (c:/texlive/2022/texmf-dist/tex/latex/stmaryrd/Ustmry.fd)
@@ -2325,7 +2325,7 @@ Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 Package: ninecolors 2022-02-13 vv2022D Select colors with proper color contrast
 
 )
-Package hyperref Info: Link coloring OFF on input line 5.
+Package hyperref Info: Link coloring OFF on input line 8.
 
 (./CSE_480_Notes.out) (./CSE_480_Notes.out)
 \@outlinefile=\write7
@@ -2338,106 +2338,39 @@ ex.map}
 \tf@toc=\write8
 \openout8 = `CSE_480_Notes.toc'.
 
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 3
+3.
+
+(c:/texlive/2022/texmf-dist/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 2022/07/10 v2.5l Standard LaTeX font definitions
+)
 \openout6 = `CSE_480_Notes.pyg'.
 
 
 (./_minted-CSE_480_Notes/default.pygstyle)
-(./_minted-CSE_480_Notes/B80FA55B1234F1935CEA559D9EFBC39AD90BEC8074339655BAFBFF
-8709335A2D.pygtex
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 3
-.
- (c:/texlive/2022/texmf-dist/tex/latex/base/t1cmtt.fd
-File: t1cmtt.fd 2022/07/10 v2.5l Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <10> not available
-(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 3.
-)
-\openout6 = `CSE_480_Notes.pyg'.
-
-
-(./_minted-CSE_480_Notes/97058E29D122D15C0A80F31E0608BD7AD90BEC8074339655BAFBFF
+(./_minted-CSE_480_Notes/4131A1E05E5CE0D8806D9937B54C2FD7D90BEC8074339655BAFBFF
 8709335A2D.pygtex)
-\openout6 = `CSE_480_Notes.pyg'.
-
-
-(./_minted-CSE_480_Notes/58EBF9960B86A9629DD60C465BFA26BDD90BEC8074339655BAFBFF
-8709335A2D.pygtex)
-\openout6 = `CSE_480_Notes.pyg'.
-
-
-(./_minted-CSE_480_Notes/3AF0BF9DC137CB0122F491A03578FA8DD90BEC8074339655BAFBFF
-8709335A2D.pygtex)
-\openout6 = `CSE_480_Notes.pyg'.
-
-
-(./_minted-CSE_480_Notes/58EBF9960B86A9629DD60C465BFA26BDD90BEC8074339655BAFBFF
-8709335A2D.pygtex)
-\openout6 = `CSE_480_Notes.pyg'.
-
-
-(./_minted-CSE_480_Notes/A55822426A5330C04625A41D264C190BD90BEC8074339655BAFBFF
-8709335A2D.pygtex)
-\openout6 = `CSE_480_Notes.pyg'.
-
-
-(./_minted-CSE_480_Notes/4B39BFABD329DDBDD14822EB58219DDAD90BEC8074339655BAFBFF
-8709335A2D.pygtex)
-\openout6 = `CSE_480_Notes.pyg'.
-
-
-(./_minted-CSE_480_Notes/F66C0C4EA08413F20FCE150CBE1CF018D90BEC8074339655BAFBFF
-8709335A2D.pygtex)
-\openout6 = `CSE_480_Notes.pyg'.
-
-
-(./_minted-CSE_480_Notes/AC4C1A956B01A13AB36CBB7E5ADBB9B3D90BEC8074339655BAFBFF
-8709335A2D.pygtex)
-\openout6 = `CSE_480_Notes.pyg'.
-
-
-(./_minted-CSE_480_Notes/E49F145124DD8EC975268B1BC168930DD90BEC8074339655BAFBFF
-8709335A2D.pygtex)
-\openout6 = `CSE_480_Notes.pyg'.
-
-
-(./_minted-CSE_480_Notes/2705B8C3D698C826857D1AC230AF9469D90BEC8074339655BAFBFF
-8709335A2D.pygtex)
-\openout6 = `CSE_480_Notes.pyg'.
-
-
-(./_minted-CSE_480_Notes/B5022718B6AC7C3341C0C239015F30F1D90BEC8074339655BAFBFF
-8709335A2D.pygtex)
-\openout6 = `CSE_480_Notes.pyg'.
-
-
-(./_minted-CSE_480_Notes/8797FCFC48EC15E97CEB0251E9122359D90BEC8074339655BAFBFF
-8709335A2D.pygtex)
-\openout6 = `CSE_480_Notes.pyg'.
-
-
-(./_minted-CSE_480_Notes/F3A2A427C0020A4AF9259B4115EB8DA3D90BEC8074339655BAFBFF
-8709335A2D.pygtex)
-\openout6 = `CSE_480_Notes.pyg'.
-
-
-(./_minted-CSE_480_Notes/2224CAFFA98B46DA55ED4131B01A9989D90BEC8074339655BAFBFF
-8709335A2D.pygtex)
-\openout6 = `CSE_480_Notes.pyg'.
-
-
-(./_minted-CSE_480_Notes/E7B29A2AC00CA7C96C12B72468664292D90BEC8074339655BAFBFF
-8709335A2D.pygtex)
-Overfull \hbox (19.17831pt too wide) in paragraph at lines 3--41
-[][][][][]\T1/cmtt/m/n/10 t[]\T1/cmr/m/n/10 , an un-ordered col-lec-tion of nam
-e/-value pairs [][][]\T1/cmtt/m/n/10 {[]"field1"[]:[] [][][][][]1[],[] [][]"fie
-ld2"[]:[] [][][][][]2[][][][]} 
+Overfull \hbox (68.87071pt too wide) in paragraph at lines 44--45
+[]\T1/cmr/m/n/10 Keywords in the schema in-clude []\T1/cmtt/m/n/10 "minimum"[]\
+T1/cmr/m/n/10 , []\T1/cmtt/m/n/10 "maximum"[]\T1/cmr/m/n/10 , []\T1/cmtt/m/n/10
+ "exclusiveMinimum"[]\T1/cmr/m/n/10 , and []\T1/cmtt/m/n/10 "exclusiveMaximum"[
+] 
  []
 
 \openout6 = `CSE_480_Notes.pyg'.
 
 
-(./_minted-CSE_480_Notes/A7CF24F7419FD981D559528C30EB815FD90BEC8074339655BAFBFF
-8709335A2D.pygtex)
+(./_minted-CSE_480_Notes/97FFC846CE4BC48E19E8330BE91B2FB7D90BEC8074339655BAFBFF
+8709335A2D.pygtex
+LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <10> not available
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 3.
+)
+Overfull \hbox (19.17831pt too wide) in paragraph at lines 46--47
+[][]\T1/cmtt/m/n/10 "object"[]\T1/cmr/m/n/10 , an un-ordered col-lec-tion of na
+me/-value pairs \T1/cmtt/m/n/10 {[]"field1"[]:[] []|value[]1[],[] [][]"field2"[
+]:[] []|value[]2[]} 
+ []
+
 \openout6 = `CSE_480_Notes.pyg'.
 
 
@@ -2466,124 +2399,22 @@ ld2"[]:[] [][][][][]2[][][][]}
 \openout6 = `CSE_480_Notes.pyg'.
 
 
-(./_minted-CSE_480_Notes/B382B64105749B8F8E154D5BA644C418D90BEC8074339655BAFBFF
-8709335A2D.pygtex)
-\openout6 = `CSE_480_Notes.pyg'.
-
-
-(./_minted-CSE_480_Notes/B97C788C51ACBFB6819E9DB5F8DAB2B0D90BEC8074339655BAFBFF
-8709335A2D.pygtex)
-\openout6 = `CSE_480_Notes.pyg'.
-
-
-(./_minted-CSE_480_Notes/9BA349867B563B89C74FCBA069004F8CD90BEC8074339655BAFBFF
-8709335A2D.pygtex)
-\openout6 = `CSE_480_Notes.pyg'.
-
-
-(./_minted-CSE_480_Notes/F8393F6572B94F6AC026EE3D9A49A9DAD90BEC8074339655BAFBFF
-8709335A2D.pygtex)
-\openout6 = `CSE_480_Notes.pyg'.
-
-
-(./_minted-CSE_480_Notes/EA81EB92564AA0B5DEA86BF289A6AD3FD90BEC8074339655BAFBFF
-8709335A2D.pygtex)
-\openout6 = `CSE_480_Notes.pyg'.
-
-
-(./_minted-CSE_480_Notes/4131A1E05E5CE0D8806D9937B54C2FD7D90BEC8074339655BAFBFF
-8709335A2D.pygtex)
-\openout6 = `CSE_480_Notes.pyg'.
-
-
-(./_minted-CSE_480_Notes/CC0599BE4463BC8E5B134113DD049420D90BEC8074339655BAFBFF
-8709335A2D.pygtex)
-\openout6 = `CSE_480_Notes.pyg'.
-
-
-(./_minted-CSE_480_Notes/CAA17CFBCB9250F2193C53E4FF525D58D90BEC8074339655BAFBFF
-8709335A2D.pygtex)
-\openout6 = `CSE_480_Notes.pyg'.
-
-
-(./_minted-CSE_480_Notes/94A45E23418896D8DEA4C10580D6EA03D90BEC8074339655BAFBFF
-8709335A2D.pygtex)
-\openout6 = `CSE_480_Notes.pyg'.
-
-
-(./_minted-CSE_480_Notes/3C7E1D9D90C7843E196B4E19F29DD515D90BEC8074339655BAFBFF
-8709335A2D.pygtex)
-\openout6 = `CSE_480_Notes.pyg'.
-
-
-(./_minted-CSE_480_Notes/5FCD52C46C676FA304B72B36AD7FB7EED90BEC8074339655BAFBFF
-8709335A2D.pygtex)
-\openout6 = `CSE_480_Notes.pyg'.
-
-
-(./_minted-CSE_480_Notes/2D786EFC5CB47AE1AF36F3BC99805405D90BEC8074339655BAFBFF
-8709335A2D.pygtex)
-Overfull \hbox (17.3732pt too wide) in paragraph at lines 3--68
-[][]\T1/cmtt/m/n/10 "number"[] \T1/cmr/m/n/10 and []\T1/cmtt/m/n/10 "integer"[]
-\T1/cmr/m/n/10 , with key-words in-clud-ing []\T1/cmtt/m/n/10 "minimum"[]\T1/cm
-r/m/n/10 , []\T1/cmtt/m/n/10 "maximum"[]\T1/cmr/m/n/10 , []\T1/cmtt/m/n/10 "exc
-lusiveMinimum"[]\T1/cmr/m/n/10 ,
- []
-
-\openout6 = `CSE_480_Notes.pyg'.
-
-
-(./_minted-CSE_480_Notes/EA48926FAA4282610530C0AAC23C064DD90BEC8074339655BAFBFF
-8709335A2D.pygtex)
-\openout6 = `CSE_480_Notes.pyg'.
-
-
-(./_minted-CSE_480_Notes/AAF45F3582277217BB3D7F0778A67888D90BEC8074339655BAFBFF
-8709335A2D.pygtex)
-\openout6 = `CSE_480_Notes.pyg'.
-
-
-(./_minted-CSE_480_Notes/0E8316AED3EC73F2A0D3F1B42960838CD90BEC8074339655BAFBFF
-8709335A2D.pygtex)
-\openout6 = `CSE_480_Notes.pyg'.
-
-
-(./_minted-CSE_480_Notes/B69E158834357C966485BEA0B135E30AD90BEC8074339655BAFBFF
-8709335A2D.pygtex)
-\openout6 = `CSE_480_Notes.pyg'.
-
-
-(./_minted-CSE_480_Notes/BC8ED315EED98652C3966B3E604423E6D90BEC8074339655BAFBFF
-8709335A2D.pygtex)
-\openout6 = `CSE_480_Notes.pyg'.
-
-
-(./_minted-CSE_480_Notes/07DA71B2EC24FCBE081E9B3FA69C09B2D90BEC8074339655BAFBFF
-8709335A2D.pygtex)
-\openout6 = `CSE_480_Notes.pyg'.
-
-
-(./_minted-CSE_480_Notes/6F4D079D07AE607C2C8390F002952E1AD90BEC8074339655BAFBFF
-8709335A2D.pygtex)
-\openout6 = `CSE_480_Notes.pyg'.
-
-
-(./_minted-CSE_480_Notes/812C4C78B8C7792FEAB21C429D1941C8A0C4C1E08064C3F6075F45
+(./_minted-CSE_480_Notes/3668CBA03AAFA1109B531348D962F78BA0C4C1E08064C3F6075F45
 E9FC27F8F3.pygtex)
 \openout6 = `CSE_480_Notes.pyg'.
 
 
-(./_minted-CSE_480_Notes/4E61AB8849D6ADA924CEDB29A91D6039A0C4C1E08064C3F6075F45
+(./_minted-CSE_480_Notes/1D4A5326450DF545D16653517972B31BA0C4C1E08064C3F6075F45
 E9FC27F8F3.pygtex)
 \openout6 = `CSE_480_Notes.pyg'.
 
 
-(./_minted-CSE_480_Notes/9BC1618EFD9366A73E1361EE88D0CC78A0C4C1E08064C3F6075F45
+(./_minted-CSE_480_Notes/892DCC73E57F683F40C128C75C9083CEA0C4C1E08064C3F6075F45
 E9FC27F8F3.pygtex)
 \openout6 = `CSE_480_Notes.pyg'.
 
 
-(./_minted-CSE_480_Notes/E238E8A7E07A7BBB018838A4CB7FE518A0C4C1E08064C3F6075F45
+(./_minted-CSE_480_Notes/C2DEFF6C168339D699E02CAB10248F1AA0C4C1E08064C3F6075F45
 E9FC27F8F3.pygtex)
 \openout5 = `CSE_480_Notes.pyg'.
 
@@ -2652,124 +2483,126 @@ E9FC27F8F3.pygtex)
 E9FC27F8F3.pygtex) [4] [5
 
 ]
-<entity1.png, id=322, 621.7629pt x 261.6174pt>
-File: entity1.png Graphic file (type png)
-<use entity1.png>
-Package pdftex.def Info: entity1.png  used on input line 162.
+<graphics/entity1.png, id=328, 621.7629pt x 261.6174pt>
+File: graphics/entity1.png Graphic file (type png)
+<use graphics/entity1.png>
+Package pdftex.def Info: graphics/entity1.png  used on input line 166.
 (pdftex.def)             Requested size: 226.48395pt x 95.29593pt.
-<entity2.png, id=324, 539.3751pt x 251.2587pt>
-File: entity2.png Graphic file (type png)
-<use entity2.png>
-Package pdftex.def Info: entity2.png  used on input line 167.
+<graphics/entity2.png, id=330, 539.3751pt x 251.2587pt>
+File: graphics/entity2.png Graphic file (type png)
+<use graphics/entity2.png>
+Package pdftex.def Info: graphics/entity2.png  used on input line 171.
 (pdftex.def)             Requested size: 226.48395pt x 105.50491pt.
-<entity3.png, id=325, 127.4361pt x 308.352pt>
-File: entity3.png Graphic file (type png)
-<use entity3.png>
-Package pdftex.def Info: entity3.png  used on input line 212.
+<graphics/entity3.png, id=331, 127.4361pt x 308.352pt>
+File: graphics/entity3.png Graphic file (type png)
+<use graphics/entity3.png>
+Package pdftex.def Info: graphics/entity3.png  used on input line 216.
 (pdftex.def)             Requested size: 40.76585pt x 98.63701pt.
-<entity4.png, id=326, 127.4361pt x 308.352pt>
-File: entity4.png Graphic file (type png)
-<use entity4.png>
-Package pdftex.def Info: entity4.png  used on input line 213.
+<graphics/entity4.png, id=332, 127.4361pt x 308.352pt>
+File: graphics/entity4.png Graphic file (type png)
+<use graphics/entity4.png>
+Package pdftex.def Info: graphics/entity4.png  used on input line 217.
 (pdftex.def)             Requested size: 40.76585pt x 98.63701pt.
-<entity5.png, id=327, 127.4361pt x 308.352pt>
-File: entity5.png Graphic file (type png)
-<use entity5.png>
-Package pdftex.def Info: entity5.png  used on input line 214.
+<graphics/entity5.png, id=333, 127.4361pt x 308.352pt>
+File: graphics/entity5.png Graphic file (type png)
+<use graphics/entity5.png>
+Package pdftex.def Info: graphics/entity5.png  used on input line 218.
 (pdftex.def)             Requested size: 40.76585pt x 98.63701pt.
-<entity6.png, id=328, 127.4361pt x 308.352pt>
-File: entity6.png Graphic file (type png)
-<use entity6.png>
-Package pdftex.def Info: entity6.png  used on input line 215.
+<graphics/entity6.png, id=334, 127.4361pt x 308.352pt>
+File: graphics/entity6.png Graphic file (type png)
+<use graphics/entity6.png>
+Package pdftex.def Info: graphics/entity6.png  used on input line 219.
 (pdftex.def)             Requested size: 40.76585pt x 98.63701pt.
-<entity7.png, id=329, 127.4361pt x 308.352pt>
-File: entity7.png Graphic file (type png)
-<use entity7.png>
-Package pdftex.def Info: entity7.png  used on input line 216.
+<graphics/entity7.png, id=335, 127.4361pt x 308.352pt>
+File: graphics/entity7.png Graphic file (type png)
+<use graphics/entity7.png>
+Package pdftex.def Info: graphics/entity7.png  used on input line 220.
 (pdftex.def)             Requested size: 40.76585pt x 98.63701pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 216--216
+Underfull \hbox (badness 10000) in paragraph at lines 220--220
 []|\T1/cmr/m/n/9 Many-to-
  []
 
-<entity8.png, id=330, 127.4361pt x 308.352pt>
-File: entity8.png Graphic file (type png)
-<use entity8.png>
-Package pdftex.def Info: entity8.png  used on input line 217.
+<graphics/entity8.png, id=336, 127.4361pt x 308.352pt>
+File: graphics/entity8.png Graphic file (type png)
+<use graphics/entity8.png>
+Package pdftex.def Info: graphics/entity8.png  used on input line 221.
 (pdftex.def)             Requested size: 40.76585pt x 98.63701pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 217--217
+Underfull \hbox (badness 10000) in paragraph at lines 221--221
 []|\T1/cmr/m/n/9 Exactly-One-to-
  []
 
 [6
 
- <./entity1.png> <./entity2.png>]
-<entity9.png, id=344, 452.6511pt x 146.949pt>
-File: entity9.png Graphic file (type png)
-<use entity9.png>
-Package pdftex.def Info: entity9.png  used on input line 226.
+ <./graphics/entity1.png> <./graphics/entity2.png>]
+<graphics/entity9.png, id=349, 452.6511pt x 146.949pt>
+File: graphics/entity9.png Graphic file (type png)
+<use graphics/entity9.png>
+Package pdftex.def Info: graphics/entity9.png  used on input line 230.
 (pdftex.def)             Requested size: 199.75972pt x 64.85059pt.
-<entity10.png, id=345, 452.6511pt x 193.9245pt>
-File: entity10.png Graphic file (type png)
-<use entity10.png>
-Package pdftex.def Info: entity10.png  used on input line 231.
+<graphics/entity10.png, id=350, 452.6511pt x 193.9245pt>
+File: graphics/entity10.png Graphic file (type png)
+<use graphics/entity10.png>
+Package pdftex.def Info: graphics/entity10.png  used on input line 235.
 (pdftex.def)             Requested size: 199.75972pt x 85.58151pt.
-<entity11.png, id=346, 304.9794pt x 127.677pt>
-File: entity11.png Graphic file (type png)
-<use entity11.png>
-Package pdftex.def Info: entity11.png  used on input line 238.
+<graphics/entity11.png, id=351, 304.9794pt x 127.677pt>
+File: graphics/entity11.png Graphic file (type png)
+<use graphics/entity11.png>
+Package pdftex.def Info: graphics/entity11.png  used on input line 242.
 (pdftex.def)             Requested size: 135.89174pt x 56.89108pt.
-<entity12.png, id=347, 377.4903pt x 310.0383pt>
-File: entity12.png Graphic file (type png)
-<use entity12.png>
-Package pdftex.def Info: entity12.png  used on input line 250.
+<graphics/entity12.png, id=352, 377.4903pt x 310.0383pt>
+File: graphics/entity12.png Graphic file (type png)
+<use graphics/entity12.png>
+Package pdftex.def Info: graphics/entity12.png  used on input line 254.
 (pdftex.def)             Requested size: 135.89174pt x 111.60896pt.
- [7 <./entity3.png> <./entity4.png> <./entity5.png> <./entity6.png> <./entity7.
-png> <./entity8.png> <./entity9.png> <./entity10.png> <./entity11.png> <./entit
-y12.png>]
-<entity15.png, id=371, 280.1667pt x 477.7047pt>
-File: entity15.png Graphic file (type png)
-<use entity15.png>
-Package pdftex.def Info: entity15.png  used on input line 262.
+ [7 <./graphics/entity3.png> <./graphics/entity4.png> <./graphics/entity5.png> 
+<./graphics/entity6.png> <./graphics/entity7.png> <./graphics/entity8.png> <./g
+raphics/entity9.png> <./graphics/entity10.png> <./graphics/entity11.png> <./gra
+phics/entity12.png>]
+<graphics/entity15.png, id=376, 280.1667pt x 477.7047pt>
+File: graphics/entity15.png Graphic file (type png)
+<use graphics/entity15.png>
+Package pdftex.def Info: graphics/entity15.png  used on input line 266.
 (pdftex.def)             Requested size: 106.99196pt x 182.42624pt.
-<entity13.png, id=372, 377.4903pt x 170.5572pt>
-File: entity13.png Graphic file (type png)
-<use entity13.png>
-Package pdftex.def Info: entity13.png  used on input line 354.
+<graphics/entity13.png, id=377, 377.4903pt x 170.5572pt>
+File: graphics/entity13.png Graphic file (type png)
+<use graphics/entity13.png>
+Package pdftex.def Info: graphics/entity13.png  used on input line 358.
 (pdftex.def)             Requested size: 135.89174pt x 61.39793pt.
-<entity14.png, id=373, 377.4903pt x 308.352pt>
-File: entity14.png Graphic file (type png)
-<use entity14.png>
-Package pdftex.def Info: entity14.png  used on input line 362.
+<graphics/entity14.png, id=378, 377.4903pt x 308.352pt>
+File: graphics/entity14.png Graphic file (type png)
+<use graphics/entity14.png>
+Package pdftex.def Info: graphics/entity14.png  used on input line 366.
 (pdftex.def)             Requested size: 135.89174pt x 111.00192pt.
- [8 <./entity15.png> <./entity13.png>]
-<entity16.png, id=385, 496.7358pt x 261.6174pt>
-File: entity16.png Graphic file (type png)
-<use entity16.png>
-Package pdftex.def Info: entity16.png  used on input line 380.
-(pdftex.def)             Requested size: 158.99039pt x 83.73523pt.
-<entity17.png, id=386, 577.6782pt x 261.6174pt>
-File: entity17.png Graphic file (type png)
-<use entity17.png>
-Package pdftex.def Info: entity17.png  used on input line 385.
-(pdftex.def)             Requested size: 158.99039pt x 72.00288pt.
-<entity18.png, id=387, 377.4903pt x 245.2362pt>
-File: entity18.png Graphic file (type png)
-<use entity18.png>
-Package pdftex.def Info: entity18.png  used on input line 390.
-(pdftex.def)             Requested size: 77.45796pt x 50.31865pt.
- [9 <./entity14.png> <./entity16.png> <./entity17.png> <./entity18.png>]
-<entity19.png, id=401, 659.3433pt x 261.6174pt>
-File: entity19.png Graphic file (type png)
-<use entity19.png>
-Package pdftex.def Info: entity19.png  used on input line 422.
-(pdftex.def)             Requested size: 317.07614pt x 125.81442pt.
 
-[10 <./entity19.png>] [11
+[8 <./graphics/entity15.png> <./graphics/entity13.png>]
+<graphics/entity16.png, id=390, 496.7358pt x 261.6174pt>
+File: graphics/entity16.png Graphic file (type png)
+<use graphics/entity16.png>
+Package pdftex.def Info: graphics/entity16.png  used on input line 384.
+(pdftex.def)             Requested size: 158.99039pt x 83.73523pt.
+<graphics/entity17.png, id=391, 577.6782pt x 261.6174pt>
+File: graphics/entity17.png Graphic file (type png)
+<use graphics/entity17.png>
+Package pdftex.def Info: graphics/entity17.png  used on input line 389.
+(pdftex.def)             Requested size: 158.99039pt x 72.00288pt.
+<graphics/entity18.png, id=392, 377.4903pt x 245.2362pt>
+File: graphics/entity18.png Graphic file (type png)
+<use graphics/entity18.png>
+Package pdftex.def Info: graphics/entity18.png  used on input line 394.
+(pdftex.def)             Requested size: 77.45796pt x 50.31865pt.
+ [9 <./graphics/entity14.png> <./graphics/entity16.png> <./graphics/entity17.pn
+g> <./graphics/entity18.png>]
+<graphics/entity19.png, id=406, 659.3433pt x 261.6174pt>
+File: graphics/entity19.png Graphic file (type png)
+<use graphics/entity19.png>
+Package pdftex.def Info: graphics/entity19.png  used on input line 426.
+(pdftex.def)             Requested size: 317.07614pt x 125.81442pt.
+ [10 <./graphics/entity19.png>] [11
 
 ] [12] [13]
-Overfull \hbox (25.75464pt too wide) in paragraph at lines 574--575
+Overfull \hbox (25.75464pt too wide) in paragraph at lines 596--597
 [][][][][] \T1/cmr/m/n/10 is op-tion-ally passed), and ei-ther [][][][][] or []
 [][][][]. 
  []
@@ -2809,7 +2642,7 @@ F0366FC554.pygtex)
 
 (./_minted-CSE_480_Notes/E7C404E927672F4A87DF72FD24D4CD9FFE30D642090B2397983B0E
 F0366FC554.pygtex)
-Overfull \hbox (0.57175pt too wide) in paragraph at lines 3--578
+Overfull \hbox (0.57175pt too wide) in paragraph at lines 3--600
 [][]\TS1/cmtt/m/n/10 '\T1/cmtt/m/n/10 DEFERRED\TS1/cmtt/m/n/10 '[]\T1/cmr/m/n/1
 0 , []\TS1/cmtt/m/n/10 '\T1/cmtt/m/n/10 IMMEDIATE\TS1/cmtt/m/n/10 '[]\T1/cmr/m/
 n/10 , or []\TS1/cmtt/m/n/10 '\T1/cmtt/m/n/10 EXCLUSIVE\TS1/cmtt/m/n/10 '[]\T1/
@@ -2821,7 +2654,7 @@ cmr/m/n/10 . Trans-ac-tions in these modes are im-plic-itly opened
 
 (./_minted-CSE_480_Notes/08E9DE24AB150D083240557CEC091D53FE30D642090B2397983B0E
 F0366FC554.pygtex) [14] [15]
-Overfull \hbox (14.19666pt too wide) in paragraph at lines 685--686
+Overfull \hbox (14.19666pt too wide) in paragraph at lines 707--708
 []\T1/cmr/m/n/10 For $\OML/cmm/m/it/10 T[]$ \T1/cmr/m/n/10 be-gin-ning be-fore 
 $\OML/cmm/m/it/10 T[]$\T1/cmr/m/n/10 , |   [] oc-curs when $\OML/cmm/m/it/10 r[
 ]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 X\OT1/cmr/m/n/10 )$ \T1/cmr/m/n/10 oc-curs a
@@ -2917,7 +2750,7 @@ F0366FC554.pygtex)
 
 (./_minted-CSE_480_Notes/41AF4089F6BDAB6F6483D08224ED9490FE30D642090B2397983B0E
 F0366FC554.pygtex)
-Overfull \hbox (1.37933pt too wide) in paragraph at lines 800--801
+Overfull \hbox (1.37933pt too wide) in paragraph at lines 822--823
 []\T1/cmr/m/n/10 To ap-ply con-verter upon se-lec-tion, use []\T1/cmtt/m/n/10 S
 ELECT[][] []col[] [][]AS[][] [][]"col [type]"[][] [][]FROM[][] [][]table[]; \T1
 /cmr/m/n/10 and spec-
@@ -2928,7 +2761,7 @@ ELECT[][] []col[] [][]AS[][] [][]"col [type]"[][] [][]FROM[][] [][]table[]; \T1
 
 (./_minted-CSE_480_Notes/C5017F258101D35EDF0B93CECC3A8503FE30D642090B2397983B0E
 F0366FC554.pygtex)
-Overfull \hbox (5.5996pt too wide) in paragraph at lines 801--802
+Overfull \hbox (5.5996pt too wide) in paragraph at lines 823--824
 []\T1/cmr/m/n/10 Both op-tions can be spec-i-fied by us-ing \T1/cmtt/m/n/10 det
 ect_types[]=[][]sqlite3[][].[]PARSE_DECLTYPES [][]|[] []sqlite3[][]
  []
@@ -3521,7 +3354,7 @@ F0366FC554.pygtex)
 
 (./_minted-CSE_480_Notes/7F5A6C3334626FA8CEC9DE904BCFF821FE30D642090B2397983B0E
 F0366FC554.pygtex)
-Overfull \hbox (20.06291pt too wide) in paragraph at lines 961--962
+Overfull \hbox (20.06291pt too wide) in paragraph at lines 983--984
 []\T1/cmr/m/n/10 Users can de-fine ag-gre-ga-tors in Python and pass them to SQ
 Lite us-ing \T1/cmtt/m/n/10 conn[][].[]create_aggregate(name,[]
  []
@@ -3576,7 +3409,7 @@ F0366FC554.pygtex)
 
 (./_minted-CSE_480_Notes/697BF35822A7935A51FBDFC8785B1763FE30D642090B2397983B0E
 F0366FC554.pygtex)
-Overfull \hbox (11.12065pt too wide) in paragraph at lines 983--984
+Overfull \hbox (11.12065pt too wide) in paragraph at lines 1005--1006
 []\T1/cmr/m/n/10 Users can de-fine col-la-tions in Python and pass them to SQLi
 te us-ing \T1/cmtt/m/n/10 conn[][].[]create_collation(name,[]
  []
@@ -3691,7 +3524,7 @@ F0366FC554.pygtex)
 
 (./_minted-CSE_480_Notes/560E4E8431C450CA9DD752D253E1C9D178185171A52FDB2A3C35FC
 730DE7DA49.pygtex)
-Overfull \hbox (4.09866pt too wide) in paragraph at lines 1043--1044
+Overfull \hbox (4.09866pt too wide) in paragraph at lines 1065--1066
 []\T1/cmr/m/n/10 Foreign key check-ing is ex-pen-sive, so it is only per-formed
  if turned on via \T1/cmtt/m/n/10 PRAGMA[] []foreign_keys[]
  []
@@ -3914,7 +3747,7 @@ Overfull \hbox (4.09866pt too wide) in paragraph at lines 1043--1044
 \openout5 = `CSE_480_Notes.pyg'.
 
 
-Overfull \hbox (12.3135pt too wide) in paragraph at lines 3--1273
+Overfull \hbox (12.3135pt too wide) in paragraph at lines 3--1295
 \T1/cmr/m/n/10 syn-tax []\T1/cmtt/m/n/10 WHERE[][] [][]column[][] [][]operator[
 ][] [][]ANY[][]|[][]ALL[][] []([]SELECT[][] []other_column[] [][]FROM[][] [][]t
 able[][] [][]WHERE[][] []condition)
@@ -4213,7 +4046,7 @@ F0366FC554.pygtex)
 
 (./_minted-CSE_480_Notes/2A6E2757E512A3B35AEE981C1264992FFE30D642090B2397983B0E
 F0366FC554.pygtex)
-Overfull \hbox (13.95737pt too wide) in paragraph at lines 1334--1335
+Overfull \hbox (13.95737pt too wide) in paragraph at lines 1356--1357
 []\T1/cmr/m/n/10 To use these, spec-ify \T1/cmtt/m/n/10 detect_types [][]=[][] 
 []sqlite3[][].[]PARSE_DECLTYPES [][]|[] []sqlite3[][].[]PARSE_COLNAMES
  []
@@ -4500,16 +4333,16 @@ F0366FC554.pygtex)
 F0366FC554.pygtex)
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 1510.
+(hyperref)                be the same. Added a new anchor on input line 1532.
 
 
 
 pdfTeX warning: pdflatex.exe (file ./Query_Planning.pdf): PDF inclusion: found 
 PDF version <1.7>, but at most version <1.5> allowed
-<Query_Planning.pdf, id=543, 614.295pt x 794.97pt>
+<Query_Planning.pdf, id=548, 614.295pt x 794.97pt>
 File: Query_Planning.pdf Graphic file (type pdf)
 <use Query_Planning.pdf>
-Package pdftex.def Info: Query_Planning.pdf  used on input line 1511.
+Package pdftex.def Info: Query_Planning.pdf  used on input line 1533.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 
 
@@ -4517,7 +4350,7 @@ pdfTeX warning: pdflatex.exe (file ./Query_Planning.pdf): PDF inclusion: found
 PDF version <1.7>, but at most version <1.5> allowed
 File: Query_Planning.pdf Graphic file (type pdf)
 <use Query_Planning.pdf>
-Package pdftex.def Info: Query_Planning.pdf  used on input line 1511.
+Package pdftex.def Info: Query_Planning.pdf  used on input line 1533.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 
 
@@ -4527,192 +4360,199 @@ PDF version <1.7>, but at most version <1.5> allowed
 
 pdfTeX warning: pdflatex.exe (file ./Query_Planning.pdf): PDF inclusion: found 
 PDF version <1.7>, but at most version <1.5> allowed
-<Query_Planning.pdf, id=546, page=1, 614.295pt x 794.97pt>
+<Query_Planning.pdf, id=551, page=1, 614.295pt x 794.97pt>
 File: Query_Planning.pdf Graphic file (type pdf)
 <use Query_Planning.pdf, page 1>
-Package pdftex.def Info: Query_Planning.pdf , page1 used on input line 1511.
+Package pdftex.def Info: Query_Planning.pdf , page1 used on input line 1533.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 File: Query_Planning.pdf Graphic file (type pdf)
 <use Query_Planning.pdf, page 1>
-Package pdftex.def Info: Query_Planning.pdf , page1 used on input line 1511.
+Package pdftex.def Info: Query_Planning.pdf , page1 used on input line 1533.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 [31]
 File: Query_Planning.pdf Graphic file (type pdf)
 <use Query_Planning.pdf, page 1>
-Package pdftex.def Info: Query_Planning.pdf , page1 used on input line 1511.
+Package pdftex.def Info: Query_Planning.pdf , page1 used on input line 1533.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 File: Query_Planning.pdf Graphic file (type pdf)
 <use Query_Planning.pdf, page 1>
-Package pdftex.def Info: Query_Planning.pdf , page1 used on input line 1511.
+Package pdftex.def Info: Query_Planning.pdf , page1 used on input line 1533.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 File: Query_Planning.pdf Graphic file (type pdf)
 <use Query_Planning.pdf, page 1>
-Package pdftex.def Info: Query_Planning.pdf , page1 used on input line 1511.
+Package pdftex.def Info: Query_Planning.pdf , page1 used on input line 1533.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
  [32 <./Query_Planning.pdf>]
 
 pdfTeX warning: pdflatex.exe (file ./Query_Planning.pdf): PDF inclusion: found 
 PDF version <1.7>, but at most version <1.5> allowed
-<Query_Planning.pdf, id=561, page=2, 614.295pt x 794.97pt>
+<Query_Planning.pdf, id=566, page=2, 614.295pt x 794.97pt>
 File: Query_Planning.pdf Graphic file (type pdf)
 <use Query_Planning.pdf, page 2>
-Package pdftex.def Info: Query_Planning.pdf , page2 used on input line 1511.
+Package pdftex.def Info: Query_Planning.pdf , page2 used on input line 1533.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 File: Query_Planning.pdf Graphic file (type pdf)
 <use Query_Planning.pdf, page 2>
-Package pdftex.def Info: Query_Planning.pdf , page2 used on input line 1511.
+Package pdftex.def Info: Query_Planning.pdf , page2 used on input line 1533.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 File: Query_Planning.pdf Graphic file (type pdf)
 <use Query_Planning.pdf, page 2>
-Package pdftex.def Info: Query_Planning.pdf , page2 used on input line 1511.
+Package pdftex.def Info: Query_Planning.pdf , page2 used on input line 1533.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 [33 <./Query_Planning.pdf>]
 
 pdfTeX warning: pdflatex.exe (file ./Query_Planning.pdf): PDF inclusion: found 
 PDF version <1.7>, but at most version <1.5> allowed
-<Query_Planning.pdf, id=571, page=3, 614.295pt x 794.97pt>
+<Query_Planning.pdf, id=577, page=3, 614.295pt x 794.97pt>
 File: Query_Planning.pdf Graphic file (type pdf)
 <use Query_Planning.pdf, page 3>
-Package pdftex.def Info: Query_Planning.pdf , page3 used on input line 1511.
+Package pdftex.def Info: Query_Planning.pdf , page3 used on input line 1533.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 File: Query_Planning.pdf Graphic file (type pdf)
 <use Query_Planning.pdf, page 3>
-Package pdftex.def Info: Query_Planning.pdf , page3 used on input line 1511.
+Package pdftex.def Info: Query_Planning.pdf , page3 used on input line 1533.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 File: Query_Planning.pdf Graphic file (type pdf)
 <use Query_Planning.pdf, page 3>
-Package pdftex.def Info: Query_Planning.pdf , page3 used on input line 1511.
+Package pdftex.def Info: Query_Planning.pdf , page3 used on input line 1533.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 [34 <./Query_Planning.pdf>]
 
 pdfTeX warning: pdflatex.exe (file ./Query_Planning.pdf): PDF inclusion: found 
 PDF version <1.7>, but at most version <1.5> allowed
-<Query_Planning.pdf, id=582, page=4, 614.295pt x 794.97pt>
+<Query_Planning.pdf, id=587, page=4, 614.295pt x 794.97pt>
 File: Query_Planning.pdf Graphic file (type pdf)
 <use Query_Planning.pdf, page 4>
-Package pdftex.def Info: Query_Planning.pdf , page4 used on input line 1511.
+Package pdftex.def Info: Query_Planning.pdf , page4 used on input line 1533.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 File: Query_Planning.pdf Graphic file (type pdf)
 <use Query_Planning.pdf, page 4>
-Package pdftex.def Info: Query_Planning.pdf , page4 used on input line 1511.
+Package pdftex.def Info: Query_Planning.pdf , page4 used on input line 1533.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 File: Query_Planning.pdf Graphic file (type pdf)
 <use Query_Planning.pdf, page 4>
-Package pdftex.def Info: Query_Planning.pdf , page4 used on input line 1511.
+Package pdftex.def Info: Query_Planning.pdf , page4 used on input line 1533.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 [35 <./Query_Planning.pdf>]
 
 pdfTeX warning: pdflatex.exe (file ./Query_Planning.pdf): PDF inclusion: found 
 PDF version <1.7>, but at most version <1.5> allowed
-<Query_Planning.pdf, id=591, page=5, 614.295pt x 794.97pt>
+<Query_Planning.pdf, id=596, page=5, 614.295pt x 794.97pt>
 File: Query_Planning.pdf Graphic file (type pdf)
 <use Query_Planning.pdf, page 5>
-Package pdftex.def Info: Query_Planning.pdf , page5 used on input line 1511.
+Package pdftex.def Info: Query_Planning.pdf , page5 used on input line 1533.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 File: Query_Planning.pdf Graphic file (type pdf)
 <use Query_Planning.pdf, page 5>
-Package pdftex.def Info: Query_Planning.pdf , page5 used on input line 1511.
+Package pdftex.def Info: Query_Planning.pdf , page5 used on input line 1533.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 File: Query_Planning.pdf Graphic file (type pdf)
 <use Query_Planning.pdf, page 5>
-Package pdftex.def Info: Query_Planning.pdf , page5 used on input line 1511.
+Package pdftex.def Info: Query_Planning.pdf , page5 used on input line 1533.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 [36 <./Query_Planning.pdf>]
 
 pdfTeX warning: pdflatex.exe (file ./Query_Planning.pdf): PDF inclusion: found 
 PDF version <1.7>, but at most version <1.5> allowed
-<Query_Planning.pdf, id=601, page=6, 614.295pt x 794.97pt>
+<Query_Planning.pdf, id=606, page=6, 614.295pt x 794.97pt>
 File: Query_Planning.pdf Graphic file (type pdf)
 <use Query_Planning.pdf, page 6>
-Package pdftex.def Info: Query_Planning.pdf , page6 used on input line 1511.
+Package pdftex.def Info: Query_Planning.pdf , page6 used on input line 1533.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 File: Query_Planning.pdf Graphic file (type pdf)
 <use Query_Planning.pdf, page 6>
-Package pdftex.def Info: Query_Planning.pdf , page6 used on input line 1511.
+Package pdftex.def Info: Query_Planning.pdf , page6 used on input line 1533.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 File: Query_Planning.pdf Graphic file (type pdf)
 <use Query_Planning.pdf, page 6>
-Package pdftex.def Info: Query_Planning.pdf , page6 used on input line 1511.
+Package pdftex.def Info: Query_Planning.pdf , page6 used on input line 1533.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 [37 <./Query_Planning.pdf>]
 
 pdfTeX warning: pdflatex.exe (file ./Query_Planning.pdf): PDF inclusion: found 
 PDF version <1.7>, but at most version <1.5> allowed
-<Query_Planning.pdf, id=612, page=7, 614.295pt x 794.97pt>
+<Query_Planning.pdf, id=617, page=7, 614.295pt x 794.97pt>
 File: Query_Planning.pdf Graphic file (type pdf)
 <use Query_Planning.pdf, page 7>
-Package pdftex.def Info: Query_Planning.pdf , page7 used on input line 1511.
+Package pdftex.def Info: Query_Planning.pdf , page7 used on input line 1533.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 File: Query_Planning.pdf Graphic file (type pdf)
 <use Query_Planning.pdf, page 7>
-Package pdftex.def Info: Query_Planning.pdf , page7 used on input line 1511.
+Package pdftex.def Info: Query_Planning.pdf , page7 used on input line 1533.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 File: Query_Planning.pdf Graphic file (type pdf)
 <use Query_Planning.pdf, page 7>
-Package pdftex.def Info: Query_Planning.pdf , page7 used on input line 1511.
+Package pdftex.def Info: Query_Planning.pdf , page7 used on input line 1533.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 [38 <./Query_Planning.pdf>]
 
 pdfTeX warning: pdflatex.exe (file ./Query_Planning.pdf): PDF inclusion: found 
 PDF version <1.7>, but at most version <1.5> allowed
-<Query_Planning.pdf, id=621, page=8, 614.295pt x 794.97pt>
+<Query_Planning.pdf, id=626, page=8, 614.295pt x 794.97pt>
 File: Query_Planning.pdf Graphic file (type pdf)
 <use Query_Planning.pdf, page 8>
-Package pdftex.def Info: Query_Planning.pdf , page8 used on input line 1511.
+Package pdftex.def Info: Query_Planning.pdf , page8 used on input line 1533.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 File: Query_Planning.pdf Graphic file (type pdf)
 <use Query_Planning.pdf, page 8>
-Package pdftex.def Info: Query_Planning.pdf , page8 used on input line 1511.
+Package pdftex.def Info: Query_Planning.pdf , page8 used on input line 1533.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 File: Query_Planning.pdf Graphic file (type pdf)
 <use Query_Planning.pdf, page 8>
-Package pdftex.def Info: Query_Planning.pdf , page8 used on input line 1511.
+Package pdftex.def Info: Query_Planning.pdf , page8 used on input line 1533.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 [39 <./Query_Planning.pdf>]
 
 pdfTeX warning: pdflatex.exe (file ./Query_Planning.pdf): PDF inclusion: found 
 PDF version <1.7>, but at most version <1.5> allowed
-<Query_Planning.pdf, id=630, page=9, 614.295pt x 794.97pt>
+<Query_Planning.pdf, id=635, page=9, 614.295pt x 794.97pt>
 File: Query_Planning.pdf Graphic file (type pdf)
 <use Query_Planning.pdf, page 9>
-Package pdftex.def Info: Query_Planning.pdf , page9 used on input line 1511.
+Package pdftex.def Info: Query_Planning.pdf , page9 used on input line 1533.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 File: Query_Planning.pdf Graphic file (type pdf)
 <use Query_Planning.pdf, page 9>
-Package pdftex.def Info: Query_Planning.pdf , page9 used on input line 1511.
+Package pdftex.def Info: Query_Planning.pdf , page9 used on input line 1533.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 File: Query_Planning.pdf Graphic file (type pdf)
 <use Query_Planning.pdf, page 9>
-Package pdftex.def Info: Query_Planning.pdf , page9 used on input line 1511.
+Package pdftex.def Info: Query_Planning.pdf , page9 used on input line 1533.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 [40 <./Query_Planning.pdf>]
 
 pdfTeX warning: pdflatex.exe (file ./Query_Planning.pdf): PDF inclusion: found 
 PDF version <1.7>, but at most version <1.5> allowed
-<Query_Planning.pdf, id=639, page=10, 614.295pt x 794.97pt>
+<Query_Planning.pdf, id=644, page=10, 614.295pt x 794.97pt>
 File: Query_Planning.pdf Graphic file (type pdf)
 <use Query_Planning.pdf, page 10>
-Package pdftex.def Info: Query_Planning.pdf , page10 used on input line 1511.
+Package pdftex.def Info: Query_Planning.pdf , page10 used on input line 1533.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 File: Query_Planning.pdf Graphic file (type pdf)
 <use Query_Planning.pdf, page 10>
-Package pdftex.def Info: Query_Planning.pdf , page10 used on input line 1511.
+Package pdftex.def Info: Query_Planning.pdf , page10 used on input line 1533.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 File: Query_Planning.pdf Graphic file (type pdf)
 <use Query_Planning.pdf, page 10>
-Package pdftex.def Info: Query_Planning.pdf , page10 used on input line 1511.
+Package pdftex.def Info: Query_Planning.pdf , page10 used on input line 1533.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
-[41 <./Query_Planning.pdf>] (./CSE_480_Notes.aux)
+[41 <./Query_Planning.pdf>]
+runsystem(del _minted-CSE_480_Notes\07DA71B2EC24FCBE081E9B3FA69C09B2D90BEC80743
+39655BAFBFF8709335A2D.pygtex)...executed.
+
+runsystem(del _minted-CSE_480_Notes\6F4D079D07AE607C2C8390F002952E1AD90BEC80743
+39655BAFBFF8709335A2D.pygtex)...executed.
+
+ (./CSE_480_Notes.aux)
 Package rerunfilecheck Info: File `CSE_480_Notes.out' has not changed.
-(rerunfilecheck)             Checksum: A0DCD0FA829B721B0023B062D05BF459;7681.
+(rerunfilecheck)             Checksum: 1372188EE9243C0511E841D9CB1EC63B;7872.
 runsystem(del CSE_480_Notes.pyg)...executed.
 
  ) 
 Here is how much of TeX's memory you used:
- 62491 strings out of 476024
- 1634105 string characters out of 5794017
- 2112404 words of memory out of 5000000
- 80759 multiletter control sequences out of 15000+600000
+ 62339 strings out of 476024
+ 1618527 string characters out of 5794017
+ 2101577 words of memory out of 5000000
+ 80704 multiletter control sequences out of 15000+600000
  538173 words of font info for 112 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  123i,18n,120p,1685b,1529s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -4735,10 +4575,10 @@ per/sfbx1440.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfit10
 022/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb><c:/texlive/2022/texmf-
 dist/fonts/type1/public/cm-super/sfrm1000.pfb><c:/texlive/2022/texmf-dist/fonts
 /type1/public/cm-super/sftt1000.pfb>
-Output written on CSE_480_Notes.pdf (41 pages, 3883726 bytes).
+Output written on CSE_480_Notes.pdf (41 pages, 3885680 bytes).
 PDF statistics:
- 769 PDF objects out of 1000 (max. 8388607)
- 606 compressed objects within 7 object streams
- 146 named destinations out of 1000 (max. 500000)
- 621 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 774 PDF objects out of 1000 (max. 8388607)
+ 611 compressed objects within 7 object streams
+ 147 named destinations out of 1000 (max. 500000)
+ 629 words of extra memory for PDF output out of 10000 (max. 10000000)
 

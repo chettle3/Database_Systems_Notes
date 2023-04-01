@@ -12,6 +12,7 @@
 \contentsline {subsection}{\numberline {3.3}Keys}{8}{subsection.3.3}%
 \contentsline {subsection}{\numberline {3.4}Design Decisions}{9}{subsection.3.4}%
 \contentsline {subsection}{\numberline {3.5}Converting E/R Diagrams to Relations}{10}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}Determining Decompositions}{10}{subsection.3.6}%
 \contentsline {section}{\numberline {4}Transaction Management}{11}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Introduction}{11}{subsection.4.1}%
 \contentsline {subsection}{\numberline {4.2}Serializable Schedules}{11}{subsection.4.2}%
