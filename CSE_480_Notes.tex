@@ -369,14 +369,7 @@ Jimmy&4\\\bottomrule
 
 \subsection{Design Decisions}
 \begin{itemize}
-\item Consider all the data in a database stored in a single table, with null values and redundancy. \emph{Decompositions} of this table are made when it is divided into smaller relations/entity sets. All decompositions should be \emph{lossless}, so that the original table could be recovered via natural joins on the subrelations
 \item A database should avoid redundancy, both to limit space requirements and to reduce the risk of inconsistency
-\begin{arrows}
-\item Redundancy can occur when not enough decompositions are specified, i.e., the relations contain too much information and should be split into separate entity sets
-\item This can lead to \emph{anomalies}, which are problems that occur specifically when too much information is contained a single relation
-\item \emph{Update anomalies} occur when redundant information is updated in one location but not in other locations
-\item \emph{Deletion anomalies} occur when a deletion causes more information to be deleted than desired (for example, deleting information about a group project when a single member of the group drops the class)
-\end{arrows}
 \begin{figure}[H]
 \centering
 \begin{subfigure}{0.39\linewidth}
@@ -441,21 +434,116 @@ Relations:
 \end{figure}
 \end{itemize}
 
-\subsection{Determining Decompositions}
+\section{Relational Database Design}
+\subsection{Introduction}
 \begin{itemize}
-\item As described, having too large of relations can cause anomalies; to solve this, we develop a theory for determining whether a relation is in good form or needs to be decomposed into subrelations
-\item To determine when decompositions are possible, we introduce \emph{functional dependency}, which captures information about the constraints in a database
+\item While the E/R-model provides an intuitive means of designing a database, there are also more systematic/mathematical ways to accomplish this task
+\item Consider all the data in a database stored in a single table, with null values and redundancy. \emph{Decompositions} of this table are made when it is divided into smaller relations/entity sets. All decompositions should be \emph{lossless}, so that the original table could be recovered via natural joins on the subrelations. The process of iteratively creating decompositions ultimately yields a database design
+\item Redundancy can occur when not enough decompositions are specified, i.e., the relations contain too much information and should be split into separate entity sets
 \begin{arrows}
+\item This can lead to \emph{anomalies}, which are problems that occur specifically when too much information is contained a single relation
+\item \emph{Update anomalies} occur when redundant information is updated in one location but not in other locations
+\item \emph{Deletion anomalies} occur when a deletion causes more information to be deleted than desired (for example, deleting information about a project grade when a student drops the class)
+\end{arrows}
+\item For these new methods to work, each domain in a relation should be an indivisible unit, called an \emph{atomic} domain
+\begin{arrows}
+\item A relation is in \emph{First Normal Form} if all of its domains are atomic (we assume this is the case for all relations)
+\item Sets of names or identification numbers like ``CS101'' are not atomic
+\item Whether a domain is atomic or not may depend on context
+\item Non-atomic domains complicate storage, queries, and data validation, and also encourage redundant storage of data
+\end{arrows}
+\end{itemize}
+
+\subsection{Functional Dependency}
+\begin{itemize}
 \item A set of attributes $Y$ is \emph{functionally dependent} on a set of attributes $X$ in relation $R$, denoted $X\rightarrow Y$, if any rows agreeing on the values in $X$ also agree on the values in $Y$
+\begin{arrows}
 \item $X\rightarrow Y$ means the values of $Y$ are entirely determined by the values in $X$, in relation $R$
 \item Notationally, $X,Y,Z$ are used to denote sets of attributes, while $A,B,C$ are used to denote individual attributes. Also, $\{A,B,C\}$ is typically denoted $ABC$
 \item $X\rightarrow A_1A_2\cdots A_n$ is equivalent to $X\rightarrow A_i$ for all $1\leq i\leq n$ (this is the \emph{splitting/combining rule})
 \item A functional dependency $X\rightarrow Y$ is \emph{trivial} if $Y\subset X$
 \end{arrows}
-\item Using functional dependency, we can revisit keys
-\begin{arrows}
 \item $K$ is a \emph{superkey} for relation $R$ if $K\rightarrow R$, and $K$ is a \emph{key} if it is minimal (i.e., no proper subset of $K$ is also a superkey)
+\begin{arrows}
 \item Keys can be determined by beginning with all of $R$ and then iteratively examining its subsets, or through deduction based on the functional dependencies in $R$
+\end{arrows}
+\end{itemize}
+
+\subsection{Closure of Functional Dependencies}
+\begin{itemize}
+\item Given a set $F$ of functional dependencies, the \emph{closure} $F^+$ of $F$ is the set of all functional dependencies logically implies by those in $F$
+\item \emph{Armstrong's axioms} provide a sound and complete logical system for functional dependencies, and thus can be used to generate $F^+$. For attribute sets $\alpha,\beta,\gamma,\delta$:
+\begin{enumerate}[label=(\roman*)]
+\item Reflexivity: If $\beta\subseteq\alpha$, then $\alpha\rightarrow\beta$
+\item Augmentation: If $\alpha\rightarrow\beta$, then $\gamma\alpha\rightarrow\gamma\beta$
+\item Transitivity: If $\alpha\rightarrow\beta$ and $\beta\rightarrow\gamma$, then $\alpha\rightarrow\gamma$
+\end{enumerate}
+\item Several additional rules can be derived from these:
+\begin{arrows}
+\item Union Rule: $\alpha\rightarrow\beta$ and $\alpha\rightarrow\gamma$ implies $\alpha\rightarrow\beta\gamma$
+\item Decomposition Rule: $\alpha\rightarrow\beta\gamma$ implies $\alpha\rightarrow\beta$ and $\alpha\rightarrow\gamma$
+\item Pseudotransitivity: $\alpha\rightarrow\beta$ and $\beta\gamma\rightarrow\delta$ implies $\alpha\gamma\rightarrow\delta$
+\end{arrows}
+\item We can generate $F^+$ as follows:
+
+\begin{center}
+\normalem
+\begin{minipage}{0.8\linewidth}
+\SetKwRepeat{uRep}{repeat}{until}
+\begin{algorithm}[H]
+\caption{Procedure to Compute $F^+$}
+\DontPrintSemicolon
+$F^+\gets F$\;
+apply reflexivity\tcp*[f]{generates all trivial dependencies}\;
+\uRep {$F^+$ does not change}{
+\ForEach{functional dependency $f\in F^+$}{
+apply the augmentation rule on $f$\;
+add the resulting functional dependencies to $F^+$\;
+}
+\ForEach{pair of functional dependencies $f_1,f_2\in F^+$}{
+\If{$f_1,f_2$ can be combined using transitivity}{add the resulting functional dependencies to $F^+$\;}
+}
+}
+\end{algorithm}
+\end{minipage}
+\ULforem
+\end{center}
+\item The closure $\alpha^+$ of a set of attributes $\alpha$ under $F$ is the set of attributes that are functionally determined by $\alpha$ under $F$
+\begin{arrows}
+\item One method is to calculate $F^+$, but this can be expensive
+\item Another method essentially applies transitivity repeatedly:
+\end{arrows}
+\begin{center}
+\normalem
+\begin{minipage}{0.8\linewidth}
+\SetKwRepeat{uRep}{repeat}{until}
+\begin{algorithm}[H]
+\caption{Procedure to Compute $\alpha^+$}
+\DontPrintSemicolon
+$\alpha^+\gets \alpha$\;
+\uRep {$\alpha^+$ does not change}{
+\ForEach{functional dependency $(\beta\rightarrow\gamma)\in F^+$}{
+\If{$\beta\subseteq\alpha^+$}{$\alpha^+\gets\alpha^+\cup\gamma$\;}
+}
+}
+\end{algorithm}
+\end{minipage}
+\ULforem
+\end{center}
+\item $\alpha$ is a superkey iff $\alpha^+=R$
+\item $\alpha\rightarrow\beta$ iff $\beta\subseteq\alpha^+$
+\end{itemize}
+
+\subsection{Determining Decompositions}
+\begin{itemize}
+\item A decomposition of $R=R_1\cup R_2$ is a lossless join iff $R_1\cap R_2$ is a superkey for either $R_1$ or $R_2$
+\begin{arrows}
+\item This implies either $R_1\cap R_2\rightarrow R_1$ or $R_1\cap R_2\rightarrow R_2$
+\end{arrows}
+\item The \emph{Boyce-Codd Normal Form (BCNF)} ensures that no redundancy arising from functional dependencies are possible
+\begin{arrows}
+\item $R$ is in BCNF iff for any nontrivial functional dependency $\alpha\rightarrow\beta$ in $F^+$, we have that $\alpha$ is a superkey for $R$
+\item For example, $R=\{\text{team\_id},\text{team\_name},\text{trophies},\text{player\_id},\text{player\_name},\text{player\_position}\}$ with the obvious functional dependencies is not in BCNF, since \text{team\_id} is not a superkey of $R$
 \end{arrows}
 \end{itemize}
 
