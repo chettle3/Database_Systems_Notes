@@ -1,0 +1,29 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{MERGE}\PYG{+w}{ }\PYG{k}{INTO}\PYG{+w}{ }\PYG{n}{ED03DBB}\PYG{p}{.}\PYG{n}{ED03E4T0}\PYG{+w}{ }\PYG{k}{C}
+\PYG{+w}{  }\PYG{k}{USING}\PYG{+w}{ }\PYG{p}{(}\PYG{k}{SELECT}\PYG{+w}{ }\PYG{n}{ASSOC\PYGZus{}ID}
+\PYG{+w}{           }\PYG{k}{FROM}\PYG{+w}{ }\PYG{n}{ED03DBB}\PYG{p}{.}\PYG{n}{ED03E1T0}
+\PYG{+w}{          }\PYG{k}{WHERE}\PYG{+w}{ }\PYG{n}{ASSOC\PYGZus{}DEPT\PYGZus{}ID}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}600\PYGZsq{}}\PYG{p}{)}\PYG{+w}{ }\PYG{k}{AS}\PYG{+w}{ }\PYG{n}{A}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{ASSOC\PYGZus{}ID}\PYG{p}{)}
+\PYG{+w}{    }\PYG{k}{ON}\PYG{+w}{ }\PYG{k}{C}\PYG{p}{.}\PYG{n}{COMP\PYGZus{}ASSOCIATE\PYGZus{}ID}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{A}\PYG{p}{.}\PYG{n}{ASSOC\PYGZus{}ID}
+\PYG{+w}{  }\PYG{k}{WHEN}\PYG{+w}{ }\PYG{n}{MATCHED}
+\PYG{+w}{    }\PYG{k}{THEN}\PYG{+w}{ }\PYG{k}{UPDATE}\PYG{+w}{ }\PYG{k}{SET}\PYG{+w}{ }\PYG{n}{COMP\PYGZus{}MANUFACTURER}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}Dell\PYGZsq{}}\PYG{p}{,}
+\PYG{+w}{                    }\PYG{n}{COMP\PYGZus{}TYPE}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}Laptop\PYGZsq{}}\PYG{p}{,}
+\PYG{+w}{                    }\PYG{n}{COMP\PYGZus{}IN\PYGZus{}SERVICE\PYGZus{}DTE}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{k}{CURRENT\PYGZus{}DATE}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{l+m+mi}{14}\PYG{+w}{ }\PYG{n}{DAYS}\PYG{p}{,}
+\PYG{+w}{                    }\PYG{n}{COMP\PYGZus{}USER\PYGZus{}ID}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{k}{SESSION\PYGZus{}USER}\PYG{p}{,}
+\PYG{+w}{                    }\PYG{n}{COMP\PYGZus{}ACTIVITY\PYGZus{}TSP}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{k}{CURRENT\PYGZus{}TIMESTAMP}
+\PYG{+w}{  }\PYG{k}{WHEN}\PYG{+w}{ }\PYG{k}{NOT}\PYG{+w}{ }\PYG{n}{MATCHED}
+\PYG{+w}{    }\PYG{k}{THEN}\PYG{+w}{ }\PYG{k}{INSERT}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{COMP\PYGZus{}COMPUTER\PYGZus{}ID}\PYG{p}{,}
+\PYG{+w}{                 }\PYG{n}{COMP\PYGZus{}ASSOCIATE\PYGZus{}ID}\PYG{p}{,}
+\PYG{+w}{                 }\PYG{n}{COMP\PYGZus{}MANUFACTURER}\PYG{p}{,}
+\PYG{+w}{                 }\PYG{n}{COMP\PYGZus{}TYPE}\PYG{p}{,}
+\PYG{+w}{                 }\PYG{n}{COMP\PYGZus{}IN\PYGZus{}SERVICE\PYGZus{}DTE}\PYG{p}{,}
+\PYG{+w}{                 }\PYG{n}{COMP\PYGZus{}USER\PYGZus{}ID}\PYG{p}{,}
+\PYG{+w}{                 }\PYG{n}{COMP\PYGZus{}ACTIVITY\PYGZus{}TSP}\PYG{p}{)}
+\PYG{+w}{         }\PYG{k}{VALUES}\PYG{+w}{ }\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}HP600\PYGZsq{}}\PYG{+w}{ }\PYG{o}{||}\PYG{+w}{ }\PYG{n}{STRIP}\PYG{p}{(}\PYG{n+nb}{CHAR}\PYG{p}{(}\PYG{n}{ASSOC\PYGZus{}ID}\PYG{p}{)),}
+\PYG{+w}{                 }\PYG{n}{ASSOC\PYGZus{}ID}\PYG{p}{,}
+\PYG{+w}{                 }\PYG{l+s+s1}{\PYGZsq{}HP\PYGZsq{}}\PYG{p}{,}
+\PYG{+w}{                 }\PYG{l+s+s1}{\PYGZsq{}Desktop\PYGZsq{}}\PYG{p}{,}
+\PYG{+w}{                 }\PYG{k}{CURRENT\PYGZus{}DATE}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{l+m+mi}{14}\PYG{+w}{ }\PYG{n}{DAYS}\PYG{p}{,}
+\PYG{+w}{                 }\PYG{k}{SESSION\PYGZus{}USER}\PYG{p}{,}
+\PYG{+w}{                 }\PYG{k}{CURRENT\PYGZus{}TIMESTAMP}\PYG{p}{)}
+\PYG{p}{;}
+\end{Verbatim}

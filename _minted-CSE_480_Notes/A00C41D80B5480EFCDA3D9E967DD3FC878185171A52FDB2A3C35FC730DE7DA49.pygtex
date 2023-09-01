@@ -1,0 +1,6 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{SELECT}\PYG{+w}{ }\PYG{p}{...}
+\PYG{+w}{  }\PYG{k}{FROM}\PYG{+w}{ }\PYG{k}{FINAL}\PYG{+w}{ }\PYG{k}{TABLE}\PYG{+w}{ }\PYG{p}{(}
+\PYG{+w}{    }\PYG{p}{[}\PYG{n}{dml}\PYG{+w}{ }\PYG{n}{query}\PYG{p}{])}
+\PYG{p}{;}
+\end{Verbatim}

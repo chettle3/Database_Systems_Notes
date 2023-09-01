@@ -1,0 +1,6 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{SELECT}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{k}{FROM}\PYG{+w}{ }\PYG{n}{Customers}
+\PYG{k}{WHERE}\PYG{+w}{ }\PYG{n}{id}\PYG{+w}{ }\PYG{k}{IN}\PYG{+w}{ }\PYG{p}{(}
+\PYG{+w}{    }\PYG{k}{SELECT}\PYG{+w}{ }\PYG{n}{customer\PYGZus{}id}\PYG{+w}{ }\PYG{k}{FROM}\PYG{+w}{ }\PYG{n}{Orders}
+\PYG{p}{);}
+\end{Verbatim}

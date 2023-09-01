@@ -1,0 +1,3 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{DROP}\PYG{+w}{ }\PYG{k}{VIEW}\PYG{+w}{ }\PYG{k}{IF}\PYG{+w}{ }\PYG{k}{EXISTS}
+\end{Verbatim}

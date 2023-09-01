@@ -1,5 +1,5 @@
 \begin{Verbatim}[commandchars=\\\{\}]
 \PYG{k}{SELECT}\PYG{+w}{ }\PYG{n}{column1}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{column2}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{column3}
 \PYG{k}{FROM}\PYG{+w}{ }\PYG{k}{table\PYGZus{}name}
-\PYG{k}{ORDER}\PYG{+w}{ }\PYG{k}{BY}\PYG{+w}{ }\PYG{n}{column1}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{column2}\PYG{+w}{ }\PYG{k}{ASC}\PYG{o}{|}\PYG{k}{DESC}\PYG{p}{;}
+\PYG{k}{ORDER}\PYG{+w}{ }\PYG{k}{BY}\PYG{+w}{ }\PYG{n}{column1}\PYG{+w}{ }\PYG{k}{ASC}\PYG{o}{|}\PYG{k}{DESC}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{column2}\PYG{+w}{ }\PYG{k}{ASC}\PYG{o}{|}\PYG{k}{DESC}\PYG{p}{;}
 \end{Verbatim}

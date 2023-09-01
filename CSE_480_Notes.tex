@@ -1,7 +1,7 @@
 \documentclass[a4paper]{article}
 \usepackage[title={CSE 480 Notes}]{mycommands}
 \setcounter{tocdepth}{2}
-\graphicspath{{graphics}}
+\graphicspath{{graphics/}}
 
 \renewcommand{\fcolorbox}[4][]{#4}
 
@@ -28,9 +28,12 @@
         \item While originally derived from JavaScript, it is now a language-independent data format
     \end{arrows}
     \item Data is contained in a semi-structured hierarchical structure under one root JSON object
+    \begin{arrows}
+    \item Whitespace outside strings is ignored
+    \end{arrows}
     \item The types in JSON are:
     \begin{itemize}
-        \item \textcolor{codegreen}{\texttt{"string"}}, a sequence of zero or more characters enclosed in quotation marks
+        \item \textcolor{codegreen}{\texttt{"string"}}, a sequence of zero or more characters enclosed in double quotes
         \begin{arrows}
             \item Characters are escaped with \texttt{\textbackslash}, such as \texttt{"}, \texttt{\textbackslash}, and optionally \texttt{/}
             \item Escape sequences include backspace \texttt{\textbackslash b}, formfeed \texttt{\textbackslash f}, newline \texttt{\textbackslash n}, carriage return \texttt{\textbackslash r}, tab \texttt{\textbackslash t}, and unicode \texttt{\textbackslash u\#\#\#\#} where \texttt{\#\#\#\#} is a four digit hexadecimal number
@@ -51,10 +54,20 @@
         \begin{arrows}
         \item For arbitrary-length arrays where each item must meet the same schema, specify this schema using the keyword \textcolor{codegreen}{\texttt{"items"}}
         \item To validate the first $n$ values (if present) against different schemas, specify an array of schemas using \textcolor{codegreen}{\texttt{"prefixItems"}}
+        \item Use \textcolor{codegreen}{\texttt{"minItems"}} and \textcolor{codegreen}{\texttt{"maxItems"}} to validate the length of the array
         \end{arrows}
-        \item \textcolor{codegreen}{\texttt{"boolean"}}, which is either \iljson{true}, \iljson{false}
+        \item \textcolor{codegreen}{\texttt{"boolean"}}, which is either \iljson{true} or \iljson{false}
         \item \iljson{null}
     \end{itemize}
+    \item A sample JSON file is:
+    \begin{json}
+{
+    "name": "James",
+    "classes": [ {"Name": "CSE480", "Students": 135},
+                 {"Name": "CSE498", "Students": 178} ],
+    "Employed": true
+}
+    \end{json}
     \item A sample JSON schema is:
     \begin{json}
 {
@@ -85,9 +98,9 @@
     \end{arrows}
     \item XML also stores data in a semi-structured hierarchical structure under a single root element
     \item Each element consists of a start tag \ilxml{<tag_name>}, optional content (without quotes), and an end tag \ilxml{</tag_name>}, or an empty tag \ilxml{<tag_name/>} can be used
-    \item Each start or empty tag can also contain columns \ilxml{<tag_name attr_name="value">}
+    \item Each start or empty tag can also contain attributes \ilxml{<tag_name attr_name="value">}
     \begin{arrows}
-        \item Only one value may be specified, so if multiple are needed, oftentimes space-delimited strings are used
+        \item Only one value may be specified for an attribute, so if multiple are needed, often space-delimited strings are used
     \end{arrows}
     \item An XML schema uses the following format:
     \begin{xml}
@@ -106,10 +119,18 @@
 </xsd:complexType>
 </xsd:schema>
 \end{xml}
+	\begin{arrows}
+	\item \ilxml{xsd} specifies the namespace; it is also common to use \ilxml{xs} instead (in which case the first line of the schema would be changed as well)
+	\end{arrows}
     \item The built-in simple types are \ilxml{"xsd:string"}, \ilxml{"xsd:decimal"}, \ilxml{"xsd:integer"}, \ilxml{"xsd:boolean"}, \ilxml{"xsd:date"},
     \ilxml{"xsd:time"}, \ilxml{"xsd:dateTime"}, and \ilxml{"xsd:duration"}
-    \item Other attributes include \ilxml{default}, \ilxml{use} (set equal to \ilxml{"required"} to make required)
-    \item More detailed restrictions can be placed by defining a simple type, such as:
+    \item The number of times a tag occurs can be specified with \ilxml{minOccurs="#"} and \ilxml{maxOccurs="#"}
+    \begin{arrows}
+    \item Use \ilxml{"unbounded"} for unlimited number of occurrences
+    \item By default, \ilxml{minOccurs="1"} and \ilxml{maxOccurs="1"}, so that the tag is mandatory and can appear only once
+    \end{arrows}
+    \item Within a complex type, an attribute can be specified via \ilxml{<xsd:attribute name="attr_name" type="xsd:type"/>}
+    \item More detailed restrictions can be placed on a xsd type by defining a simple type, such as:
 \begin{xml}
 <xsd:simpleType name="myType">
   <xsd:restriction base="xsd:integer">
@@ -118,18 +139,109 @@
   </xsd:restriction>
 </xsd:simpleType>
 \end{xml}
+	\item Rather than having complex types be named (and then defined later), they can be embedded directly inside the <xsd:element> tag:
+\begin{xml}
+<xsd:element name="name">
+  <xsd:complexType>
+    ...
+  </xsd:complexType>
+</xsd:element>
+\end{xml}
+	\item Alternatively, all elements and attributes can be defined at the beginning without any structure, and then the xsd element tags can use \ilxml{ref="element_name"} to reference it
 \end{itemize}
 
 \section{Database Concepts}
 \subsection{Introduction}
 \begin{itemize}
+	\item A \emph{Database Management System (DBSM)} is a software used to store and interact with a database, such as SQLite or DB2
+	\begin{arrows}
+	\item Provides a single interface for interacting with files of potentially different types
+	\item Creates a level of abstraction between the data and the application, so that changes to the file structures do not require code changes
+	\item Adds the ability to enforce security and permissions for reading/modifying data
+	\end{arrows}
     \item A \emph{database instance} is the actual data in a database in a moment of time, whereas a \emph{database schema} is a specification for the type of data that may be in the database
-    \item \emph{Well-formed} means the data conforms to the file format, whereas \emph{valid} means the data conforms to the schema (and is well-formed)
+    \item \emph{Well-formed} means the data conforms to the file format, whereas \emph{valid} is a stronger notion meaning that thee data conforms to the schema
 \end{itemize}
 
-\subsection{CAP Theorem for Distributed Databases}
+\subsection{Methods of Organizing Databases}
 \begin{itemize}
-    \item A \emph{distributed database} stores information on many nodes or virtual machines
+\item A \emph{hierarchical} database uses trees to store one-to-many relationships between entities
+\begin{arrows}
+\item For example, a department could have children that are employees, which in turn have children that are project history
+\item This is a fast and easy to understand structure
+\item It requires that programs can traverse the tree in order to locate leaf nodes, which makes it inflexible to structure changes
+\item It is not possible to represent many-to-many relationships without introducing redundancy
+\end{arrows}
+\item A \emph{network} database is an extension of hierarchical databases to allow for many-to-many relationships by allowing an entity to have multiple parents
+\begin{arrows}
+\item This is also fast, but more complex to understand
+\item It is also inflexible to structure changes
+\end{arrows}
+\item A \emph{relational} database stores data in tables (\emph{relations}) which have columns (\emph{attributes}) and rows (\emph{tuples})
+\begin{arrows}
+\item Has mathematical foundation in set theory and relational algebra
+\item Data redundancy is actively reduced via \emph{normalization}, which reduces storage and helps to avoid anomalies which lead to inconsistencies
+\item It is self-documenting, easy to understand, and allows for restructuring
+\item It is slower since relationships between entities are not enforced by the database structure inherently
+\item Objects present in object-oriented code may need to be taken apart before being stored in the database
+\end{arrows}
+\item An \emph{object-oriented} database allows for storage of objects, sometimes based on XML or JSON models
+\item A \emph{NoSQL} database describes a mix of organizations, some similar to hierarchical and network organizations, boasting faster performance
+\begin{arrows}
+\item This comes at the cost of data consistency -- it can only guarantee \textit{eventual} consistency
+\end{arrows}
+\end{itemize}
+
+\subsection{Relational Databases}
+\begin{itemize}
+    \item A relational database stores data in tables, called \emph{relations}
+    \begin{arrows}
+        \item The rows of a relation are called \emph{tuples}
+        \item The columns of a relation are called \emph{attributes}
+    \end{arrows}
+    \item A relation may have a \emph{relation schema}, which consists of a name for the relation and a list of its attributes, optionally with their corresponding \emph{domains}, or sets of possible values
+    \begin{arrows}
+        \item The database is therefore the collection of all relations, whereas the database schema is the collection of all relation schemas
+    \end{arrows}
+    \item All values in a relation should be \emph{atomic domains}, meaning that they contain an indivisible unit of information
+    \begin{arrows}
+    \item A relation is in \emph{First Normal Form} if all of its domains are atomic (we assume this is the case for all relations)
+    \item Sets of names or identification numbers like ``CSE101'' are not atomic (this should be represented with two separate attributes)
+    \item A list of values is not atomic, and should be represented using an additional relation instead
+    \item Whether a domain is atomic or not may depend on context
+    \item Non-atomic domains complicate storage, queries, and data validation, and also encourage redundant storage of data
+    \end{arrows}
+    \item A \emph{key} is a column or set of columns that uniquely identifies rows in the relation
+    \begin{arrows}
+    \item Every relation must have a key, since the rows in a relation do not have an inherent order and thus must be distinguishable
+    \item A key cannot be changed under normal circumstances and cannot have null values
+    \item From a set of \emph{candidate keys}, a single \emph{primary key} is selected to use, and the rest are called \emph{alternate keys}
+    \item A \emph{natural key} is a key that is an obvious choice, like student ID
+    \item A \emph{artificial key} or \emph{surrogate key} is one automatically created by the DBMS when one is not specified (or cannot be created from the existing columns)
+    \begin{arrows}
+    \item In SQLite, a surrogate key called \ilsql{rowid} is automatically created when an integer primary key is not specified
+    \item In DB2, either an identity column is generated automatically, or values can be specified manually by the user with a sequence object (obtaining the next value with \texttt{NEXTVAL FOR sequence-object} and the previous value with \texttt{PREVVAL FOR sequence-object})
+    \end{arrows}
+    \end{arrows}
+\end{itemize}
+
+\section{Distributed Databases}
+
+\subsection{Introduction}
+\begin{itemize}
+    \item A \emph{distributed database} stores information on many nodes or virtual machines, run by a \emph{Distributed Database Management System (DDBMS)}
+    \begin{arrows}
+    \item This is in comparison to a \emph{centralized database}, in which a single datacenter serves all queries
+    \item The multiple datacenters have communications channels to facilitate the transfer of data
+    \item Distributed databases allow for greater accessibility, redundancy in case of failure, ability to grow/change without interrupting service, and greater parallelism/concurrency
+    \end{arrows}
+    \item A \emph{homogeneous distributed database} has identical software (OS, DBMS, and schema) used at all sites, whereas a \emph{heterogeneous distributed database} uses different softwares
+    \begin{arrows}
+    \item Homogeneous distributed databases are easier to treat as a centralized database conceptually
+    \item Optimizations used in one datacenter of a homogeneous database can be used at all others, but this is not true for heterogeneous databases
+    \item Cooperation between datacenters is easier in the homogeneous case
+    \item Heterogeneous databases allow for more diversity of optimization and less reliance on a particular technology
+    \end{arrows}
     \item The \emph{CAP Theorem} (or \emph{Brewer's Theorem}) states that a distributed database can only achieve two of the following three guarantees:
     \begin{itemize}
         \item[C:] \emph{Consistency}. The same information is seen by all clients regardless of the node accessed; all successful writes should be reflected across all nodes
@@ -143,12 +255,88 @@
             \item A \emph{partition} is a communications break within a distributed database; either a lost or delayed connection between two nodes
         \end{arrows}
     \end{itemize}
-    \item This theorem yields the following cases:
+    \item In practice, partitions are unavoidable, so partition tolerance must always be included. Thus, the CAP theorem is stating a tradeoff between consistency and availability
     \begin{itemize}
-        \item[CA:]
-        \item[CP:]
-        \item[AP:]
+    \item The PACELC expands upon this by saying that in the absence of a partition, there is a tradeoff between latency and consistency
     \end{itemize}
+\end{itemize}
+
+\subsection{Replication and Fragmentation}
+\begin{itemize}
+    \item \emph{Replication} is the process of keeping copies of the same data at different sites
+    \begin{arrows}
+    \item This increases availability and safety of the data, but also increases difficulty of data modifications, consistency, and concurrency control
+    \item Replication can be complete (the entire database is replicated) or partial (some of the database is replicated)
+    \item When no replication is used, the database is \emph{partitioned}
+    \end{arrows}
+    \item For partial replication or partitioned databases, the following strategies can be used to determine which sites store which data:
+    \begin{itemize}
+    \item \emph{Horizontal partitioning/fragmentation}, where a table is partitioned by records. An example is a CSE server holding CSE students and a MTH server holding MTH students
+    \item \emph{Vertical partitioning/fragmentation}, where a table is partitioned by columns (i.e., a decomposition is formed). An example is a CSE server holding capstone data and an MSU server holding tuition data
+    \item \emph{Hybrid partitioning/fragmentation}, where a mix of both is used
+    \end{itemize}
+    \item For horizontal fragmentation, the following strategies can be used:
+    \begin{itemize}
+    \item \emph{Primary Horizontal Fragmentation}, where rows are selected for each fragment using a simple predicate (equality, inequality, or boolean operators)
+    \item \emph{Derived Horizontal Fragmentation}, where rows are selected for each fragment based on a particular foreign key
+    \end{itemize}
+\end{itemize}
+
+\subsection{Locking and Committing Protocol}
+\begin{itemize}
+    \item A transaction only requiring/affecting data at one local database is a \emph{local transaction}, while those requiring multiple sites is a \emph{global transaction}
+    \begin{arrows}
+    \item Local transactions are easy to carry out and commit, while global transactions require more machinery
+    \end{arrows}
+	\item For global transactions, the following strategies exist of granting locks:
+	\begin{arrows}
+	\item A \emph{primary site} can be specified when complete replication is used, and all locking must be approved by this site
+	\item This is unreliable, but can be improved by specifying a \emph{backup site} which immediately carries on with transactions if the primary site fails
+	\item This can be extended when complete replication is not used by specifying a \emph{primary copy}/\emph{backup copy} for each database item individually
+	\item Backup sites/copies can also be determined by an election upon failure
+	\item Instead of having primary copies, a vote could be commenced each time a lock is requested, although this can drastically increase network traffic
+	\end{arrows}
+	\item For committing, a \emph{two-phased commit} proceeds as follows:
+	\begin{arrows}
+	\item \emph{Commit-Request Phase}: the \emph{coordinator} informs the \emph{cohort} (sites involved in the commit) of the required changes, and each responds with ``yes'' or ``no''
+	\item \emph{Commit Phase}: the coordinator decides whether to commit or rollback based on responses received and sends the appropriate message
+	\item Two-phased commits are a blocking protocol; if the coordinator fails, all sites which responded ``yes'' are stuck in waiting
+	\end{arrows}
+	\item A \emph{three-phased commit} improves this by adding more communications (but this also increases latency):
+	\begin{arrows}
+	\item \emph{Commit-Request Phase}: Same as two-phased commit; any failures at this stage result in the transaction aborting (either upon timeout, or because the coordinator issues this)
+	\item \emph{Prepare-to-Commit Phase}: The cohort is notified that they should prepare to commit, and they send an acknowledgment to the coordinator
+	\item \emph{Commit Phase}: Once all acknowledgments are received, a commit message is sent
+	\item If the coordinator fails, a new one can be elected, which can attempt to determine when the original coordinator failed and where to resume
+	\end{arrows}
+\end{itemize}
+
+\subsection{Redundant Array of Inexpensive/Independent Disks (RAID)}
+\begin{itemize}
+\item \emph{Redundant Array of Inexpensive/Independent Disks (RAID)} is a combination of software and hardware meant to improve disk performance
+\begin{arrows}
+\item Instead of distributing data across sites, as in the previous conversation, data is distributed across disks to allow for parallelism
+\end{arrows}
+\item \emph{Data Striping} is the process of breaking up contiguous data normally contained in a single disk into multiple, either by byte or by block, to allow for parallelism during reads/writes
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\linewidth]{data_striping.png}
+\end{figure}
+\item \emph{Mirroring/shadowing} is often used, which is the process of replicating data to multiple disks (adding redundancy)
+\begin{arrows}
+\item The mean-time-to-failure of a hard drive is 20 years, so if many disks are being used, disk failures can become common
+\item Error-correcting codes can be used to detect small failures in disks
+\end{arrows}
+\item The following RAID levels categorize combinations of the above:
+\begin{arrows}
+\item \emph{RAID Level 0}, where striping is used without any mirroring/shadowing (popular choice for efficiency, but data is not protected)
+\item \emph{RAID Level 1}, where the data is mirrored in full on one or more other disks (used for critical applications like logs)
+\item \emph{RAID Level 2}, where data is striped at the bit level using Hamming Codes for error correction (rarely used due to complexity and inefficiency)
+\item \emph{RAID Level 3}, where data is striped at the byte level, and a dedicated parity disk stores parity information (less used due to single parity disk being a bottleneck)
+\item \emph{RAID Level 4}, where data is striped at block level with a dedicated parity disk (less used also due to bottleneck)
+\item \emph{RAID Level 5}, where data is striped at block level and parity information is distributed (popular choice for balance between performance and redundancy)
+\item \emph{RAID Level 6}, where data is striped at block level and two sets of parity information are distributed (protection against two simultaneous disk failures)
+\end{arrows}
 \end{itemize}
 
 \section{Entity-Relationship Model}
@@ -205,7 +393,7 @@ playerid&teamid\\\midrule
 \begin{arrows}
 \item \emph{One-to-one}, where each entity of $A$ is associated with at most one entity of $B$ and vice versa
 \item \emph{One-to-many}, where each entity of $B$ is associated to at most one entity of $A$ (but any entity of $A$ can be associated to any number of entities of $B$)
-\item \emph{Many-to-one}, where each entity of $A$ is associated to at most one entity of $B$ (but any entity of $B$ can be associated to any number of entities of $B$)
+\item \emph{Many-to-one}, where each entity of $A$ is associated to at most one entity of $B$ (but any entity of $B$ can be associated to any number of entities of $A$)
 \item \emph{Many-to-many}, where each entity of $A$ is associated to any number of entities in $B$ and vice versa
 \end{arrows}
 \item If one entity is related to exactly one of another entity, this is represent with a rounded arrow
@@ -399,19 +587,20 @@ Jimmy&4\\\bottomrule
 \end{arrows}
 \item Weak entities should not be overused
 \begin{arrows}
-\item It is better to create unique IDs for entity sets (e.g., social security numbers, automobile VINs, etc.
+\item It is better to create unique IDs for entity sets (e.g., social security numbers and automobile VINs)
 \item Weak entities are only needed when there is no global authority capable of establishing a unique identifier
 \end{arrows}
 \end{itemize}
 
 \subsection{Converting E/R Diagrams to Relations}
 \begin{itemize}
-\item When converting an E/R diagram to relations/tables, each entity set becomes a relation with the corresponding attributes,
+\item When converting an E/R diagram to relations/tables, each entity set becomes a relation with the corresponding attributes
 \item Each relationship becomes a relation whose attributes are:
 \begin{enumerate}[label=(\roman*)]
 \item The keys of the connected entity sets
 \item Any attributes of the relationship itself
 \end{enumerate}
+\item All attributes needed to form the key of a weak entity set must be included in the relation
 \item In a many-to-one relationship, the table for the relationship can be combined with the ``many'' table
 
 \begin{figure}[H]
@@ -444,14 +633,9 @@ Relations:
 \item This can lead to \emph{anomalies}, which are problems that occur specifically when too much information is contained a single relation
 \item \emph{Update anomalies} occur when redundant information is updated in one location but not in other locations
 \item \emph{Deletion anomalies} occur when a deletion causes more information to be deleted than desired (for example, deleting information about a project grade when a student drops the class)
+\item \emph{Insert anomalies} occur when data cannot be inserted into a relation because another piece of data is missing
 \end{arrows}
-\item For these new methods to work, each domain in a relation should be an indivisible unit, called an \emph{atomic} domain
-\begin{arrows}
-\item A relation is in \emph{First Normal Form} if all of its domains are atomic (we assume this is the case for all relations)
-\item Sets of names or identification numbers like ``CS101'' are not atomic
-\item Whether a domain is atomic or not may depend on context
-\item Non-atomic domains complicate storage, queries, and data validation, and also encourage redundant storage of data
-\end{arrows}
+\item We also assume that all relations are in First Normal Form (all domains are atomic)
 \end{itemize}
 
 \subsection{Functional Dependency}
@@ -471,7 +655,7 @@ Relations:
 
 \subsection{Closure of Functional Dependencies}
 \begin{itemize}
-\item Given a set $F$ of functional dependencies, the \emph{closure} $F^+$ of $F$ is the set of all functional dependencies logically implies by those in $F$
+\item Given a set $F$ of functional dependencies, the \emph{closure} $F^+$ of $F$ is the set of all functional dependencies logically implied by those in $F$
 \item \emph{Armstrong's axioms} provide a sound and complete logical system for functional dependencies, and thus can be used to generate $F^+$. For attribute sets $\alpha,\beta,\gamma,\delta$:
 \begin{enumerate}[label=(\roman*)]
 \item Reflexivity: If $\beta\subseteq\alpha$, then $\alpha\rightarrow\beta$
@@ -522,7 +706,7 @@ add the resulting functional dependencies to $F^+$\;
 \DontPrintSemicolon
 $\alpha^+\gets \alpha$\;
 \uRep {$\alpha^+$ does not change}{
-\ForEach{functional dependency $(\beta\rightarrow\gamma)\in F^+$}{
+\ForEach{functional dependency $(\beta\rightarrow\gamma)\in F$}{
 \If{$\beta\subseteq\alpha^+$}{$\alpha^+\gets\alpha^+\cup\gamma$\;}
 }
 }
@@ -534,324 +718,127 @@ $\alpha^+\gets \alpha$\;
 \item $\alpha\rightarrow\beta$ iff $\beta\subseteq\alpha^+$
 \end{itemize}
 
-\subsection{Determining Decompositions}
+\subsection{Boyce-Codd Normal Form (BCNF)}
 \begin{itemize}
 \item A decomposition of $R=R_1\cup R_2$ is a lossless join iff $R_1\cap R_2$ is a superkey for either $R_1$ or $R_2$
 \begin{arrows}
 \item This implies either $R_1\cap R_2\rightarrow R_1$ or $R_1\cap R_2\rightarrow R_2$
+\item Note implicitly that we have required all attributes be present in either $R_1$ or $R_2$
 \end{arrows}
 \item The \emph{Boyce-Codd Normal Form (BCNF)} ensures that no redundancy arising from functional dependencies are possible
 \begin{arrows}
 \item $R$ is in BCNF iff for any nontrivial functional dependency $\alpha\rightarrow\beta$ in $F^+$, we have that $\alpha$ is a superkey for $R$
-\item For example, $R=\{\text{team\_id},\text{team\_name},\text{trophies},\text{player\_id},\text{player\_name},\text{player\_position}\}$ with the obvious functional dependencies is not in BCNF, since \text{team\_id} is not a superkey of $R$
+\item For example, $R=\{\text{team\_id},\text{team\_name},\text{trophies},\text{player\_id},\text{player\_name},\text{player\_position}\}$ with the obvious functional dependencies is not in BCNF, since \text{team\_id} is not a superkey of $R$ but functionally determines \text{team\_name}
+\end{arrows}
+\item To check whether $R$ is in BCNF, it suffices to check that none of the functional dependencies in $F$ violate the rule, rather than checking all of $F^+$
+\begin{arrows}
+\item However, this is not true after $R$ is decomposed, say into $R_1$ and $R_2$. For example, let $R=\{A, B, C, D\}$, $R_1=\{A, C, D\}$, and $R_2=\{A, B\}$, with the functional dependencies $A\rightarrow B$ and $B\rightarrow C$. Although neither of these are present in $R_1$ or $R_2$, transitivity yields $A\rightarrow C$, which violates BCNF for $R_1$
+\item Instead, compute $\alpha^+$ for each subset $\alpha\subset R_i$, and confirm that either $R_i\subset\alpha^+$ or $\alpha^+\cap R_i=\alpha$
+\end{arrows}
+\begin{center}
+\normalem
+\begin{minipage}{0.8\linewidth}
+\SetKwRepeat{uRep}{repeat}{until}
+\begin{algorithm}[H]
+\caption{BCNF Decomposition Algorithm}
+\DontPrintSemicolon
+$\text{result}=\{R\}$\;
+
+\While {there is a schema $R_i\in\text{results}$ that is not in BCNF}{
+let $\alpha\rightarrow\beta$ be a nontrivial functional dependency holding on $R_i$ such that $R_i\not\subset\alpha^+$ and $\alpha\cap\beta=\varnothing$\;
+replace $R_i$ with $(R_i-\beta)$ and $(\alpha,\beta)$ in results\;
+}
+\end{algorithm}
+\end{minipage}
+\ULforem
+\end{center}
+\begin{arrows}
+\item The relation is decomposed into one containing just the attributes involved in the functional dependency and one containing all attributes except those functionally determined by $\alpha$
+\item When choosing $\alpha\rightarrow\beta$, it is best to let $\beta=\alpha^+$, so that fewer decompositions are formed
 \end{arrows}
 \end{itemize}
 
+\subsection{Canonical Cover}
 
-\section{Transaction Management}
-\subsection{Introduction}
 \begin{itemize}
-    \item A \emph{transaction} is a unit of program execution that accesses and possibly updates various data items
-    \item The principles of transactions for relational databases are summarized with then acronym \emph{ACID} (called the \emph{ACID Properties)}:
-    \begin{itemize}
-        \item[A:] \emph{Atomicity}. Despite consisting of possibly many statements, the collection must appear to the user as an indivisible unit: it either executes in entirety or not at all (if failure occurs for any reason, any changes must be undone)
-        \item[C:] \emph{Consistency}. The database must remain in a consistent after an isolated transaction is run (data still is valid)
-        \item[I:] \emph{Isolation}. Since transactions consist of many statements, it must be ensured that each transaction is not affected by other concurrent transactions
-        \item[D:] \emph{Durability}. Successful transactions must remain permanent even if the system later crashes.
-    \end{itemize}
-    \item The primary way to make a database system more efficient is to allow for concurrency, but the scheduling of transactions cannot violate the ACID test; it must appear to the end-user that each query runs independently
-    \begin{arrows}
-        \item Note that no restrictions are placed on the order in which transactions are executed; if an order is required, they should be packaged in the same transaction
-        \item All transactions must conform to the ``Correctness Principle'': if a transaction executes independently without system errors, and the database begins in a consistent state, then it must end in a consistent state
-        \item When determining how to implement concurrency, there is a tradeoff between latency (wait-time for a given query) and throughput (the number of queries that can be processed at once)
-    \end{arrows}
-\end{itemize}
-\subsection{Serializable Schedules}
-\begin{itemize}
-    \item A schedule is a \emph{serial schedule} if the actions consist of all the actions from one transaction, then all the actions of another transaction, and so on
-    \item A schedule is a \emph{serializable schedule} if there exists a serial schedule producing the same output
-    \begin{arrows}
-    \item Serializable schedules may have actions being interweaved between transactions, resulting in concurrency, but it appears to the end user as if each runs in isolation
-    \item A non-serializable schedule violates ACID properties, so may not be used by the database scheduler
-    \end{arrows}
-    \item When determining whether a schedule is serializable, only the details of what element is being written to/read from is used, not the actual contents of the read/write
-    \begin{arrows}
-    \item This means arithmetic coincidence cannot be utilized; for example, properties such as commutativity and associativity cannot be utilized
-    \item The reason for this is understanding the effect of a query on the database is a hard problem, related to the Halting Problem
-    \end{arrows}
-\end{itemize}
-
-\subsection{Conflict-Serializable Schedules}
-\begin{itemize}
-    \item A \emph{conflict} is a pair of consecutive actions in a schedule such that the output may change if their order is interchanged
-    \begin{arrows}
-        \item To identify conflicts (again assuming no arithmetic coincidence), we notate the operations as $r_i(X)$ and $w_i(X)$ for read and write, where $i$ is the transaction and $X$ is the database element
-        \item Note that a write represents a \emph{blind write}, where the element is written to without being read (i.e., the element is overwritten)
-    \end{arrows}
-    \item Consider two actions $a_i(X)$ and $b_j(Y)$. We have:
-    \begin{enumerate}[label=(\roman*)]
-        \item There is a conflict if $i=j$, since we never allow actions within the same transaction to be re-ordered
-        \begin{arrows}
-        \item Although a transaction is represented by $r_i$ and $w_i$, other database-independent actions are also being performed; for example, the information of a read can be processed in some way and then used in a write
-        \item Thus, it is not feasible to consider re-ordering transactions under this framework
-        \end{arrows}
-        \item Otherwise, if $X\neq Y$, there is no conflict, since different database elements are being utilized
-        \item Finally, if $X=Y$, then there is a conflict iff either $a$ or $b$ is a write action
-    \end{enumerate}
-    \item Two schedules are \emph{conflict-equivalent} if one can be transformed to the other via non-conflicting swaps of adjacent actions
-    \item A schedule is \emph{conflict-serializable} if it is conflict equivalent to a serializable schedule
-    \begin{arrows}
-    \item Every conflict-serializable schedule is serializable
-    \item Not every serializable schedule is conflict-serializable, such as $r_1(X); w_2(x); w_1(X); w_3(X)$. This is not conflict serializable since $w_2(X)$ and $w_1(X)$ conflict, but it is serializable since in any order, the result is over-written by $w_3(X)$
-    \item In practice, it is difficult to determine whether a schedule is serializable, but it is much easier to determine whether it is conflict-serializable
-    \end{arrows}
-    \item Transaction $i$ ($T_i$) \emph{takes precedence} over transaction $j$ ($T_j$) in schedule $S$ if there are actions $A_1\in T_1$ and $A_2\in T_2$ such that $A_1$ precedes $A_2$, $A_1$ and $A_2$ involve the same data element, and at least one is a write
-    \begin{itemize}
-        \item Equivalently, $T_i$ has precedence over $T_j$ if there exists conflicting actions $A_1\in T_i$ and $A_2\in T_j$ such that $A_1$ precedes $A_2$
-        \item This is denoted $T_1<T_2$
-    \end{itemize}
-    \item In a conflict-serializable schedule, $T_i<T_j$ must imply that $T_i$ precedes $T_j$ in the corresponding serial schedule
-    \begin{arrows}
-    \item Thus, by building a precedence graph (a directed graph with edges from $T_i$ to $T_j$ for each $T_i<T_j$), a schedule is conflict-serializable iff it is acyclic
-    \item A conflict-equivalent serial schedule can then be found via topological sorting
-    \end{arrows}
-\end{itemize}
-
-\subsection{Locks}
-\begin{itemize}
-    \item \emph{Locks} provide a mechanism for producing conflict-serializable schedules while still allowing concurrency; transactions request and release locks on different elements of the database
-    \item Locks control transactions as follows:
-    \begin{arrows}
-    \item A transaction may only read or write to an element if it was previously granted a lock and has not released the lock yet
-    \item Transactions must eventually release all locks
-    \item No two transactions can concurrently have a lock on the same element
-    \end{arrows}
-    \item Locking an element is denoted $l_i(X)$, and releasing a lock is denoted $u_i(X)$
-    \item Simply having locks is not enough to ensure conflict-serializable schedules, since each action could simply lock and then immediately unlock the element
-    \item \emph{Two-Phase Locking (2PL)} guarantees that a legal schedule of consistent transactions is conflict-serializable by forcing all lock actions to precede all unlock actions
-    \begin{arrows}
-        \item The \emph{expanding phase} consists of the portion of the transaction where locks may be acquired, and the \emph{shrinking phase} consists of the portion where locks may be released
-        \item This ensures that no other transactions may interfere with a given element until the transaction is completely finished with it
-    \end{arrows}
-    \item To produce the schedule, each transaction can greedily request resources/locks, and the scheduler will either grant these are deny them
-\end{itemize}
-
-\subsection{Types of Locks}
-\begin{itemize}
-\item If multiple transactions only read from an element without writing to it, then hypothetically these could run concurrently in any order
-\item To allow this, locks are divided into two categories: \emph{shared locks} and \emph{exclusive locks}
-\item A shared lock is used for reading, while an exclusive lock is used for reading and/or writing
-\item Many shared locks can be granted simultaneously, but an exclusive lock can only be granted if it is the only locks
-\item Shared lock requests are denoted $sl_i(X)$ and exclusive locks are denoted $xl_i(X)$
-\item Thus, all of the rules become:
+\item During any update, in theory, the database system should ensure that functional dependencies are satisfied
 \begin{arrows}
-\item Consistency of Transactions: In any transaction $T_i$, $r_i(X)$ must be preceded by $sl_i(X)$ or $xl_i(X)$, with no intervening $u_i(X)$; $w_i(X)$ must be preceded by $xl_i(X)$ with no intervening $u_i(X)$; and $sl_i(X)$ and $xl_i(X)$ must eventually be followed by $u_i(X)$
-\item Two-Phase Locking of Transactions: No action $sl_i(X)$ or $xl_i(X)$ may be preceded by $u_i(Y)$ for any $Y$
-\item Legality of Schedules: If $xl_i(X)$ appears in a schedule, then no $xl_j(X)$ or $sl_j(X)$ may appear for $j\neq i$ until $u_i(X)$ appears; and if $sl_i(X)$ appears in a schedule, then there cannot be a following $xl_j(X)$ for $j\neq i$ until $u_i(X)$ appears
+\item In practice, this is not done since it is expensive and generally difficult
+\item However, by developing theory to make this more efficient, we can develop forms (such as Third Normal Form) in which this is possible
+\end{arrows}
+\item \emph{Extraneous attributes} of functional dependency $\alpha\rightarrow\beta$ are those that could be removed without changing the closure set $F^+$ of all functional dependencies
+\begin{arrows}
+\item $A\in\alpha$ is extraneous if $F$ logically implies $(F-\{\alpha\rightarrow\beta\})\cup\{(\alpha-A)\rightarrow\beta\}$
+\item $A\in\beta$ is extraneous if $(F-\{\alpha\rightarrow\beta\})\cup\{\alpha\rightarrow(\beta-A)\}$ logically implies $F$
+\end{arrows}
+\item The reverse direction for each of the above is always true
+\item To check for extraneous attributes, either:
+\begin{arrows}
+\item If $A\in\alpha$, then compute the closure of $\alpha-A$ under $F$, and determine if all attributes of $\beta$ are contained in it
+\item If $A\in\beta$, then compute the closure of $\alpha$ under $(F-\{\alpha\rightarrow\beta\})\cup\{\alpha\rightarrow(\beta-A)\}$, and determine if it includes $A$
+\end{arrows}
+\item A \emph{canonical cover} $F_c$ for $F$ is a set of dependencies equivalent to $F$ (so that each logically implies the other) with the minimality properties:
+\begin{itemize}
+\item No functional dependency in $F_c$ contains an extraneous attribute
+\item Each left side of a functional dependency in $F_c$ is unique (i.e., there does not exist $\alpha_1\rightarrow\beta_1$ and $\alpha_2\rightarrow\beta_2$ with $\alpha_1=\alpha_2$)
+\end{itemize}
+\item There may exist multiple canonical covers (it is not unique)
+\item To compute a canonical cover, begin with $F_c=F$ then iteratively use the union rule to combine dependencies with the same left side, and remove extraneous attributes \textit{computed using the current value of $F_c$}
+\end{itemize}
+
+\subsection{Third Normal Form (3NF)}
+
+\begin{itemize}
+\item Another desirable quality of database designs (other than avoiding redundancy with BCNF) is ensuring \emph{dependency preservation}
+\begin{arrows}
+\item Dependency preservation states that all functional dependencies in $F^+$ should be able to be checked solely by examining the quantities within each relation, \textit{without} needing to perform joins
+\item Joins can be expensive, and aside from that it is more clear and natural to have functional dependencies represented within a single relation
+\item Formally, suppose $R$ is decomposed into relations $R_1,\dots,R_n$. Define $F_i$ to be the \emph{restriction} of $F$ to $R_i$, which is the set of all functional dependencies in $F^+$ including only attributes in $R_i$. The functional dependencies $F'=F_1\cup\cdots\cup F_n$ are those that can be efficiently verified without joins. If $(F')^+=F^+$, then the decomposition satisfies dependency preservation, since verifying dependencies in $F'$ is sufficient to confirm that all those in $F$ hold.
+\end{arrows}
+\item \emph{Third Normal Form (3NF)} is a weaker form of BCNF which allows enough flexibility for a lossless dependency-preserving decomposition to exist; for every nontrivial $\alpha\rightarrow\beta$, either $\alpha$ is a superkey for $R$ as in BCNF, or each attribute in $\beta-\alpha$ belongs to some key in $R$
+\begin{arrows}
+\item It may be that each of the different attributes in $\beta-\alpha$ belong to a different possible key for $R$; they do not all need to belong to the same key
+\end{arrows}
+\begin{center}
+\normalem
+\begin{minipage}{0.8\linewidth}
+\SetKwRepeat{uRep}{repeat}{until}
+\begin{algorithm}[H]
+\caption{3NF Dependency-Preserving Lossless Decomposition Algorithm}
+\DontPrintSemicolon
+compute canonical cover $F_c$ of $F$\;
+\ForEach{$\alpha\rightarrow\beta$ in $F_c$}{
+add relation $\alpha\beta$
+}
+\If{no schema generated contains a key for $R$}{
+add relation containing just a key for $R$\;
+}
+\tcc{Optionally remove redundant relations}
+\uRep{no more relations can be removed}{
+\If{any schema $R_j$ is contained in another schema $R_k$}{
+delete $R_j$\;
+}
+}
+\end{algorithm}
+\end{minipage}
+\ULforem
+\end{center}
+\begin{arrows}
+\item This algorithm ensures dependency preservation by explicitly building a relation for each functional dependency in the canonical cover, which can lead to a high amount of redundancy and unnecessary decompositions
+\item However, this algorithm is a proof by construction that 3NF is sufficiently relaxed to allow for dependency preservation
+\item The algorithm is clearly dependency preserving since every dependency in the canonical cover is represented in a single relation. To see that it generates relations $R$ in 3NF, consider nontrivial $\gamma\rightarrow\delta$ that holds on $R$. Without loss of generality, we can let $\delta$ be a single attribute, so that we can consider nontrivial $\gamma\rightarrow B$. Let $\alpha\rightarrow\beta$ be the functional dependency that generated $R$ in the above algorithm. Since $R=\alpha\beta$, either $B$ is in $\alpha$ or $\beta$, so one of the following is true:
+\begin{itemize}[label=-]
+\item $B\in\alpha$ and $B\in\beta$. Then $B$ is extraneous, so that $\alpha\rightarrow\beta$ would not be in $F_c$, a contradiction.
+\item $B\in\alpha$ and $B\not\in\beta$. $\alpha$ is a key since $\alpha\rightarrow\beta$ and $R=\alpha\beta$, so $\gamma\rightarrow B$ does not violate 3NF.
+\item $B\in\beta$ and $B\not\in\alpha$. Either:
+\begin{itemize}[label=-]
+\item $\gamma$ is a superkey, so that $\gamma\rightarrow B$ does not violate 3NF.
+\item $\gamma$ is not a superkey. We claim that $B$ is extraneous in $\alpha\rightarrow\beta$, a contradiction since $\alpha\rightarrow\beta$ is in $F_c$. From $F'=(F-\{\alpha\rightarrow\beta\})\cup\{\alpha\rightarrow(\beta-B)\}$, we must show that $\alpha\rightarrow B$. $\gamma\rightarrow B$ is in $F_c$ and thus is derivable from $F$, and this derivation could not have used $\alpha\rightarrow\beta$ since $\gamma$ is not a superkey and thus $\alpha\not\subset\gamma^+$. Therefore, $\gamma\rightarrow B$ is logically implied by $F'$. Rewrite $\alpha\rightarrow(\beta-B)$ as $\alpha\rightarrow(\alpha\beta-B)$. Since $\gamma\subset \alpha\beta-B$ (noting that $B\not\in\gamma$), we have $\alpha\rightarrow\gamma$, and thus $\alpha\rightarrow B$.
+\end{itemize}
+\end{itemize}
 \end{arrows}
 \end{itemize}
 
-\subsection{Transactions in SQLite}
-\begin{itemize}
-\item SQLite chooses to lock on the entire database at a time, rather than locking on a table/row/value
-\begin{arrows}
-\item This sacrifices efficiency for ease of implementation
-\item Due to triggers, it may be difficult to determine how a given action impacts the database
-\end{arrows}
-\item There are five locking states of the database:
-\begin{arrows}
-\item \lstinline|UNLOCKED|. No locks are held on the database, and the database can not be read or written. This is the default state.
-\item \lstinline|SHARED|. The database may be read but not written. Any number of processes can hold a shared lock, so many simultaneous reads can occur.
-\item \lstinline|RESERVED|. A single process has a reserved lock, indicating that it plans to eventually write to the database, but that shared locks can continue being acquired until then.
-\item \lstinline|PENDING|. A single process has a pending lock, indicating that it plans to write to the database as soon as possible. No new shared locks may be acquired, although existing shared locks are allowed to finish.
-\item \lstinline|EXCLUSIVE|. A single process may have an exclusive lock, and no other locks may be present at that time. This lock permits reads and writes. Since this limits concurrency, SQLite minimizes the number of these locks granted.
-\end{arrows}
-\item A transaction in SQLite ends with either a commit, rollback, or error (which in turn triggers a rollback)
-\begin{arrows}
-\item These are denoted in a schedule with $\text{commit}_i$ and $\text{rollback}_i$
-\item Typically, the transaction does not write to the database until the commit, and instead modifies a local cached copy (so that different transactions may see different snapshots of the database)
-\item More formally, SQLite uses write-ahead logging (WAL) to record changes to the database (so a literal copy is not made, but this is an easy way to think about it)
-\item It is possible that a write may occur sooner that the commit (perhaps when using the immediate/exclusive mode) %!!! CLARIFY ON PIAZZA
-\item In the case of a rollback/error, all changes are undone
-\item All locks are released upon commit
-\end{arrows}
-\item A transaction can be run in three modes:
-\begin{arrows}
-\item \lstinline|DEFERRED|. A shared lock is requested upon the first read, and an exclusive lock is requested upon the first write (recall that the write typically occurs on commit, not on the first update/insert statement). This is the default.
-\item \lstinline|IMMEDIATE|. A reserved lock is requested immediately, and it will fail or wait if another transaction is holding an exclusive/reserved/pending lock. An exclusive lock is requested prior to writing (typically the promotion occurs on commit).
-\item \lstinline|EXCLUSIVE|. An exclusive lock is requested immediately, and it will fail or wait if other locks are being held.
-\end{arrows}
-\item The syntax in SQLite is \lstinline|BEGIN [MODE] TRANSACTION| for beginning the transaction (where \lstinline|[MODE]| is optionally passed), and either \lstinline|COMMIT TRANSACTION| or \lstinline|ROLLBACK TRANSACTION|.
-\item Statements executed outside of explicit transactions are handled differently depending on the \lstinline|isolation_level| property specified when forming the connection
-\begin{arrows}
-\item \ilpy{'DEFERRED'}, \ilpy{'IMMEDIATE'}, or \ilpy{'EXCLUSIVE'}. Transactions in these modes are implicitly opened in the respective mode before any \lstinline|INSERT|, \lstinline|UPDATE|, \lstinline|DELETE|, or \lstinline|REPLACE| statement is run. The transaction must be explicitly committed or rolled back with \ilpy{commit()} or \ilpy{rollback()}, otherwise the changes are rolled back. The default is \ilpy{'DEFERRED'}.
-\item \ilpy{None}. Each executed statement is treated as its own transactions, automatically committed after it finishes. This mode is often better to use, since it is better to explicitly open transactions when they are needed.
-\end{arrows}
-\item If a statement cannot be run because it cannot acquire the locks, then SQLite issues an error after a certain amount of time
-\end{itemize}
-
-\subsection{Rollbacks}
-\begin{itemize}
-\item A \emph{rollback} aborts a transaction and undoes its changes (which is necessary by atomicity)
-\item If a serial schedule is not used, rolling back one transaction may require that previous transactions be rolled back as well
-\begin{arrows}
-\item Namely, if a transaction $T_1$ has read modified (uncommitted) data created by $T_2$, then a rollback of $T_2$ also requires that $T_1$ be rolled back
-\item This can lead to \emph{cascading rollbacks}
-\item Cascading rollbacks can be avoided using \emph{strict two-phase locking}, which only allows locks to be released at the moment of commit or rollback, and not sooner
-\item There is a tradeoff between throughput and preventing cascading rollbacks
-\end{arrows}
-\item Rollbacks can be handled %!!! FINISH, and discuss which way SQLite3 does it
-\end{itemize}
-
-\subsection{Deadlock}
-\begin{itemize}
-\item In a locking schedule, \emph{deadlock} occurs when transactions are waiting for locks to be released, but they are holding the locks that other transactions need to continue
-\item Deadlock can be detected via a \emph{Wait-For graph}, where each transaction is a node, and directed edges point from the waiting transaction to the transaction it is waiting on
-\begin{arrows}
-\item If the Wait-For graph has a cycle, then there is deadlock
-\item Deadlock must be resolved by rolling back a transaction
-\item However, many methods do not directly detect deadlock via waits-for graphs, and instead impose other rules
-%!!! Add picture/example
-\end{arrows}
-\item Using a timeout is one method of deadlock resolution, where any transaction waiting for some number of seconds is rolled back
-\begin{arrows}
-\item Choosing the threshold is difficult and may not solve the issue if the transactions are resubmitted the same way
-\end{arrows}
-\item The Wait-Die and Wound-Wait methods resolve deadlocks by rolling back transactions based on their timestamps when one transactions requests the resources/locks of another
-\begin{arrows}
-\item No explicit deadlock detection is performed; rather, the rules make it so that deadlock could not possibly occur
-\item Each transaction $T_i$ is assigned a timestamp $ts(T_i)$ for when it starts, where $ts(T_i)<ts(T_j)$ indicates that $T_i$ is older (such as with Unix time)
-\item Both methods give priority to older transactions, but in different ways
-\item When a transaction is rolled back, then it restarts with the same timestamp, so that it will eventually be the oldest (being rolled back does not penalize its priority)
-\item A waiting transaction tries to get the lock again as soon as it is free, but when a rolled back transaction resurfaces is less predictable
-\end{arrows}
-\item When $T_i$ requests a lock held by $T_j$, the \emph{Wait-Die} deadlock resolution method performs one of two actions:
-\begin{arrows}
-\item If $ts(T_i)<ts(T_j)$, $T_i$ waits for $T_j$ (older waits for younger)
-\item Otherwise, $T_i$ aborts (younger dies)
-\end{arrows}
-%!!! Add example
-\item Similarly, the \emph{Wound-Wait} deadlock resolution method takes the actions:
-\begin{arrows}
-\item If $ts(T_i)<ts(T_j)$, then $T_j$ aborts (older wounds younger, forcing it to roll back)
-\item Otherwise, $T_i$ waits (younger waits for older)
-\end{arrows}
-\item Both these methods minimize \emph{starvation}, which is when objects are less efficient due to waiting for resources (deadlock is the most extreme form of this)
-\begin{arrows}
-\item Wait-Die tends to roll back more transactions than Wound-Wait (since all younger transactions die when requesting resources from older), but the transactions have done less work when they are rolled back
-\end{arrows}
-\item These methods do not specify when each transaction is allocated time to run its actions; one method is \emph{round-robin style scheduling}, which performs one action from each transaction in an alternating fashion
-\begin{arrows}
-\item Commit is treated as its own action
-\item If a transaction is waiting on a lock, it can try again next time (but this means that younger transactions may acquire it sooner)
-\end{arrows}
-\end{itemize}
-
-\subsection{Validation Scheduling}
-\begin{itemize}
-\item Locks are a form of \emph{pessimistic concurrency control} because they assume transactions will conflict unless the scheduler prevents them
-\item \emph{Validation} is an optimistic way of ensuring serializable schedules, which assumes that conflicts are rare
-\begin{arrows}
-\item This is useful when most transactions are readers, and only small fractions of the total database are accessed/modified by any transaction
-\end{arrows}
-\item Each transaction has three phases:
-\begin{arrows}
-\item A read phase, where all writes occur to private storage
-\item A validation phase, where it is checked that no conflicts will occur if the write phase happens
-\item A write phase, where the writes are made public if the validation is successful (otherwise the transaction is aborted)
-\end{arrows}
-\item In particular, validation ensures that the schedule generalized will be equivalent to the serial schedule ordered by timestamp (all conflicts must occur in one direction)
-\item The validation test for $T_j$ check that for all $ts(T_i)<ts(T_j)$, we have one of the following:
-\begin{enumerate}[label=\arabic*.]
-\item $T_i$ completes its write phase before $T_j$ starts its read phase
-\begin{arrows}
-\item This is what would occur in a serial schedule
-\end{arrows}
-\item ($T_i$ does not write to any object that $T_j$ reads from) and ($T_i$ completes its write phase before $T_j$ starts its write phase)
-\begin{arrows}
-\item Writes/reads from $T_i$ can be interweaved with reads of $T_j$ as long as there is no WR conflict
-\item No writes are interweaved
-\end{arrows}
-\item ($T_i$ does not write to any object that $T_j$ reads from) and ($T_i$ does not write to the same element that $T_j$ writes to) and ($T_i$ completes its read phase before $T_j$ completes its read phase)
-\begin{arrows}
-\item Writes may now be interweaved as well, under the condition that writes in $T_i$ act on objects which $T_j$ does no interact with
-\item To ensure $T_j$ (the later transaction) does not impact $T_i$ (the earlier transaction), we must have that $T_i$ completes its read phase before $T_j$ completes its write phase (i.e., $T_j$ cannot begin to write while $T_i$ is still reading, so that all conflicts are resolved as RW)
-\end{arrows}
-\end{enumerate}
-\end{itemize}
-
-\subsection{Timestamp-Based Scheduling}
-\begin{itemize}
-\item Timestamp-based scheduling is also optimistic, but validates each action as it occurs, rather than all at once in a validation phase
-\item To accomplish this, every database element has the additional metadata:
-\begin{arrows}
-\item $RT(X)$: The \emph{read time} of $X$, which is the most recent time $X$ was read
-\item $WT(X)$: The \emph{write time} of $X$, which is the most recent time $X$ was written to
-\item $C(X)$: The \emph{commit bit} of $X$, which is a boolean for whether the most recent write to $X$ has been committed
-\end{arrows}
-\item \emph{Physically unrealizable behaviors} are those that yield results incapable of being produced by the serial schedule where each transaction runs in order according to its start time
-\begin{arrows}
-\item This method aims to prevent these behaviors
-\item For $T_i$ beginning before $T_j$, \emph{read-too-late} occurs when $r_i(X)$ occurs after $w_j(X)$, and \emph{write-too-late} occurs when $w_i(X)$ occurs after $r_j(X)$
-\item These are essentially the conflicts from before, aside from write-write conflicts - in this case, $T_i$ can just skip its write action by the following rule
-\end{arrows}
-\item The \emph{Thomas Write Rule} states that write may be skipped if a later write is in place
-\begin{arrows}
-\item The one exception is when the later write is aborted (in which case the earlier write should have occurred)
-\item In this case, these writes are ``delayed'' until either the later transaction is committed (in which case they do not run) or aborted (in which case they do run). This is kept track of with the committed bit
-\end{arrows}
-\item The rules for a transaction $T_i$ doing a read $r_i(X)$ are:
-\begin{enumerate}
-\item If $ts(T_i)>WT(X)$, then the read is physically realizable, so:
-\begin{enumerate}[label=(\roman*)]
-\item If $C(X)$ is true, then perform $r_i(X)$ and update $RT(X)=\max\{ts(T_1),RT(X)\}$
-\item If $C(X)$ is false, then delay $r_i(X)$ until the transaction which wrote to $X$ commits or aborts
-\end{enumerate}
-\item If $ts(T_i)<WT(X)$, then the read is physically unrealizable (read-too-late), so roll back and restart with a new timestamp
-\end{enumerate}
-\item The rules for a transaction $T_i$ doing a write $w_i(X)$ are:
-\begin{enumerate}
-\item If $ts(T_i)>RT(X)$ and $ts(T_i)>WT(X)$, then it is physically realizable, so store a copy of $X$ in case of rollback, perform $w_i(X)$, and set $WT(X)=ts(T_i)$ and $C(X)$ to false
-\item If $ts(T_i)>RT(X)$ and $ts(T_i)<WT(X)$, then it is physically realizable but has already been written to, so:
-\begin{enumerate}[label=(\roman*)]
-\item If $C(X)$ is true, then the Thomas Write Rule applies, so do nothing
-\item If $C(X)$ is false, then delay the action until the other transactions commits or aborts
-\end{enumerate}
-\item If $ts(T_i)<RT(X)$, then the write is physically unrealizable (write-too-late), so roll back and restart with a new timestamp
-\end{enumerate}
-\item When $T_i$ commits, it finds all of the elements it wrote to and sets the commit bits to true
-\item When $T_i$ rolls back, restore the old values of any elements written to, and allow the waiting transactions to perform reads/writes
-\end{itemize}
-
-\subsection{Comparison of Concurrency Control Methods}
-\begin{itemize}
-\item For the optimistic methods, validation and timestamp-based methods have similar performance and rates of rollback
-\begin{itemize}
-\item Validation has overhead all at once during the validation phase, while timestamp methods have overhead distributed across all actions
-\end{itemize}
-\item Storage requirements for locking and validation methods are similar
-\begin{arrows}
-\item Locking has storage requirements proportional to the number of elements locked
-\item Validation needs to store timestamps and the sets of elements accessed/modified for all open transactions
-\end{arrows}
-\item Locking has few rollbacks, while validation has more frequent rollbacks
-\item Validation has fewer delays in transactions, while locking can cause delays due to starvation
-\end{itemize}
-
-\section{Relational Database Model}
-\subsection{Structure of Relational Databases}
-\begin{itemize}
-    \item A relational database stores data in tables, called \emph{relations}
-    \begin{arrows}
-        \item The rows of a relation are called \emph{tuples}
-        \item The columns of a relation are called \emph{attributes}
-        \item The relation may be given a name
-    \end{arrows}
-    \item A relation may have a \emph{relation schema}, which consists of a name for the relation and a list of its attributes, optionally with their corresponding \emph{domains}, or sets of possible values
-    \begin{arrows}
-        \item The database is therefore the collection of all relations, whereas the database schema is the collection of all relation schemas
-    \end{arrows}
-\end{itemize}
 
 \section{SQL}
 \subsection{Introduction to SQL}
@@ -862,12 +849,15 @@ $\alpha^+\gets \alpha$\;
         \item Often they are not Turing-complete, although technically SQL is
     \end{arrows}
     \item SQL offers both querying and a component for data-definition (describing database schemas)
-    \item SQLite is a database engine which can be used in Python
-    \item SQL statements fall into two categories:
+    \item SQLite is a database engine which can be used in Python, while DB2 is a database engine provided by IBM used with COBOL and CICS
+    \item The four basic operations for persistent storage are create, read, update, and delete (acronym CRUD)
+    \item SQL statements can more specifically be divided into the categories:
     \begin{arrows}
-        \item \emph{Data Definition Language (DDL)}, which build/modify the structure of the tables/objects, including \ilsql{CREATE}, \ilsql{ALTER}, and \ilsql{DROP}
-        \item \emph{Data Manipulation Language (DML)}, including adding/removing/querying data
-        \item DML is often summarized by the acronym \emph{CRUD}: create, read, update, and delete
+        \item \emph{Data Definition Language (DDL)}, which build/modify the structure or schema of the database elements: \ilsql{CREATE}, \ilsql{ALTER}, \ilsql{DROP}
+        \item \emph{Data Query Language (DQL)}, which reads data: \ilsql{SELECT}
+        \item \emph{Data Manipulation Language (DML)}, which manipulate data within relations: \ilsql{INSERT}, \ilsql{UPDATE}, \ilsql{DELETE}
+        \item \emph{Data Control Language (DCL)}, which grants or revokes access privileges
+        \item \emph{Transaction Control Language (TCL)}, which controls transactions: \ilsql{COMMIT}, \ilsql{ROLLBACK}
     \end{arrows}
 \end{itemize}
 
@@ -876,6 +866,20 @@ $\alpha^+\gets \alpha$\;
     \item Semicolons should terminate each statement
     \item SQL keywords should be in all capitals
     \item Whitespace is only relevant in strings, although good practices are shown in the examples below
+    \item When using DB2, whitespace is typically formatted very diligently, as with COBOL; an example of a well-styled query is:
+\begin{sql}
+SELECT DEPT_DESC AS "DEPARTMENT"
+       COUNT(*)  AS "NUMBER OF EMPLOYEES"
+  FROM EMPLOYEE_RECORDS R
+       JOIN DEPT_DESC D
+         ON R.DEPT_NUM = D.DEPT_NUM_KEY
+ WHERE R.EMPLOYEE_SALARY > 50000
+   AND R.DEPT_NUM LIKE '5%'
+ GROUP BY R.DEPT_NUM
+HAVING COUNT(*) > 20
+ ORDER BY COUNT(*) DESC, DEPT_DESC
+;
+\end{sql}
 \end{itemize}
 
 \subsection{SQLite Datatypes}
@@ -887,6 +891,7 @@ $\alpha^+\gets \alpha$\;
         \item \ilsql{TEXT}, a string of any length delimited by single quotes
         \begin{arrows}
             \item Single quotes are escaped by including two of them
+            \item Note that double quotes are used for alias names
             \item Other databases limit the length of strings, but SQLite does not
         \end{arrows}
         \item \ilsql{BLOB}, used to hold arbitrary binary data, such as images or videos
@@ -899,7 +904,7 @@ $\alpha^+\gets \alpha$\;
         \item It is used to represent an absence of information or an inapplicable value
         \item It should not be used to represent empty strings, false, or 0
     \end{arrows}
-    \item Dates and times can be represented as \ilsql{TEXT} (ISO8601 strings, \texttt{"YYYY-MM-DD HH:MM:SS.SSS"}), \ilsql{REAL} (Julian day numbers), or \ilsql{INTEGER} (Unix time)
+    \item Dates and times can be represented as \ilsql{TEXT} (ISO8601 strings, \texttt{"YYYY-MM-DD HH:MM:SS.SSS"}), \ilsql{REAL} (Julian day numbers), or \ilsql{INTEGER} (Unix time); see section \ref{dates_and_times}
     \item Other types not in SQLite include Memo (65536 characters), Currency (15 whole digits and 4 decimal places), Yes/No (Microsoft Access), and Enum
     \item One way of working with other types in SQLite is to use adapters/converters
     \begin{arrows}
@@ -928,6 +933,45 @@ row = next(res)
 \end{python}
 \end{itemize}
 
+\subsection{DB2 Datatypes}
+\begin{itemize}
+\item Character:
+\begin{itemize}
+\item \texttt{CHAR(n)}: A fixed-length character string of length $n$ (shorter strings are padded with trailing spaces)
+\item \texttt{VARCHAR(n)}: A variable-length character string of maximum length $n$
+\item \texttt{GRAPHIC(n)}: A fixed-length character string with double-byte characters (allowing for special characters like in Chinese and Japanese)
+\item \texttt{VARGRAPHIC(n)}: A variable-length character string of maximum length $n$ with double-byte characters
+\item \texttt{CLOB}: A character large object with maximum length approximately 2 GB (useful for length documents)
+\item \texttt{DBCLOB}: A double-byte character large object with maximum length approximately 2 GB (1073741823 double-byte characters)
+\item \texttt{XML}: A variable-length string containing an XML document
+\end{itemize}
+\item Numeric:
+\begin{itemize}
+\item \texttt{SMALLINT}: An integer between $-32768$ and $32767$
+\item \texttt{INTEGER} or \texttt{INT}: An integer between approximately $\pm2$ billion
+\item \texttt{BIGINT}: An integer between approximately $\pm 9$ quintillion
+\item \texttt{DECIMAL(p,s)} or \texttt{NUMERIC(p,s)}: A decimal with precision \texttt{p} (the total number of digits) and scale \texttt{s} (number of decimal places)
+\begin{arrows}
+\item This is also used for integers where there is an expectation on the number of digits, such as a salary
+\end{arrows}
+\item \texttt{REAL}: A single precision floating-point number (32 bits)
+\item \texttt{DOUBLE} or \texttt{FLOAT}: A double precision floating-point number (64 bits)
+\item \texttt{DECFLOAT}: A number with the decimal stored in the value itself, rather than via a sign/exponent/mantissa
+\end{itemize}
+\item Temporal:
+\begin{itemize}
+\item \texttt{DATE}: A date in \texttt{YYYY-MM-DD} format
+\item \texttt{TIME}: A time in \texttt{HH.MM.SS} format
+\item \texttt{TIMESTAMP}: A date and time with format \texttt{YYYY-MM-DD HH.MM.SS.mmmmmm} where microseconds are included
+\end{itemize}
+\item Binary Strings:
+\begin{itemize}
+\item \texttt{BINARY(n)}: A binary string with fixed-length specified between 1 and 255
+\item \texttt{VARBINARY(n)}: A variable-length binary string with maximum length specified between 1 and 32704
+\item \texttt{BLOB}: A binary large object with maximum length approximately 2 GB, useful for images, videos, JSON data, etc.
+\end{itemize}
+\end{itemize}
+
 \subsection{Adding Data}
 \begin{itemize}
     \item A relation is created via the \ilsql{CREATE TABLE} statement:
@@ -945,7 +989,7 @@ CREATE TABLE new_table AS
 SELECT column1, column2
 FROM old_table
 \end{sql}
-\item Tuples are added to the table via the \ilsql{INSERT INTO} statement:
+\item Records are added to the table via the \ilsql{INSERT INTO} statement:
     \begin{sql}
 INSERT INTO table_name (column1, column2, column3)
 VALUES (value1a, value2a, value3a),
@@ -972,6 +1016,8 @@ UPDATE guestbook
 SET name = 'Mr. ' || name
 WHERE gender = 'Male';
 \end{sql}
+\item Multiple columns can be updated with \ilsql{col1=value1, col2=value2, ...}
+\item The syntax \ilsql{SET (col1, col2, ...) = (value1, value2, ...)} is also possible but not preferred
 \end{itemize}
 
 \subsection{Removing Data}
@@ -992,26 +1038,34 @@ FROM table_name;
         \item All attributes may be selected with the wildcard character \ilsql{*}
         \item Other queries may order or filter by columns; these need not be selected. \ilsql{SELECT} is essentially just controlling the final output to the user
     \end{arrows}
+\item In SQLite, the \ilsql{FROM} clause is not required if selecting a literal
+\begin{arrows}
+\item In DB2, it is required, so one can select from the table \ilsql{SYSIBM.SYSDUMMY1}
+\end{arrows}
 \item To order the rows by an column (or a set of columns), use the \ilsql{ORDER BY} statement:
     \begin{sql}
 SELECT column1, column2, column3
 FROM table_name
-ORDER BY column1, column2 ASC|DESC;
+ORDER BY column1 ASC|DESC, column2 ASC|DESC;
 \end{sql}
 \begin{arrows}
     \item The order is ascending by default, although \ilsql{DESC} can be specified to make it descending
+    \item A number can also be specified in place of a column, where 1 means the first column, 2 means the second, and so on (this is discouraged because changes to the database structure would require code changes)
+    \item In SQLite, nulls are treated as low values, although this can be modified by specifying \ilsql{NULLS FIRST|LAST} in the order clause
+    \item In DB2, nulls are treated as high values
 \end{arrows}
-\item Rows can be filtered with the \ilsql{WHERE} clause:
+\item Rows can be filtered with the \ilsql{WHERE} clause (the rows are then included iff the condition evaluates to \ilsql{TRUE}):
     \begin{sql}
 SELECT column1, column2
 FROM table_name
-WHERE condition;\end{sql}
+WHERE condition;
+\end{sql}
 \item \ilsql{LIMIT n} can be used at the end of the query to only return at most \ilsql{n} rows
 \item A \ilsql{SELECT} statement may select arbitrary expressions, and need not have \ilsql{FROM}, such as \ilsql{SELECT 1+2+3+4;}
-\item \ilsql{DISTINCT} can be used to select distinct/unique values in a column, with syntax \ilsql{SELECT DISTINCT col1}
+\item \ilsql{DISTINCT} can be used to select distinct/unique values in a column, with syntax \ilsql{SELECT DISTINCT col1 col2 ...}
     \begin{arrows}
-        \item Since \ilsql{DISTINCT} is an operator returning distinct values, it can also be used inside the functions described here, such as \ilsql{count(DISTINCT col1)}
-        \item \ilsql{DISTINCT} operates on a single column; multi-column \ilsql{DISTINCT} is not supported
+        \item Since \ilsql{DISTINCT} is an operator returning distinct values, it can also be used inside functions, such as \ilsql{count(DISTINCT col1)}
+        \item \ilsql{DISTINCT} can only operate on a single column in SQLite, whereas multiple columns are supported in DB2
     \end{arrows}
 \item Altogether, a \ilsql{SELECT} statement may have the following parts, in order: \ilsql{SELECT}, \ilsql{FROM}, \ilsql{WHERE}, \ilsql{GROUP BY}, \ilsql{HAVING}, \ilsql{ORDER BY}, \ilsql{LIMIT}
 \end{itemize}
@@ -1036,11 +1090,13 @@ WHERE condition;\end{sql}
         \item \ilsql|%| is a wildcard matching 0 or more characters
         \item \ilsql{_} is a wildcard matching a single character
         \item An escape character can be specified using \ilsql{LIKE 'ab\%cd\\' escape '\'}, so that this would match the string \ilsql|'ab%cd\'|
+        \item Using \ilsql|%| as the first character can be inefficient since it leads to a full table scan, so it is worthwhile to consider whether alternatives exist
+        \item In DB2, trailing spaces in fixed-width fields must be accounted for in the pattern
     \end{arrows}
     \item \ilsql{IN} is used to select values that are in a list, such as \ilsql{IN (1,3,5)} (or it can be used with subqueries)
 \end{itemize}
 
-\subsection{SQL Functions}
+\subsection{SQLite Scalar Functions}
 \begin{itemize}
     \item \ilsql{abs(x)} returns the absolute value of \ilsql{x}
     \item \ilsql{lower(x)} and \ilsql{upper(x)} return copies of a string with the case changed
@@ -1051,12 +1107,68 @@ WHERE condition;\end{sql}
     \item Users can define functions in Python and pass them to SQLite using \ilsql{conn.create_function(name, num_params, func)}
     \begin{arrows}
         \item The function must return precisely one value, which must be a SQLite-supported datatype
+        \item Functions can be overloaded by the number of parameters
     \end{arrows}
+\end{itemize}
+
+\subsection{DB2 Scalar Functions}
+\begin{itemize}
+\item \ilsql{CONCAT(string_expr1, string_expr2)} concatenates two strings, equivalent to \ilsql{||}
+\item \ilsql{STRIP(string_expr)}, \ilsql{STRIP(string_expr, location)}, \ilsql{STRIP(string_expr, location, trim_char)}, \ilsql{TRIM(string_expr)}, \ilsql{TRIM(location FROM trim_char)}, \ilsql{TRIM(location trim_char FROM string_expr)} all remove leading and/or trailing spaces
+\begin{arrows}
+\item \ilsql{location} defaults to \ilsql{BOTH}, but can be specified as \ilsql{LEADING}/\ilsql{L}, \ilsql{TRAILING}/\ilsql{T}, or \ilsql{BOTH}/\ilsql{B}
+\item \ilsql{trim_char} defaults to \ilsql{SPACES}
+\end{arrows}
+\item \ilsql{LENGTH(expr)} roughly returns the length of a value, but this depends on the datatype:
+\begin{arrows}
+\item For \texttt{CHAR} or \texttt{VARCHAR} types, it return the number of characters, which is the same as the number of bytes needed to store the string. For fixed-length strings, this is always constant.
+\item For \texttt{GRAPHIC}, this return the number of character (half the number of bytes needed to store the string)
+\item For all other datatypes, it returns the number of bytes needed to hold the value
+\item If \ilsql{expr} is null, then so is \ilsql{LENGTH(expr)}
+\end{arrows}
+\item \ilsql{SUBSTR(string, start_pos, length)} extracts a substring from a character type
+\begin{arrows}
+\item \ilsql{start_pos} is 1-indexed
+\item \ilsql{length} is optional, and if not specified, the substring extends to the end of the original string
+\end{arrows}
+\item \ilsql{POSSTR(source_string, search_string)} searches a string for the location of the first occurrence of a substring (returning 0 if not found, or \ilsql{NULL} if either argument is \ilsql{NULL})
+\item \ilsql{UPPER(string)} and \ilsql{LOWER(string)} convert the case of a character string
+\item \ilsql{LPAD(string, length, pad_string)} and \ilsql{RPAD(string, length, pad_string)} pad a string to a desired length, either by adding characters to the left or right
+\begin{arrows}
+\item Strings that are too long are truncated
+\item \ilsql{pad_string} is optional, and default to \ilsql{SPACES}. If it contains more than one character, then characters are pulled from the string in order as needed, repeating if necessary
+\end{arrows}
+\item \ilsql{DECIMAL(string, precision, scale)} returns a numeric representation of a character string
+\begin{arrows}
+\item \ilsql{precision} and \ilsql{scale} are each optional. \ilsql{precision} defaults to a value dependent on the resulting datatype, and \ilsql{scale} defaults to 0 (no decimal places).
+\item If \ilsql{precision} or \ilsql{scale} are not large enough, then an error is thrown (no rounding or truncation are performed)
+\item If \ilsql{string} is \ilsql{NULL}, then the output is also \ilsql{NULL}
+\end{arrows}
+\item \ilsql{CHAR(numeric_expr)} returns a character representation of a string (or \ilsql{NULL} if the input is \ilsql{NULL})
+\begin{arrows}
+\item The string is allocated enough space to hold the largest value of the numeric datatype, a sign, and a decimal place if the type is not an integer. The result is padded on the left with spaces.
+\end{arrows}
+\item \ilsql{NULLIF(expr1, expr2)} returns \ilsql{expr1} unless the two expressions are equal, in which case \ilsql{NULL} is returned.
+\begin{arrows}
+\item If either expression is \ilsql{NULL}, then \ilsql{NULL} is returned.
+\end{arrows}
+\item \ilsql{IFNULL(expr1, expr2)} returns \ilsql{expr1} unless it is \ilsql{NULL}, in which case \ilsql{expr2} is returned
+\begin{arrows}
+\item The types of \ilsql{expr1} and \ilsql{expr2} must be compatible
+\end{arrows}
+\item \ilsql{COALESCE(expr1, expr2, ...)} returns the first non-null value, or \ilsql{NULL} if all of the expressions are \ilsql{NULL} (and again the types of the expressions must be compatible)
 \end{itemize}
 
 \subsection{SQL Aggregators}
 \begin{itemize}
-    \item Aggregators take 0 or more values and return some form of summary of those values
+    \item Aggregators take 0 or more values and return some form of summary of those values; they can be used in select statements, but not in \ilsql{WHERE} clauses
+    \begin{arrows}
+    \item If this is needed, a subquery can be used to select the appropriate value
+    \end{arrows}
+	\item In DB2 and many other engines, an ordinary column cannot be selected along with an aggregate value
+	\begin{arrows}
+	\item In SQLite, selecting a column along with an aggregate does not through an error (for min and max, it returns the info for one of the rows achieving the minimum or maximum; otherwise, it is information for an arbitrary row)
+	\end{arrows}
     \item \ilsql{min} and \ilsql{max} return the minimum/maximum value of a column
     \begin{arrows}
         \item When used in a select statement, the query essentially returns a single row whose value is minimal or maximal in the specified column, so that \ilsql{SELECT col1, min(col2)} would return a single row with the minimum of \ilsql{col2} and some corresponding value in \ilsql{col1}
@@ -1101,16 +1213,7 @@ WHERE condition;\end{sql}
 
 \subsection{Case Expression}
 \begin{itemize}
-    \item A case expression acts like a switch statement, such as in:
-\begin{sql}
-UPDATE table SET col =
-CASE
-  WHEN cond_1 THEN val_1
-  WHEN cond_2 THEN val_2
-  ELSE val_3
-END;
-\end{sql}
-    \item A case expression can also use the value of some expression instead of conditions:
+    \item A \emph{simple case expression} acts like a switch statement, such as in:
 \begin{sql}
 UPDATE table SET col =
 CASE expr
@@ -1119,6 +1222,16 @@ CASE expr
   ELSE val_3
 END;
 \end{sql}
+\item A \emph{searched case expression} uses separate conditions for each \ilsql{WHEN} clause:
+\begin{sql}
+UPDATE table SET col =
+CASE
+  WHEN cond_1 THEN val_1
+  WHEN cond_2 THEN val_2
+  ELSE val_3
+END;
+\end{sql}
+\item If no \ilsql{ELSE} clause is specified and none of the conditions are matched, then \ilsql{NULL} is returned
 \end{itemize}
 
 \subsection{Column Constraints}
@@ -1163,17 +1276,20 @@ CHECK (col_in_table IS NULL OR EXISTS (
 \end{sql}
 \end{itemize}
 
-\subsection{Qualified Table Names}
+\subsection{Qualified Table Names and Aliases}
 \begin{itemize}
     \item Columns can be prefaced by their relation, which in turn can be prefaced by the database name, using the syntax \ilsql{database.relation.column}
     \item The \ilsql{*} symbol can be qualified as well
     \item The \ilsql{AS} keyword allows for column aliases with the syntax \ilsql{SELECT database.column FROM table AS alias}
-    \item Implicit aliases are not recommended but possible, with syntax \ilsql{SELECT database.column FROM table alias}
+    \begin{arrows}
+    \item The alias name is enclosed in double quotes (although these are optional if the alias contains no spaces)
+    \end{arrows}
+    \item Implicit aliases are not recommended but possible when the alias name contains no spaces, with syntax \ilsql{SELECT database.column FROM table alias}
     \item Qualified table names are necessary when referring to two columns in different tables of the same name (for example, in a subquery, join, or union)
     \item Aliases are necessary when, for example, doing a self join
 \end{itemize}
 
-\subsection{SQL Union}
+\subsection{SQL Set Operations}
 \begin{itemize}
     \item Rows/values from two separate queries can be combined using \ilsql{UNION}
 \begin{sql}
@@ -1181,9 +1297,24 @@ SELECT Student.Name FROM Student
 UNION
 SELECT Staff.Name FROM Staff;
 \end{sql}
-    \item The columns need not have the same name; the only requirement is that the datatypes are the same
-    \item \ilsql{UNION} removes duplicates on the results; to avoid this, use \ilsql{UNION ALL}
-\end{itemize}
+	\begin{arrows}
+	\item The columns need not have the same name; the only requirement is that the datatypes are the same (called \emph{union compatible})
+	\begin{arrows}
+	\item In DB2, this includes the length of character attributes
+	\item In DB2, if an alias is specified for one table, the same alias must be specified for the other
+	\end{arrows}
+ 	\item \ilsql{UNION} removes duplicates on the results; to avoid this, use \ilsql{UNION ALL}
+ 	\item \ilsql{UNION ALL} is more efficient, so it is desirable to use \ilsql{UNION ALL} when possible (and perhaps let the processing program handle duplicates)
+ 	\item A technique used to distinguish which of the two tables a row originated from is to include a literal in the \ilsql{SELECT} statement to serve as an indicator
+	\end{arrows}
+	\item Set minus can be performed using \ilsql{EXCEPT}
+	\begin{arrows}
+	\item Similar to before, the two tables must be union compatible
+	\item \ilsql{EXCEPT ALL} does not check for duplicates; this means that if the first table has more instances of a particular tuple than the second, then it will remain in the output
+	\item Thus, to use \ilsql{EXCEPT ALL}, it is often necessary to ensure that the first table has no duplicates (such as by using an \ilsql{EXISTS} subquery rather than a \ilsql{JOIN})
+	\end{arrows}
+	\item \ilsql{INTERSECT} and \ilsql{INTERSECT ALL} perform set intersection
+  \end{itemize}
 
 \subsection{SQL Joins}
 
@@ -1297,7 +1428,7 @@ SELECT Staff.Name FROM Staff;
     \end{arrows}
     \item \ilsql{INNER JOIN} is like \ilsql{CROSS JOIN} but only combinations matching a predicate are returned, with syntax \ilsql{INNER JOIN table2 ON predicate}
     \begin{arrows}
-        \item Often, the predicate is checking equality of two columns, and there will not be multiple matches per row
+        \item Often, the predicate (also called \emph{correlation condition}) is checking equality of two columns, and there will not be multiple matches per row
         \item This could also be performed with an implicit cross join follows by a filter with \ilsql{WHERE}
     \end{arrows}
     \item \ilsql{FULL OUTER JOIN} include all rows matching a predicate like \ilsql{INNER JOIN}, but rows without a match are also included with \ilsql{NULL} values inserted
@@ -1333,12 +1464,18 @@ WHERE t1.column1 < t2.column1;
         \item Two conditions are used to ensure both ways match (recall that \ilsql{INNER JOIN} is just a refinement of \ilsql{CROSS JOIN}, so we must check that both directions match)
         \item The last filter removes duplicates
     \end{arrows}
+\item A table is a \emph{preserved table} in a join if all of its rows will be included; for example, the left table is preserved in either a left join or a full outer join
+\item Nulls in the original table and nulls in a non-preserved table are indistinguishable. If some form of filtering must be applied where this is a concern, then the filtering should occur in the \ilsql{ON} clause, rather than the \ilsql{WHERE} clause.
 \end{itemize}
 
 \subsection{SQL Subqueries}
 \begin{itemize}
     \item A subquery is a nested SQL query returning information (either individual values or a list of records) to an outer query
+    \begin{arrows}
     \item Subqueries are enclosed in parentheses
+    \item A subquery can either be \emph{non-correlated} (could be run as an independent query) or \emph{correlated} (references attributes in the outer query)
+    \item Subqueries can appear in many locations, including \ilsql{SELECT} and \ilsql{WHERE} clauses
+    \end{arrows}
     \item Subqueries can be used to test for set membership, make set comparisons, and determine set cardinality
     \item The \ilsql{IN} keyword can be used with subqueries instead of lists:
 \begin{sql}
@@ -1371,6 +1508,22 @@ WHERE EXISTS (
 \end{sql}
 \begin{arrows}
 \item Note that the column returned by the subquery is irrelevant; it could be \ilsql{*} or even \ilsql{1}
+\item It is much more efficient to use \ilsql{EXISTS} with a correlated subquery than \ilsql{IN} with a non-correlated subquery, since it can terminate the instant a single row is identified (rather than having to evaluate the entire subquery). For example, to identify customers who have placed orders, the following two queries could be used, but the one using \ilsql{EXISTS} is likely to be more efficient:
+
+\begin{sql}
+SELECT * FROM Customers
+WHERE id IN (
+    SELECT customer_id FROM Orders
+);
+\end{sql}
+\begin{sql}
+SELECT * FROM Customers
+WHERE EXISTS (
+    SELECT 1 FROM Orders
+    WHERE Customers.id = Orders.customer_id
+);
+\end{sql}
+
 \end{arrows}
 \item \ilsql{ANY} and \ilsql{ALL} allow a comparison between a field and a range of other values from a subquery, with syntax \ilsql{WHERE column operator ANY|ALL (SELECT other_column FROM table WHERE condition)}
 \begin{sql}
@@ -1389,15 +1542,16 @@ WHERE InvoiceId = ANY(
 \subsection{Group By}
 \begin{itemize}
     \item \ilsql{GROUP BY} groups records into summary rows, where one record is kept for each group
-    \item \ilsql{GROUP BY} is thus often used with aggregates like \ilsql{count}, \ilsql{sum}, etc.
+    \item \ilsql{GROUP BY} is thus often used with aggregators like \ilsql{count}, \ilsql{sum}, etc.
 \begin{sql}
 -- Count how many tracks of each genre are present
-SELECT GenreId, count()
+SELECT GenreId, count(*)
 FROM Track
 GROUP BY GenreId;
 \end{sql}
     \item \ilsql{GROUP BY} can work on multiple columns
     \item \ilsql{HAVING} is used to filter \ilsql{GROUP BY} results, similar to how \ilsql{WHERE} is used to filter \ilsql{SELECT} results
+    \item Generally, it is best to use \ilsql{WHERE} clauses when possible to do filtering ahead of time, then use \ilsql{HAVING} when the condition depends on the value of aggregate functions
 \begin{sql}
 -- Count how many tracks of each genre are present, but only if they have at least 10 tracks
 SELECT GenreId, count()
@@ -1405,9 +1559,11 @@ FROM Track
 GROUP BY GenreId
 HAVING count()>10;
 \end{sql}
+\item All columns appearing in the select statement must also appear in the \ilsql{GROUP BY} clause; otherwise, it would be ambiguous which value should be returned for each group
 \end{itemize}
 
-\subsection{Dates and Times}
+\subsection{SQLite Dates and Times}
+\label{dates_and_times}
 \begin{itemize}
     \item SQL does not have a built-in datatype for dates or times, so often ISO 8601 is used to represent them with \ilsql{TEXT} as \ilsql{YYYY-MM-DD HH:MM:SS.SSS}
     \begin{arrows}
@@ -1443,6 +1599,21 @@ HAVING count()>10;
     \begin{arrows}
         \item To use these, specify \ilpy{detect_types = sqlite3.PARSE_DECLTYPES | sqlite3.PARSE_COLNAMES} when calling the \ilpy{connect} function
     \end{arrows}
+\end{itemize}
+
+\subsection{DB2 Dates and Times}
+
+\begin{itemize}
+\item Information about the current date and time can be obtained with the literals \texttt{CURRENT\_TIMESTAMP}, \texttt{CURRENT\_DATE}, and \texttt{CURRENT\_TIME}
+\item A duration literal can be specified by providing a number followed by one of \texttt{YEARS}, \texttt{MONTHS}, \texttt{DAYS}, \texttt{HOURS}, \texttt{MINUTES}, \texttt{SECONDS}, and \texttt{MICROSECONDS}
+\begin{arrows}
+\item This can then be added to or subtracted from a date, time, or timestamp datatype
+\item When adding, first add \texttt{YEARS}, then \texttt{MONTHS}, and so on
+\item When subtracting, first subtract \texttt{MICROSECONDS}, then \texttt{SECONDS}, and so on
+\item Two dates can be subtracted to yield a duration \texttt{yyyymmdd}, two times can be subtracted to yield a duration \texttt{hhmmss}, and two timestamps can be subtracted to yield a duration \texttt{yyyymmddhhmmss.mmmmmm}
+\item Integer quantities can be extracted from durations/dates/times with scalar functions \texttt{YEAR}, \texttt{MONTH}, \texttt{DAY}, \texttt{HOUR}, \texttt{MINUTE}, \texttt{SECOND}, and \texttt{MICROSECOND}
+\item Character strings can be converted to date/time types with the scalar functions \texttt{DATE} and \texttt{TIME}
+\end{arrows}
 \end{itemize}
 
 \subsection{Stored Procedures}
@@ -1542,6 +1713,7 @@ END;
     \begin{arrows}
         \item The main action used is \ilsql{ABORT}, which ends the query and undoes any changes
     \end{arrows}
+    \item A trigger can be removed with \ilsql{DROP TRIGGER trigger_name}, or if the trigger may not exist, \ilsql{DROP TRIGGER IF EXISTS trigger_name}
     \item Some advantages of triggers include:
     \begin{arrows}
     \item They always activate when the operation occurs
@@ -1568,7 +1740,22 @@ END;
     \begin{arrows}
         \item This implicitly drops all rows from the table first
     \end{arrows}
-    \item Similar drop statements exist for triggers with \ilsql{DROP TRIGGER}
+
+\end{itemize}
+
+\subsection{TCL Operations}
+
+\begin{itemize}
+\item \ilsql{COMMIT} and \ilsql{ROLLBACK} are used to terminate transactions
+\item \ilsql{SAVEPOINT savepoint-name} sets a savepoint which can be restored with \ilsql{ROLLBACK TO SAVEPOINT savepoint-name}
+\begin{arrows}
+\item In DB2, the savepoint name defaults to the last made savepoint when performing a rollback, but it must be specified in SQLite
+\end{arrows}
+\item \ilsql{RELEASE SAVEPOINT savepoint-name} removes a savepoint
+\begin{arrows}
+\item This is automatically done on a commit
+\end{arrows}
+\item Formally, when a savepoint is created, it initiates a new nested transaction, which is committed when the savepoint is released and rolled back when the savepoint is rolled back
 \end{itemize}
 
 \subsection{Views}
@@ -1581,13 +1768,14 @@ END;
     \item A view is dropped automatically when the referenced table is dropped
     \begin{arrows}
         \item To drop a view automatically when the connection closes, use \ilsql{CREATE TEMPORARY VIEW}
-        \item A view can be manually dropped with \ilsql{DROP VIEW}
+        \item A view can be manually dropped with \ilsql{DROP VIEW} or \ilsql{DROP VIEW IF EXISTS}
     \end{arrows}
 \end{itemize}
 
 \subsection{Indices}
 \begin{itemize}
-    \item Most ordinary tables contain an implicitly-created \ilsql{rowid} column that is used to uniquely identify rows (for indexing the database)
+	\item See section \ref{indices} for a discussion of indices
+    \item Most ordinary tables in SQLite contain an implicitly-created \ilsql{rowid} column that is used to uniquely identify rows (for indexing the database)
     \begin{arrows}
         \item This can be turned off with \ilsql{WITHOUT ROWID} at the end of the \ilsql{CREATE} statement
         \item If an integer primary key is declared, then this becomes an alias for \ilsql{rowid}
@@ -1597,14 +1785,70 @@ END;
         \item Multiple columns can also be included instead of just one
         \item To remove an index, use \ilsql{DROP INDEX index_name} or \ilsql{DROP INDEX IF EXISTS index_name}
     \end{arrows}
-    \item Indices can improve the speed of many operations:
-    \begin{arrows}
-    \item Looking up rows in a way not according to their primary key
-    \item Identifying matching rows according to the value in a column, when doing a look-up
-    \end{arrows}
-    \item However, indices add additional time to CRUD operations (since indices must be updated) and take more memory
 \end{itemize}
 
+\subsection{Select From Final Table (DB2)}
+\begin{itemize}
+\item To select data from rows that were added/modified by a query, the DML query can be embedded inside the FROM clause of the following:
+\begin{sql}
+SELECT ...
+  FROM FINAL TABLE (
+    [dml query])
+;
+\end{sql}
+\item This is useful either for confirming proper updates/deletes, or for obtaining the value of an automatically-filled attribute during inserts
+\end{itemize}
+
+\subsection{Merge Statement (DB2)}
+\begin{itemize}
+\item To either update rows that exist, or add rows if they do not, a \ilsql{MERGE} statement can be used as follows:
+\begin{sql}
+MERGE INTO table-name
+  USING (VALUES (lookup-column-values)) AS alias-name (column-names)
+     ON matching-criteria
+  WHEN MATCHED
+    AND conditions
+    THEN UPDATE SET col1 = val1,
+                    col2 = val2,
+                    ...
+  WHEN NOT MATCHED
+    THEN INSERT (columns-to-insert-into)
+         VALUES (values-to-insert)
+;
+\end{sql}
+\item An arbitrary select statement can be included in the \ilsql{USING} clause
+\item Multiple \ilsql{WHEN MATCHED} clauses can be provided with different conditions; only the first one satisfied is executed
+\item An example is:
+\begin{sql}
+MERGE INTO ED03DBB.ED03E4T0 C
+  USING (SELECT ASSOC_ID
+           FROM ED03DBB.ED03E1T0
+          WHERE ASSOC_DEPT_ID = '600') AS A (ASSOC_ID)
+    ON C.COMP_ASSOCIATE_ID = A.ASSOC_ID
+  WHEN MATCHED
+    THEN UPDATE SET COMP_MANUFACTURER = 'Dell',
+                    COMP_TYPE = 'Laptop',
+                    COMP_IN_SERVICE_DTE = CURRENT_DATE - 14 DAYS,
+                    COMP_USER_ID = SESSION_USER,
+                    COMP_ACTIVITY_TSP = CURRENT_TIMESTAMP
+  WHEN NOT MATCHED
+    THEN INSERT (COMP_COMPUTER_ID,
+                 COMP_ASSOCIATE_ID,
+                 COMP_MANUFACTURER,
+                 COMP_TYPE,
+                 COMP_IN_SERVICE_DTE,
+                 COMP_USER_ID,
+                 COMP_ACTIVITY_TSP)
+         VALUES ('HP600' || STRIP(CHAR(ASSOC_ID)),
+                 ASSOC_ID,
+                 'HP',
+                 'Desktop',
+                 CURRENT_DATE - 14 DAYS,
+                 SESSION_USER,
+                 CURRENT_TIMESTAMP)
+;
+\end{sql}
+\end{itemize}
 
 \subsection{Miscellaneous SQL}
 \begin{itemize}
@@ -1616,8 +1860,441 @@ END;
     \end{arrows}
 \end{itemize}
 
-\addcontentsline{toc}{section}{Other Notes}
-\addcontentsline{toc}{subsection}{Query Planning/Indices}
+
+
+\section{Transaction Management}
+\subsection{Introduction}
+\begin{itemize}
+    \item A \emph{transaction} is a unit of program execution that accesses and possibly updates various data items
+    \item The principles of transactions for relational databases are summarized with then acronym \emph{ACID} (called the \emph{ACID Properties)}:
+    \begin{itemize}
+        \item[A:] \emph{Atomicity}. Despite consisting of possibly many statements, the collection must appear to the user as an indivisible unit: it either executes in entirety or not at all (if failure occurs for any reason, any changes must be undone)
+        \item[C:] \emph{Consistency}. The database must remain in a consistent state after an isolated transaction is run (data still is valid)
+        \item[I:] \emph{Isolation}. Since transactions consist of many statements, it must be ensured that each transaction is not affected by other concurrent transactions
+        \item[D:] \emph{Durability}. Successful transactions must remain permanent even if the system later crashes
+    \end{itemize}
+    \item The primary way to make a database system more efficient is to allow for concurrency, but the scheduling of transactions cannot violate the ACID test; it must appear to the end-user that each query runs independently
+    \begin{arrows}
+        \item Note that no restrictions are placed on the order in which transactions are executed; if an order is required, they should be packaged in the same transaction
+        \item All transactions must conform to the ``Correctness Principle'': if a transaction executes independently without system errors, and the database begins in a consistent state, then it must end in a consistent state
+        \item When determining how to implement concurrency, there is a tradeoff between latency (wait-time for a given query) and throughput (the number of queries that can be processed at once)
+    \end{arrows}
+\end{itemize}
+\subsection{Serializable Schedules}
+\begin{itemize}
+    \item A schedule is a \emph{serial schedule} if the actions consist of all the actions from one transaction, then all the actions of another transaction, and so on
+    \item A schedule is a \emph{serializable schedule} if there exists a serial schedule producing the same output
+    \begin{arrows}
+    \item Serializable schedules may have actions being interweaved between transactions, resulting in concurrency, but it appears to the end user as if each runs in isolation
+    \item A non-serializable schedule violates ACID properties, so may not be used by the database scheduler
+    \end{arrows}
+    \item When determining whether a schedule is serializable, only the details of what element is being written to/read from is used, not the actual contents of the read/write
+    \begin{arrows}
+    \item This means arithmetic coincidence cannot be utilized; for example, properties such as commutativity and associativity cannot be utilized
+    \item The reason for this is understanding the effect of a query on the database is a hard problem, related to the Halting Problem
+    \end{arrows}
+\end{itemize}
+
+\subsection{Conflict-Serializable Schedules}
+\begin{itemize}
+    \item A \emph{conflict} is a pair of consecutive actions in a schedule such that the output may change if their order is interchanged
+    \begin{arrows}
+        \item To identify conflicts (again assuming no arithmetic coincidence), we notate the operations as $r_i(X)$ and $w_i(X)$ for read and write, where $i$ is the transaction and $X$ is the database element
+        \item Note that a write represents a \emph{blind write}, where the element is written to without being read, and is instead being overwritten
+    \end{arrows}
+    \item Consider two actions $a_i(X)$ and $b_j(Y)$. We have:
+    \begin{enumerate}[label=(\roman*)]
+        \item There is a conflict if $i=j$, since we never allow actions within the same transaction to be re-ordered
+        \begin{arrows}
+        \item Although a transaction is represented by $r_i$ and $w_i$, other database-independent actions are also being performed; for example, the information of a read can be processed in some way and then used in a write
+        \item Thus, it is not feasible to consider re-ordering steps within a transaction under this framework
+        \end{arrows}
+        \item Otherwise, if $X\neq Y$, there is no conflict, since different database elements are being utilized
+        \item Finally, if $X=Y$, then there is a conflict iff either $a$ or $b$ is a write action
+    \end{enumerate}
+    \item Two schedules are \emph{conflict-equivalent} if one can be transformed to the other via non-conflicting swaps of adjacent actions
+    \item A schedule is \emph{conflict-serializable} if it is conflict equivalent to a serializable schedule
+    \begin{arrows}
+    \item Every conflict-serializable schedule is serializable
+    \item Not every serializable schedule is conflict-serializable, such as $r_1(X); w_2(X); w_1(X); w_3(X)$. This is not conflict serializable since $w_2(X)$ and $w_1(X)$ conflict, but it is serializable since in any order, the result is over-written by $w_3(X)$
+    \item In practice, it is difficult to determine whether a schedule is serializable, but it is much easier to determine whether it is conflict-serializable
+    \end{arrows}
+    \item Transaction $T_1$ \emph{takes precedence} over transaction $T_2$ in schedule $S$ if there are actions $A_1\in T_1$ and $A_2\in T_2$ such that $A_1$ precedes $A_2$ in $S$, $A_1$ and $A_2$ involve the same data element, and at least one is a write
+    \begin{itemize}
+        \item Equivalently, $T_1$ has precedence over $T_2$ if $T_1$ occurs before $T_2$ and there exists conflicting actions $A_1\in T_1$ and $A_2\in T_2$
+        \item This is denoted $T_1<T_2$
+    \end{itemize}
+    \item In a conflict-serializable schedule, $T_i<T_j$ must imply that $T_i$ precedes $T_j$ in the corresponding serial schedule
+    \begin{arrows}
+    \item Thus, by building a precedence graph (a directed graph with edges from $T_i$ to $T_j$ for each $T_i<T_j$), a schedule is conflict-serializable iff it is acyclic
+    \item A conflict-equivalent serial schedule can then be found via topological sorting
+    \end{arrows}
+\end{itemize}
+
+\subsection{Locks}
+\begin{itemize}
+    \item \emph{Locks} provide a mechanism for producing conflict-serializable schedules while still allowing concurrency; transactions request and release locks on different elements of the database
+    \item Locks control transactions as follows:
+    \begin{arrows}
+    \item A transaction may only read or write to an element if it was previously granted a lock and has not released the lock yet
+    \item Transactions must eventually release all locks
+    \item No two transactions can concurrently have a lock on the same element
+    \end{arrows}
+    \item Locking an element is denoted $l_i(X)$, and releasing a lock is denoted $u_i(X)$
+    \item Simply having locks is not enough to ensure conflict-serializable schedules, since each action could simply lock and then immediately unlock the element
+    \item \emph{Two-Phase Locking (2PL)} guarantees that a legal schedule of consistent transactions is conflict-serializable by forcing all lock actions to precede all unlock actions
+    \begin{arrows}
+        \item The \emph{expanding phase} consists of the portion of the transaction where locks may be acquired, and the \emph{shrinking phase} consists of the portion where locks may be released
+        \item Intuitively, each transaction can be viewed as executing in entirety the moment it releases its first lock (and this is what the corresponding serial schedule looks like)
+    \end{arrows}
+    \item To produce the schedule, each transaction can greedily request resources/locks, and the scheduler will either grant these are deny them
+\end{itemize}
+
+\subsection{Types of Locks}
+\begin{itemize}
+\item If multiple transactions only read from an element without writing to it, then hypothetically these could run concurrently in any order
+\item To allow this, locks are divided into two categories: \emph{shared locks} and \emph{exclusive locks}
+\item A shared lock is used for reading, while an exclusive lock is used for reading and/or writing
+\item Many shared locks can be granted simultaneously, but an exclusive lock can only be granted if it is the only lock
+\item Shared lock requests are denoted $sl_i(X)$ and exclusive locks are denoted $xl_i(X)$
+\item Thus, all of the rules become:
+\begin{arrows}
+\item Consistency of Transactions: In any transaction $T_i$, $r_i(X)$ must be preceded by $sl_i(X)$ or $xl_i(X)$, with no intervening $u_i(X)$; $w_i(X)$ must be preceded by $xl_i(X)$ with no intervening $u_i(X)$; and $sl_i(X)$ and $xl_i(X)$ must eventually be followed by $u_i(X)$
+\item Two-Phase Locking of Transactions: No action $sl_i(X)$ or $xl_i(X)$ may be preceded by $u_i(Y)$ for any $Y$
+\item Legality of Schedules: If $xl_i(X)$ appears in a schedule, then no $xl_j(X)$ or $sl_j(X)$ may appear for $j\neq i$ until $u_i(X)$ appears; and if $sl_i(X)$ appears in a schedule, then there cannot be a following $xl_j(X)$ for $j\neq i$ until $u_i(X)$ appears
+\end{arrows}
+\end{itemize}
+
+\subsection{Transactions in SQLite}
+\begin{itemize}
+\item SQLite chooses to lock on the entire database at a time, rather than locking on a table/row/value
+\begin{arrows}
+\item This sacrifices efficiency for ease of implementation
+\item Due to triggers, it may be difficult to determine how a given action impacts the database
+\item This is unlike DB2, which locks by rows using \lstinline|SHARED| locks, \lstinline|UPDATE| locks (one of which can be granted to allow for updates while still allowing shared locks), and \lstinline|EXCLUSIVE| locks
+\end{arrows}
+\item There are five locking states of the database:
+\begin{arrows}
+\item \lstinline|UNLOCKED|. No locks are held on the database, and the database cannot be read or written. This is the default state.
+\item \lstinline|SHARED|. The database may be read but not written. Any number of processes can hold a shared lock, so many simultaneous reads can occur.
+\item \lstinline|RESERVED|. A single process has a reserved lock, indicating that it plans to eventually write to the database, but that shared locks can continue being acquired until then.
+\item \lstinline|PENDING|. A single process has a pending lock, indicating that it plans to write to the database as soon as possible. No new shared locks may be acquired, although existing shared locks are allowed to finish.
+\item \lstinline|EXCLUSIVE|. A single process may have an exclusive lock, and no other locks may be present at that time. This lock permits reads and writes. Since this limits concurrency, SQLite minimizes the number of these locks granted.
+\end{arrows}
+\item A transaction in SQLite ends with either a commit, rollback, or error (which in turn triggers a rollback)
+\begin{arrows}
+\item These are denoted in a schedule with $\text{commit}_i$ and $\text{rollback}_i$
+\item Typically, the transaction does not write to the database until the commit, and instead modifies a local cached copy (so that different transactions may see different snapshots of the database)
+\item More formally, SQLite uses write-ahead logging (WAL) to record changes to the database (so a literal copy is not made, but this is an easy way to think about it)
+\item In the case of a rollback/error, all changes are undone
+\item All locks are released upon commit
+\end{arrows}
+\item A transaction can be run in three modes:
+\begin{arrows}
+\item \lstinline|DEFERRED|. A shared lock is requested upon the first read, and an exclusive lock is requested upon the first write (recall that the write typically occurs on commit, not on the first update/insert statement). This is the default.
+\item \lstinline|IMMEDIATE|. A reserved lock is requested immediately, and it will fail or wait if another transaction is holding an exclusive/reserved/pending lock. An exclusive lock is requested prior to writing (typically the promotion occurs on commit).
+\item \lstinline|EXCLUSIVE|. An exclusive lock is requested immediately, and it will fail or wait if other locks are being held.
+\end{arrows}
+\item The syntax in SQLite is \lstinline|BEGIN [MODE] TRANSACTION| for beginning the transaction (where \lstinline|[MODE]| is optionally passed), and either \lstinline|COMMIT TRANSACTION| or \lstinline|ROLLBACK TRANSACTION|.
+\item Statements executed outside of explicit transactions are handled differently depending on the \lstinline|isolation_level| property specified when forming the connection
+\begin{arrows}
+\item \ilpy{'DEFERRED'}, \ilpy{'IMMEDIATE'}, or \ilpy{'EXCLUSIVE'}. Transactions in these modes are implicitly opened in the respective mode before any \lstinline|INSERT|, \lstinline|UPDATE|, \lstinline|DELETE|, or \lstinline|REPLACE| statement is run. The transaction must be explicitly committed or rolled back with \ilpy{commit()} or \ilpy{rollback()}, otherwise the changes are rolled back. The default is \ilpy{'DEFERRED'}.
+\item \ilpy{None}. Each executed statement is treated as its own transactions, automatically committed after it finishes. This mode is often better to use, since it is better to explicitly open transactions when they are needed.
+\end{arrows}
+\item If a statement cannot be run because it cannot acquire the locks, then SQLite issues an error after a certain amount of time
+\end{itemize}
+
+\subsection{Rollbacks}
+\begin{itemize}
+\item A \emph{rollback} aborts a transaction and undoes its changes (which is necessary by atomicity)
+\item If a serial schedule is not used, rolling back one transaction may require that previous transactions be rolled back as well
+\begin{arrows}
+\item Namely, if a transaction $T_1$ has read modified (uncommitted) data created by $T_2$, then a rollback of $T_2$ also requires that $T_1$ be rolled back
+\item This can lead to \emph{cascading rollbacks}
+\item Cascading rollbacks can be avoided using \emph{strict two-phase locking}, which only allows locks to be released at the moment of commit or rollback, and not sooner
+\item There is a tradeoff between throughput and preventing cascading rollbacks
+\end{arrows}
+\end{itemize}
+
+\subsection{Deadlock}
+\begin{itemize}
+\item In a locking schedule, \emph{deadlock} occurs when transactions are waiting for locks to be released, but they are holding the locks that other transactions need to continue
+\item Deadlock can be detected via a \emph{Wait-For graph}, where each transaction is a node, and directed edges point from the waiting transaction to the transaction it is waiting on
+\begin{arrows}
+\item If the Wait-For graph has a cycle, then there is deadlock
+\item Deadlock must be resolved by rolling back a transaction
+\item However, many methods do not directly detect deadlock via waits-for graphs, and instead impose other rules
+\end{arrows}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.3\linewidth]{waits_for.png}
+\caption*{All are deadlocked except $T_3$, $T_4$, and $T_6$}
+\end{figure}
+\item Using a timeout is one method of deadlock resolution, where any transaction waiting for some number of seconds is rolled back
+\begin{arrows}
+\item Choosing the threshold is difficult and may not solve the issue if the transactions are resubmitted the same way
+\end{arrows}
+\item The Wait-Die and Wound-Wait methods resolve deadlocks by rolling back transactions based on their timestamps when one transactions requests the resources/locks of another
+\begin{arrows}
+\item No explicit deadlock detection is performed; rather, the rules make it so that deadlock could not possibly occur
+\item Each transaction $T_i$ is assigned a timestamp $ts(T_i)$ for when it starts, where $ts(T_i)<ts(T_j)$ indicates that $T_i$ is older (such as with Unix time)
+\item Both methods give priority to older transactions, but in different ways
+\item When a transaction is rolled back, then it restarts with the same timestamp, so that it will eventually be the oldest (being rolled back does not penalize its priority)
+\item A waiting transaction tries to get the lock again as soon as it is free, but when a rolled back transaction resurfaces is less predictable
+\end{arrows}
+\item When $T_i$ requests a lock held by $T_j$, the \emph{Wait-Die} deadlock resolution method performs one of two actions:
+\begin{arrows}
+\item If $ts(T_i)<ts(T_j)$, $T_i$ waits for $T_j$ (older waits for younger)
+\item Otherwise, $T_i$ aborts (younger dies)
+\end{arrows}
+\item Similarly, the \emph{Wound-Wait} deadlock resolution method takes the actions:
+\begin{arrows}
+\item If $ts(T_i)<ts(T_j)$, then $T_j$ aborts (older wounds younger, forcing it to roll back)
+\item Otherwise, $T_i$ waits (younger waits for older)
+\end{arrows}
+\item Both these methods minimize \emph{starvation}, which is when objects are less efficient due to waiting for resources (deadlock is the most extreme form of this)
+\begin{arrows}
+\item Wait-Die tends to roll back more transactions than Wound-Wait (since all younger transactions die when requesting resources from older), but the transactions have done less work when they are rolled back
+\end{arrows}
+\item These methods do not specify when each transaction is allocated time to run its actions; one method is \emph{round-robin style scheduling}, which performs one action from each transaction in an alternating fashion
+\begin{arrows}
+\item Commit is treated as its own action
+\item If a transaction is waiting on a lock, it can try again next time (but this means that younger transactions may acquire it sooner)
+\end{arrows}
+\end{itemize}
+
+\subsection{Validation Scheduling}
+\begin{itemize}
+\item Locks are a form of \emph{pessimistic concurrency control} because they assume transactions will conflict unless the scheduler prevents them
+\item \emph{Validation} is an optimistic way of ensuring serializable schedules, which assumes that conflicts are rare
+\begin{arrows}
+\item This is useful when most users are readers, and only small fractions of the total database are accessed/modified by any transaction
+\end{arrows}
+\item Each transaction has three phases:
+\begin{arrows}
+\item A read phase, where all writes occur to private storage
+\item A validation phase, where it is checked that no conflicts will occur if the write phase happens
+\item A write phase, where the writes are made public if the validation is successful (otherwise the transaction is aborted)
+\end{arrows}
+\item In particular, validation ensures that the schedule generalized will be equivalent to the serial schedule ordered by timestamp (all conflicts must occur in one direction)
+\item The validation test for $T_j$ check that for all $ts(T_i)<ts(T_j)$, we have one of the following:
+\begin{enumerate}[label=\arabic*.]
+\item $T_i$ completes its write phase before $T_j$ starts its read phase
+\begin{arrows}
+\item This is what would occur in a serial schedule
+\end{arrows}
+\item ($T_i$ does not write to any object that $T_j$ reads from) and ($T_i$ completes its write phase before $T_j$ starts its write phase)
+\begin{arrows}
+\item Writes/reads from $T_i$ can be interweaved with reads of $T_j$ as long as there is no WR conflict
+\item No writes are interweaved
+\end{arrows}
+\item ($T_i$ does not write to any object that $T_j$ reads from) and ($T_i$ does not write to the same element that $T_j$ writes to) and ($T_i$ completes its read phase before $T_j$ completes its read phase)
+\begin{arrows}
+\item Writes may now be interweaved as well, under the condition that writes in $T_i$ act on objects which $T_j$ does no interact with
+\item To ensure $T_j$ (the later transaction) does not impact $T_i$ (the earlier transaction), we must have that $T_i$ completes its read phase before $T_j$ completes its write phase (i.e., $T_j$ cannot begin to write while $T_i$ is still reading, so that all conflicts are resolved as RW)
+\end{arrows}
+\end{enumerate}
+\end{itemize}
+
+\subsection{Timestamp-Based Scheduling}
+\begin{itemize}
+\item Timestamp-based scheduling is also optimistic, but validates each action as it occurs, rather than all at once in a validation phase
+\item To accomplish this, every database element has the additional metadata:
+\begin{arrows}
+\item $RT(X)$: The \emph{read time} of $X$, which is the most recent time $X$ was read
+\item $WT(X)$: The \emph{write time} of $X$, which is the most recent time $X$ was written to
+\item $C(X)$: The \emph{commit bit} of $X$, which is a boolean for whether the most recent write to $X$ has been committed
+\end{arrows}
+\item \emph{Physically unrealizable behaviors} are those that yield results incapable of being produced by the serial schedule where each transaction runs in order according to its start time
+\begin{arrows}
+\item This method aims to prevent these behaviors
+\item For $T_i$ beginning before $T_j$, \emph{read-too-late} occurs when $r_i(X)$ occurs after $w_j(X)$, and \emph{write-too-late} occurs when $w_i(X)$ occurs after $r_j(X)$
+\item These are essentially the conflicts from before, aside from write-write conflicts - in this case, $T_i$ can just skip its write action by the following rule
+\end{arrows}
+\item The \emph{Thomas Write Rule} states that write may be skipped if a later write is in place
+\begin{arrows}
+\item The one exception is when the later write is aborted (in which case the earlier write should have occurred)
+\item In this case, these writes are ``delayed'' until either the later transaction is committed (in which case they do not run) or aborted (in which case they do run). This is kept track of with the committed bit
+\end{arrows}
+\item The rules for a transaction $T_i$ doing a read $r_i(X)$ are:
+\begin{enumerate}
+\item If $ts(T_i)>WT(X)$, then the read is physically realizable, so:
+\begin{enumerate}[label=(\roman*)]
+\item If $C(X)$ is true, then perform $r_i(X)$ and update $RT(X)=\max\{ts(T_1),RT(X)\}$
+\item If $C(X)$ is false, then delay $r_i(X)$ until the transaction which wrote to $X$ commits or aborts
+\end{enumerate}
+\item If $ts(T_i)<WT(X)$, then the read is physically unrealizable (read-too-late), so roll back and restart with a new timestamp
+\end{enumerate}
+\item The rules for a transaction $T_i$ doing a write $w_i(X)$ are:
+\begin{enumerate}
+\item If $ts(T_i)>RT(X)$ and $ts(T_i)>WT(X)$, then it is physically realizable, so store a copy of $X$ in case of rollback, perform $w_i(X)$, and set $WT(X)=ts(T_i)$ and $C(X)$ to false
+\item If $ts(T_i)>RT(X)$ and $ts(T_i)<WT(X)$, then it is physically realizable but has already been written to, so:
+\begin{enumerate}[label=(\roman*)]
+\item If $C(X)$ is true, then the Thomas Write Rule applies, so do nothing
+\item If $C(X)$ is false, then delay the action until the other transactions commits or aborts
+\end{enumerate}
+\item If $ts(T_i)<RT(X)$, then the write is physically unrealizable (write-too-late), so roll back and restart with a new timestamp
+\end{enumerate}
+\item When $T_i$ commits, it finds all of the elements it wrote to and sets the commit bits to true
+\item When $T_i$ rolls back, restore the old values of any elements written to, and allow the waiting transactions to perform reads/writes
+\end{itemize}
+
+\subsection{Comparison of Concurrency Control Methods}
+\begin{itemize}
+\item For the optimistic methods, validation and timestamp-based methods have similar performance and rates of rollback
+\begin{itemize}
+\item Validation has overhead all at once during the validation phase, while timestamp methods have overhead distributed across all actions
+\end{itemize}
+\item Storage requirements for locking and validation methods are similar
+\begin{arrows}
+\item Locking has storage requirements proportional to the number of elements locked
+\item Validation needs to store timestamps and the sets of elements accessed/modified for all open transactions
+\end{arrows}
+\item Locking has few rollbacks, while validation has more frequent rollbacks
+\item Validation has fewer delays in transactions, while locking can cause delays due to starvation
+\end{itemize}
+
+
+\section{Indices}
+\label{indices}
+\subsection{Introduction}
+
+\begin{itemize}
+\item Indices can improve the speed of many operations:
+\begin{arrows}
+\item Looking up rows in a way not according to their primary key
+\item Identifying matching rows according to the value in a column, when doing a look-up
+\end{arrows}
+\item However, indices add additional time to CRUD operations (since indices must be updated) and take more memory
+\begin{arrows}
+\item Indices for attributes that change often should be reduced
+\item The 80-20 rule says that 80\% of the database's processing time is caused by 20\% of the queries, so identifying and optimizing for the 20\% is most important
+\item Some queries require faster response times than others based on context, so this can be used when planning which indices to create and which to avoid
+\end{arrows}
+\item A \emph{primary index} is an index which specifies the order of the stored data, while a \emph{secondary index} provides alternative means of accessing data in the relation
+\item Indices can be \emph{unsorted} (such as hash tables, which only allow records to be found through equality) or \emph{sorted} (which allow records to be returned matching a range)
+\begin{arrows}
+\item Sorted indices are most common and generally most useful
+\end{arrows}
+\item Primary indices can be \emph{dense} (containing an entry for every search key value) or \emph{sparse} (containing only some entries for the search key)
+\begin{arrows}
+\item For example, an index containing the first word of each starting letter in a dictionary is a sparse index
+\item Secondary indices cannot be sparse since the index does not correspond to the order in which the data is stored
+\item Most indices are dense
+\end{arrows}
+\end{itemize}
+
+\addtocounter{subsection}{1}
+\addcontentsline{toc}{subsection}{\protect\numberline{\thesubsection}Query Planning/Indices}
 \includepdf[scale=1.0,pages={-},pagecommand={\thispagestyle{fancy}},link=true]{Query_Planning.pdf}
+
+\subsection{B$^+$ Trees}
+
+\begin{itemize}
+\item Indices can be too large to load into memory at once, making IO operations and binary searches for non-extreme values expensive
+\item This can be resolved by storing the index as a \emph{multilevel index}, where the actual contents of the index are stored in the terminal nodes of a tree
+\begin{arrows}
+\item The internal nodes allow for the correct data block/terminal node to be searched for and identified
+\end{arrows}
+\item A binary tree suffers from several problems, which are ultimately resolved by using a B$^+$ tree:
+\begin{arrows}
+\item There are many internal nodes, so that $\log_2(N)$ nodes must be read in order to find the desired key
+\item The next highest key (useful for key ranges) is not stored in memory near the current key, requiring more IO operations
+\item Binary trees can become unbalanced or require expensive restructuring in order to remain balanced
+\end{arrows}
+\item An \emph{$M$-ary search tree} is an extension of a binary tree but with a maximum branching factor of $M$ rather than 2
+\begin{arrows}
+\item In a complete tree, the depth is $\log_M(N)$, each internal node has $M-1$ keys, and the expected runtime of a lookup is $M\log_M(N)$
+\end{arrows}
+\item A \emph{B$^+$ tree} is a specified $M$-ary search tree where each internal node contains $M-1$ keys
+\begin{arrows}
+\item Each internal node other than the root has between $\lceil M/2\rceil$ and $M$ children
+\item The internal node contains one fewer search key than children, so that the search keys mark the ``boundaries'' between the children
+\item Each leaf node contains a block of data, between $\lceil L/2\rceil$ and $L$ key values
+\end{arrows}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.3\linewidth]{b_plus_internal_node.png}
+\caption*{An internal node of a B$^+$ tree with $M=5$}
+\end{figure}
+
+\begin{arrows}
+\item Binary searches are used when traversing the tree, both with internal nodes and leaf nodes, allowing for asymptotic runtime to be logarithmic
+\item For a B$^+$ tree to be used to store an index, each leaf node should point to the subsequent leaf node so that it can be easily traversed
+\end{arrows}
+
+\item When inserting into a B$^+$ tree, perform the following:
+\begin{itemize}
+\item Identify the proper leaf node by traversing the tree then insert
+\item If the leaf has $L+1$ items, split the leaf into two nodes, of sizes $\lceil (L+1)/2\rceil$ and $\lfloor (L+1)/2\rfloor$. If the parent has $M+1$ children, perform following step
+\item If an internal non-root node has $M+1$ children, split the node into two nodes, one with $\lceil(M+1)/2\rceil$ children and the other with $\lfloor(M+1)/2\rfloor$. If the parent has $M+1$ children, repeat this step on that node if it is not the root, or perform the following step
+\item If the root node has $M+1$ children, make the tree deeper by splitting the root node in half (as above) then creating a new root node whose children are these two halves
+\end{itemize}
+
+\item When deleting from a B$^+$ tree, perform the following:
+\begin{itemize}
+\item Identify the proper leaf node by traversing the tree then delete
+\item If the leaf note has fewer than $\lceil L/2\rceil$ items, then if either neighbor has extra items, adopt one and update the parent
+\item If no neighbor has extra items, then divide up the node's items with its neighbor(s), update the parent, then delete the node
+\item If the previous step causes the parent to have fewer than $\lceil M/2\rceil$ children, then repeat the process, either adopting neighboring children or deleting
+\item If the previous step causes the root to have only one child, then replace the root with its child
+\end{itemize}
+
+\item Insertion can cause expensive splitting with propagation, while deletion can cause either cheap adoption or expensive deletion with propagation
+\begin{arrows}
+\item These expensive operations are rare with $M$ and $L$ large, such as $M=L=128$
+\end{arrows}
+\end{itemize}
+
+\subsection{Alternate Index Structures}
+
+\begin{itemize}
+\item If lookup ranges are rare, then hash tables can be used
+\begin{arrows}
+\item For a good hash function, lookup is nearly constant time, allowing for quicker performance than B$^+$ trees
+\item However, hash tables are unsorted, so they do not work for range lookups
+\item Performance also decreases as the hash table fills up
+\end{arrows}
+\item If keys in the index are often duplicated, bitmaps can provide better performance, especially for compound operations like AND/OR/NOT
+\begin{arrows}
+\item Each key has its own associated bitmap, such as in the example:
+\begin{figure}[H]
+\begin{subfigure}{0.6\linewidth}
+\centering
+\begin{tabular}{ccccc}
+\toprule
+rowid&student\_id&first\_name&major&honors\\
+\midrule
+0 & 1923 & Alice & CSE & 1 \\
+1 & 3451 & Bob & MTH & 0 \\
+2 & 2323 & Carol & Other & 0 \\
+3 & 4561 & David & Other & 1 \\
+4 & 9365 & Emily & CSE & 0 \\
+5 & 1086 & Frank & MTH & 1 \\
+\bottomrule
+\end{tabular}
+\end{subfigure}
+\begin{subfigure}{0.3\linewidth}
+\centering
+\begin{tabular}{cc}
+\toprule
+\texttt{major\_CSE} & 100010\\
+\texttt{major\_MTH} & 010001\\
+\texttt{honors\_1}  & 100101\\
+\bottomrule
+\end{tabular}
+\end{subfigure}
+\end{figure}
+\item A query selecting CSE majors or MTH majors, neither with honors, would use bitmap operations to yield the bitmap 010010, corresponding to the rowid 1 and 4
+\end{arrows}
+\item Space efficiency is high assuming that there are a few highly duplicated keys, lookups with multiple criteria are efficient, but range lookups are not efficient
+\item Insertion and deletion can be highly expensive, often requiring the bitmap to be regenerated
+\begin{arrows}
+\item To lessen this effect, and existence bitmap can track whether a row has been deleted or not, and then this can be implicitly added to the criteria of queries
+\end{arrows}
+\end{itemize}
+
+
+
 
 \end{document}

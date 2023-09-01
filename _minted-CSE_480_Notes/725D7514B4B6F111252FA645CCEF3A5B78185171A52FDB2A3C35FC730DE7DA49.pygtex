@@ -1,4 +1,5 @@
 \begin{Verbatim}[commandchars=\\\{\}]
 \PYG{k}{SELECT}\PYG{+w}{ }\PYG{n}{column1}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{column2}
 \PYG{k}{FROM}\PYG{+w}{ }\PYG{k}{table\PYGZus{}name}
+\PYG{k}{WHERE}\PYG{+w}{ }\PYG{n}{condition}\PYG{p}{;}
 \end{Verbatim}

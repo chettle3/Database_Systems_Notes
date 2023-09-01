@@ -1,0 +1,3 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{CONCAT}\PYG{p}{(}\PYG{n}{string\PYGZus{}expr1}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{string\PYGZus{}expr2}\PYG{p}{)}
+\end{Verbatim}

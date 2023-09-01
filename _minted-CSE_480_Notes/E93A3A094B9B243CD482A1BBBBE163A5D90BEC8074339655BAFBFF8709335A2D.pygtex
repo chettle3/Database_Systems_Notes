@@ -1,0 +1,8 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{n+nt}{\PYGZdq{}name\PYGZdq{}}\PYG{p}{:}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}James\PYGZdq{}}\PYG{p}{,}
+\PYG{+w}{    }\PYG{n+nt}{\PYGZdq{}classes\PYGZdq{}}\PYG{p}{:}\PYG{+w}{ }\PYG{p}{[}\PYG{+w}{ }\PYG{p}{\PYGZob{}}\PYG{n+nt}{\PYGZdq{}Name\PYGZdq{}}\PYG{p}{:}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}CSE480\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n+nt}{\PYGZdq{}Students\PYGZdq{}}\PYG{p}{:}\PYG{+w}{ }\PYG{l+m+mi}{135}\PYG{p}{\PYGZcb{},}
+\PYG{+w}{                 }\PYG{p}{\PYGZob{}}\PYG{n+nt}{\PYGZdq{}Name\PYGZdq{}}\PYG{p}{:}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}CSE498\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n+nt}{\PYGZdq{}Students\PYGZdq{}}\PYG{p}{:}\PYG{+w}{ }\PYG{l+m+mi}{178}\PYG{p}{\PYGZcb{}}\PYG{+w}{ }\PYG{p}{],}
+\PYG{+w}{    }\PYG{n+nt}{\PYGZdq{}Employed\PYGZdq{}}\PYG{p}{:}\PYG{+w}{ }\PYG{k+kc}{true}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

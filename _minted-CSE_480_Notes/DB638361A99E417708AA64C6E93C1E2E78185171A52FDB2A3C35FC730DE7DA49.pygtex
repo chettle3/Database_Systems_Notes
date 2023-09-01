@@ -1,0 +1,13 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{SELECT}\PYG{+w}{ }\PYG{n}{DEPT\PYGZus{}DESC}\PYG{+w}{ }\PYG{k}{AS}\PYG{+w}{ }\PYG{l+s+ss}{\PYGZdq{}DEPARTMENT\PYGZdq{}}
+\PYG{+w}{       }\PYG{k}{COUNT}\PYG{p}{(}\PYG{o}{*}\PYG{p}{)}\PYG{+w}{  }\PYG{k}{AS}\PYG{+w}{ }\PYG{l+s+ss}{\PYGZdq{}NUMBER OF EMPLOYEES\PYGZdq{}}
+\PYG{+w}{  }\PYG{k}{FROM}\PYG{+w}{ }\PYG{n}{EMPLOYEE\PYGZus{}RECORDS}\PYG{+w}{ }\PYG{n}{R}
+\PYG{+w}{       }\PYG{k}{JOIN}\PYG{+w}{ }\PYG{n}{DEPT\PYGZus{}DESC}\PYG{+w}{ }\PYG{n}{D}
+\PYG{+w}{         }\PYG{k}{ON}\PYG{+w}{ }\PYG{n}{R}\PYG{p}{.}\PYG{n}{DEPT\PYGZus{}NUM}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{D}\PYG{p}{.}\PYG{n}{DEPT\PYGZus{}NUM\PYGZus{}KEY}
+\PYG{+w}{ }\PYG{k}{WHERE}\PYG{+w}{ }\PYG{n}{R}\PYG{p}{.}\PYG{n}{EMPLOYEE\PYGZus{}SALARY}\PYG{+w}{ }\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{l+m+mi}{50000}
+\PYG{+w}{   }\PYG{k}{AND}\PYG{+w}{ }\PYG{n}{R}\PYG{p}{.}\PYG{n}{DEPT\PYGZus{}NUM}\PYG{+w}{ }\PYG{k}{LIKE}\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}5\PYGZpc{}\PYGZsq{}}
+\PYG{+w}{ }\PYG{k}{GROUP}\PYG{+w}{ }\PYG{k}{BY}\PYG{+w}{ }\PYG{n}{R}\PYG{p}{.}\PYG{n}{DEPT\PYGZus{}NUM}
+\PYG{k}{HAVING}\PYG{+w}{ }\PYG{k}{COUNT}\PYG{p}{(}\PYG{o}{*}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{l+m+mi}{20}
+\PYG{+w}{ }\PYG{k}{ORDER}\PYG{+w}{ }\PYG{k}{BY}\PYG{+w}{ }\PYG{k}{COUNT}\PYG{p}{(}\PYG{o}{*}\PYG{p}{)}\PYG{+w}{ }\PYG{k}{DESC}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{DEPT\PYGZus{}DESC}
+\PYG{p}{;}
+\end{Verbatim}

@@ -1,0 +1,3 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n+nt}{\PYGZlt{}xsd:attribute} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}attr\PYGZus{}name\PYGZdq{}} \PYG{n+na}{type=}\PYG{l+s}{\PYGZdq{}xsd:type\PYGZdq{}}\PYG{n+nt}{/\PYGZgt{}}
+\end{Verbatim}

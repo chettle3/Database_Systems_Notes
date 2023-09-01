@@ -1,0 +1,3 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n+nb}{DECIMAL}\PYG{p}{(}\PYG{n}{string}\PYG{p}{,}\PYG{+w}{ }\PYG{k}{precision}\PYG{p}{,}\PYG{+w}{ }\PYG{k}{scale}\PYG{p}{)}
+\end{Verbatim}

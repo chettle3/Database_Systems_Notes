@@ -1,0 +1,3 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{TRIM}\PYG{p}{(}\PYG{k}{location}\PYG{+w}{ }\PYG{n}{trim\PYGZus{}char}\PYG{+w}{ }\PYG{k}{FROM}\PYG{+w}{ }\PYG{n}{string\PYGZus{}expr}\PYG{p}{)}
+\end{Verbatim}
